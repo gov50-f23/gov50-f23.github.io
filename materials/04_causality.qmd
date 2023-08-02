@@ -1,0 +1,29 @@
+---
+title: "Causality and Pivoting"
+date: 2022-09-13
+---
+
+
+## Readings 
+
+- [Chapter 2 of QSS](https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science)
+
+## Data
+
+- Reinstall the Gov 50 data package that has new data for this week:
+```{r}
+#| eval: false
+remotes::install_github("mattblackwell/gov50data")
+```
+
+## Slides and Code
+
+- Tuesday (9/20) lecture: Causality
+  - [PDF of slides as I present them](/slides/06_causality.pdf)
+  - [PDF of handout version of slides](/slides/06_causality_handout.pdf) (no incremental slides)
+  - Code: [`transphobia.Rmd`](/files/code/transphobia.Rmd)
+
+- Tuesday (9/22) lecture: Observational Studies
+  - [PDF of slides as I present them](/slides/07_obs_studies.pdf)
+  - [PDF of handout version of slides](/slides/07_obs_studies_handout.pdf) (no incremental slides)
+  

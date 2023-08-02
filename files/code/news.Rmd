@@ -1,0 +1,161 @@
+---
+title: "News"
+author: "Matt Blackwell"
+date: '2022-09-13'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(gov50data)
+library(tidyverse)
+data(news)
+```
+
+## filter
+
+```{r}
+filter(news, affiliation %in% c("ABC", "FOX", "CBS"))
+
+
+news |> 
+  filter(affiliation %in% c("ABC", "FOX", "CBS"))
+```
+
+
+## arrange()
+
+```{r arrange1}
+news |> 
+  arrange(date, callsign)
+```
+
+```{r}
+news |> 
+  arrange(desc(ideology))
+```
+
+## select()
+
+
+```{r}
+news |> 
+  select(callsign, date, ideology)
+```
+
+```{r}
+news |> 
+  select(callsign:date, ideology)
+```
+
+
+## slice()
+
+
+```{r}
+max(news$ideology, na.rm = TRUE)
+news |>
+  slice_min(ideology, prop = 0.1)
+```
+
+
+
+## rename()
+
+```{r}
+new_news <- news |>
+  rename(call_sign = callsign)
+new_news
+```
+
+
+
+## mutate()
+
+
+```{r}
+news |>
+  mutate(
+    nat_local_diff = national_politics - local_politics,
+    national_percent = national_politics * 100
+  ) |>
+  select(national_politics, local_politics, 
+         nat_local_diff, national_percent)
+```
+
+
+```{r}
+news <- news |>
+  mutate(
+    Ownership = if_else(sinclair2017 == 1, 
+                        "Acquired by Sinclair",
+                        "Not Acquired")
+  )
+
+
+news |>
+  select(callsign, affiliation, Ownership)
+```
+
+
+## group/summarize
+
+```{r}
+news |>
+  group_by(month) |> 
+  summarize(
+    slant_mean = mean(ideology, na.rm = TRUE)
+  )
+```
+
+```{r}
+my_table <- news |> 
+  group_by(Ownership, post) |> 
+  summarize(
+    slant_mean = mean(ideology, na.rm = TRUE),
+    national_mean = mean(national_politics, na.rm = TRUE)
+  ) 
+
+knitr::kable(my_table, digits = 3, 
+             col.names = c("Ownership", "Pre/Post", 
+                           "Avg Slant", "Avg National Coverage"))
+```
+
+## barplot()
+
+
+```{r}
+news |>
+  group_by(affiliation) |> 
+  summarize(count = n())
+
+
+ggplot(news, mapping = aes(x = affiliation)) +
+  geom_bar(fill = "dodgerblue")
+```
+
+
+```{r}
+aff_ideo_mean <- news |> 
+  group_by(affiliation) |> 
+  summarize(
+    slant_mean = mean(ideology, na.rm = TRUE)
+  )
+aff_ideo_mean
+
+ggplot(aff_ideo_mean, aes(x = affiliation, y = slant_mean)) + 
+  geom_col()
+```
+
+```{r}
+station_ideology <- news |> 
+  group_by(callsign, affiliation) |>
+  summarize(slant_mean = mean(ideology, na.rm = TRUE)) |>
+  slice_max(slant_mean, n = 20)
+station_ideology
+
+ggplot(station_ideology, aes(x = slant_mean, 
+                             y = fct_reorder(callsign, slant_mean))) + 
+  geom_col()
+```
+

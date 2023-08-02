@@ -1,0 +1,14 @@
+{
+  "hash": "170eb517dfe2aed8ec7907476385453d",
+  "result": {
+    "markdown": "---\ntitle: \"Summarizing Relationships, Tidying and Joining Data\"\ndate: 2022-10-04\n---\n\n\n\n## Readings \n\n- For summarizing relationships, see QSS 3.6 and MD 5.1.1. \n- For pivoting and tidy data, see MD Ch 4. \n- For more on joins, see the [chapter 20](https://r4ds.hadley.nz/joins.html) in R for Data Science.\n\n## Data\n\n- Reinstall the Gov 50 data package that has new data for this week:\n\n::: {.cell}\n\n```{.r .cell-code}\nremotes::install_github(\"mattblackwell/gov50data\")\n```\n:::\n\n\n- If you cannot install the package, you can download the data locally at [`covid_votes.csv`](/files/data/covid_votes.csv)  to the same directory as your Rmd file and load it using:\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\ncovid_votes <- read_csv(\"covid_votes.csv\")\n```\n:::\n\n\n- For Thursday lecture, we added to additional data sets to `gov50data`. If you cannot install that package, then you can download them: [`mortality.csv`](/files/data/mortality.csv) and [`spotify.csv`](/files/data/spotify.csv). Put them in the same folder as your Rmd file and use these commands to load:\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nmortality <- read_csv(\"mortality.csv\")\nspotify <- read_csv(\"spotify.csv\")\n```\n:::\n\n\n- We will also use data from the `nycflights13` package that you can install with:\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"nycflights13\")\n```\n:::\n\n\n\n\n\n## Slides and Code\n\n- Tuesday (10/4) lecture: Summarizing relationships and writing our own functions\n  - [PDF of slides as I present them](/slides/10_bivariate.pdf)\n  - [PDF of handout version of slides](/slides/10_bivariate_handout.pdf) (no incremental slides)\n  - Code: [`covid_votes.Rmd`](/files/code/covid_votes.Rmd)\n\n- Thursday (10/6) lecture: Causality review, pivoting longer, joining data.\n  - [PDF of slides as I present them](/slides/11_tidy_joins.pdf)\n  - [PDF of handout version of slides](/slides/11_tidy_joins_handout.pdf) (no incremental slides)\n   - Code: [`lecture-11.Rmd`](/files/code/lecture-11.Rmd)\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

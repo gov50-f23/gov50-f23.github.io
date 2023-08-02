@@ -1,0 +1,10 @@
+---
+title: "Gov 50 Speaker Series"
+slug: speaker-series
+toc: false
+sidebar: false
+page-layout: full
+---
+
+More details to come...
+

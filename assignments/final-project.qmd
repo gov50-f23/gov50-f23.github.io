@@ -1,0 +1,101 @@
+---
+title: "Final Project Information"
+date: 2022-09-23
+summary: "A guide for the final project in Gov 50."
+---
+
+
+
+The final project is a data analysis project about whatever data excites you. That could be public opinion in U.S. elections, United Nations voting patterns, patterns of racial discrimination in police behavior, the distribution of salaries in basketball, or the economics of the Marvel Cinematic Universe. No matter the topic, you will formulate a key research question, find data on that question, answer the question using the tools of the course, and present those results for public consumption. 
+
+Here is a list of milestones that we will have to keep you on track:
+
+- Milestone 1: Create a new public GitHub repository that will host the article (10/21)
+- Milestone 2: Find a data source and write a short proposal on your research question (10/28)
+- Milestone 3: Add one polished data visualization on your distill article (11/11)
+- Milestone 4: Add results from one set of analyses (11/18)
+- Final project due (12/14)
+
+## Milestone 1: Create public GitHub repository (due 9/29)
+
+Follow [the instructions](/assignments/distill.qmd) on how to create a repository for your final project.
+You should change the metadata on your article and write a few sentences in the main text about what you might be interested in writing about. You will submit a link to the public article (not the github repository) to Canvas (not Gradescope). 
+
+## Milestone 2: Finding data and writing a proposal (due 10/13)
+
+### Finding a data source 
+
+The biggest part of the final project in Gov 50 is finding a data source. Here are some other resources and repositories with data sets:
+
+- [List of links to political science data sets](https://github.com/erikgahner/PolData) 
+- [Harvard Dataverse - Social Science](https://dataverse.harvard.edu/dataverse/harvard?q=&fq0=subject_ss%3A%22Social+Sciences%22&types=dataverses%3Adatasets&sort=dateSort&order=desc)
+- [Data.gov - Data sets released by the US government](https://catalog.data.gov/dataset) 
+- [Data published by FiveThirtyEight](https://data.fivethirtyeight.com/) 
+- [Harvard OpenData Group Directory](https://github.com/HarvardOpenData/harvard-data)
+- [Harvard Program on Survey Research Data Collections](https://psr.iq.harvard.edu/book/survey-data-collections)
+- [Roper Center : Public Opinion in the US](https://psr.iq.harvard.edu/roper_center_public_opinion_research)
+- [Pew Research Center Data Sets](https://www.pewresearch.org/download-datasets/)
+
+If you find a data set that you think is interesting, but you have problems loading the data set into R, please contact the course staff. R can load almost anything, so we can likely help you.
+
+
+We also have the following specific datasets available to use:
+
+- American National Election Survey, 2016: [Data](https://www.dropbox.com/s/qf8mnhbpckx469u/anes-2016.csv?dl=0) [Codebook](https://www.dropbox.com/s/n5ogow0vdcbmrik/anes_timeseries_2016_userguidecodebook.pdf?dl=0)
+- Civil Wars: [Data](https://www.dropbox.com/s/gde30hr9yokqku5/civilwar.csv?dl=0) [Codebook](https://www.dropbox.com/s/m7hnd64g2z38plm/civilwar-codebook.txt?dl=0)
+- Political Violence: [Data](https://www.dropbox.com/s/8zms0isy8epvzvd/violence.csv?dl=0) [Codebook](https://www.dropbox.com/s/wqmnc9w2stvhlvj/violence-codebook.txt?dl=0)
+- Fox News rollout: [Data](https://www.dropbox.com/s/i1n16wng61tq02x/foxnews.csv?dl=0) [Codebook](https://www.dropbox.com/s/8a8lspgey9sx1pa/foxnews.pdf?dl=0)
+- Afrobarometer: [Data](https://www.dropbox.com/s/f4n778feixbvz4r/afrobarometer2016.RData?dl=0) [Codebook](https://www.dropbox.com/s/4uhrdeylzc8r6ib/merged_round_6_codebook_20161.pdf?dl=0)
+
+### General advice for choosing data sources
+
+- If you want to analyze the relationship between X and Y, make sure that these two variables are included in the data set. If you want to look at effects for subgroups, make sure there is a variable that you can use for subsetting.
+- Try to look for a 'codebook' or some other document that explains what the variables mean and how they are coded.
+- For most projects, preparing the data for analysis takes longer than the actual analysis itself. Try to find a data set where you do not need to extensively recode / clean up the data before you run your analyses, this makes the final project easier.
+- In similar vein, if the data set is greater than about 50MB (this is not a hard cutoff), R commands and analyses tend to take longer. 
+- **Important:** Please do not try to commit any file that is larger than 100MB. You will not be able to push these files to GitHub and will require some complicated work to undo the commits. Instead, you can write an R script that subsets the data to units/variables that you need and save that file, which should be considerably smaller. Then you can put that in your repository and commit that. 
+- Data from experiments is usually simple to analyze, since the analysis commonly involves simple comparisons of group means.
+
+
+
+### Writing a proposal
+
+
+You should write a one-paragraph note to describe what data set you will use and what your tentative research question is. Your research question should ask how one dependent variable is related to one or more independent variables. That is, your research question should be able to be answered by a regression analysis. In this paragraph, you should do the following:
+
+1. State your research question.
+2. Formulate a hypothesis related to the research question. This hypothesis should be rooted in some sort of theory. In other words, you need to present a plausible story why the hypothesis might be true. Often, this is in the form of a behaviorial or institutional explanation. As social scientists, we are not interested in idiosyncratic explanations; we want to understand systematic patterns and relationships!
+3. Describe your explanatory variable(s) of interest and how it is measured. Importantly, we need to observe variation in this variable in order to study it!
+4. Describe your outcome variable of interest and how it is measured.
+5. What observed pattern in the data would provide support for your hypothesis? More importantly, what observed pattern would disprove your hypothesis?
+
+For instance, this would be a comprehensive paragraph that address each of these points in detail:
+
+> Does unified government enhance legislative productivity? In this study, I plan to examine the extent to which periods of unified government produce more landmark laws. I hypothesize that legislative productivity increases during periods of unified government in which one party controls both Houses of Congress and the presidency relative to periods of divided government. During periods of unified government, I expect that it is more likely for major bills to pass both Houses and gain the president's signature. During periods of divided government, it is more difficult to reach a consensus around legislation that can pass each House and gain the president's approval. My sample is comprised of each of the 79th (1945-1946) through 103rd (1993-1994) Congresses. My unit of analysis is a Congress (e.g., the 88th Congress). The explanatory variable of interest is whether there is unified government (both Houses and the presidency are controlled by the same party) or divided government. The variable is coded =1 for unified government and =0 for divided government. My outcome variable is the count of landmark pieces of legislation passed in a given Congress. For instance, if the variable were coded =11, it would mean that 11 pieces of landmark legislation were signed into law in that Congress. This variable is measured from David Mayhew's data set on landmark legislation and relies on Mayhew's expert knowledge to classify legislation as "landmark." If I observe greater landmark legislative productivity under unified government relative to divided government, this would provide support for my hypothesis. If, on the other hand, I observe less productivity or the same level of productivity under unified government, this would provide evidence against my hypothesis. When I run my regression of the count of landmark legislation on the unified government indicator variable, a positive, significant coefficient would indicate support for my hypothesis.
+
+Your paragraph might be less detailed and may not refer to any academic literature, but it should address the above items. 
+
+Note that you are not fully committing to any specific question or data in this exercise. If you want to change data or questions later, that is fine. This is just a milestone to keep you on track. You can write this proposal on your `index.Rmd` file in the public article. You will submit a link to the rendered article with the proposal.
+
+Note that you will eventually remove this proposal with the actual article. If down the road you don't want this proposal to be part of the public history of the repository, you can always create a new repository for the final report. 
+
+
+## Milestone 3: One data visualization (due 10/27)
+
+
+The next milestone will require that your Distill article  loads the data you have selected and produces one interesting and polished data visualization. This could either show the distribution of one variable or the relationship between two variables. 
+
+
+## Milestone 4: Add results from one analysis (due 11/10)
+
+By this time, your article should contain one visualization and one analysis that attempts to answer your research question. There does not need to be a long discussion, but the results should be presented in either a second visualization or a nicely formatted table. 
+
+
+## Final step: Write up final report (due date TBD)
+
+
+The final report will include the following sections: (1) an introduction where you introduce the research question and hypothesis and briefly describe why it is interesting; (2) a data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; (3) a results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; and (4) a brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect). 
+
+For the data section, you should note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences). For the results section, you should interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect. 
+
+

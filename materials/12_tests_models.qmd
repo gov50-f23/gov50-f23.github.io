@@ -1,0 +1,25 @@
+---
+title: "More Hypothesis Tests and Mathematical Models"
+date: 2022-11-14
+---
+
+
+## Readings 
+
+- IMS Ch 13 for Thursday. 
+
+
+
+## Data
+
+- No new data for Tuesday. 
+
+## Slides and Code
+
+- Tuesday (11/15) lecture: Difference in means tests and Power
+  - [PDF of slides as I present them](/slides/22_hyp_tests_more.pdf)
+  - [PDF of handout version of slides](/slides/22_hyp_tests_more_handout.pdf) (no incremental slides)
+
+- Thursday (11/17) lecture: Mathematical models for inference
+  - [PDF of slides as I present them](/slides/23_math_models.pdf)
+  - [PDF of handout version of slides](/slides/23_math_models_handout.pdf) (no incremental slides)

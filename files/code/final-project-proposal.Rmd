@@ -1,0 +1,10 @@
+---
+title: "Final Project Milestone 1: Proposal"
+author: Your Name Here
+output: pdf_document
+---
+
+
+## Proposal
+
+Please write your paragraph proposal here. 

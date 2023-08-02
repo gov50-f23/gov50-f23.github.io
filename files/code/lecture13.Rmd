@@ -1,0 +1,102 @@
+---
+title: "Health"
+author: "Matt Blackwell"
+date: "2022-10-13"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(gov50data)
+```
+
+
+
+## Look at the data
+
+```{r}
+health <- health |> drop_na()
+health
+```
+
+
+```{r}
+health |> 
+  ggplot(aes(x = steps_lag, y = weight)) +
+  geom_point(color = "steelblue1") +
+  labs(x = "Steps yesterday (in 1,000s)",
+       y = "Weight")
+```
+
+```{r}
+mean_wt_5k_steps <- health |> 
+  filter(round(steps_lag) == 5) |> 
+  summarize(mean(weight)) |> 
+  pull()
+mean_wt_5k_steps
+```
+
+```{r}
+health |> 
+  ggplot(aes(x = steps_lag, y = weight)) +
+  geom_point(color = "steelblue1", alpha = 0.5) +
+  labs(x = "Steps yesterday (in 1,000s)",
+       y = "Weight") +
+  geom_vline(xintercept = c(4.5, 5.5), linetype = "dashed") +
+  geom_point(aes(x = 5, y = mean_wt_5k_steps), color = "indianred1", size = 3)
+```
+
+```{r}
+health |> 
+  ggplot(aes(x = steps_lag, y = weight)) +
+  geom_point(color = "steelblue1", alpha = 0.25) +
+  labs(x = "Steps yesterday (in 1,000s)",
+       y = "Weight") + 
+  stat_summary_bin(fun = "mean", geom = "point", binwidth = 0.5,
+                    color = "indianred1", size = 2)
+```
+
+```{r}
+health |> 
+  ggplot(aes(x = steps_lag, y = weight)) +
+  geom_point(color = "steelblue1", alpha = 0.5) +
+  labs(x = "Steps yesterday (in 1,000s)",
+       y = "Weight") +
+  geom_smooth(method = "lm", se = FALSE, color = "indianred1",
+              size = 1.5) + 
+  stat_summary_bin(fun = "mean", geom = "point", binwidth = 0.5,
+                    color = "indianred1", size = 2)
+```
+
+## Linear regression in R
+
+
+```{r}
+fit <- lm(weight ~ steps_lag, data = health)
+fit
+```
+
+```{r}
+library(broom)
+augment(fit)
+```
+
+```{r}
+augment(fit) |> 
+  ggplot(aes(x = steps_lag, y = .resid)) +
+  geom_point()
+```
+
+```{r}
+coef(fit)
+```
+
+The coefficient on steps is `r round(coef(fit)[2], 2)`. 
+
+
+```{r}
+library(broom)
+augment(fit)
+```
+

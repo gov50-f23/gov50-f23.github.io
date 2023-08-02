@@ -1,0 +1,64 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "*.Rmd"
+    - "*.md"
+    - "!files/"
+
+website:
+  title: "Gov 50"
+  favicon: "files/img/gov50-icon-512.png"
+  navbar:
+    pinned: true
+    background: "#3498db"
+    right:
+      - syllabus.qmd
+      - schedule.qmd
+      - text: "Materials"
+        file: materials/index.qmd
+      - text: "Assignments"
+        file: assignments/index.qmd
+      - text: "Resources"
+        file: resources/index.qmd
+
+  sidebar:
+    - title: "Materials"
+      style: "docked"
+      search: false
+      background: dark
+      contents:
+        - section: "Overview"
+          contents:
+            - materials/index.qmd
+        - section: "Course Materials"
+          contents:
+            - text: "0: Introduction to Gov 50"
+              file: materials/01_intro.qmd
+              
+    - title: "Assignments"
+      style: "docked"
+      search: false
+      background: dark
+      contents:
+        - section: "Resources"
+          contents:
+            - assignments/index.qmd
+            - assignments/tutorials.qmd
+            - assignments/problem-sets.qmd
+        - section: "Assignments"
+          contents:
+            - text: "Problem Set 0"
+              file: assignments/00-problem-set.qmd
+format:
+  html:
+    theme:
+      - litera
+      - html/custom.scss
+    toc: true
+
+execute:
+  freeze: auto
+
+
+

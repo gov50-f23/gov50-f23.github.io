@@ -1,0 +1,78 @@
+---
+title: "Lecture 14"
+author: "Matt Blackwell"
+date: "2022-10-18"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(gov50data)
+library(broom)
+```
+
+
+
+
+## Fitting models
+
+
+```{r}
+midterms
+```
+
+
+```{r}
+fit_app <- lm(seat_change ~ approval, data = midterms)
+fit_app
+```
+
+
+```{r}
+fit_rdi <- lm(seat_change ~ rdi_change, data = midterms)
+fit_rdi
+```
+
+
+## Model fit
+
+```{r}
+midterms |> 
+  ggplot(mapping = aes(x = approval, y = seat_change)) +
+  geom_point() +
+  geom_smooth(color = "indianred1", se = FALSE, method = "lm")
+
+midterms |> 
+  ggplot(mapping = aes(x = rdi_change, y = seat_change)) +
+  geom_point() +
+  geom_smooth(color = "indianred1", se = FALSE, method = "lm")
+```
+
+
+```{r}
+summary(fit_app)$r.squared
+summary(fit_rdi)$r.squared
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

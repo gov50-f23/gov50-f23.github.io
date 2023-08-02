@@ -1,0 +1,33 @@
+---
+title: "The Bootstrap and Confidence Intervals"
+date: 2022-10-31
+---
+
+
+## Readings 
+
+- MD Ch 8, IMS Ch 12 for another take. 
+
+
+
+## Data
+
+- Reinstall the Gov 50 data package that has new data for this week:
+```{r}
+#| eval: false
+remotes::install_github("mattblackwell/gov50data")
+```
+
+- CSV files for the data from this week if you cannot install the package:
+  - [`anes.csv`](/files/data/anes.csv)
+  - [`trains.csv`](/files/data/trains.csv)
+
+## Slides and Code
+
+- Tuesday (11/1) lecture: The Bootstrap
+  - [PDF of slides as I present them](/slides/18_bootstrap.pdf)
+  - [PDF of handout version of slides](/slides/18_bootstrap_handout.pdf) (no incremental slides)
+
+- Thursday (11/3) lecture: More Confidence Intervals
+  - [PDF of slides as I present them](/slides/19_conf_int.pdf)
+  - [PDF of handout version of slides](/slides/19_conf_int_handout.pdf) (no incremental slides)

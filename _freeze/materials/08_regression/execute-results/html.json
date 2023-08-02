@@ -1,0 +1,14 @@
+{
+  "hash": "d87f0c941162d54d2122fe1bc567464f",
+  "result": {
+    "markdown": "---\ntitle: \"Prediction: More Regression\"\ndate: 2022-10-17\n---\n\n\n\n## Readings \n\n- For model fit, see QSS 4.2.6 or IMS 7.2.5\n- For multiple regression, IMS 8.1-8.3, MD 6.1-6.2, or QSS 4.3.1-4.3.2\n\n\n## Data\n\n- Reinstall the Gov 50 data package that has new data for this week:\n\n::: {.cell}\n\n```{.r .cell-code}\nremotes::install_github(\"mattblackwell/gov50data\")\n```\n:::\n\n\n- CSV files for the data from this week if you cannot install the package:\n  - [`midterms.csv`](/files/data/midterms.csv)\n\n## Slides and Code\n\n- Tuesday (10/18) lecture: Model fit and multiple regression\n  - [PDF of slides as I present them](/slides/14_regression_ii.pdf)\n  - [PDF of handout version of slides](/slides/14_regression_ii_handout.pdf) (no incremental slides)\n\n- Thursday (10/20) lecture: Multiple regression and categorical independent variables\n  - [PDF of slides as I present them](/slides/15_multiple_regression.pdf)\n  - [PDF of handout version of slides](/slides/15_multiple_regression_handout.pdf) (no incremental slides)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

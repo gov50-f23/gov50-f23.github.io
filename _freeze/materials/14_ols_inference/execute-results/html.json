@@ -1,0 +1,14 @@
+{
+  "hash": "4df064d0e8d49fbe4b922f1dacb2fcb9",
+  "result": {
+    "markdown": "---\ntitle: \"The Bootstrap and Confidence Intervals\"\ndate: 2022-10-31\n---\n\n\n\n## Readings \n\n- QSS 7.3 and/or IMS Ch 24. \n\n\n\n## Data\n\n- Reinstall the Gov 50 data package that has new data for this week:\n\n::: {.cell}\n\n```{.r .cell-code}\nremotes::install_github(\"mattblackwell/gov50data\")\n```\n:::\n\n\n- CSV files for the data from this week if you cannot install the package:\n  - [`ajr.csv`](/files/data/ajr.csv)\n\n## Slides and Code\n\n- Tuesday (11/29) lecture: Inference with Linear Regression\n  - [PDF of slides as I present them](/slides/25_ols_inference.pdf)\n  - [PDF of handout version of slides](/slides/25_ols_inference_handout.pdf) (no incremental slides)\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

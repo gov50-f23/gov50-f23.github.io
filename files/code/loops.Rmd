@@ -1,0 +1,131 @@
+---
+title: 'Lecture 12: Loops'
+author: "Matt Blackwell"
+date: "2022-10-11"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(gov50data)
+```
+
+
+## Finding unique values
+
+
+```{r}
+cces_2020
+```
+
+```{r}
+length(unique(cces_2020$gender))
+length(unique(cces_2020$race))
+length(unique(cces_2020$educ))
+length(unique(cces_2020$pid3))
+length(unique(cces_2020$turnout_self))
+length(unique(cces_2020$pres_vote))
+```
+
+```{r}
+head(cces_2020$gender)
+head(cces_2020[[1]])
+```
+
+```{r}
+head(cces_2020$pid3)
+head(cces_2020[[4]])
+```
+
+```{r}
+length(unique(cces_2020[[1]]))
+length(unique(cces_2020[[2]]))
+length(unique(cces_2020[[3]]))
+length(unique(cces_2020[[4]]))
+length(unique(cces_2020[[5]]))
+length(unique(cces_2020[[6]]))
+```
+
+## Loops
+
+
+```{r}
+output <- rep(NA, times = ncol(cces_2020))
+output
+
+for (i in seq_along(cces_2020)) {
+  print(str_c("Now the value of i is ", i))
+  num_vals <- length(unique(cces_2020[[i]]))
+  print(str_c("Number of unique values ", num_vals))
+  output[i] <- num_vals
+}
+output
+
+```
+
+```{r}
+output <- rep(NA, times = ncol(cces_2020))
+output
+
+for (i in seq_along(cces_2020)) {
+  output[i] <- length(unique(cces_2020[[i]]))
+}
+output
+
+```
+
+
+
+## Predicting 2020
+
+
+```{r}
+polls20 <- polls20 |> 
+  mutate(margin = biden - trump)
+
+pres20 <- pres20 |> 
+  mutate(margin = biden - trump)
+
+pres20
+polls20
+```
+
+```{r}
+pred_poll <- rep(NA, times = length(unique(polls20$state)))
+
+state_names <- sort(unique(polls20$state))
+names(pred_poll) <- state_names
+
+for (i in seq_along(state_names)) {
+  state_data <- polls20 |> filter(state == state_names[i])
+  latest <- state_data |> filter(days_left == min(days_left))
+  
+  pred_poll[i] <- mean(latest$margin)
+  
+}
+pred_poll
+```
+
+```{r}
+tidy_pred <- polls20 |> 
+  group_by(state) |> 
+  filter(days_left == min(days_left)) |> 
+  summarize(margin_pred = mean(margin))
+tidy_pred
+```
+
+## Evaluating the predictions
+
+```{r}
+tidy_pred <- tidy_pred |> 
+  left_join(pres20) |> 
+  mutate(error = margin - margin_pred)
+
+tidy_pred |> 
+  ggplot(aes(x = error)) +
+  geom_histogram()
+
+
+```
+

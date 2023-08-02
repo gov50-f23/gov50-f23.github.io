@@ -1,0 +1,14 @@
+{
+  "hash": "91f8a50e095ec9f5b9a6b888355dc671",
+  "result": {
+    "markdown": "---\ntitle: \"Hypothesis Tests\"\ndate: 2022-11-07\n---\n\n\n\n## Readings \n\n- MD Ch 9, IMS Ch 11 for another take. \n\n\n\n## Data\n\n- Reinstall the Gov 50 data package that has new data for this week:\n\n::: {.cell}\n\n```{.r .cell-code}\nremotes::install_github(\"mattblackwell/gov50data\")\n```\n:::\n\n\n- CSV files for the data from this week if you cannot install the package:\n  - [`tea.csv`](/files/data/tea.csv)\n\n## Slides and Code\n\n- Tuesday (11/8) lecture: Hypothesis tests\n  - [PDF of slides as I present them](/slides/20_hyp_tests.pdf)\n  - [PDF of handout version of slides](/slides/20_hyp_tests_handout.pdf) (no incremental slides)\n\n- Thursday (11/11) lecture: More hypothesis tests\n  - [PDF of slides as I present them](/slides/21_hyp_tests_diff.pdf)\n  - [PDF of handout version of slides](/slides/21_hyp_tests_diff_handout.pdf) (no incremental slides)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

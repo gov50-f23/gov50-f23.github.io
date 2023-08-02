@@ -1,0 +1,86 @@
+---
+title: "Schedule"
+slug: schedule
+summary: "Schedule of the Gov 50 semester with readings, due dates, and links to materials."
+toc: false
+sidebar: false
+page-layout: full
+---
+           
+```{r packages-data, include=FALSE} 
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(lubridate)
+library(glue)
+
+schedule <- read_csv("data/schedule.csv", show_col_types = FALSE) 
+```
+   
+Below is the schedule for the semester. You can find the materials for each course meeting under the “Content” links for that week. You should generally: 
+ 
+- watch the lecture videos (if any) and complete the readings by Monday;
+- complete the tutorials by Monday evening at 11:59pm; and
+- submit the problem set or exam by Wednesday at 11:59pm.
+
+Here's a guide to the schedule: 
+
+- [**Materials**](/materials/) ({{< fa book-open-reader >}}): This page contains the readings, slides, and recorded lectures (if any) for the topic. Read/watch these first.
+- **Tutorial** ({{< fa laptop-code >}}): A link to the tutorial for that week. 
+- **Assignment** ({{< fa pen-ruler >}}): This page contains the instructions for each assignment. **Assignments are due by 11:59 PM on the day they're listed.** 
+
+The readings refer to following texts:   
+
+- **QSS**: [*Quantitative Social Science: An Introduction in tidyverse*](https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science) by Kosuke Imai and Nora Webb Williams
+- **MD**: [*Statistical Inference via Data Science: A ModernDive into R and the Tidyverse*](https://moderndive.com/index.html) by Chester Ismay and Albert Y. Kim
+- **IMS**: [*Introduction to Modern Statistics*](https://www.openintro.org/book/ims/) by Mine Çetinkaya-Rundel and Johanna Hardin.
+
+ 
+```{r build-table, echo=FALSE, results="asis"}
+schedule <- schedule %>%  
+    mutate(var_title = ifelse(!is.na(content),
+                              glue('<span class="content-title">{title}</span>'),
+                              glue('{title}'))) %>%
+  mutate(var_reading = ifelse(!is.na(reading),
+                              glue('<span class="content-reading">{reading}</span>'),
+                              glue(""))) %>%
+    mutate(var_deadline = ifelse(!is.na(deadline),
+                                 glue('&emsp;&emsp;<small>(submit by {deadline})</small>'),
+                                 glue(""))) %>%
+    mutate(var_content = ifelse(!is.na(content),
+                                glue('<a href="{content}.qmd"><i class="fa-solid fa-book-open-reader fa-lg"></i></a>'),
+                                glue('<font color="#e9ecef"><i class="fa-solid fa-book-open-reader fa-lg"></i></font>'))) %>%
+    mutate(var_tutorial = ifelse(!is.na(tutorial),
+                                glue('<a href="{tutorial}"><i class="fa-solid fa-laptop-code fa-lg"></i></a>'),
+                                glue('<font color="#e9ecef"><i class="fa-solid fa-laptop-code fa-lg"></i></font>'))) %>%
+    mutate(var_assignment = ifelse(!is.na(assignment),
+                                   glue('<a href="{assignment}.qmd"><i class="fa-solid fa-pen-ruler fa-lg"></i></a>'),
+                                   glue('<font color="#e9ecef"><i class="fa-solid fa-pen-ruler fa-lg"></i></font>'))) %>%
+    mutate(col_date = ifelse(is.na(date_end),
+                             glue('<strong>{format(date, "%B %e")}</strong>'),
+                             glue('<strong>{format(date, "%B %e")}</strong>–<strong>{format(date_end, "%B %e")}</strong>'))) %>%
+    mutate(col_title = glue('{var_title}{var_deadline}')) %>%
+    mutate(col_content = var_content,
+           col_tutorial = var_tutorial,
+           col_reading = var_reading,
+           col_assignment = var_assignment) %>%
+  select(Week = week, Date = col_date, Title = col_title, Reading = col_reading, Materials = col_content,
+         Tutorial = col_tutorial, Assignment = col_assignment) 
+
+week_count <- schedule |> count(Week)
+week_index <- week_count |> pull(n) |> set_names(paste0("Week ", week_count$Week))
+ 
+tbl <- schedule |>
+  select(-Week) |>
+  kbl(escap = FALSE, align = "rllccccc", table.attr = 'class="schedule-table"') |>
+  kable_styling() |>
+  column_spec(1, width = "20%", extra_css = "padding-right: 20px;") |>  
+  column_spec(2, width = "45%") |>  
+  column_spec(3, width = "20%") |>  
+  column_spec(c(4:6), width = "5%") |>
+  pack_rows(index = week_index,
+              label_row_css = "border-bottom: 2px solid #000000;")
+
+  cat(tbl)
+```
+  

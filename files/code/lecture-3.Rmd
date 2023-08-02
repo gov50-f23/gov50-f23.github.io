@@ -1,0 +1,70 @@
+---
+title: "Lecture 3 Notes"
+author: "Matt Blackwell"
+date: '2022-09-08'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+
+```{r first_scatter, echo = FALSE}
+
+## my first scatter plot
+## beware of commas
+ggplot(data = midwest,  # hello 
+       mapping = aes(x = popdensity,
+                     y = percbelowpoverty)) + 
+  geom_point()
+  
+
+```
+
+
+
+```{r}
+ggplot(data = midwest,  # hello 
+       mapping = aes(x = popdensity,
+                     y = percbelowpoverty)) + 
+  geom_point(mapping = aes(color = state)) + 
+  geom_smooth() +
+  scale_x_log10()  +
+  labs(x = "Population Density",
+       y = "Percent in Poverty",
+       title = "Density vs Poverty in the Midwest")
+```
+
+
+
+```{r}
+ggplot(data = midwest,
+       mapping = aes(x = percbelowpoverty)) + 
+  geom_histogram() +
+  facet_wrap(~ state, ncol = 3)
+```
+
+```{r}
+ggplot(data = midwest, 
+       mapping = aes(x = state,
+                     y = percbelowpoverty)) + 
+  geom_boxplot(fill="green")
+```
+
+
+```{r back-tothegap}
+library(gapminder)
+```
+
+
+```{r}
+ggplot(data = gapminder,
+       mapping = aes(x = year,
+                     y = gdpPercap)) +
+  geom_line(color = "grey70", mapping = aes(group = country)) +
+  scale_y_log10() +
+  geom_smooth()
+```
+

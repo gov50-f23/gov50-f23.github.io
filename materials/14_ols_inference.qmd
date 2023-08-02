@@ -1,0 +1,29 @@
+---
+title: "The Bootstrap and Confidence Intervals"
+date: 2022-10-31
+---
+
+
+## Readings 
+
+- QSS 7.3 and/or IMS Ch 24. 
+
+
+
+## Data
+
+- Reinstall the Gov 50 data package that has new data for this week:
+```{r}
+#| eval: false
+remotes::install_github("mattblackwell/gov50data")
+```
+
+- CSV files for the data from this week if you cannot install the package:
+  - [`ajr.csv`](/files/data/ajr.csv)
+
+## Slides and Code
+
+- Tuesday (11/29) lecture: Inference with Linear Regression
+  - [PDF of slides as I present them](/slides/25_ols_inference.pdf)
+  - [PDF of handout version of slides](/slides/25_ols_inference_handout.pdf) (no incremental slides)
+

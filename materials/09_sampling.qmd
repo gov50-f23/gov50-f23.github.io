@@ -1,0 +1,32 @@
+---
+title: "Sampling"
+date: 2022-10-24
+---
+
+
+## Readings 
+
+- MD Ch 7
+
+
+
+## Data
+
+- Reinstall the Gov 50 data package that has new data for this week:
+```{r}
+#| eval: false
+remotes::install_github("mattblackwell/gov50data")
+```
+
+- CSV files for the data from this week if you cannot install the package:
+  - [`class_years.csv`](/files/data/class_years.csv)
+
+## Slides and Code
+
+- Tuesday (10/25) lecture: Sampling
+  - [PDF of slides as I present them](/slides/16_sampling.pdf)
+  - [PDF of handout version of slides](/slides/16_sampling_handout.pdf) (no incremental slides)
+
+- Thursday (10/27) lecture: Sampling distributions
+  - [PDF of slides as I present them](/slides/17_sampling_dist.pdf)
+  - [PDF of handout version of slides](/slides/17_sampling_dist_handout.pdf) (no incremental slides)

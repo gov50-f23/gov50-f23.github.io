@@ -1,0 +1,12 @@
+---
+title: "Introduction to Gov 50"
+date: 2023-09-05
+---
+
+
+## Readings 
+
+- The [syllabus](/syllabus.qmd) and [schedule](/schedule.qmd) pages. 
+- Review and try to start [Problem Set 0](/assignments/00-problem-set.html)
+
+

@@ -1,0 +1,24 @@
+---
+title: "Resources"
+---
+
+
+## Gov 50 Resources
+
+- [Getting Software Set Up](/assignments/00-problem-set.qmd)
+- [R Tutorials Instructions](/assignments/tutorials.qmd) (for running locally in RStudio)
+- [Problem Sets and Exams Instructions](/assignments/problem-sets.qmd)
+
+## R Tutorials
+
+- [Hands On Programming with R](https://rstudio-education.github.io/hopr/)
+- [R for Data Science](https://r4ds.had.co.nz/)
+
+## R Markdown
+
+- [R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html)
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+## Git and GitHub Resources
+
+- [Happy Git with R](https://happygitwithr.com)

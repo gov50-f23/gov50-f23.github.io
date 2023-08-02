@@ -1,0 +1,14 @@
+{
+  "hash": "9446798aaf41cfe0f946bd7a0e42830a",
+  "result": {
+    "markdown": "---\ntitle: \"Sampling\"\ndate: 2022-10-24\n---\n\n\n\n## Readings \n\n- MD Ch 7\n\n\n\n## Data\n\n- Reinstall the Gov 50 data package that has new data for this week:\n\n::: {.cell}\n\n```{.r .cell-code}\nremotes::install_github(\"mattblackwell/gov50data\")\n```\n:::\n\n\n- CSV files for the data from this week if you cannot install the package:\n  - [`class_years.csv`](/files/data/class_years.csv)\n\n## Slides and Code\n\n- Tuesday (10/25) lecture: Sampling\n  - [PDF of slides as I present them](/slides/16_sampling.pdf)\n  - [PDF of handout version of slides](/slides/16_sampling_handout.pdf) (no incremental slides)\n\n- Thursday (10/27) lecture: Sampling distributions\n  - [PDF of slides as I present them](/slides/17_sampling_dist.pdf)\n  - [PDF of handout version of slides](/slides/17_sampling_dist_handout.pdf) (no incremental slides)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

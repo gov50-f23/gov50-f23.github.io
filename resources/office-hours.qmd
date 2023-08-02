@@ -1,0 +1,34 @@
+---
+title: "Office House Schedule"
+slug: schedule
+summary: "Schedule of the Gov 50 Office Hours."
+toc: false
+sidebar: false
+page-layout: full
+---
+
+ 
+```{r packages-data, include=FALSE} 
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(lubridate)
+library(glue)
+
+schedule <- read_csv("../data/office-hours.csv", show_col_types = FALSE) 
+```
+ 
+More to come soon...
+ 
+```{r build-table, eval = FALSE, echo=FALSE, results="asis"}
+tbl <- schedule |>
+  kbl(escap = FALSE, align = "llll", table.attr = 'class="schedule-table"') |>
+  kable_styling() |>
+  column_spec(1:3, width = "20%", extra_css = "padding-right: 20px;") |>  
+  column_spec(4, width = "60%")
+
+  cat(tbl)
+```
+
+ 
+ 

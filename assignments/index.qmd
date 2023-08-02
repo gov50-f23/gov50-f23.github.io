@@ -1,0 +1,26 @@
+---
+title: "Assignments"
+---
+
+## Tutorials
+
+- [Tutorial Instructions](/assignments/tutorials.qmd)
+- [Tutorial 1: Data Visualization](https://mblackwell.shinyapps.io/01-r-basics-data-viz/)
+- [Tutorial 2: Data Wrangling](https://mblackwell.shinyapps.io/02-data-wrangling/)
+- [Tutorial 3: Causality](https://mblackwell.shinyapps.io/03-causality/)
+- [Tutorial 4: Summarizing Data](https://mblackwell.shinyapps.io/04-summarizing-data/)
+- [Tutorial 5: Correlation and Tidying Data](https://mblackwell.shinyapps.io/05-correlation-tidying/)
+- [Tutorial 6: Loops](https://mblackwell.shinyapps.io/06-loops/)
+- [Tutorial 7: Regression and Sampling](https://mblackwell.shinyapps.io/07-regression/)
+- [Tutorial 8: Bootstrap](https://mblackwell.shinyapps.io/08-bootstrap/)
+
+## Problem Sets
+
+- [Submission guide for problem sets](/assignments/problem-sets.html)
+- [Problem set 0: Setting up R, RStudio, and GitHub](/assignments/00-problem-set.html)
+
+
+## Final Project 
+
+- [Final project information](/assignments/final-project.html)
+- [Final project milestone 1: Creating a repo](/assignments/distill.qmd)

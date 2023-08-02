@@ -1,0 +1,17 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+/.quarto/
+/_site/
+
+*conflicted\ copy
+
+
+
+# knitr and caching stuff
+**/*_files/*
+**/*_cache/*
+
+README.html

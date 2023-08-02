@@ -1,0 +1,14 @@
+{
+  "hash": "bea7fe0abea826964ec9f472e80f1ff7",
+  "result": {
+    "markdown": "---\ntitle: \"Causality and Pivoting\"\ndate: 2022-09-13\n---\n\n\n\n## Readings \n\n- [Chapter 2 of QSS](https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science)\n\n## Data\n\n- Reinstall the Gov 50 data package that has new data for this week:\n\n::: {.cell}\n\n```{.r .cell-code}\nremotes::install_github(\"mattblackwell/gov50data\")\n```\n:::\n\n\n## Slides and Code\n\n- Tuesday (9/20) lecture: Causality\n  - [PDF of slides as I present them](/slides/06_causality.pdf)\n  - [PDF of handout version of slides](/slides/06_causality_handout.pdf) (no incremental slides)\n  - Code: [`transphobia.Rmd`](/files/code/transphobia.Rmd)\n\n- Tuesday (9/22) lecture: Observational Studies\n  - [PDF of slides as I present them](/slides/07_obs_studies.pdf)\n  - [PDF of handout version of slides](/slides/07_obs_studies_handout.pdf) (no incremental slides)\n  \n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
