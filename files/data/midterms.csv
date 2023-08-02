@@ -1,0 +1,21 @@
+year,president,party,approval,seat_change,rdi_change
+1946,Truman,D,33,-55,NA
+1950,Truman,D,39,-29,8.2
+1954,Eisenhower,R,61,-4,1
+1958,Eisenhower,R,57,-47,1.1
+1962,Kennedy,D,61,-4,5
+1966,Johnson,D,44,-47,5.3
+1970,Nixon,R,58,-8,6.6
+1974,Ford,R,54,-43,6.4
+1978,Carter,D,49,-11,7.7
+1982,Reagan,R,42,-28,4.8
+1986,Reagan,R,63,-5,5.1
+1990,H.W. Bush,R,58,-8,5.6
+1994,Clinton,D,46,-53,3.9
+1998,Clinton,D,66,5,5.6
+2002,W. Bush,R,63,6,2.6
+2006,W. Bush,R,38,-30,5.7
+2010,Obama,D,45,-63,3.5
+2014,Obama,D,40,-13,4.6
+2018,Trump,R,38,-42,4.1
+2020,Biden,D,42,NA,-0.003

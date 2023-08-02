@@ -1,0 +1,125 @@
+---
+title: "Lecture 11"
+author: "Matt Blackwell"
+date: '2022-10-06'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(gov50data)
+mortality
+```
+
+
+
+```{r}
+mortality |> 
+  select(-indicator) |> 
+  pivot_longer(
+    cols = -c(country, country_code),  ##`1972`:`2020`,
+    names_to = "year",
+    values_to = "child_mortality"
+  )
+```
+
+
+
+```{r}
+mortality |> 
+  select(-indicator) |> 
+  pivot_longer(
+    cols = -c(country, country_code),  ##`1972`:`2020`,
+    names_to = "year",
+    values_to = "child_mortality"
+  ) |> 
+  mutate(
+    year = as.integer(year)
+  ) |> 
+  ggplot(mapping = aes(x = year, y = child_mortality, group = country)) +
+  geom_line(alpha = 0.25)
+```
+
+
+## Spotify data
+
+
+```{r}
+spotify
+```
+
+```{r}
+spotify |> 
+  pivot_longer(
+    cols = -c(`Track Name`, Artist),
+    names_to = "week_of_year",
+    values_to = "rank"
+  )
+```
+
+```{r}
+spotify |> 
+  pivot_longer(
+    cols = -c(`Track Name`, Artist),
+    names_to = "week_of_year",
+    values_to = "rank",
+    names_prefix = "week"
+  ) |> 
+  mutate(
+    week_of_year = as.integer(week_of_year)
+  )
+```
+
+
+## Joins
+
+
+```{r}
+mortality_long <- mortality |> 
+  select(-indicator) |> 
+  pivot_longer(
+    cols = -c(country, country_code),  ##`1972`:`2020`,
+    names_to = "year",
+    values_to = "child_mortality"
+  ) |> 
+  mutate(
+    year = as.integer(year)
+  )
+mortality_long
+```
+
+
+```{r}
+library(gapminder)
+left_join(gapminder, mortality_long) |> 
+  select(country, year, lifeExp, child_mortality)
+```
+
+```{r}
+gapminder |> 
+  inner_join(mortality_long) |> 
+  select(country, year, lifeExp, child_mortality)
+```
+
+## flights data
+
+```{r}
+library(nycflights13)
+flights2 <- flights |> 
+  select(year, time_hour, origin, dest, tailnum, carrier)
+flights2
+planes2 <- planes |> 
+  select(tailnum, year, type, engine, seats)
+planes2
+  
+```
+
+```{r}
+flights2 |> 
+  left_join(planes2, by = "tailnum")
+```
+

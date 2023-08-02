@@ -1,0 +1,117 @@
+---
+title: "CCES"
+author: "Matt Blackwell"
+date: '2022-09-27'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(gov50data)
+```
+
+## R Markdown
+
+
+```{r}
+cces_2020 |> 
+  drop_na(turnout_self)
+```
+
+
+
+### Available-case analysis
+
+```{r}
+cces_2020 |> 
+  summarize(mean(turnout_self, na.rm = TRUE)) |> 
+  pull()
+```
+
+### Complete-case analysis
+
+```{r}
+cces_2020 |> 
+  drop_na() |> 
+  summarize(mean(turnout_self)) |> 
+  pull()
+```
+
+```{r}
+mean(is.na(c(5, 1, NA, 75)))
+```
+
+### Bias in missingness?
+
+```{r}
+cces_2020 |> 
+  group_by(pid3) |> 
+  summarize(
+    mean_turnout = mean(turnout_self, na.rm = TRUE),
+    missing_turnout = mean(is.na(turnout_self))
+  )
+```
+
+
+## Proportion table
+
+```{r}
+cces_2020 |> 
+  group_by(pres_vote) |> 
+  summarize(n = n()) |> 
+  mutate(
+    prop = n / sum(n)
+  )
+```
+
+```{r}
+cces_2020 |> 
+  group_by(pres_vote) |> 
+  summarize(prop = n() / nrow(cces_2020))
+```
+
+## multiple grouping variables/cross-tab
+
+```{r}
+cces_2020 |> 
+  filter(pres_vote %in% c("Joe Biden (Democrat)", 
+                          "Donald J. Trump (Republican)")) |> 
+  mutate(pres_vote = if_else(pres_vote == "Donald J. Trump (Republican)",
+                             "Trump",
+                             "Biden")) |> 
+  group_by(pid3, pres_vote) |> 
+  summarize(n = n()) |> 
+  mutate(
+    prop = n / sum(n)
+  ) |> 
+  select(-n) |> 
+  pivot_wider(
+    names_from = pid3,
+    values_from = prop
+  )
+```
+
+```{r}
+vote_by_party <- cces_2020 |> 
+  filter(pres_vote %in% c("Joe Biden (Democrat)", 
+                          "Donald J. Trump (Republican)")) |> 
+  mutate(pres_vote = if_else(pres_vote == "Donald J. Trump (Republican)",
+                             "Trump",
+                             "Biden")) |> 
+  group_by(pid3, pres_vote) |> 
+  summarize(n = n()) |> 
+  mutate(
+    prop = n / sum(n)
+  )
+vote_by_party
+
+vote_by_party |> 
+  ggplot(mapping = aes(x = pid3, y = prop, fill = pres_vote)) +
+  geom_col(position = "dodge") + 
+  scale_fill_manual(values = c(Biden = "steelblue1", Trump = "indianred1"))
+
+
+
+```
+

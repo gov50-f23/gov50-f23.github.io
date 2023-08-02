@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Gov 50">
+<meta name="dcterms.date" content="2022-08-12">
+
+<title>Gov 50 - Getting Started with R, R Studio, Git, and Github</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../files/img/gov50-icon-512.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Gov 50</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html" rel="" target="">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../materials/index.html" rel="" target="">
+ <span class="menu-text">Materials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../assignments/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resources/index.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/00-problem-set.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/00-problem-set.html">Problem Set 0</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gov 50 R Tutorials Instructions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/problem-sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Sets and Exams</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Assignments</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/00-problem-set.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Problem Set 0</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#installing-r-and-rstudio" id="toc-installing-r-and-rstudio" class="nav-link active" data-scroll-target="#installing-r-and-rstudio">Installing R and RStudio</a></li>
+  <li><a href="#installing-and-configuring-git" id="toc-installing-and-configuring-git" class="nav-link" data-scroll-target="#installing-and-configuring-git">Installing and configuring git</a>
+  <ul class="collapse">
+  <li><a href="#install-git" id="toc-install-git" class="nav-link" data-scroll-target="#install-git">Install git</a></li>
+  <li><a href="#setup-a-github-account" id="toc-setup-a-github-account" class="nav-link" data-scroll-target="#setup-a-github-account">Setup a GitHub account</a></li>
+  <li><a href="#set-up-rstudio-to-talk-to-github" id="toc-set-up-rstudio-to-talk-to-github" class="nav-link" data-scroll-target="#set-up-rstudio-to-talk-to-github">Set up RStudio to talk to GitHub</a></li>
+  <li><a href="#creating-your-first-repo" id="toc-creating-your-first-repo" class="nav-link" data-scroll-target="#creating-your-first-repo">Creating your first repo</a></li>
+  </ul></li>
+  <li><a href="#working-with-a-project-in-rstudio" id="toc-working-with-a-project-in-rstudio" class="nav-link" data-scroll-target="#working-with-a-project-in-rstudio">Working with a project in RStudio</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Getting Started with R, R Studio, Git, and Github</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Gov 50 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 12, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="installing-r-and-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="installing-r-and-rstudio">Installing R and RStudio</h2>
+<p>In this problem set, we’re going to get R, RStudio, and R Markdown set up on your computer. To get started, follow these steps:</p>
+<ol type="1">
+<li>Download and install the most recent version of <a href="https://cloud.r-project.org/">R</a>. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the <code>R-x.y.z-win.exe</code> file where <code>x.y.z</code> is a version number. On a Mac, you will want to install using the <code>R-x.y.z.pkg</code> file that is notarized and signed.</li>
+<li>With R installed, download and install <a href="https://rstudio.com/">RStudio</a>. RStudio is a type of “integrated development environment” or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free.</li>
+<li>Install the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the “Console” in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type “no”. Note that the symbols next to <code>my_package</code> are a less than sign <code>&lt;</code> followed by a minus sign <code>-</code> with no space between them. (Don’t be worried if you see some red text here. Those are usually just messages telling you information about the packages you are installing. Unless you see the word <code>Error</code> you should be fine.)</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"usethis"</span>, <span class="st">"devtools"</span>, <span class="st">"learnr"</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"tinytex"</span>, <span class="st">"gitcreds"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(my_packages, <span class="at">repos =</span> <span class="st">"http://cran.rstudio.com"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"kosukeimai/qss-package"</span>, <span class="at">build_vignettes =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>For some things in the course, we’ll need produce PDFs from R and that requires something called LaTeX. If you’ve never heard of that, it’s completely fine and you should just run the following two lines of R code:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="installing-and-configuring-git" class="level2">
+<h2 class="anchored" data-anchor-id="installing-and-configuring-git">Installing and configuring git</h2>
+<p>Git is a version control program that helps organize the process of writing and maintaining code. It allows you to maintain a history of edits to your code without having to resort to a set of files like:</p>
+<pre><code>my_code.R
+my_code_v1.R
+my_code_v2_FINAL.R</code></pre>
+<p>There’s a lot to git and it will be harder to use in the beginning, but in the long term there are huge benefits of it. First, when you use git, you are much less likely to encounter a devastating data failure. All of your (committed) changes to your project are preserved, even when you make new changes or you revert old changes.</p>
+<p>Git is also a very useful way for people to collaborate. There is a huge community built up around it. And once your projects are publicly available on Github (a website for hosting git repositories), there are a host of ways that folks can collaborate with you.</p>
+<section id="install-git" class="level3">
+<h3 class="anchored" data-anchor-id="install-git">Install git</h3>
+<p>You might already have git installed on your computer, especially if you have a Mac. To check, in RStudio, click on the Terminal tab in the bottom-left panel (next to the Console tab). Type <code>git --version</code> at the command prompt. If you get a response with a version number, great you are all set. If you get any kind of error message, you learn how to install git on your machine <a href="https://happygitwithr.com/install-git.html">here</a>.</p>
+</section>
+<section id="setup-a-github-account" class="level3">
+<h3 class="anchored" data-anchor-id="setup-a-github-account">Setup a GitHub account</h3>
+<p>Next, you can setup a <a href="https://github.com/join">GitHub</a> account. You can think of GitHub as similar to Dropbox or Google Drive for your git projects (“repositories”) where everything is public by default. Since you might use this account to interact with potential employers in the future, you should probably pick a professional username.</p>
+<p>Once you have a GitHub account, you can configure your local git program to interact with your account gracefully. Run the following two lines of code in the Terminal replacing <code>"John Harvard"</code> with your name and <code>"john@harvard.edu"</code> with your email address used to sign up for GitHub.</p>
+<pre><code>git config --global user.name "John Harvard"
+git config --global user.email "john@harvard.edu"</code></pre>
+</section>
+<section id="set-up-rstudio-to-talk-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-rstudio-to-talk-to-github">Set up RStudio to talk to GitHub</h3>
+<p>We also need to set up RStudio to be able to communicate with GitHub securely. This requires a bit of fidily configuration that we luckily only have to do once. Basically, we need to get a secret code from GitHub and store it in RStudio (kind of like a app-specific password when you’re using two-factor authentication). We can start the process from by doing:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This will open a page on GitHub asking you to create a “Personal Access Token” or PAT (this is the secret code). You’ll have to give the PAT a note that describes what it’s for and choose an expiration date. You can accept the default of 30 days but you will have to renew it a couple of times during the class. Alternatively, if you set it to a date after the semester ends, you shouldn’t have to touch this again. We recommend keeping the “scope” selections as they are and clicking the “Generate Token” button at the bottom of the page.</p>
+<p><img src="../files/img/assignments/github-pat.png" class="img-fluid" alt="Create a GitHub PAT"></p>
+<p>You will then see a new screen with a long sequence of letters. This is your token or secret code. You should treat it like a password and do not share it with anyone. If you use a password manager like 1Password or LastPass, you can put it in a secure note in those programs. Copy this by hitting the button with the two boxes.</p>
+<p><img src="../files/img/assignments/github-pat-copy.png" class="img-fluid" alt="Copy the GitHub PAT"></p>
+<p>Once you have copied the PAT, call <code>gitcreds::gitcreds_set()</code> from the RStudio console and paste the PAT when prompted. You should see the following:</p>
+<pre><code>&gt; gitcreds::gitcreds_set()
+? Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+-&gt; Adding new credentials...
+-&gt; Removing credentials from cache...
+-&gt; Done.</code></pre>
+<p>Once this is done, you should be all set for RStudio to communicate with GitHub. If you have any problems with the PAT process or want to know more about it, the <a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a> book has a <a href="https://happygitwithr.com/https-pat.html">great chapter</a> about it.</p>
+</section>
+<section id="creating-your-first-repo" class="level3">
+<h3 class="anchored" data-anchor-id="creating-your-first-repo">Creating your first repo</h3>
+<p>Once you are logged into Github and at its homepage, you can now create a new repo (shorthand for “repository”). These repositories are like folders in Dropbox except a bit more structured. Create one by clicking on the green “New” button in the top-left of the screen next to “Repositories.” It should look like this:</p>
+<p><img src="../files/img/assignments/github-create-new.png" class="img-fluid" alt="Create a new repo"></p>
+<p>Now a new screen should pop up requesting some information for the new repo. Give this new Repository the name <code>gov50-problem-set0</code> and set it to be a private repository. You can give it an informative description and check the “Initialize this repository with a README” checkbox. This latter option will add a README to the repository where you can add more information that will display nicely in the repository’s homepage. Your setup should look something like this:</p>
+<p><img src="../files/img/assignments/github-create-options.png" class="img-fluid" alt="New Repo Options"></p>
+<p>Once you create your repo, you are ready to connect it to RStudio on your local computer. The easiest way to do this is go to the repo homepage (you’re already there if you’ve just created it) and click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).</p>
+<p><img src="../files/img/assignments/github-clone.png" class="img-fluid" alt="Cloning the repo"></p>
+<p>Now, switch to RStudio. Go to the menu bar and hit “File &gt; New Project”. You can then choose what type of project to start. Since we’re importing from Github, we’ll use the “Version Control” option (it’s the bottom of the list). In the next menu, choose “Git”. Now, you can paste the URL in the “Repository URL” box. Choose a set of local directories to place this project and hit “Create Project”. And now you’ll have your project ready to go in RStudio.</p>
+</section>
+</section>
+<section id="working-with-a-project-in-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-a-project-in-rstudio">Working with a project in RStudio</h2>
+<p>You’ll see in the bottom right window of RStudio you’ll now see the files from your Github project.</p>
+<p><img src="../files/img/assignments/rstudio-files.png" class="img-fluid" alt="Files in RStudio"></p>
+<p>Let’s edit the README file by clicking on <code>README.md</code> in that file pane and you’ll be able to edit it in the top-left pane. Change the header from <code># gov-50-problem-set0</code> to <code># Introduction</code> and save the file (⌘+S or Ctrl+S). If you click on the “Git” tab in the top right panel, you will a list of the changes you’ve made to the repo since the last commit (you can think of a commit as a more permanent type of saving work to the git repo).</p>
+<p><img src="../files/img/assignments/rstudio-git-panel.png" class="img-fluid" alt="Git panel in RStudio"></p>
+<p>One thing you’ll notice here is that git thinks that <code>gov50-problem-set0.Rproj</code> is a file that maybe should go into the repo. But this file is just for our local copy of RStudio and shouldn’t really go into the repo. To prevent git from bothering us about it every time we open something, we can modify the <code>.gitignore</code> file to tell git to ignore certain files. Open <code>.gitignore</code> and add a new line with <code>*.Rproj</code> on it to tell git to ignore any file with the extension <code>.Rproj</code>. Make sure to save the file.</p>
+<p><img src="../files/img/assignments/rstudio-edit-gitignore.png" class="img-fluid" alt="Editing .gitignore"></p>
+<p>If you go back to the Git tab in the top right and refresh (little circular arrow in the top right corner), you see that <code>gov50-problem-set0.Rproj</code> is removed from our list. Now we are ready to commit our changes. Click the “Staged” box for <code>.gitignore</code> and <code>README.md</code> and hit the “Commit” button just above the file list. You’ll see a window with the changes that you are about to commit.</p>
+<p><img src="../files/img/assignments/rstudio-commit.png" class="img-fluid" alt="Commit dialog box in RStudio"></p>
+<p>You can click on different files to see what exactly you are changing. Add a short but informative commit message that describes what you are committing and hit “Commit”. Once this completes, you can hit the “Push” button in the top right to push that commit back to Github.</p>
+<p><img src="../files/img/assignments/rstudio-push.png" class="img-fluid" alt="Push to GitHub"></p>
+<p>If you go back to your repo’s homepage on Github and refresh the page, you’ll see the updates to your README file and the new <code>.gitignore</code>.</p>
+<p><img src="../files/img/assignments/github-changed.png" class="img-fluid" alt="Github repo after commit"></p>
+<p>And you’re done! You’ve just created your first repo.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

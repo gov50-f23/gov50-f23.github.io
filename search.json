@@ -1,0 +1,737 @@
+[
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Prof. Matt Blackwell\n   CGIS Knafel 305\n   mblackwell@gov.harvard.edu\n   matt_blackwell\n   Schedule an appointment\n\n\n\n\n\nTBD\n\n\n\n\n\n\n\n   Tue/Thu\n   September 3rd-December 20th, 2023\n   12:00–1:15 PM\n   TBD\n   Slack\n\n\n\n\n\nTBD"
+  },
+  {
+    "objectID": "syllabus.html#course-objectives",
+    "href": "syllabus.html#course-objectives",
+    "title": "Syllabus",
+    "section": "Course objectives",
+    "text": "Course objectives\nIn this course, you will learn the basics of data science as applied to the social sciences. This involves two broad skill sets: (1) learning the computing and programming tools to both manage and analyze data; and (2) understanding the conceptual foundations of why we might manage or analyze data in one way versus another. This course will address both of these topics.\nSpecifically, at the end of the course you should be able to:\n\nSummarize and visualize data\nWrangle messy data into tidy forms\nEvaluate claims about causality\nBe able to use linear regression to analyze data\nUnderstand uncertainty in data analysis and how to quantify it\nUse professional tools for data analysis such as R, RStudio, git, and GitHub\n\nWe will also attempt to inspire a passion for data analysis and create a community among the students to deepen their learning.\n\nExpectations\nIn this course, you will be expected to\n\ncomplete eight problem sets,\ncomplete eight weekly tutorials,\ntake two take-home, open-book exams, and\nwrite one final data analysis project.\n\n\n\nPrerequisites\nNo prerequisites will be assumed. If you are unfamiliar with downloading and installing software programs on your Mac or PC, you may want to allocate additional time to make sure those aspects of the course go smoothly. In particular, we have developed a Problem Set 0 to guide you through installing R, RStudio, and git to give you a sense of the tools we will be using.\n\n\nCredit\nThis course satisfies the Methods requirement for the Government department and the Quantitative Reasoning with Data requirement in the Harvard College Curriculum. It also counts toward completion of the Government department Data Science track.\n\n\nSpeaker Series\nOn various Fridays throughout the semester, we will host the Gov 50 Speaker Series, where guest speakers working in data science in various industries will discuss their career paths and answer student questions."
+  },
+  {
+    "objectID": "syllabus.html#course-structure",
+    "href": "syllabus.html#course-structure",
+    "title": "Syllabus",
+    "section": "Course structure",
+    "text": "Course structure\n\nFlow of the Course\nThe course will follow a basic flow each week, with small differences if a tutorial or problem set is due or not.\n\nMonday: Complete reading/watching course material, complete tutorial (if due).\nTuesday: Lecture meets.\nWednesday: Submit problem set by 11:55 PM (if due).\nThursday: Lecture meets; problem sets and exams posted; sections meet.\nFriday: Sections meet.\nSunday: Submit exams by 11:55 PM (if due)\n\n\n\nTutorials\nWe will assign short weekly tutorials to assess your knowledge of the material covered in the reading/video materials that week. While you are expected to complete them on time, they will be graded based on completion not on how correct the answers are. With some exceptions, they will usually be due Mondays at 11:59pm ET.\n\n\nLectures\nWe will meet twice a week for lectures where I will combine presenting material and doing live coding demonstrations. Ideally, you should bring your laptop to class and be ready to code along with me! We will have a Slack channel dedicated to answer computing questions by TFs during lecture.\n\n\nSections\nSections will be small-group settings to practice the tools and techniques that we cover in class. These meetings are essential to gaining the skills you need for the problem sets, exams, and final project. You are expected to attend sections. We will not assign you a particular section, so you are free to attend one that works for your schedule and attend different sections throughout the semester if a conflict arises.\nSections will fall into two types based on prior exposure to the course material: more comfortable and less comfortable. While Gov 50 is designed to be accessible to students without prior exposure to data science and computing, we recognize that students with different backgrounds in the material may require different pedagogical approaches.\n\n\nStudy Halls\nStudy halls are a combination of office hours and drop-in tutoring sessions. Course assistants will hold a table usually at one of the house dining halls or common rooms and help students with assignments and course material. Study halls work best if you come as a group and work on the assignments on your own while you are there and ask for help from the CAs when you get stuck.\nYou can find a list of the Study Hall times on the Study Hall Schedule page.\n\n\nProblem Sets\nOnly reading about data science is about as instructive as reading a lot about hammers or watching someone else wield a hammer. You need to get your hands on a hammer or two. Thus, in this course, you will have mostly-weekly problem sets that will give you an opportunity to apply the statistical techniques you are learning. They will usually be focused on data analysis in general and will often involve a real dataset.\nWe encourage students to rely on peer working groups as they work on these homeworks, but each student will submit their own work individually. We will facilitate the formation of homework peer groups.\n\n\n\n\n\n\nGrace policy\n\n\n\nWhen calculating the final homework portion of the overall grade, we will drop the lowest score and use the remaining scores. Thus, if you have an emergency that forces you to miss one homework, your grade will not be severely affected.\n\n\n\n\nExams\nThere will be two take-home exams during the course. This exam will be similar to a homework in format and in the sense that it will be open book and open internet, but you will not be allowed to collaborate with other students or be able to communicate with any humans about the exam. You will be given several days to complete the exam. We will provide more information about the exam as it approaches.\n\n\n\nExam\nRelease Date\nDue Date\n\n\n\n\nExam 1\nThu, Oct 19th 5:00pm ET\nSun, Oct 22nd 11:59pm ET\n\n\nExam 2\nThu, Dec 7th 5:00pm ET\nSun, Dec 10th 11:59pm ET\n\n\n\n\n\nDiscussion\nWe will be using the Ed platform for discussions on course material. There is a users guide to help orient yourself to the platform. We will enroll you into the platform toward the start of the semester.\n\n\nGrading\nYou (the student) and I (the instructor) should care the most about what you learn, not what numerical/letter summary of that learning you get at the end of the semester. So I would love to not have grades at all, but unfortunately we humans are very good at procrastinating on our good intentions when there is no incentive not to. Thus, we have grades to help solve this commitment problem and to encourage you to put effort into learning the course material.\nHere are how each portion of course contributes to the overall grade:\n\n\n\nCategory\nPercent of Final Grade\n\n\n\n\nR Tutorials\n10%\n\n\nProblem Sets\n40%\n\n\nExams\n30%\n\n\nFinal Project\n20%\n\n\n\nWe will use Gradescope for submission of the various assignments throughout the semester. Once enrollment is finished, Gradescope will automatically connect through Canvas.\nBump-up policy: We reserve the right to “bump up” the grades of students who have made valuable contributions to the course in the lecture, sections, study halls, or discussion/Slack. This also applies to students who show tremendous progress and growth over the semester."
+  },
+  {
+    "objectID": "syllabus.html#final-project",
+    "href": "syllabus.html#final-project",
+    "title": "Syllabus",
+    "section": "Final Project",
+    "text": "Final Project\nThe final project is a data analysis project about whatever data excites you. That could be public opinion in U.S. elections, United Nations voting patterns, patterns of racial discrimination in police behavior, the distribution of salaries in basketball, or the economics of the Marvel Cinematic Universe. No matter the topic, you will formula a key research question, find data on that question, answer the question using the tools of the course, and present those results for public consumption.\nThe goal is for this to be a professional project that you can use to showcase the skills that you have gained to potential employers. Your final submission will be a publicly available article/website that contains: (1) a brief introduction to the research question and data collected; (2) a visualization of the data in question that speaks to your research question; (3) a presentation (as a table or graph) of a regression model assessing your question along with a plain-English interpretation; (4) a brief (one-paragraph) section that describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect). Finally, there must be a link to the GitHub repo that contains the source code to load, clean, and analyze the data and produce the article.\nThe data collection and cleaning must be meaningful—it’s not sufficient to simply use a pre-cleaned data from an R package. Self-collected data is allowed and even encouraged, though beware that it can only be used for the final project itself only unless you go through human subjects approval from the University.\n\n\n\nMilestone\nDue Date\n\n\n\n\nCreating a GitHub Repository\nFri, Sep 29th 11:59pm ET\n\n\nData and Proposal\nFri, Oct 13th 11:59pm ET\n\n\nFirst Visualization\nFri, Oct 27th 11:59pm ET\n\n\nFirst Analysis\nFri, Nov 10th 11:59pm ET\n\n\nFinal Report\nDec TBD 11:59pm ET"
+  },
+  {
+    "objectID": "syllabus.html#course-policies",
+    "href": "syllabus.html#course-policies",
+    "title": "Syllabus",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nRegrading Policy\nIf you feel there has been an error in the grading of one your assignment, you may request (in writing) a regrade of the assignment. Please send your request in an email to Professor Blackwell and the Head TF. A member of the teaching staff will regrade the entire assignment, not just the part you are disputing. Therefore, your regrade might increase or decrease the overall grade on the assignment.\n\n\nOffice Hours and Availability\nOffice hours for the teaching staff are listed on the Office Hours Schedule page.\nIf you have a general question, you should post it to the Ed discussion board (where you can make your question anonymous if you would like). This is almost always the fastest way to get an answer. However, you can also email me directly at mblackwell@gov.harvard.edu if you have a question that is about a personal situation.\n\n\nAcademic Honesty\nThe work that you do in both the problem sets should be your own work. You may seek help from others so long as this does not result in someone else completing your work for you. When asking for help, you may show others your code to help diagnose a bug or highlight a potential issue, but you should not view their (working) code. You should cite any discussions you have with other students in your problem set and note if they helped you with your code. You should never copy and paste code from another student or elsewhere (e.g., websites, former students).\nI also strongly suggest that you make a solo effort at all the problems before consulting others. The exams will be very difficult if you have no experience working on your own. There is no collaboration allowed on the exams."
+  },
+  {
+    "objectID": "syllabus.html#course-materials",
+    "href": "syllabus.html#course-materials",
+    "title": "Syllabus",
+    "section": "Course materials",
+    "text": "Course materials\n\nBooks\nWe will use the following books in this class:\n\nImai, Kosuke and Nora Webb Willaims. 2022. Quantitative Social Science: An Introduction with Tidyverse, 2022. Princeton University Press.\nIsmay, Chester and Albert Y. Kim. 2022. Statistical Inference via Data Science: A ModernDive into R and the Tidyverse.\nMine Cetinkaya-Rundel and Johanna Hardin. 2021. Introduction to Modern Statistics. OpenIntro.\n\nThe following books are optional, but may be helpful to build you understanding of the material:\n\nFreedman, David, Pisani, Robert, and Purves, Roger. 2007. Statistics. W.W. Norton & Company. 4th edition.\nGonick, Larry, and Woollcott Smith. 1993. The Cartoon Guide to Statistics. HarperPerinnial.\n\n\n\nComputing\nWe’ll use R in this class to conduct data analysis. R is free, open source, and available on all major platforms (including Solaris, so no excuses). RStudio (also free) is a graphical interface to R that is widely used to work with the R language. You can find a virtually endless set of resources for R and RStudio on the internet. For beginners, there are several web-based tutorials. In these, you will be able to learn the basic syntax of R. We’ll post more R resources on the course website. We will also use git and Github to manage our projects.\nYou can get setup with all of these tools by completing Problem Set 0."
+  },
+  {
+    "objectID": "syllabus.html#mental-health",
+    "href": "syllabus.html#mental-health",
+    "title": "Syllabus",
+    "section": "Mental Health",
+    "text": "Mental Health\nCollege is a stressful time in one’s life and mixing it with a global pandemic, remote learning, and dislocation makes this one of the most fraught semester any of us have probably faced. We acknowledge that nothing is quite normal and that there may be times when you feel overwhelmed by this course or by life more generally. Please feel free to reach out to any of the course staff if you want to talk about any issues you are having with the course or anything else. We will always try to help and we are committed to being extra accommodating this semester on course policy issues. Please just get in touch.\nOf course, there are other resources at Harvard if you need them. A few are listed below:\n\nCounseling and Mental Health Services\nRoom 13"
+  },
+  {
+    "objectID": "syllabus.html#accessibility",
+    "href": "syllabus.html#accessibility",
+    "title": "Syllabus",
+    "section": "Accessibility",
+    "text": "Accessibility\nHarvard University values inclusive excellence and providing equal educational opportunities for all students. Our goal is to remove barriers for disabled students related to inaccessible elements of instruction or design in this course. If reasonable accommodations are necessary to provide access, please contact the Disability Access Office (DAO). Accommodations do not alter fundamental requirements of the course and are not retroactive. Students should request accommodations as early as possible, since they may take time to implement. Students should notify DAO at any time during the semester if adjustments to their communicated accommodation plan are needed."
+  },
+  {
+    "objectID": "resources/study-halls.html",
+    "href": "resources/study-halls.html",
+    "title": "Study Hall Schedule",
+    "section": "",
+    "text": "More to come soon…"
+  },
+  {
+    "objectID": "resources/office-hours.html",
+    "href": "resources/office-hours.html",
+    "title": "Office House Schedule",
+    "section": "",
+    "text": "More to come soon…"
+  },
+  {
+    "objectID": "resources/cheatsheet.html",
+    "href": "resources/cheatsheet.html",
+    "title": "Gov 50 Cheat Sheet",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(gov50data)"
+  },
+  {
+    "objectID": "resources/cheatsheet.html#r-basics-week-1",
+    "href": "resources/cheatsheet.html#r-basics-week-1",
+    "title": "Gov 50 Cheat Sheet",
+    "section": "R Basics (Week 1)",
+    "text": "R Basics (Week 1)\n\nCreating a vector\nYou can create a vector using the c function:\n\n## Any R code that begins with the # character is a comment\n## Comments are ignored by R\n\nmy_numbers &lt;- c(4, 8, 15, 16, 23, 42) # Anything after # is also a\n# comment\nmy_numbers\n\n[1]  4  8 15 16 23 42\n\n\n\n\nInstalling and loading a package\nYou can install a package with the install.packages function, passing the name of the package to be installed as a string (that is, in quotes):\n\ninstall.packages(\"ggplot2\")\n\nYou can load a package into the R environment by calling library() with the name of package without quotes. You should only have one package per library call.\n\nlibrary(ggplot2)\n\n\n\nCalling functions from specific packages\nWe can also use the mypackage:: prefix to access package functions without loading:\n\nknitr::kable(head(mtcars))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\ncarb\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n1\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n1\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n2\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n1"
+  },
+  {
+    "objectID": "resources/cheatsheet.html#data-visualization-week-1",
+    "href": "resources/cheatsheet.html#data-visualization-week-1",
+    "title": "Gov 50 Cheat Sheet",
+    "section": "Data Visualization (week 1)",
+    "text": "Data Visualization (week 1)\n\nScatter plot\nYou can produce a scatter plot with using the x and y aesthetics along with the geom_point() function.\n\nggplot(data = midwest,\n       mapping = aes(x = popdensity,\n                     y = percbelowpoverty)) +\n  geom_point()\n\n\n\n\n\n\nSmoothed curves\nYou can add a smoothed curve that summarizes the relationship between two variables with the geom_smooth() function. By default, it uses a loess smoother to estimated the conditional mean of the y-axis variable as a function of the x-axis variable.\n\nggplot(data = midwest,\n       mapping = aes(x = popdensity,\n                     y = percbelowpoverty)) +\n  geom_point() + geom_smooth()\n\n`geom_smooth()` using method = 'loess' and formula 'y ~ x'\n\n\n\n\n\n\n\nAdding a regression line\ngeom_smooth can also add a regression line by setting the argument method = \"lm\" and we can turn off the shaded regions around the line with se = FALSE\n\nggplot(data = midwest,\n       mapping = aes(x = popdensity,\n                     y = percbelowpoverty)) +\n  geom_point() + geom_smooth(method = \"lm\", se = FALSE)\n\n`geom_smooth()` using formula 'y ~ x'\n\n\n\n\n\n\n\nChanging the scale of the axes\nIf we want the scale of the x-axis to be logged to stretch out the data we can use the scale_x_log10():\n\nggplot(data = midwest,\n       mapping = aes(x = popdensity,\n                     y = percbelowpoverty)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  scale_x_log10()\n\n`geom_smooth()` using formula 'y ~ x'\n\n\n\n\n\n\n\nAdding informative labels to a plot\nUse the labs() to add informative labels to the plot:\n\nggplot(data = midwest,\n       mapping = aes(x = popdensity,\n                     y = percbelowpoverty)) +\n  geom_point() +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  scale_x_log10() +\n  labs(x = \"Population Density\",\n       y = \"Percent of County Below Poverty Line\",\n       title = \"Poverty and Population Density\",\n       subtitle = \"Among Counties in the Midwest\",\n       source = \"US Census, 2000\")\n\n`geom_smooth()` using formula 'y ~ x'\n\n\n\n\n\n\n\nMapping aesthetics to variables\nIf you would like to map an aesthetic to a variable for all geoms in the plot, you can put it in the aes call in the ggplot() function:\n\nggplot(data = midwest,\n       mapping = aes(x = popdensity,\n                     y = percbelowpoverty,\n                     color = state,\n                     fill = state)) +\n  geom_point() +\n  geom_smooth() +\n  scale_x_log10()\n\n`geom_smooth()` using method = 'loess' and formula 'y ~ x'\n\n\n\n\n\n\n\nMapping aesthetics for a single geom\nYou can also map aesthetics for a specific geom using the mapping argument to that function:\n\nggplot(data = midwest,\n       mapping = aes(x = popdensity,\n                     y = percbelowpoverty)) +\n  geom_point(mapping = aes(color = state)) +\n  geom_smooth(color = \"black\") +\n  scale_x_log10()\n\n`geom_smooth()` using method = 'loess' and formula 'y ~ x'\n\n\n\n\n\n\n\nSetting the aesthetics for all observations\nIf you would like to set the color or size or shape of a geom for all data points (that is, not mapped to any variables), be sure to set these outside of aes():\n\nggplot(data = midwest,\n       mapping = aes(x = popdensity,\n                     y = percbelowpoverty)) +\n  geom_point(color = \"purple\") +\n  geom_smooth() +\n  scale_x_log10()\n\n`geom_smooth()` using method = 'loess' and formula 'y ~ x'\n\n\n\n\n\n\n\nHistograms\n\nggplot(data = midwest,\n       mapping = aes(x = percbelowpoverty)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+  },
+  {
+    "objectID": "materials/14_ols_inference.html",
+    "href": "materials/14_ols_inference.html",
+    "title": "The Bootstrap and Confidence Intervals",
+    "section": "",
+    "text": "QSS 7.3 and/or IMS Ch 24."
+  },
+  {
+    "objectID": "materials/14_ols_inference.html#readings",
+    "href": "materials/14_ols_inference.html#readings",
+    "title": "The Bootstrap and Confidence Intervals",
+    "section": "",
+    "text": "QSS 7.3 and/or IMS Ch 24."
+  },
+  {
+    "objectID": "materials/14_ols_inference.html#data",
+    "href": "materials/14_ols_inference.html#data",
+    "title": "The Bootstrap and Confidence Intervals",
+    "section": "Data",
+    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nCSV files for the data from this week if you cannot install the package:\n\najr.csv"
+  },
+  {
+    "objectID": "materials/14_ols_inference.html#slides-and-code",
+    "href": "materials/14_ols_inference.html#slides-and-code",
+    "title": "The Bootstrap and Confidence Intervals",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (11/29) lecture: Inference with Linear Regression\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
+    "objectID": "materials/12_tests_models.html",
+    "href": "materials/12_tests_models.html",
+    "title": "More Hypothesis Tests and Mathematical Models",
+    "section": "",
+    "text": "IMS Ch 13 for Thursday."
+  },
+  {
+    "objectID": "materials/12_tests_models.html#readings",
+    "href": "materials/12_tests_models.html#readings",
+    "title": "More Hypothesis Tests and Mathematical Models",
+    "section": "",
+    "text": "IMS Ch 13 for Thursday."
+  },
+  {
+    "objectID": "materials/12_tests_models.html#data",
+    "href": "materials/12_tests_models.html#data",
+    "title": "More Hypothesis Tests and Mathematical Models",
+    "section": "Data",
+    "text": "Data\n\nNo new data for Tuesday."
+  },
+  {
+    "objectID": "materials/12_tests_models.html#slides-and-code",
+    "href": "materials/12_tests_models.html#slides-and-code",
+    "title": "More Hypothesis Tests and Mathematical Models",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (11/15) lecture: Difference in means tests and Power\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (11/17) lecture: Mathematical models for inference\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
+    "objectID": "materials/10_bootstrap.html",
+    "href": "materials/10_bootstrap.html",
+    "title": "The Bootstrap and Confidence Intervals",
+    "section": "",
+    "text": "MD Ch 8, IMS Ch 12 for another take."
+  },
+  {
+    "objectID": "materials/10_bootstrap.html#readings",
+    "href": "materials/10_bootstrap.html#readings",
+    "title": "The Bootstrap and Confidence Intervals",
+    "section": "",
+    "text": "MD Ch 8, IMS Ch 12 for another take."
+  },
+  {
+    "objectID": "materials/10_bootstrap.html#data",
+    "href": "materials/10_bootstrap.html#data",
+    "title": "The Bootstrap and Confidence Intervals",
+    "section": "Data",
+    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nCSV files for the data from this week if you cannot install the package:\n\nanes.csv\ntrains.csv"
+  },
+  {
+    "objectID": "materials/10_bootstrap.html#slides-and-code",
+    "href": "materials/10_bootstrap.html#slides-and-code",
+    "title": "The Bootstrap and Confidence Intervals",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (11/1) lecture: The Bootstrap\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (11/3) lecture: More Confidence Intervals\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
+    "objectID": "materials/08_regression.html",
+    "href": "materials/08_regression.html",
+    "title": "Prediction: More Regression",
+    "section": "",
+    "text": "For model fit, see QSS 4.2.6 or IMS 7.2.5\nFor multiple regression, IMS 8.1-8.3, MD 6.1-6.2, or QSS 4.3.1-4.3.2"
+  },
+  {
+    "objectID": "materials/08_regression.html#readings",
+    "href": "materials/08_regression.html#readings",
+    "title": "Prediction: More Regression",
+    "section": "",
+    "text": "For model fit, see QSS 4.2.6 or IMS 7.2.5\nFor multiple regression, IMS 8.1-8.3, MD 6.1-6.2, or QSS 4.3.1-4.3.2"
+  },
+  {
+    "objectID": "materials/08_regression.html#data",
+    "href": "materials/08_regression.html#data",
+    "title": "Prediction: More Regression",
+    "section": "Data",
+    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nCSV files for the data from this week if you cannot install the package:\n\nmidterms.csv"
+  },
+  {
+    "objectID": "materials/08_regression.html#slides-and-code",
+    "href": "materials/08_regression.html#slides-and-code",
+    "title": "Prediction: More Regression",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (10/18) lecture: Model fit and multiple regression\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (10/20) lecture: Multiple regression and categorical independent variables\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
+    "objectID": "materials/06_bivariate_tidying.html",
+    "href": "materials/06_bivariate_tidying.html",
+    "title": "Summarizing Relationships, Tidying and Joining Data",
+    "section": "",
+    "text": "For summarizing relationships, see QSS 3.6 and MD 5.1.1.\nFor pivoting and tidy data, see MD Ch 4.\nFor more on joins, see the chapter 20 in R for Data Science."
+  },
+  {
+    "objectID": "materials/06_bivariate_tidying.html#readings",
+    "href": "materials/06_bivariate_tidying.html#readings",
+    "title": "Summarizing Relationships, Tidying and Joining Data",
+    "section": "",
+    "text": "For summarizing relationships, see QSS 3.6 and MD 5.1.1.\nFor pivoting and tidy data, see MD Ch 4.\nFor more on joins, see the chapter 20 in R for Data Science."
+  },
+  {
+    "objectID": "materials/06_bivariate_tidying.html#data",
+    "href": "materials/06_bivariate_tidying.html#data",
+    "title": "Summarizing Relationships, Tidying and Joining Data",
+    "section": "Data",
+    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nIf you cannot install the package, you can download the data locally at covid_votes.csv to the same directory as your Rmd file and load it using:\n\n\nlibrary(tidyverse)\ncovid_votes &lt;- read_csv(\"covid_votes.csv\")\n\n\nFor Thursday lecture, we added to additional data sets to gov50data. If you cannot install that package, then you can download them: mortality.csv and spotify.csv. Put them in the same folder as your Rmd file and use these commands to load:\n\n\nlibrary(tidyverse)\nmortality &lt;- read_csv(\"mortality.csv\")\nspotify &lt;- read_csv(\"spotify.csv\")\n\n\nWe will also use data from the nycflights13 package that you can install with:\n\n\ninstall.packages(\"nycflights13\")"
+  },
+  {
+    "objectID": "materials/06_bivariate_tidying.html#slides-and-code",
+    "href": "materials/06_bivariate_tidying.html#slides-and-code",
+    "title": "Summarizing Relationships, Tidying and Joining Data",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (10/4) lecture: Summarizing relationships and writing our own functions\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: covid_votes.Rmd\n\nThursday (10/6) lecture: Causality review, pivoting longer, joining data.\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture-11.Rmd"
+  },
+  {
+    "objectID": "materials/04_causality.html",
+    "href": "materials/04_causality.html",
+    "title": "Causality and Pivoting",
+    "section": "",
+    "text": "Chapter 2 of QSS"
+  },
+  {
+    "objectID": "materials/04_causality.html#readings",
+    "href": "materials/04_causality.html#readings",
+    "title": "Causality and Pivoting",
+    "section": "",
+    "text": "Chapter 2 of QSS"
+  },
+  {
+    "objectID": "materials/04_causality.html#data",
+    "href": "materials/04_causality.html#data",
+    "title": "Causality and Pivoting",
+    "section": "Data",
+    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")"
+  },
+  {
+    "objectID": "materials/04_causality.html#slides-and-code",
+    "href": "materials/04_causality.html#slides-and-code",
+    "title": "Causality and Pivoting",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (9/20) lecture: Causality\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: transphobia.Rmd\n\nTuesday (9/22) lecture: Observational Studies\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
+    "objectID": "materials/02_r_data_viz.html",
+    "href": "materials/02_r_data_viz.html",
+    "title": "R Introduction, Data Visualization",
+    "section": "",
+    "text": "Chapter 1 of Modern Dive\nReview and try to start Problem Set 0"
+  },
+  {
+    "objectID": "materials/02_r_data_viz.html#readings",
+    "href": "materials/02_r_data_viz.html#readings",
+    "title": "R Introduction, Data Visualization",
+    "section": "",
+    "text": "Chapter 1 of Modern Dive\nReview and try to start Problem Set 0"
+  },
+  {
+    "objectID": "materials/02_r_data_viz.html#slides-and-code",
+    "href": "materials/02_r_data_viz.html#slides-and-code",
+    "title": "R Introduction, Data Visualization",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (9/6) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (9/8) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture-3.Rmd"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\n            Data Science for the Social Sciences\n        ",
+    "section": "",
+    "text": "Data Science for the Social Sciences\n        \n        \n            Learning to use data to explore the social, political, and economic world\n        \n        \n            Gov 50 • Fall 2023Harvard University\n        \n    \n    \n      \n        \n        \n        \n      \n    \n\n\n\n\nInstructor\n\n   Prof. Matt Blackwell\n   CGIS Knafel 305\n   mblackwell@gov.harvard.edu\n   matt_blackwell\n   Schedule an appointment\n\n\n\nCourse details\n\n   Tue/Thu\n   September 3rd-December 20th, 2023\n   12:00–1:15 PM\n   TBD\n   Slack\n   Study Hall Schedule\n   Office Hours Schedule\n   Gov 50 Speaker Series\n\n\n\nContacting me\nGeneral questions about the course should be posted to either the course Ed Discussion board or the course Slack. Someone on the teaching staff will attempt to respond to these messages within 25 hours, but also remember that life can be busy and chaotic for everyone (including me!), so if I don’t respond right away, don’t worry! For other issues (absences, etc), feel free to email me or send me a direct message on Slack."
+  },
+  {
+    "objectID": "assignments/problem-sets.html",
+    "href": "assignments/problem-sets.html",
+    "title": "Problem Sets and Exams",
+    "section": "",
+    "text": "For both problem sets and exams, you will end up producing two types of documents:"
+  },
+  {
+    "objectID": "assignments/problem-sets.html#problem-set-workflow",
+    "href": "assignments/problem-sets.html#problem-set-workflow",
+    "title": "Problem Sets and Exams",
+    "section": "Problem set workflow",
+    "text": "Problem set workflow\nThe text of the problem sets will be posted here on the course website. We will distribute templates and data for the problem sets via Github. To get started, follow these steps:\n\nGo to the Ed Board and find the pinned thread with the GitHub Classroom links for each assignment.\nClick on the Github Classroom link for the assignment in question. You’ll be presented with a page that asks you to accept the assignment. Click “Accept this assignment”.\nGo to this new problem set repository on GitHub. Click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).\n\n\n\nNow, switch to RStudio. Go to the menu bar and hit “File &gt; New Project”. You can then choose what type of project to start. Since we’re importing from Github, we’ll use the “Version Control” option (it’s the bottom of the list). In the next menu, choose “Git”. Now, you can paste the URL in the “Repository URL” box. Choose a set of local directories to place this project and hit “Create Project”. Because this is a private repository, you will be prompted to enter your GitHub username and password. Go ahead and do this.\nAs you make changes to your file, make sure to commit those changes. Every commit is a point that you can always go back to if your code stops working for some reason. So doing this often will make sure that you have access to that great feature of git. At an absolute minimum, you should do this every time you complete a question, though you may want to do it more often than that. Committing often means you also don’t have to constantly create new versions of the same file because you’re afraid of making some change. Also, make sure to use informative commit messages so you know what’s changing. Important: be sure to answer the questions in the Rmd file provided by the template. This is what the autograder will look for when you submit.\nAt some point, you’ll want to push your changes back to GitHub so the teaching staff can see your work (if you need help) or so that you can submit to Gradescope."
+  },
+  {
+    "objectID": "assignments/problem-sets.html#submitting-your-assignments",
+    "href": "assignments/problem-sets.html#submitting-your-assignments",
+    "title": "Problem Sets and Exams",
+    "section": "Submitting your assignments",
+    "text": "Submitting your assignments\n\nStep 1: Download your GitHub repo as a zip file\n\nOnce you are think you have completed the assignment, make sure to push your commits to GitHub and then go to the repository website and download the repo as a .zip file under the green “Code” button. It’s important to use the default name for the zip file, so you may have to delete an older zip file if you have already downloaded it to the same location. In general, it will have the structure problem-set-X-username-main.zip where X is the problem set number and username is your GitHub username. Note: do not add this zip file to your repository.\n\n\nStep 2: Submit the zip file to Gradescope\nOn Gradescope, you’ll find two entries for each assignment. One will be labelled “Zip File” and the other “PDF”. Click on the Zip File entry and drag/select your zip into the box. Click “Upload.”\n\n\n\nStep 3: Check autograder output\nWhen you submit the zip file, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You’ll see a list of test results and an overall score.\n\nCheck the messages on any questions you got wrong for hints about how to fix them. You may then re-upload the zip file again once you have fixed the code. You should repeat this process as many times as needed before you get a perfect score.\nIf you get an autograder error saying “The autograder failed to execute correctly” and you are using the Safari browser on macOS, check to see if Safari is unzipping the zip file automatically upon download. If it is, you can turn off this setting by following these instructions.\n\n\nStep 4: Upload PDF\nOnce you are satisfied with your autograding, then you should produce your final PDF report by hitting the “Knit” button at the top of the RStudio editor. This should produce a PDF output that you can then upload to Gradescope. In Gradescope, there will be an assignment labelled “Problem Set X: PDF”. There, you will be prompted to upload your final PDF report. You’ll be asked to indicate on which page each answer is. Label the PDF with where those answers are (being sure to mark two different pages if an answer continues on two pages)."
+  },
+  {
+    "objectID": "assignments/problem-sets.html#checklist",
+    "href": "assignments/problem-sets.html#checklist",
+    "title": "Problem Sets and Exams",
+    "section": "Checklist",
+    "text": "Checklist\n\nAccept GitHub Classroom invite.\nUse RStudio to “Clone with HTTPS” this repo to your computer.\nMake progress editing the .Rmd file.\n\nAs you do, commit and push to GitHub regularly.\nYou can check your answers with the autograder at any point.\nMake sure to name your code chunks.\nAdd the names of anyone you discuss the problem set with on your write-up.\n\nPush final version to GitHub and download the .zip file.\nUpload the .zip file to the Gradescope autograder.\nUpload final .pdf file to Gradescope."
+  },
+  {
+    "objectID": "assignments/problem-sets.html#writing-good-code",
+    "href": "assignments/problem-sets.html#writing-good-code",
+    "title": "Problem Sets and Exams",
+    "section": "Writing good code",
+    "text": "Writing good code\nYou’ll be writing code to do the analyses in this class. Code, like any language, provides many different ways of saying the same thing. One good practice of coding is to have what’s called good coding style. This refers to how you format the code that you so that it is (a) easy for you and others to read, and (b) less prone to making mistakes. Here are some general guidelines for writing R code and Rmd file.\n\nWhen writing R code and unless we tell you otherwise, follow the tidyverse style guide. For this class, the relevant parts of this document are the first couple of chapters. If you are ever uncertain about how to name something or how to write some code, see this document and it will likely help you quite a bit.\nMake sure the code chunks in the Rmd file have blank lines above and below them. If you don’t have this, it can sometimes cause problems with compilation.\nTry to keep your lines of code shorter than 80 characters since this makes reading code much easier. Usually this means writing some function arguments on a different line. See the style guide (section 2.5) for more on this.\nInclude comments in your code and format them nicely as in section 3.4 of the style guide. These comments should explain why you wrote the code you wrote and any notes you had about how you came to this solution. This might include, say, other approaches you tried but didn’t work or approaches you might want to try if you ever revisit this. Look at our code and examples to get a sense of how to use comments. In RStudio, you can nicely format a comment by hitting Control-Shift-\\."
+  },
+  {
+    "objectID": "assignments/final-project.html",
+    "href": "assignments/final-project.html",
+    "title": "Final Project Information",
+    "section": "",
+    "text": "The final project is a data analysis project about whatever data excites you. That could be public opinion in U.S. elections, United Nations voting patterns, patterns of racial discrimination in police behavior, the distribution of salaries in basketball, or the economics of the Marvel Cinematic Universe. No matter the topic, you will formulate a key research question, find data on that question, answer the question using the tools of the course, and present those results for public consumption.\nHere is a list of milestones that we will have to keep you on track:"
+  },
+  {
+    "objectID": "assignments/final-project.html#milestone-1-create-public-github-repository-due-929",
+    "href": "assignments/final-project.html#milestone-1-create-public-github-repository-due-929",
+    "title": "Final Project Information",
+    "section": "Milestone 1: Create public GitHub repository (due 9/29)",
+    "text": "Milestone 1: Create public GitHub repository (due 9/29)\nFollow the instructions on how to create a repository for your final project. You should change the metadata on your article and write a few sentences in the main text about what you might be interested in writing about. You will submit a link to the public article (not the github repository) to Canvas (not Gradescope)."
+  },
+  {
+    "objectID": "assignments/final-project.html#milestone-2-finding-data-and-writing-a-proposal-due-1013",
+    "href": "assignments/final-project.html#milestone-2-finding-data-and-writing-a-proposal-due-1013",
+    "title": "Final Project Information",
+    "section": "Milestone 2: Finding data and writing a proposal (due 10/13)",
+    "text": "Milestone 2: Finding data and writing a proposal (due 10/13)\n\nFinding a data source\nThe biggest part of the final project in Gov 50 is finding a data source. Here are some other resources and repositories with data sets:\n\nList of links to political science data sets\nHarvard Dataverse - Social Science\nData.gov - Data sets released by the US government\nData published by FiveThirtyEight\nHarvard OpenData Group Directory\nHarvard Program on Survey Research Data Collections\nRoper Center : Public Opinion in the US\nPew Research Center Data Sets\n\nIf you find a data set that you think is interesting, but you have problems loading the data set into R, please contact the course staff. R can load almost anything, so we can likely help you.\nWe also have the following specific datasets available to use:\n\nAmerican National Election Survey, 2016: Data Codebook\nCivil Wars: Data Codebook\nPolitical Violence: Data Codebook\nFox News rollout: Data Codebook\nAfrobarometer: Data Codebook\n\n\n\nGeneral advice for choosing data sources\n\nIf you want to analyze the relationship between X and Y, make sure that these two variables are included in the data set. If you want to look at effects for subgroups, make sure there is a variable that you can use for subsetting.\nTry to look for a ‘codebook’ or some other document that explains what the variables mean and how they are coded.\nFor most projects, preparing the data for analysis takes longer than the actual analysis itself. Try to find a data set where you do not need to extensively recode / clean up the data before you run your analyses, this makes the final project easier.\nIn similar vein, if the data set is greater than about 50MB (this is not a hard cutoff), R commands and analyses tend to take longer.\nImportant: Please do not try to commit any file that is larger than 100MB. You will not be able to push these files to GitHub and will require some complicated work to undo the commits. Instead, you can write an R script that subsets the data to units/variables that you need and save that file, which should be considerably smaller. Then you can put that in your repository and commit that.\nData from experiments is usually simple to analyze, since the analysis commonly involves simple comparisons of group means.\n\n\n\nWriting a proposal\nYou should write a one-paragraph note to describe what data set you will use and what your tentative research question is. Your research question should ask how one dependent variable is related to one or more independent variables. That is, your research question should be able to be answered by a regression analysis. In this paragraph, you should do the following:\n\nState your research question.\nFormulate a hypothesis related to the research question. This hypothesis should be rooted in some sort of theory. In other words, you need to present a plausible story why the hypothesis might be true. Often, this is in the form of a behaviorial or institutional explanation. As social scientists, we are not interested in idiosyncratic explanations; we want to understand systematic patterns and relationships!\nDescribe your explanatory variable(s) of interest and how it is measured. Importantly, we need to observe variation in this variable in order to study it!\nDescribe your outcome variable of interest and how it is measured.\nWhat observed pattern in the data would provide support for your hypothesis? More importantly, what observed pattern would disprove your hypothesis?\n\nFor instance, this would be a comprehensive paragraph that address each of these points in detail:\n\nDoes unified government enhance legislative productivity? In this study, I plan to examine the extent to which periods of unified government produce more landmark laws. I hypothesize that legislative productivity increases during periods of unified government in which one party controls both Houses of Congress and the presidency relative to periods of divided government. During periods of unified government, I expect that it is more likely for major bills to pass both Houses and gain the president’s signature. During periods of divided government, it is more difficult to reach a consensus around legislation that can pass each House and gain the president’s approval. My sample is comprised of each of the 79th (1945-1946) through 103rd (1993-1994) Congresses. My unit of analysis is a Congress (e.g., the 88th Congress). The explanatory variable of interest is whether there is unified government (both Houses and the presidency are controlled by the same party) or divided government. The variable is coded =1 for unified government and =0 for divided government. My outcome variable is the count of landmark pieces of legislation passed in a given Congress. For instance, if the variable were coded =11, it would mean that 11 pieces of landmark legislation were signed into law in that Congress. This variable is measured from David Mayhew’s data set on landmark legislation and relies on Mayhew’s expert knowledge to classify legislation as “landmark.” If I observe greater landmark legislative productivity under unified government relative to divided government, this would provide support for my hypothesis. If, on the other hand, I observe less productivity or the same level of productivity under unified government, this would provide evidence against my hypothesis. When I run my regression of the count of landmark legislation on the unified government indicator variable, a positive, significant coefficient would indicate support for my hypothesis.\n\nYour paragraph might be less detailed and may not refer to any academic literature, but it should address the above items.\nNote that you are not fully committing to any specific question or data in this exercise. If you want to change data or questions later, that is fine. This is just a milestone to keep you on track. You can write this proposal on your index.Rmd file in the public article. You will submit a link to the rendered article with the proposal.\nNote that you will eventually remove this proposal with the actual article. If down the road you don’t want this proposal to be part of the public history of the repository, you can always create a new repository for the final report."
+  },
+  {
+    "objectID": "assignments/final-project.html#milestone-3-one-data-visualization-due-1027",
+    "href": "assignments/final-project.html#milestone-3-one-data-visualization-due-1027",
+    "title": "Final Project Information",
+    "section": "Milestone 3: One data visualization (due 10/27)",
+    "text": "Milestone 3: One data visualization (due 10/27)\nThe next milestone will require that your Distill article loads the data you have selected and produces one interesting and polished data visualization. This could either show the distribution of one variable or the relationship between two variables."
+  },
+  {
+    "objectID": "assignments/final-project.html#milestone-4-add-results-from-one-analysis-due-1110",
+    "href": "assignments/final-project.html#milestone-4-add-results-from-one-analysis-due-1110",
+    "title": "Final Project Information",
+    "section": "Milestone 4: Add results from one analysis (due 11/10)",
+    "text": "Milestone 4: Add results from one analysis (due 11/10)\nBy this time, your article should contain one visualization and one analysis that attempts to answer your research question. There does not need to be a long discussion, but the results should be presented in either a second visualization or a nicely formatted table."
+  },
+  {
+    "objectID": "assignments/final-project.html#final-step-write-up-final-report-due-date-tbd",
+    "href": "assignments/final-project.html#final-step-write-up-final-report-due-date-tbd",
+    "title": "Final Project Information",
+    "section": "Final step: Write up final report (due date TBD)",
+    "text": "Final step: Write up final report (due date TBD)\nThe final report will include the following sections: (1) an introduction where you introduce the research question and hypothesis and briefly describe why it is interesting; (2) a data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; (3) a results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; and (4) a brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect).\nFor the data section, you should note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences). For the results section, you should interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect."
+  },
+  {
+    "objectID": "assignments/00-problem-set.html",
+    "href": "assignments/00-problem-set.html",
+    "title": "Getting Started with R, R Studio, Git, and Github",
+    "section": "",
+    "text": "In this problem set, we’re going to get R, RStudio, and R Markdown set up on your computer. To get started, follow these steps:\n\nDownload and install the most recent version of R. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the R-x.y.z-win.exe file where x.y.z is a version number. On a Mac, you will want to install using the R-x.y.z.pkg file that is notarized and signed.\nWith R installed, download and install RStudio. RStudio is a type of “integrated development environment” or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free.\nInstall the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the “Console” in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type “no”. Note that the symbols next to my_package are a less than sign &lt; followed by a minus sign - with no space between them. (Don’t be worried if you see some red text here. Those are usually just messages telling you information about the packages you are installing. Unless you see the word Error you should be fine.)\n\n\nmy_packages &lt;- c(\"tidyverse\", \"usethis\", \"devtools\", \"learnr\",\n                 \"tinytex\", \"gitcreds\")\ninstall.packages(my_packages, repos = \"http://cran.rstudio.com\")\nremotes::install_github(\"kosukeimai/qss-package\", build_vignettes = TRUE)\n\n\nFor some things in the course, we’ll need produce PDFs from R and that requires something called LaTeX. If you’ve never heard of that, it’s completely fine and you should just run the following two lines of R code:\n\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX"
+  },
+  {
+    "objectID": "assignments/00-problem-set.html#installing-r-and-rstudio",
+    "href": "assignments/00-problem-set.html#installing-r-and-rstudio",
+    "title": "Getting Started with R, R Studio, Git, and Github",
+    "section": "",
+    "text": "In this problem set, we’re going to get R, RStudio, and R Markdown set up on your computer. To get started, follow these steps:\n\nDownload and install the most recent version of R. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the R-x.y.z-win.exe file where x.y.z is a version number. On a Mac, you will want to install using the R-x.y.z.pkg file that is notarized and signed.\nWith R installed, download and install RStudio. RStudio is a type of “integrated development environment” or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free.\nInstall the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the “Console” in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type “no”. Note that the symbols next to my_package are a less than sign &lt; followed by a minus sign - with no space between them. (Don’t be worried if you see some red text here. Those are usually just messages telling you information about the packages you are installing. Unless you see the word Error you should be fine.)\n\n\nmy_packages &lt;- c(\"tidyverse\", \"usethis\", \"devtools\", \"learnr\",\n                 \"tinytex\", \"gitcreds\")\ninstall.packages(my_packages, repos = \"http://cran.rstudio.com\")\nremotes::install_github(\"kosukeimai/qss-package\", build_vignettes = TRUE)\n\n\nFor some things in the course, we’ll need produce PDFs from R and that requires something called LaTeX. If you’ve never heard of that, it’s completely fine and you should just run the following two lines of R code:\n\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX"
+  },
+  {
+    "objectID": "assignments/00-problem-set.html#installing-and-configuring-git",
+    "href": "assignments/00-problem-set.html#installing-and-configuring-git",
+    "title": "Getting Started with R, R Studio, Git, and Github",
+    "section": "Installing and configuring git",
+    "text": "Installing and configuring git\nGit is a version control program that helps organize the process of writing and maintaining code. It allows you to maintain a history of edits to your code without having to resort to a set of files like:\nmy_code.R\nmy_code_v1.R\nmy_code_v2_FINAL.R\nThere’s a lot to git and it will be harder to use in the beginning, but in the long term there are huge benefits of it. First, when you use git, you are much less likely to encounter a devastating data failure. All of your (committed) changes to your project are preserved, even when you make new changes or you revert old changes.\nGit is also a very useful way for people to collaborate. There is a huge community built up around it. And once your projects are publicly available on Github (a website for hosting git repositories), there are a host of ways that folks can collaborate with you.\n\nInstall git\nYou might already have git installed on your computer, especially if you have a Mac. To check, in RStudio, click on the Terminal tab in the bottom-left panel (next to the Console tab). Type git --version at the command prompt. If you get a response with a version number, great you are all set. If you get any kind of error message, you learn how to install git on your machine here.\n\n\nSetup a GitHub account\nNext, you can setup a GitHub account. You can think of GitHub as similar to Dropbox or Google Drive for your git projects (“repositories”) where everything is public by default. Since you might use this account to interact with potential employers in the future, you should probably pick a professional username.\nOnce you have a GitHub account, you can configure your local git program to interact with your account gracefully. Run the following two lines of code in the Terminal replacing \"John Harvard\" with your name and \"john@harvard.edu\" with your email address used to sign up for GitHub.\ngit config --global user.name \"John Harvard\"\ngit config --global user.email \"john@harvard.edu\"\n\n\nSet up RStudio to talk to GitHub\nWe also need to set up RStudio to be able to communicate with GitHub securely. This requires a bit of fidily configuration that we luckily only have to do once. Basically, we need to get a secret code from GitHub and store it in RStudio (kind of like a app-specific password when you’re using two-factor authentication). We can start the process from by doing:\n\nusethis::create_github_token()\n\nThis will open a page on GitHub asking you to create a “Personal Access Token” or PAT (this is the secret code). You’ll have to give the PAT a note that describes what it’s for and choose an expiration date. You can accept the default of 30 days but you will have to renew it a couple of times during the class. Alternatively, if you set it to a date after the semester ends, you shouldn’t have to touch this again. We recommend keeping the “scope” selections as they are and clicking the “Generate Token” button at the bottom of the page.\n\nYou will then see a new screen with a long sequence of letters. This is your token or secret code. You should treat it like a password and do not share it with anyone. If you use a password manager like 1Password or LastPass, you can put it in a secure note in those programs. Copy this by hitting the button with the two boxes.\n\nOnce you have copied the PAT, call gitcreds::gitcreds_set() from the RStudio console and paste the PAT when prompted. You should see the following:\n&gt; gitcreds::gitcreds_set()\n? Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n-&gt; Adding new credentials...\n-&gt; Removing credentials from cache...\n-&gt; Done.\nOnce this is done, you should be all set for RStudio to communicate with GitHub. If you have any problems with the PAT process or want to know more about it, the Happy Git and GitHub for the useR book has a great chapter about it.\n\n\nCreating your first repo\nOnce you are logged into Github and at its homepage, you can now create a new repo (shorthand for “repository”). These repositories are like folders in Dropbox except a bit more structured. Create one by clicking on the green “New” button in the top-left of the screen next to “Repositories.” It should look like this:\n\nNow a new screen should pop up requesting some information for the new repo. Give this new Repository the name gov50-problem-set0 and set it to be a private repository. You can give it an informative description and check the “Initialize this repository with a README” checkbox. This latter option will add a README to the repository where you can add more information that will display nicely in the repository’s homepage. Your setup should look something like this:\n\nOnce you create your repo, you are ready to connect it to RStudio on your local computer. The easiest way to do this is go to the repo homepage (you’re already there if you’ve just created it) and click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).\n\nNow, switch to RStudio. Go to the menu bar and hit “File &gt; New Project”. You can then choose what type of project to start. Since we’re importing from Github, we’ll use the “Version Control” option (it’s the bottom of the list). In the next menu, choose “Git”. Now, you can paste the URL in the “Repository URL” box. Choose a set of local directories to place this project and hit “Create Project”. And now you’ll have your project ready to go in RStudio."
+  },
+  {
+    "objectID": "assignments/00-problem-set.html#working-with-a-project-in-rstudio",
+    "href": "assignments/00-problem-set.html#working-with-a-project-in-rstudio",
+    "title": "Getting Started with R, R Studio, Git, and Github",
+    "section": "Working with a project in RStudio",
+    "text": "Working with a project in RStudio\nYou’ll see in the bottom right window of RStudio you’ll now see the files from your Github project.\n\nLet’s edit the README file by clicking on README.md in that file pane and you’ll be able to edit it in the top-left pane. Change the header from # gov-50-problem-set0 to # Introduction and save the file (⌘+S or Ctrl+S). If you click on the “Git” tab in the top right panel, you will a list of the changes you’ve made to the repo since the last commit (you can think of a commit as a more permanent type of saving work to the git repo).\n\nOne thing you’ll notice here is that git thinks that gov50-problem-set0.Rproj is a file that maybe should go into the repo. But this file is just for our local copy of RStudio and shouldn’t really go into the repo. To prevent git from bothering us about it every time we open something, we can modify the .gitignore file to tell git to ignore certain files. Open .gitignore and add a new line with *.Rproj on it to tell git to ignore any file with the extension .Rproj. Make sure to save the file.\n\nIf you go back to the Git tab in the top right and refresh (little circular arrow in the top right corner), you see that gov50-problem-set0.Rproj is removed from our list. Now we are ready to commit our changes. Click the “Staged” box for .gitignore and README.md and hit the “Commit” button just above the file list. You’ll see a window with the changes that you are about to commit.\n\nYou can click on different files to see what exactly you are changing. Add a short but informative commit message that describes what you are committing and hit “Commit”. Once this completes, you can hit the “Push” button in the top right to push that commit back to Github.\n\nIf you go back to your repo’s homepage on Github and refresh the page, you’ll see the updates to your README file and the new .gitignore.\n\nAnd you’re done! You’ve just created your first repo."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "assignments/distill.html",
+    "href": "assignments/distill.html",
+    "title": "Creating the Final Project Repository",
+    "section": "",
+    "text": "First you need to install the {distill} package with the following code at the Console:\n\ninstall.packages(\"distill\")"
+  },
+  {
+    "objectID": "assignments/distill.html#install-the-distill-package",
+    "href": "assignments/distill.html#install-the-distill-package",
+    "title": "Creating the Final Project Repository",
+    "section": "",
+    "text": "First you need to install the {distill} package with the following code at the Console:\n\ninstall.packages(\"distill\")"
+  },
+  {
+    "objectID": "assignments/distill.html#create-your-github-repository",
+    "href": "assignments/distill.html#create-your-github-repository",
+    "title": "Creating the Final Project Repository",
+    "section": "Create your GitHub repository",
+    "text": "Create your GitHub repository\nThe next thing you will do is create the GitHub repository that will house your final project. You can do this easily by using the Gov 50 Final Project template. After going to that repository, click on the green “Use this template” button:\n\nWhen presented with the option of the repository name, for now you can call it gov50-final-project or something similar. You can change the name of repository later once you have a more solid idea for your final project idea. Make sure that Public option is selected."
+  },
+  {
+    "objectID": "assignments/distill.html#setting-up-github-pages",
+    "href": "assignments/distill.html#setting-up-github-pages",
+    "title": "Creating the Final Project Repository",
+    "section": "Setting up GitHub pages",
+    "text": "Setting up GitHub pages\nOnce you have your repository created, it’s time to have GitHub publish the pages. In the repository click on the settings tab and then select the “Pages” entry in the side bar. There you should be able to select a branch to publish the site from. Select the “main” branch and hit “Save”. The setup should look like this:\n\nOnce you do this, GitHub will start to publish your site. After a few minutes, you’ll see a new box on the Pages settings pane that gives you the URL:\n\nClick on “Visit Site” to see your site in progress. It should be at the URL https://{username}.github.io/{repo-name}."
+  },
+  {
+    "objectID": "assignments/distill.html#working-with-your-repo",
+    "href": "assignments/distill.html#working-with-your-repo",
+    "title": "Creating the Final Project Repository",
+    "section": "Working with your repo",
+    "text": "Working with your repo\nYou should now create a project in RStudio based on your final project repository. Open the index.Rmd file and update it with your name and some thoughts about your final project ideas. Hit the “Knit” button to preview your site. If you are happy with your edits, stage the files and commit them in the usual way:\n\nOnce committed, push your changes to GitHub. When you go back to your repo, you’ll see a yellow dot, indicating that GitHub is working on publishing your changes:\n\nOnce it is done publishing, you’ll see a green checkmark:\n\nYou can now go to your site and see the changes."
+  },
+  {
+    "objectID": "assignments/distill.html#milestone-1",
+    "href": "assignments/distill.html#milestone-1",
+    "title": "Creating the Final Project Repository",
+    "section": "Milestone 1",
+    "text": "Milestone 1\nYou should change the metadata on your article (your name at the least) and write a few sentences in the main text about what you might be interested in writing about. You will submit a link to the public article (not the github repository) to Canvas (not Gradescope)."
+  },
+  {
+    "objectID": "assignments/distill.html#more-information-on-distill-authoring",
+    "href": "assignments/distill.html#more-information-on-distill-authoring",
+    "title": "Creating the Final Project Repository",
+    "section": "More information on distill authoring",
+    "text": "More information on distill authoring\nThe basics of distill are very similar to the basics of the Rmd files that you have been working with. You can also check out the distill website for more information on the basics of authoring distill articles."
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Tutorial Instructions\nTutorial 1: Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Causality\nTutorial 4: Summarizing Data\nTutorial 5: Correlation and Tidying Data\nTutorial 6: Loops\nTutorial 7: Regression and Sampling\nTutorial 8: Bootstrap"
+  },
+  {
+    "objectID": "assignments/index.html#tutorials",
+    "href": "assignments/index.html#tutorials",
+    "title": "Assignments",
+    "section": "",
+    "text": "Tutorial Instructions\nTutorial 1: Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Causality\nTutorial 4: Summarizing Data\nTutorial 5: Correlation and Tidying Data\nTutorial 6: Loops\nTutorial 7: Regression and Sampling\nTutorial 8: Bootstrap"
+  },
+  {
+    "objectID": "assignments/index.html#problem-sets",
+    "href": "assignments/index.html#problem-sets",
+    "title": "Assignments",
+    "section": "Problem Sets",
+    "text": "Problem Sets\n\nSubmission guide for problem sets\nProblem set 0: Setting up R, RStudio, and GitHub"
+  },
+  {
+    "objectID": "assignments/index.html#final-project",
+    "href": "assignments/index.html#final-project",
+    "title": "Assignments",
+    "section": "Final Project",
+    "text": "Final Project\n\nFinal project information\nFinal project milestone 1: Creating a repo"
+  },
+  {
+    "objectID": "assignments/tutorials.html",
+    "href": "assignments/tutorials.html",
+    "title": "Gov 50 R Tutorials Instructions",
+    "section": "",
+    "text": "Once you have completed the tutorial you will see a screen that prompts you to enter your name (as it appears on Gradescope) and produce a submission report. Clicking “Download” should place a report into the folder of your choosing. Find that PDF and upload it to Gradescope (see the link at the top of every page).\n\nNote that we do not grade these reports on correctness, just that you attempted the tutorial. That said, going slowly and making sure that you understand each question and its answer is a good practice to ensure you are mastering the course material."
+  },
+  {
+    "objectID": "assignments/tutorials.html#submitting-tutorial-reports-to-gradescope",
+    "href": "assignments/tutorials.html#submitting-tutorial-reports-to-gradescope",
+    "title": "Gov 50 R Tutorials Instructions",
+    "section": "",
+    "text": "Once you have completed the tutorial you will see a screen that prompts you to enter your name (as it appears on Gradescope) and produce a submission report. Clicking “Download” should place a report into the folder of your choosing. Find that PDF and upload it to Gradescope (see the link at the top of every page).\n\nNote that we do not grade these reports on correctness, just that you attempted the tutorial. That said, going slowly and making sure that you understand each question and its answer is a good practice to ensure you are mastering the course material."
+  },
+  {
+    "objectID": "assignments/tutorials.html#installing-the-gov-50-tutorials-package",
+    "href": "assignments/tutorials.html#installing-the-gov-50-tutorials-package",
+    "title": "Gov 50 R Tutorials Instructions",
+    "section": "Installing the Gov 50 tutorials package",
+    "text": "Installing the Gov 50 tutorials package\nOur tutorials will be hosted on an external website so that you should not have to install any packages on your own computer. However, occasionally the server will become slow or unresponsive when there are many students trying to complete the tutorial at once. When this happens, you can install the tutorials locally to your RStudio. To install the package that contains the tutorials for the class run the following lines of code, each entered separately. Note that you may be asked to update packages when you enter this code. You can select 1 for “All” to perform any updates.\n\nremotes::install_github(\"kosukeimai/qss-package\", build_vignettes = TRUE)\nremotes::install_github(\"rstudio/learnr\")\nremotes::install_github(\"rstudio-education/gradethis\")\nremotes::install_github(\"mattblackwell/gov50tutor\")\n\nAfter the package has been installed, you should be able to find all of the tutorials for the course in the “Tutorials” tab in the top-right pane of RStudio. Scroll down to find a Gov 50 tutorial and click “Start Tutorial” to launch a tutorial:\n\nIf you do not see any QSS tutorials after scrolling to the bottom, try to restart RStudio, and check again. If you still don’t see any tutorials, confirm that you have installed the package by running library(gov50tutor). If you get an error about the package not being installed, try the above installation procedure again and note any error messages you receive before reaching out to the teaching staff for assistance."
+  },
+  {
+    "objectID": "assignments/tutorials.html#faqs",
+    "href": "assignments/tutorials.html#faqs",
+    "title": "Gov 50 R Tutorials Instructions",
+    "section": "FAQs",
+    "text": "FAQs\n\nWhat if I receive an error about pdflatex and the submission report doesn’t download?\nTo generate the reports, you need something called LaTeX. You should have installed this with Problem Set 0, but the following command will install it:\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX\n\n\n\nWhat if I don’t see a Tutorial tab in RStudio?\nMake sure that you have RStudio version 1.3 or higher installed on your computer. On a Mac, you can check the version by going to the top left of the menu bar (next to the Apple logo) and clicking on “RStudio” then “About RStudio”. On a Windows PC, you can find the same item under File &gt; About.\n\n\nWhat if my submission report misses some of my attempts?\nThe submission report isn’t perfect and will sometimes say you didn’t attempt a question when you actually did. We do not grade strictly on this and are mostly looking for a confirmation that you made a good-faith effort to complete the tutorial."
+  },
+  {
+    "objectID": "materials/01_intro.html",
+    "href": "materials/01_intro.html",
+    "title": "Introduction to Gov 50",
+    "section": "",
+    "text": "The syllabus and schedule pages.\nReview and try to start Problem Set 0"
+  },
+  {
+    "objectID": "materials/01_intro.html#readings",
+    "href": "materials/01_intro.html#readings",
+    "title": "Introduction to Gov 50",
+    "section": "",
+    "text": "The syllabus and schedule pages.\nReview and try to start Problem Set 0"
+  },
+  {
+    "objectID": "materials/03_data_wrangling.html",
+    "href": "materials/03_data_wrangling.html",
+    "title": "Data Transformation and Wrangling",
+    "section": "",
+    "text": "Chapter 3 of Modern Dive"
+  },
+  {
+    "objectID": "materials/03_data_wrangling.html#readings",
+    "href": "materials/03_data_wrangling.html#readings",
+    "title": "Data Transformation and Wrangling",
+    "section": "",
+    "text": "Chapter 3 of Modern Dive"
+  },
+  {
+    "objectID": "materials/03_data_wrangling.html#data",
+    "href": "materials/03_data_wrangling.html#data",
+    "title": "Data Transformation and Wrangling",
+    "section": "Data",
+    "text": "Data\n\nInstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")"
+  },
+  {
+    "objectID": "materials/03_data_wrangling.html#slides-and-code",
+    "href": "materials/03_data_wrangling.html#slides-and-code",
+    "title": "Data Transformation and Wrangling",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (9/13) lecture: Data Wrangling\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (9/15) lecture: Data Wrangling and Barplots\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: news.Rmd"
+  },
+  {
+    "objectID": "materials/05_measurement.html",
+    "href": "materials/05_measurement.html",
+    "title": "Measuring and Summarizing Data",
+    "section": "",
+    "text": "Chapter 3 of QSS (though 3.6)"
+  },
+  {
+    "objectID": "materials/05_measurement.html#readings",
+    "href": "materials/05_measurement.html#readings",
+    "title": "Measuring and Summarizing Data",
+    "section": "",
+    "text": "Chapter 3 of QSS (though 3.6)"
+  },
+  {
+    "objectID": "materials/05_measurement.html#data",
+    "href": "materials/05_measurement.html#data",
+    "title": "Measuring and Summarizing Data",
+    "section": "Data",
+    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")"
+  },
+  {
+    "objectID": "materials/05_measurement.html#slides-and-code",
+    "href": "materials/05_measurement.html#slides-and-code",
+    "title": "Measuring and Summarizing Data",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (9/27) lecture: Summarizing data\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (9/29) lecture: Survey Sampling\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: cces.Rmd"
+  },
+  {
+    "objectID": "materials/07_prediction.html",
+    "href": "materials/07_prediction.html",
+    "title": "Prediction: Elections and Regression",
+    "section": "",
+    "text": "For prediction and loops, see QSS 4.1 (you can skip 4.1.1)\nFor regression, see either MD Ch 5 or QSS 4.2 (you can skip 4.2.5)."
+  },
+  {
+    "objectID": "materials/07_prediction.html#readings",
+    "href": "materials/07_prediction.html#readings",
+    "title": "Prediction: Elections and Regression",
+    "section": "",
+    "text": "For prediction and loops, see QSS 4.1 (you can skip 4.1.1)\nFor regression, see either MD Ch 5 or QSS 4.2 (you can skip 4.2.5)."
+  },
+  {
+    "objectID": "materials/07_prediction.html#data",
+    "href": "materials/07_prediction.html#data",
+    "title": "Prediction: Elections and Regression",
+    "section": "Data",
+    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nIf you cannot install the package, you can download the data locally at\n\npoll20.csv\npres20.csv\nnational_poll20.csv\n\n\n\nlibrary(tidyverse)\npolls20 &lt;- read_csv(\"polls20.csv\")\npres20 &lt;- read_csv(\"pres20.csv\")\nnational_polls20 &lt;- read_csv(\"national_polls20.csv\")\n\n\nYou may need to install the lubridate package if it’s not installed:\n\n\ninstall.packages(\"lubridate\")\n\n\nFor Thursday, you may want to reinstall the gov50date package and install the broom package:\n\n\ninstall.packages(\"broom\")"
+  },
+  {
+    "objectID": "materials/07_prediction.html#slides-and-code",
+    "href": "materials/07_prediction.html#slides-and-code",
+    "title": "Prediction: Elections and Regression",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (10/11) lecture: Prediction and loops\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nTuesday (10/13) lecture: Regression\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
+    "objectID": "materials/09_sampling.html",
+    "href": "materials/09_sampling.html",
+    "title": "Sampling",
+    "section": "",
+    "text": "MD Ch 7"
+  },
+  {
+    "objectID": "materials/09_sampling.html#readings",
+    "href": "materials/09_sampling.html#readings",
+    "title": "Sampling",
+    "section": "",
+    "text": "MD Ch 7"
+  },
+  {
+    "objectID": "materials/09_sampling.html#data",
+    "href": "materials/09_sampling.html#data",
+    "title": "Sampling",
+    "section": "Data",
+    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nCSV files for the data from this week if you cannot install the package:\n\nclass_years.csv"
+  },
+  {
+    "objectID": "materials/09_sampling.html#slides-and-code",
+    "href": "materials/09_sampling.html#slides-and-code",
+    "title": "Sampling",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (10/25) lecture: Sampling\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (10/27) lecture: Sampling distributions\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
+    "objectID": "materials/11_hyp_tests.html",
+    "href": "materials/11_hyp_tests.html",
+    "title": "Hypothesis Tests",
+    "section": "",
+    "text": "MD Ch 9, IMS Ch 11 for another take."
+  },
+  {
+    "objectID": "materials/11_hyp_tests.html#readings",
+    "href": "materials/11_hyp_tests.html#readings",
+    "title": "Hypothesis Tests",
+    "section": "",
+    "text": "MD Ch 9, IMS Ch 11 for another take."
+  },
+  {
+    "objectID": "materials/11_hyp_tests.html#data",
+    "href": "materials/11_hyp_tests.html#data",
+    "title": "Hypothesis Tests",
+    "section": "Data",
+    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nCSV files for the data from this week if you cannot install the package:\n\ntea.csv"
+  },
+  {
+    "objectID": "materials/11_hyp_tests.html#slides-and-code",
+    "href": "materials/11_hyp_tests.html#slides-and-code",
+    "title": "Hypothesis Tests",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (11/8) lecture: Hypothesis tests\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (11/11) lecture: More hypothesis tests\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
+    "objectID": "materials/13_models.html",
+    "href": "materials/13_models.html",
+    "title": "More Mathematical Models",
+    "section": "",
+    "text": "IMS Ch 15, 16."
+  },
+  {
+    "objectID": "materials/13_models.html#readings",
+    "href": "materials/13_models.html#readings",
+    "title": "More Mathematical Models",
+    "section": "",
+    "text": "IMS Ch 15, 16."
+  },
+  {
+    "objectID": "materials/13_models.html#slides-and-code",
+    "href": "materials/13_models.html#slides-and-code",
+    "title": "More Mathematical Models",
+    "section": "Slides and Code",
+    "text": "Slides and Code\n\nTuesday (11/22) lecture: Math models for hypothesis testing and difference in means\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
+    "objectID": "materials/index.html",
+    "href": "materials/index.html",
+    "title": "Readings, lectures, and videos",
+    "section": "",
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials."
+  },
+  {
+    "objectID": "resources/index.html",
+    "href": "resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Getting Software Set Up\nR Tutorials Instructions (for running locally in RStudio)\nProblem Sets and Exams Instructions"
+  },
+  {
+    "objectID": "resources/index.html#gov-50-resources",
+    "href": "resources/index.html#gov-50-resources",
+    "title": "Resources",
+    "section": "",
+    "text": "Getting Software Set Up\nR Tutorials Instructions (for running locally in RStudio)\nProblem Sets and Exams Instructions"
+  },
+  {
+    "objectID": "resources/index.html#r-tutorials",
+    "href": "resources/index.html#r-tutorials",
+    "title": "Resources",
+    "section": "R Tutorials",
+    "text": "R Tutorials\n\nHands On Programming with R\nR for Data Science"
+  },
+  {
+    "objectID": "resources/index.html#r-markdown",
+    "href": "resources/index.html#r-markdown",
+    "title": "Resources",
+    "section": "R Markdown",
+    "text": "R Markdown\n\nR Markdown Tutorial\nR Markdown: The Definitive Guide"
+  },
+  {
+    "objectID": "resources/index.html#git-and-github-resources",
+    "href": "resources/index.html#git-and-github-resources",
+    "title": "Resources",
+    "section": "Git and GitHub Resources",
+    "text": "Git and GitHub Resources\n\nHappy Git with R"
+  },
+  {
+    "objectID": "resources/speaker-series.html",
+    "href": "resources/speaker-series.html",
+    "title": "Gov 50 Speaker Series",
+    "section": "",
+    "text": "More details to come…"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Below is the schedule for the semester. You can find the materials for each course meeting under the “Content” links for that week. You should generally:\n\nwatch the lecture videos (if any) and complete the readings by Monday;\ncomplete the tutorials by Monday evening at 11:59pm; and\nsubmit the problem set or exam by Wednesday at 11:59pm.\n\nHere’s a guide to the schedule:\n\nMaterials (): This page contains the readings, slides, and recorded lectures (if any) for the topic. Read/watch these first.\nTutorial (): A link to the tutorial for that week.\nAssignment (): This page contains the instructions for each assignment. Assignments are due by 11:59 PM on the day they’re listed.\n\nThe readings refer to following texts:\n\nQSS: Quantitative Social Science: An Introduction in tidyverse by Kosuke Imai and Nora Webb Williams\nMD: Statistical Inference via Data Science: A ModernDive into R and the Tidyverse by Chester Ismay and Albert Y. Kim\nIMS: Introduction to Modern Statistics by Mine Çetinkaya-Rundel and Johanna Hardin.\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nReading\n\n\nMaterials\n\n\nTutorial\n\n\nAssignment\n\n\n\n\n\n\nWeek 1\n\n\n\n\nSeptember 5\n\n\nIntroduction to the course\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 7\n\n\nR, Rstudio, and data visualization\n\n\nMD Ch 1\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 2\n\n\n\n\nSeptember 11\n\n\nTutorial 1  (submit by 23:59:00)\n\n\nMD Ch 2\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 12\n\n\nData visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 13\n\n\nTutorial 2  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 14\n\n\nData wrangling\n\n\nMD Ch 3\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 3\n\n\n\n\nSeptember 18\n\n\nTutorial 3  (submit by 23:59:00)\n\n\nQSS 2.1-2.2\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 19\n\n\nData wrangling\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 20\n\n\nProblem Set 1  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 21\n\n\nCausal inference\n\n\nQSS Ch 2.3\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 4\n\n\n\n\nSeptember 26\n\n\nCausal inference and randomized experiments\n\n\nQSS 2.4\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 27\n\n\nProblem Set 2  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 28\n\n\nCausal inference and observational studies\n\n\nQSS 2.5\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeptember 29\n\n\nFinal Project Milestone 1  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 5\n\n\n\n\nOctober 2\n\n\nTutorial 4  (submit by 23:59:00)\n\n\nQSS Ch 2.6-3.3\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 3\n\n\nSummarizing data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 4\n\n\nProblem Set 3  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 5\n\n\nSurvey sampling\n\n\nQSS 3.4\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 6\n\n\n\n\nOctober 9\n\n\nTutorial 5  (submit by 23:59:00)\n\n\nQSS Ch 3.5-3.6 or MD Ch 4\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 10\n\n\nSummarizing relationships in our data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 11\n\n\nProblem Set 4  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 12\n\n\nImporting and joining data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 13\n\n\nFinal Project Milestone 2  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 7\n\n\n\n\nOctober 16\n\n\nTutorial 6  (submit by 23:59:00)\n\n\nQSS 4.1 (except 4.1.2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 17\n\n\nPrediction & iteration\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 18\n\n\nRegression\n\n\nMD Ch 5 or QSS 4.2.1-4.2.4\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 19–October 22\n\n\nExam 1  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 8\n\n\n\n\nOctober 24\n\n\nRegression and model fit\n\n\nMD Ch 6.1-6.2 or QSS 4.2.6-4.3.2\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 26\n\n\nMultiple regression and interpretation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 27\n\n\nFinal Project Milestone 3  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 9\n\n\n\n\nOctober 30\n\n\nTutorial 7  (submit by 23:59:00)\n\n\nMD Ch 7\n\n\n\n\n\n\n\n\n\n\n\n\n\nOctober 31\n\n\nSampling\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 1\n\n\nProblem Set 5  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 2\n\n\nSampling distributions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 10\n\n\n\n\nNovember 6\n\n\nTutorial 8  (submit by 23:59:00)\n\n\nMD Ch 8/IMS Ch 12\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 7\n\n\nThe bootstrap and confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 8\n\n\nProblem Set 6  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 9\n\n\nThe bootstrap and confidence intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 10\n\n\nFinal Project Milestone 4  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 11\n\n\n\n\nNovember 14\n\n\nHypothesis testing\n\n\nMD Ch 9/IMS Ch 11\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 15\n\n\nProblem Set 7  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 16\n\n\nHypothesis testing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 12\n\n\n\n\nNovember 22\n\n\nHypothesis testing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 13\n\n\n\n\nNovember 28\n\n\nMathematical models of uncertainty\n\n\nIMS Ch 13\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 29\n\n\nProblem Set 8  (submit by 23:59:00)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNovember 30\n\n\nMathematical models of uncertainty\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 14\n\n\n\n\nDecember 5\n\n\nUncertainty in regression\n\n\nQSS Ch 7.3\n\n\n\n\n\n\n\n\n\n\n\n\n\nDecember 7–December 10\n\n\nExam 2  (submit by 23:59:00)"
+  }
+]

@@ -1,0 +1,82 @@
+---
+title: "Transphobia Study"
+author: "Matt Blackwell"
+date: '2022-09-20'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(gov50data)
+library(tidyverse)
+```
+
+## R Markdown
+
+```{r}
+trans
+```
+
+```{r}
+treat_mean <- trans |> 
+  filter(treat_ind == 1) |> 
+  summarize(mean(nondiscrim_post))
+treat_mean
+```
+
+```{r}
+control_mean <- trans |> 
+  filter(treat_ind == 0) |> 
+  summarize(mean(nondiscrim_post))
+control_mean
+```
+
+
+```{r}
+treat_mean - control_mean
+```
+
+```{r}
+trans |> 
+  group_by(treat_ind) |> 
+  summarize(age_mean = mean(age),
+            nd_pre_mean = mean(nondiscrim_pre))
+```
+
+```{r}
+trans |> 
+  mutate(
+    treat_ind = if_else(treat_ind == 1, "Trans Rights Script", "Recycling Script")
+      ) |> 
+  group_by(treat_ind, racename) |> 
+  summarize(n = n()) |> 
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = n
+  ) |> 
+  mutate(
+    diff_treat = `Trans Rights Script` - `Recycling Script`
+  )
+```
+
+
+```{r}
+trans |> 
+  mutate(
+    treat_ind = if_else(treat_ind == 1, "Treated", "Control"), 
+    party = case_when(
+      democrat == 1 ~ "Democrat",
+      democrat == 0 ~ "Non-Democrat"
+    )
+  ) |> 
+  group_by(treat_ind, party) |> 
+  summarize(nondiscrim_mean = mean(nondiscrim_post)) |> 
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = nondiscrim_mean
+  ) |> 
+  mutate(
+    ATE = Treated - Control
+  )
+```
+

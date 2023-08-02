@@ -1,0 +1,58 @@
+---
+title: "Covid Votes"
+author: "Matt Blackwell"
+date: '2022-10-04'
+output: pdf_document
+---
+
+
+```{r}
+library(tidyverse)
+library(gov50data)
+covid_votes
+```
+
+```{r}
+covid_votes |> 
+  mutate(
+    one_dose_5p_centered = one_dose_5plus_pct - mean(one_dose_5plus_pct, na.rm = TRUE), 
+    one_dose_5p_z = (one_dose_5plus_pct - mean(one_dose_5plus_pct, na.rm = TRUE)) / sd(one_dose_5plus_pct, na.rm = TRUE)
+  ) |> 
+  filter(one_dose_5p_z < -2)
+```
+
+
+
+## Correlations
+
+```{r}
+cor(covid_votes$one_dose_65plus_pct, covid_votes$dem_pct_2020, 
+    use = "pairwise")
+```
+
+
+```{r}
+covid_votes |> 
+  ggplot(mapping = aes(x = dem_pct_2020, y = one_dose_65plus_pct)) + 
+  geom_point(alpha = 0.5)
+```
+
+## Functions
+
+
+```{r}
+z_score <- function(x) {
+  (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE)
+}
+
+z_score(c(1, 2, 3, 4, 5))
+```
+
+
+```{r}
+covid_votes |> 
+  mutate(
+    across(one_dose_5plus_pct:dem_pct_2020, z_score)
+  )
+```
+
