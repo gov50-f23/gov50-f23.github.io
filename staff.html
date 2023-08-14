@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-10-31">
 
-<title>Gov 50 - The Bootstrap and Confidence Intervals</title>
+<title>Gov 50 – staff</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,59 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../files/img/gov50-icon-512.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./files/img/gov50-icon-512.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Gov 50</span>
     </a>
   </div>
@@ -116,27 +83,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html" rel="" target="">
+    <a class="nav-link" href="./syllabus.html" rel="" target="">
  <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule.html" rel="" target="">
+    <a class="nav-link" href="./schedule.html" rel="" target="">
  <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../staff.html" rel="" target="">
+    <a class="nav-link active" href="./staff.html" rel="" target="" aria-current="page">
  <span class="menu-text">Staff</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../materials/index.html" rel="" target="">
+    <a class="nav-link" href="./materials/index.html" rel="" target="">
  <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../assignments/index.html" rel="" target="">
+    <a class="nav-link" href="./assignments/index.html" rel="" target="">
  <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/index.html" rel="" target="">
+    <a class="nav-link" href="./resources/index.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -155,70 +122,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#readings" id="toc-readings" class="nav-link active" data-scroll-target="#readings">Readings</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#slides-and-code" id="toc-slides-and-code" class="nav-link" data-scroll-target="#slides-and-code">Slides and Code</a></li>
+  <li><a href="#course-staff" id="toc-course-staff" class="nav-link active" data-scroll-target="#course-staff">Course Staff</a>
+  <ul class="collapse">
+  <li><a href="#head-instructor" id="toc-head-instructor" class="nav-link" data-scroll-target="#head-instructor">Head Instructor</a></li>
+  <li><a href="#teaching-fellows" id="toc-teaching-fellows" class="nav-link" data-scroll-target="#teaching-fellows">Teaching Fellows</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">The Bootstrap and Confidence Intervals</h1>
+
+
+<section id="course-staff" class="level1">
+<h1>Course Staff</h1>
+<section id="head-instructor" class="level2 staff">
+<h2 class="staff anchored" data-anchor-id="head-instructor">Head Instructor</h2>
+<div class="grid d-flex align-items-center">
+<div class="g-col-3">
+<p><img src="files/img/blackwell-2015@2x.jpg" class="img-fluid"></p>
+</div>
+<div class="g-col-9">
+<ul>
+<li><i class="fa-solid fa-user" aria-label="user"></i> &nbsp; <a href="https://mattblackwell.org">Prof.&nbsp;Matt Blackwell</a></li>
+<li><i class="fa-solid fa-university" aria-label="university"></i> &nbsp; CGIS Knafel 305</li>
+<li><i class="fa-solid fa-envelope" aria-label="envelope"></i> &nbsp; <a href="mailto:mblackwell@gov.harvard.edu">mblackwell@gov.harvard.edu</a></li>
+<li><i class="fa-brands fa-twitter" aria-label="twitter"></i> &nbsp; <a href="https://www.twitter.com/matt_blackwell">matt_blackwell</a></li>
+<li><i class="fa-solid fa-calendar-check" aria-label="calendar-check"></i> &nbsp; <a href="https://calendly.com/matt_blackwell/">Schedule an appointment</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="teaching-fellows" class="level2 staff">
+<h2 class="staff anchored" data-anchor-id="teaching-fellows">Teaching Fellows</h2>
+<div class="grid d-flex align-items-center">
+<div class="g-col-3">
+<p><img src="files/img/totoro.png" class="img-fluid"></p>
+</div>
+<div class="g-col-9">
+<ul>
+<li><i class="fa-solid fa-user" aria-label="user"></i> &nbsp; Ahmet Akbiyik</li>
+<li><i class="fa-solid fa-envelope" aria-label="envelope"></i> &nbsp; <a href="mailto:ahmetakbiyik@g.harvard.edu">ahmetakbiyik@g.harvard.edu</a></li>
+</ul>
+</div>
+</div>
+<div class="grid d-flex align-items-center">
+<div class="g-col-3">
+<p><img src="files/img/totoro.png" class="img-fluid"></p>
+</div>
+<div class="g-col-9">
+<ul>
+<li><i class="fa-solid fa-user" aria-label="user"></i> &nbsp; Jerry Min</li>
+<li><i class="fa-solid fa-envelope" aria-label="envelope"></i> &nbsp; <a href="mailto:jiemin@fas.harvard.edu">jiemin@fas.harvard.edu</a></li>
+</ul>
+</div>
+</div>
+<div class="grid d-flex align-items-center">
+<div class="g-col-3">
+<p><img src="files/img/totoro.png" class="img-fluid"></p>
+</div>
+<div class="g-col-9">
+<ul>
+<li><i class="fa-solid fa-user" aria-label="user"></i> &nbsp; Laura Royden</li>
+<li><i class="fa-solid fa-envelope" aria-label="envelope"></i> &nbsp; <a href="mailto:lroyden@g.harvard.edu">lroyden@g.harvard.edu</a></li>
+</ul>
+</div>
+</div>
+<div class="grid d-flex align-items-center">
+<div class="g-col-3">
+<p><img src="files/img/totoro.png" class="img-fluid"></p>
+</div>
+<div class="g-col-9">
+<ul>
+<li><i class="fa-solid fa-user" aria-label="user"></i> &nbsp; Julio Solis Arce</li>
+<li><i class="fa-solid fa-envelope" aria-label="envelope"></i> &nbsp;</li>
+</ul>
+</div>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 31, 2022</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="readings" class="level2">
-<h2 class="anchored" data-anchor-id="readings">Readings</h2>
-<ul>
-<li>QSS 7.3 and/or IMS Ch 24.</li>
-</ul>
 </section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<ul>
-<li>Reinstall the Gov 50 data package that has new data for this week:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mattblackwell/gov50data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>CSV files for the data from this week if you cannot install the package:
-<ul>
-<li><a href="../files/data/ajr.csv"><code>ajr.csv</code></a></li>
-</ul></li>
-</ul>
-</section>
-<section id="slides-and-code" class="level2">
-<h2 class="anchored" data-anchor-id="slides-and-code">Slides and Code</h2>
-<ul>
-<li>Tuesday (11/29) lecture: Inference with Linear Regression
-<ul>
-<li><a href="../slides/25_ols_inference.pdf">PDF of slides as I present them</a></li>
-<li><a href="../slides/25_ols_inference_handout.pdf">PDF of handout version of slides</a> (no incremental slides)</li>
-</ul></li>
-</ul>
-
-
 </section>
 
 </main> <!-- /main -->
