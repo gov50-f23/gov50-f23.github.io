@@ -1,0 +1,112 @@
+# Course Staff
+
+## Head Instructor {.staff}
+
+::: {.grid .d-flex .align-items-center}
+
+::: {.g-col-3}
+
+
+![](files/img/blackwell-2015@2x.jpg)
+
+:::
+
+::: {.g-col-9}
+
+
+
+- {{< fa user >}} &nbsp; [{{< var instructor.name >}}]({{< var instructor.url >}})
+- {{< fa university >}} &nbsp; {{< var instructor.office >}}
+- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var instructor.email >}}">{{< var instructor.email >}}</a>
+- {{< fa brands twitter >}} &nbsp; [{{< var instructor.twitter >}}](https://www.twitter.com/{{< var instructor.twitter >}})
+- {{< fa calendar-check >}} &nbsp; [Schedule an appointment]({{< var instructor.appointment_url >}})
+
+::: 
+
+:::
+
+## Teaching Fellows {.staff}
+
+::: {.grid .d-flex .align-items-center}
+
+::: {.g-col-3}
+
+
+![](files/img/totoro.png)
+ 
+:::
+
+::: {.g-col-9}
+
+
+
+- {{< fa user >}} &nbsp; Ahmet Akbiyik
+- {{< fa envelope >}} &nbsp; <a href="mailto:ahmetakbiyik@g.harvard.edu">ahmetakbiyik@g.harvard.edu</a>
+
+
+::: 
+
+:::
+
+
+::: {.grid .d-flex .align-items-center}
+
+::: {.g-col-3}
+ 
+![](files/img/totoro.png)
+ 
+:::
+
+::: {.g-col-9}
+
+
+
+- {{< fa user >}} &nbsp; Jerry Min 
+- {{< fa envelope >}} &nbsp; <a href="mailto:jiemin@fas.harvard.edu">jiemin@fas.harvard.edu</a>
+
+
+::: 
+
+:::
+
+::: {.grid  .d-flex .align-items-center}
+
+::: {.g-col-3}
+ 
+![](files/img/totoro.png)
+ 
+:::
+
+::: {.g-col-9}
+
+
+
+- {{< fa user >}} &nbsp; Laura Royden
+- {{< fa envelope >}} &nbsp; <a href="mailto:lroyden@g.harvard.edu">lroyden@g.harvard.edu</a>
+
+
+::: 
+
+:::
+
+
+
+::: {.grid  .d-flex .align-items-center}
+
+::: {.g-col-3}
+ 
+![](files/img/totoro.png)
+ 
+:::
+
+::: {.g-col-9}
+
+
+
+- {{< fa user >}} &nbsp; Julio Solis Arce
+- {{< fa envelope >}} &nbsp; 
+
+
+::: 
+
+:::

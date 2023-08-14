@@ -24,7 +24,10 @@ output:
 
 ### Teaching fellows
 
-- TBD
+- Ahmet Akbiyik
+- Jerry Min
+- Laura Royden
+- Julio Solis Arce
 
 :::
 
