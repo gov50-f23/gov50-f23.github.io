@@ -41,7 +41,6 @@
 
 
 - {{< fa user >}} &nbsp; Ahmet Akbiyik
-- {{< fa envelope >}} &nbsp; <a href="mailto:ahmetakbiyik@g.harvard.edu">ahmetakbiyik@g.harvard.edu</a>
 
 
 ::: 
@@ -62,7 +61,6 @@
 
 
 - {{< fa user >}} &nbsp; Jerry Min 
-- {{< fa envelope >}} &nbsp; <a href="mailto:jiemin@fas.harvard.edu">jiemin@fas.harvard.edu</a>
 
 
 ::: 
@@ -82,7 +80,6 @@
 
 
 - {{< fa user >}} &nbsp; Laura Royden
-- {{< fa envelope >}} &nbsp; <a href="mailto:lroyden@g.harvard.edu">lroyden@g.harvard.edu</a>
 
 
 ::: 
@@ -104,7 +101,6 @@
 
 
 - {{< fa user >}} &nbsp; Julio Solis Arce
-- {{< fa envelope >}} &nbsp; 
 
 
 ::: 
