@@ -107,12 +107,12 @@ We will assign short weekly tutorials to assess your knowledge of the material c
 
 ### Lectures
 
-We will meet twice a week for lectures where I will combine presenting material and doing live coding demonstrations. Ideally, you should bring your laptop to class and be ready to code along with me! We will have a Slack channel dedicated to answer computing questions by TFs during lecture. 
+We will meet twice a week for lectures where I will combine presenting material and doing live coding demonstrations. Ideally, you should bring your laptop to class and be ready to code along with me! We will have a Slack channel dedicated to answer computing questions by TFs during lecture. Lectures will be recorded and usually posted to Canvas within 24 hours of the lecture time. Keeping up with these lectures is vital to your success in the class. 
 
 
 ### Sections
 
-Sections will be small-group settings to practice the tools and techniques that we cover in class. These meetings are *essential* to gaining the skills you need for the problem sets, exams, and final project. You are expected to attend sections. We will not assign you a particular section, so you are free to attend one that works for your schedule and attend different sections throughout the semester if a conflict arises. 
+Sections will be small-group settings to practice the tools and techniques that we cover in class. These meetings are *essential* to gaining the skills you need for the problem sets, exams, and final project. You are **expected** to attend sections. We will not assign you a particular section, so you are free to attend one that works for your schedule and attend different sections throughout the semester if a conflict arises. 
 
 Sections will fall into two types based on prior exposure to the course material: more comfortable and less comfortable. While Gov 50 is designed to be accessible to students without prior exposure to data science and computing, we recognize that students with different backgrounds in the material may require different pedagogical approaches. 
 

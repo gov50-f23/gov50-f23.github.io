@@ -32,7 +32,7 @@
 ::: {.g-col-3}
 
 
-![](files/img/totoro.png)
+![](files/img/ahmet_photo.jpeg)
  
 :::
 
@@ -52,7 +52,7 @@
 
 ::: {.g-col-3}
  
-![](files/img/totoro.png)
+![](files/img/Min_pic.jpg)
  
 :::
 
@@ -92,7 +92,7 @@
 
 ::: {.g-col-3}
  
-![](files/img/totoro.png)
+![](files/img/solis.jpg)
  
 :::
 
@@ -106,3 +106,5 @@
 ::: 
 
 :::
+
+## Course Assistants {.staff}
