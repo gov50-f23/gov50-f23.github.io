@@ -19,10 +19,10 @@ course:
   time: "12:00–1:15 PM"
   location: "2 Divinity Ave. 118 (Yenching Auditorium)"
   dates: "September 3rd-December 20th, 2023"
-  github: "https://github.com/gov50/gov50-f22-site"
-  url: "https://gov50.mattblackwell.org"
+  github: "https://github.com/gov50/gov50-f23"
+  url: "https://mattblackwell.github.io/gov50-f23"
   copyright_year: "2023"
-  slack: "https://gov-50-f22-62y.slack.com/ssb/redirect"
+  slack: "https://gov-50-f23-dbz.slack.com/ssb/redirect"
 
 university:
   name: "Harvard University"
