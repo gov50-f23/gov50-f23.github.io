@@ -71,7 +71,7 @@
 
 ::: {.g-col-3}
  
-![](files/img/totoro.png)
+![](files/img/royden.jpg)
  
 :::
 

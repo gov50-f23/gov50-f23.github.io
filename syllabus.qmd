@@ -25,9 +25,12 @@ output:
 ### Teaching fellows
 
 - Ahmet Akbiyik
+- James Jolin
 - Jerry Min
 - Laura Royden
 - Julio Solis Arce
+- Andy Wang
+
 
 :::
 

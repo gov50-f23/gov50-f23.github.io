@@ -5,9 +5,9 @@ This repo houses the [Quarto][] sources for the Gov 50 website. It is largely in
 ## How to build this site
 
 1. Install [RStudio][] version 2022.07.1 of later since it installs [Quarto][] with it or just download and install [Quarto][] separately. 
-2. Open `gov50-f22-site.Rproj` in as an RStudio Project.
+2. Open `site.Rproj` in as an RStudio Project.
 3. Edit files as needed and hit the "Render" button to preview the changes locally. 
-4. Commit changes and push them to GitHub. GitHub Actions will build the site and deploy it to [https://gov50.mattblackwell.org](https://gov50.mattblackwell.org). 
+4. Commit changes and push them to GitHub. GitHub Actions will build the site and deploy it to [https://gov50-f23.github.io](https://gov50-f23.github.io). 
 
 
 
