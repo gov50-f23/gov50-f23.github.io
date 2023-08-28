@@ -1,1 +1,1 @@
-Sitemap: https://github.com/mattblackwell/gov50-f23/sitemap.xml
+Sitemap: https://github.com/gov50-f23/gov50-f23.github.io/sitemap.xml
