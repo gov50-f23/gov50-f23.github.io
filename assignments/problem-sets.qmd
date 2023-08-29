@@ -15,14 +15,14 @@ For both problem sets and exams, you will end up producing two types of document
 
 The text of the problem sets will be posted here on the course website. We will distribute templates and data for the problem sets via Github. To get started, follow these steps:
 
-1. Go to the [Ed Board](https://edstem.org/us/courses/24957/) and find the pinned thread with the GitHub Classroom links for each assignment. 
+1. Go to the [Ed Board]({{< var course.ed >}}) and find the pinned thread with the GitHub Classroom links for each assignment. 
 2. Click on the Github Classroom link for the assignment in question.
    You'll be presented with a page that asks you to accept the
    assignment. Click "Accept this assignment".
 3. Go to this new problem set repository on GitHub. Click on the green
    "Code" button toward the top right of the page. When you click
    that, a popup will appear and you can copy the URL (you can click
-   the little clipboard icon to copy this automatically).
+   the little clipboard icon to copy this automatically). 
 
 ![](/files/img/assignments/github-clone.png){fig-alt="Cloning the repo"}
 
@@ -55,29 +55,25 @@ The text of the problem sets will be posted here on the course website. We will 
 
 ## Submitting your assignments 
 
-### Step 1: Download your GitHub repo as a zip file
+### Step 1: Submit the GitHub repository to Gradescope
 
-![](/files/img/github-zip.png){fig-alt="Downloading your repo as a zip file"}
+On Gradescope, you'll find two entries for each assignment. One will be labelled "Autograder" and the other "PDF". Click on the Autograder entry and select the GitHub submission option. The first time you do this step, you will first need to connect your GitHub account to your Gradescope account. 
 
-Once you are think you have completed the assignment, make sure to push your commits to GitHub and then go to the repository website and download the repo as a `.zip` file under the green "Code" button. It's important to use the default name for the zip file, so you may have to delete an older zip file if you have already downloaded it to the same location. In general, it will have the structure `problem-set-X-username-main.zip` where `X` is the problem set number and `username` is your GitHub username. **Note: do not add this zip file to your repository.**
+![](/files/img/assignments/gradescope-github-connect.png){fig-alt="Connect Gradescope to GitHub"}
 
-### Step 2: Submit the zip file to Gradescope
+Once you have connected your GitHub account, you can find the repository for the relevant problem set and the "main" branch and hit "Submit".
 
-On Gradescope, you'll find two entries for each assignment. One will be labelled "Zip File" and the other "PDF". Click on the Zip File entry and drag/select your zip into the box. Click "Upload."
+![](/files/img/assignments/gradescope-submit.png){fig-alt="Choosing repository for submission"}
 
-![](/files/img/assignments/gradescope-upload.png){fig-alt="Uploading your zip file to Gradescope"}
+### Step 2: Check autograder output
 
-### Step 3: Check autograder output
+When you submit the repository, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You'll see a list of test results and an overall score.
 
-When you submit the zip file, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You'll see a list of test results and an overall score.
+![](/files/img/assignments/autograder-results.png){fig-alt="Autograder results"}
 
-![](/files/img/assignments/autograder-results.png){fig-alt="Uploading your zip file to Gradescope"}
+Check the messages on any questions you got wrong for hints about how to fix them. You may then resubmit the GitHub repository again once you have fixed the code and pushed your changes to GitHub. You should repeat this process as many times as needed before you get a perfect score. 
 
-Check the messages on any questions you got wrong for hints about how to fix them. You may then re-upload the zip file again once you have fixed the code. You should repeat this process as many times as needed before you get a perfect score. 
-
-If you get an autograder error saying "The autograder failed to execute correctly" and you are using the Safari browser on macOS, check to see if Safari is unzipping the zip file automatically upon download. If it is, you can turn off this setting by following [these instructions](https://wiki.umbc.edu/pages/viewpage.action?pageId=31919091). 
-
-### Step 4: Upload PDF
+### Step 3: Upload PDF
 
 Once you are satisfied with your autograding, then you should produce your final PDF report by hitting the "Knit" button at the top of the RStudio editor. This should produce a PDF output that you can then upload to Gradescope. In Gradescope, there will be an assignment labelled "Problem Set X: PDF". There, you will be prompted to upload your final PDF report. You'll be asked to indicate on which page each answer is. Label the PDF with where those answers are (being sure to mark two different pages if an answer continues on two pages).
 
@@ -91,8 +87,8 @@ Once you are satisfied with your autograding, then you should produce your final
    - You can check your answers with the autograder at any point. 
    - Make sure to **name your code chunks**.
    - Add the names of anyone you discuss the problem set with on your write-up. 
-4. Push final version to GitHub and download the `.zip` file. 
-5. Upload the `.zip` file to the Gradescope autograder. 
+4. Push final version to GitHub. 
+5. Submit the GitHub repository to the Gradescope autograder. 
 6. Upload final `.pdf` file to Gradescope.
 
 ## Writing good code
