@@ -195,10 +195,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#problem-set-workflow" id="toc-problem-set-workflow" class="nav-link active" data-scroll-target="#problem-set-workflow">Problem set workflow</a></li>
   <li><a href="#submitting-your-assignments" id="toc-submitting-your-assignments" class="nav-link" data-scroll-target="#submitting-your-assignments">Submitting your assignments</a>
   <ul class="collapse">
-  <li><a href="#step-1-download-your-github-repo-as-a-zip-file" id="toc-step-1-download-your-github-repo-as-a-zip-file" class="nav-link" data-scroll-target="#step-1-download-your-github-repo-as-a-zip-file">Step 1: Download your GitHub repo as a zip file</a></li>
-  <li><a href="#step-2-submit-the-zip-file-to-gradescope" id="toc-step-2-submit-the-zip-file-to-gradescope" class="nav-link" data-scroll-target="#step-2-submit-the-zip-file-to-gradescope">Step 2: Submit the zip file to Gradescope</a></li>
-  <li><a href="#step-3-check-autograder-output" id="toc-step-3-check-autograder-output" class="nav-link" data-scroll-target="#step-3-check-autograder-output">Step 3: Check autograder output</a></li>
-  <li><a href="#step-4-upload-pdf" id="toc-step-4-upload-pdf" class="nav-link" data-scroll-target="#step-4-upload-pdf">Step 4: Upload PDF</a></li>
+  <li><a href="#step-1-submit-the-github-repository-to-gradescope" id="toc-step-1-submit-the-github-repository-to-gradescope" class="nav-link" data-scroll-target="#step-1-submit-the-github-repository-to-gradescope">Step 1: Submit the GitHub repository to Gradescope</a></li>
+  <li><a href="#step-2-check-autograder-output" id="toc-step-2-check-autograder-output" class="nav-link" data-scroll-target="#step-2-check-autograder-output">Step 2: Check autograder output</a></li>
+  <li><a href="#step-3-upload-pdf" id="toc-step-3-upload-pdf" class="nav-link" data-scroll-target="#step-3-upload-pdf">Step 3: Upload PDF</a></li>
   </ul></li>
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
   <li><a href="#writing-good-code" id="toc-writing-good-code" class="nav-link" data-scroll-target="#writing-good-code">Writing good code</a></li>
@@ -240,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="problem-set-workflow">Problem set workflow</h2>
 <p>The text of the problem sets will be posted here on the course website. We will distribute templates and data for the problem sets via Github. To get started, follow these steps:</p>
 <ol type="1">
-<li>Go to the <a href="https://edstem.org/us/courses/24957/">Ed Board</a> and find the pinned thread with the GitHub Classroom links for each assignment.</li>
+<li>Go to the <a href="https://edstem.org/us/courses/43339/">Ed Board</a> and find the pinned thread with the GitHub Classroom links for each assignment.</li>
 <li>Click on the Github Classroom link for the assignment in question. You’ll be presented with a page that asks you to accept the assignment. Click “Accept this assignment”.</li>
 <li>Go to this new problem set repository on GitHub. Click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).</li>
 </ol>
@@ -253,25 +252,21 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="submitting-your-assignments" class="level2">
 <h2 class="anchored" data-anchor-id="submitting-your-assignments">Submitting your assignments</h2>
-<section id="step-1-download-your-github-repo-as-a-zip-file" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-download-your-github-repo-as-a-zip-file">Step 1: Download your GitHub repo as a zip file</h3>
-<p><img src="../files/img/github-zip.png" class="img-fluid" alt="Downloading your repo as a zip file"></p>
-<p>Once you are think you have completed the assignment, make sure to push your commits to GitHub and then go to the repository website and download the repo as a <code>.zip</code> file under the green “Code” button. It’s important to use the default name for the zip file, so you may have to delete an older zip file if you have already downloaded it to the same location. In general, it will have the structure <code>problem-set-X-username-main.zip</code> where <code>X</code> is the problem set number and <code>username</code> is your GitHub username. <strong>Note: do not add this zip file to your repository.</strong></p>
+<section id="step-1-submit-the-github-repository-to-gradescope" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-submit-the-github-repository-to-gradescope">Step 1: Submit the GitHub repository to Gradescope</h3>
+<p>On Gradescope, you’ll find two entries for each assignment. One will be labelled “Autograder” and the other “PDF”. Click on the Autograder entry and select the GitHub submission option. The first time you do this step, you will first need to connect your GitHub account to your Gradescope account.</p>
+<p><img src="../files/img/assignments/gradescope-github-connect.png" class="img-fluid" alt="Connect Gradescope to GitHub"></p>
+<p>Once you have connected your GitHub account, you can find the repository for the relevant problem set and the “main” branch and hit “Submit”.</p>
+<p><img src="../files/img/assignments/gradescope-submit.png" class="img-fluid" alt="Choosing repository for submission"></p>
 </section>
-<section id="step-2-submit-the-zip-file-to-gradescope" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-submit-the-zip-file-to-gradescope">Step 2: Submit the zip file to Gradescope</h3>
-<p>On Gradescope, you’ll find two entries for each assignment. One will be labelled “Zip File” and the other “PDF”. Click on the Zip File entry and drag/select your zip into the box. Click “Upload.”</p>
-<p><img src="../files/img/assignments/gradescope-upload.png" class="img-fluid" alt="Uploading your zip file to Gradescope"></p>
+<section id="step-2-check-autograder-output" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-check-autograder-output">Step 2: Check autograder output</h3>
+<p>When you submit the repository, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You’ll see a list of test results and an overall score.</p>
+<p><img src="../files/img/assignments/autograder-results.png" class="img-fluid" alt="Autograder results"></p>
+<p>Check the messages on any questions you got wrong for hints about how to fix them. You may then resubmit the GitHub repository again once you have fixed the code and pushed your changes to GitHub. You should repeat this process as many times as needed before you get a perfect score.</p>
 </section>
-<section id="step-3-check-autograder-output" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-check-autograder-output">Step 3: Check autograder output</h3>
-<p>When you submit the zip file, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You’ll see a list of test results and an overall score.</p>
-<p><img src="../files/img/assignments/autograder-results.png" class="img-fluid" alt="Uploading your zip file to Gradescope"></p>
-<p>Check the messages on any questions you got wrong for hints about how to fix them. You may then re-upload the zip file again once you have fixed the code. You should repeat this process as many times as needed before you get a perfect score.</p>
-<p>If you get an autograder error saying “The autograder failed to execute correctly” and you are using the Safari browser on macOS, check to see if Safari is unzipping the zip file automatically upon download. If it is, you can turn off this setting by following <a href="https://wiki.umbc.edu/pages/viewpage.action?pageId=31919091">these instructions</a>.</p>
-</section>
-<section id="step-4-upload-pdf" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-upload-pdf">Step 4: Upload PDF</h3>
+<section id="step-3-upload-pdf" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-upload-pdf">Step 3: Upload PDF</h3>
 <p>Once you are satisfied with your autograding, then you should produce your final PDF report by hitting the “Knit” button at the top of the RStudio editor. This should produce a PDF output that you can then upload to Gradescope. In Gradescope, there will be an assignment labelled “Problem Set X: PDF”. There, you will be prompted to upload your final PDF report. You’ll be asked to indicate on which page each answer is. Label the PDF with where those answers are (being sure to mark two different pages if an answer continues on two pages).</p>
 </section>
 </section>
@@ -287,8 +282,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Make sure to <strong>name your code chunks</strong>.</li>
 <li>Add the names of anyone you discuss the problem set with on your write-up.</li>
 </ul></li>
-<li>Push final version to GitHub and download the <code>.zip</code> file.</li>
-<li>Upload the <code>.zip</code> file to the Gradescope autograder.</li>
+<li>Push final version to GitHub.</li>
+<li>Submit the GitHub repository to the Gradescope autograder.</li>
 <li>Upload final <code>.pdf</code> file to Gradescope.</li>
 </ol>
 </section>
