@@ -69,7 +69,7 @@ We also need to set up RStudio to be able to communicate with GitHub securely. T
 usethis::create_github_token()
 ```
 
-This will open a page on GitHub asking you to create a "Personal Access Token" or PAT (this is the secret code). You'll have to give the PAT a note that describes what it's for and choose an expiration date. You can accept the default of 30 days but you will have to renew it a couple of times during the class. Alternatively, if you set it to a date after the semester ends, you shouldn't have to touch this again. We recommend keeping the "scope" selections as they are and clicking the "Generate Token" button at the bottom of the page.
+This will open a page on GitHub asking you to create a "Personal Access Token" or PAT (this is the secret code). You'll have to give the PAT a note that describes what it's for and choose an expiration date. To minimize problems throughout the semester, you should set it to a date after the semester ends such as 12/31/2023. We recommend keeping the "scope" selections as they are and clicking the "Generate Token" button at the bottom of the page.
 
 ![](/files/img/assignments/github-pat.png){fig-alt="Create a GitHub PAT"}
 
@@ -142,6 +142,6 @@ And you're done! You've just created your first repo.
 
 
 [R]: https://cloud.r-project.org/
-[RStudio]:https://rstudio.com/
+[RStudio]: https://posit.co/downloads/
 [happygit]: https://happygitwithr.com/install-git.html
 [Github]: https://github.com/join

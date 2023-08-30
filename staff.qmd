@@ -1,5 +1,18 @@
 # Course Staff
 
+
+
+```{r packages-data, include=FALSE} 
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(lubridate)
+library(glue)
+
+staff <- read_csv("data/staff.csv", show_col_types = FALSE) 
+```
+
+
 ## Head Instructor {.staff}
 
 ::: {.grid .d-flex .align-items-center}
@@ -14,7 +27,7 @@
 ::: {.g-col-9}
 
 
-
+ 
 - {{< fa user >}} &nbsp; [{{< var instructor.name >}}]({{< var instructor.url >}})
 - {{< fa university >}} &nbsp; {{< var instructor.office >}}
 - {{< fa envelope >}} &nbsp; <a href="mailto:{{< var instructor.email >}}">{{< var instructor.email >}}</a>
@@ -25,86 +38,51 @@
 
 :::
 
-## Teaching Fellows {.staff}
-
-::: {.grid .d-flex .align-items-center}
-
-::: {.g-col-3}
 
 
-![](files/img/ahmet_photo.jpeg)
+
  
-:::
-
-::: {.g-col-9}
+```{r build-table, echo=FALSE, results="asis"}
 
 
-
-- {{< fa user >}} &nbsp; Ahmet Akbiyik
-
-
-::: 
-
-:::
+positions <- c("Head Teaching Fellow", "Teaching Fellows", "Course Assistants")
 
 
-::: {.grid .d-flex .align-items-center}
+for (i in positions) {
 
-::: {.g-col-3}
+  
+  cat(
+    glue("## [i] {.staff}", , .open = "[", .close = "]")    
+  )
+
+
+  this_pos <- staff |>
+    filter(position == i)
+
+  for (j in seq_len(nrow(this_pos))) {
+    this_name <- this_pos$name[j]
+    this_email <- this_pos$email[j]
+  
+    this_pic <- ifelse(!is.na(this_pos$photo[j]), this_pos$photo[j], "totoro.png")
+    
+    
+
+    cat(
+      "\n\n::: {.grid .d-flex .align-items-center}\n\n::: {.g-col-3}\n\n",
+      glue("![](files/img/{this_pic})\n\n"),
+      "\n\n:::\n\n::: {.g-col-9}\n\n",
+      glue("- {{< fa user >}} &nbsp; [this_name]\n\n", .open = "[", .close = "]")    
+    )
+
+    if (!is.na(this_email)) {
+      cat(
+        glue("- {{< fa envelope >}} &nbsp; <a href=\"mailto:[this_email]\">[this_email]</a>",
+           , .open = "[", .close = "]")
+      )
+    }
+    cat("\n\n:::\n\n:::\n\n")
+  }     
+}
+```
  
-![](files/img/Min_pic.jpg)
- 
-:::
 
-::: {.g-col-9}
-
-
-
-- {{< fa user >}} &nbsp; Jerry Min 
-
-
-::: 
-
-:::
-
-::: {.grid  .d-flex .align-items-center}
-
-::: {.g-col-3}
- 
-![](files/img/royden.jpg)
- 
-:::
-
-::: {.g-col-9}
-
-
-
-- {{< fa user >}} &nbsp; Laura Royden
-
-
-::: 
-
-:::
-
-
-
-::: {.grid  .d-flex .align-items-center}
-
-::: {.g-col-3}
- 
-![](files/img/solis.jpg)
- 
-:::
-
-::: {.g-col-9}
-
-
-
-- {{< fa user >}} &nbsp; Julio Solis Arce
-
-
-::: 
-
-:::
-
-## Course Assistants {.staff}
