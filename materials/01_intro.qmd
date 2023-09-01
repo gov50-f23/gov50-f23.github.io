@@ -10,3 +10,8 @@ date: 2023-09-05
 - Review and try to start [Problem Set 0](/assignments/00-problem-set.html)
 
 
+## Slides
+
+- [PDF of slides as I present them](/slides/01_intro.pdf)
+- [PDF of handout version of slides](/slides/01_intro_handout.pdf) (no incremental slides)
+ 

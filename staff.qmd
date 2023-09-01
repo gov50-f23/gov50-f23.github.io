@@ -21,12 +21,12 @@ staff <- read_csv("data/staff.csv", show_col_types = FALSE)
 
 
 ![](files/img/blackwell-2015@2x.jpg)
-
+ 
 :::
 
 ::: {.g-col-9}
 
-
+  
  
 - {{< fa user >}} &nbsp; [{{< var instructor.name >}}]({{< var instructor.url >}})
 - {{< fa university >}} &nbsp; {{< var instructor.office >}}
@@ -38,9 +38,9 @@ staff <- read_csv("data/staff.csv", show_col_types = FALSE)
 
 :::
 
- 
+  
 
-
+  
  
 ```{r build-table, echo=FALSE, results="asis"}
 
