@@ -26,7 +26,7 @@ staff <- read_csv("data/staff.csv", show_col_types = FALSE)
 
 ::: {.g-col-9}
 
-   
+    
  
 - {{< fa user >}} &nbsp; [{{< var instructor.name >}}]({{< var instructor.url >}})
 - {{< fa university >}} &nbsp; {{< var instructor.office >}}
