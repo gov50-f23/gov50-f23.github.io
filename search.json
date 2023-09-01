@@ -287,6 +287,13 @@
     "text": "The syllabus and schedule pages.\nReview and try to start Problem Set 0"
   },
   {
+    "objectID": "materials/01_intro.html#slides",
+    "href": "materials/01_intro.html#slides",
+    "title": "Introduction to Gov 50",
+    "section": "Slides",
+    "text": "Slides\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+  },
+  {
     "objectID": "assignments/tutorials.html",
     "href": "assignments/tutorials.html",
     "title": "Gov 50 R Tutorials Instructions",
@@ -739,7 +746,7 @@
     "href": "staff.html",
     "title": "Course Staff",
     "section": "",
-    "text": "Prof. Matt Blackwell\n   CGIS Knafel 305\n   mblackwell@gov.harvard.edu\n   matt_blackwell\n   Schedule an appointment\n\n\n\n\n\n\n\n\n\n\n\n\n   Laura Royden\n   lroyden@g.harvard.edu\n\n\n\n\n\n\n\n\n\n\n\n\n   Ahmet Akbiyik\n   ahmetakbiyik@g.harvard.edu\n\n\n\n\n\n\n\n\n\n   Ada Cruz ’24\n\n\n\n\n\n\n\n\n\n   Jerry Min\n   jiemin@fas.harvard.edu\n\n\n\n\n\n\n\n\n\n   James René Jolin ’24\n\n\n\n\n\n\n\n\n\n   Julio Solis Arce\n   jsolisarce@g.harvard.edu\n\n\n\n\n\n\n\n\n\n   Andy Wang ’23\n\n\n\n\n\n\n\n\n\n   Shriya Yarlagadda ’25\n\n\n\n\n\n\n\n\n\n\n\n\n   Frank T. Berrios ’25\n\n\n\n\n\n\n\n\n\n   Mitja Bof ’26\n\n\n\n\n\n\n\n\n\n   Kate De Groote ’24\n\n\n\n\n\n\n\n\n\n   Alex Heuss ’26\n\n\n\n\n\n\n\n\n\n   Katherine Jackson ’25\n\n\n\n\n\n\n\n\n\n   Zachary Mecca ’24\n\n\n\n\n\n\n\n\n\n   Pranav Moudgalya ’26\n\n\n\n\n\n\n\n\n\n   Vivian Nguyen ’24\n\n\n\n\n\n\n\n\n\n   Isa Peña ’24\n\n\n\n\n\n\n\n\n\n   Gowri Rangu ’26\n\n\n\n\n\n\n\n\n\n   Azeez Richardson ’25\n\n\n\n\n\n\n\n\n\n   Christopher Shen ’26\n\n\n\n\n\n\n\n\n\n   Jason Wang ’24"
+    "text": "Prof. Matt Blackwell\n   CGIS Knafel 305\n   mblackwell@gov.harvard.edu\n   matt_blackwell\n   Schedule an appointment\n\n\n\n\n\n\n\n\n\n\n\n\n   Laura Royden\n   lroyden@g.harvard.edu\n\n\n\n\n\n\n\n\n\n\n\n\n   Ahmet Akbiyik\n   ahmetakbiyik@g.harvard.edu\n\n\n\n\n\n\n\n\n\n   Ada Cruz ’24\n   acruz@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Katherine Jackson ’25\n   katherinejackson@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   James René Jolin ’24\n   jamesjolin@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Pranav Moudgalya ’26\n   pmoudgalya@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Jerry Min\n   jiemin@fas.harvard.edu\n\n\n\n\n\n\n\n\n\n   Christopher Shen ’26\n   christopher_shen@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Julio Solis Arce\n   jsolisarce@g.harvard.edu\n\n\n\n\n\n\n\n\n\n   Andy Wang ’23\n   azwang@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Shriya Yarlagadda ’25\n   syarlagadda1@college.harvard.edu\n\n\n\n\n\n\n\n\n\n\n\n\n   Frank T. Berrios ’25\n\n\n\n\n\n\n\n\n\n   Mitja Bof ’26\n\n\n\n\n\n\n\n\n\n   Kate De Groote ’24\n\n\n\n\n\n\n\n\n\n   Alina Esanu ’24\n\n\n\n\n\n\n\n\n\n   Eric Forteza ’24\n\n\n\n\n\n\n\n\n\n   Alex Heuss ’26\n\n\n\n\n\n\n\n\n\n   Tracy Jiang ’24\n\n\n\n\n\n\n\n\n\n   Zachary Mecca ’24\n\n\n\n\n\n\n\n\n\n   Vivian Nguyen ’24\n\n\n\n\n\n\n\n\n\n   Isa Peña ’24\n\n\n\n\n\n\n\n\n\n   Julia Poulson ’26\n\n\n\n\n\n\n\n\n\n   Gowri Rangu ’26\n\n\n\n\n\n\n\n\n\n   Azeez Richardson ’25\n\n\n\n\n\n\n\n\n\n   Jason Wang ’24"
   },
   {
     "objectID": "staff.html#head-instructor",
@@ -760,13 +767,13 @@
     "href": "staff.html#teaching-fellows",
     "title": "Course Staff",
     "section": "",
-    "text": "Ahmet Akbiyik\n   ahmetakbiyik@g.harvard.edu\n\n\n\n\n\n\n\n\n\n   Ada Cruz ’24\n\n\n\n\n\n\n\n\n\n   Jerry Min\n   jiemin@fas.harvard.edu\n\n\n\n\n\n\n\n\n\n   James René Jolin ’24\n\n\n\n\n\n\n\n\n\n   Julio Solis Arce\n   jsolisarce@g.harvard.edu\n\n\n\n\n\n\n\n\n\n   Andy Wang ’23\n\n\n\n\n\n\n\n\n\n   Shriya Yarlagadda ’25"
+    "text": "Ahmet Akbiyik\n   ahmetakbiyik@g.harvard.edu\n\n\n\n\n\n\n\n\n\n   Ada Cruz ’24\n   acruz@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Katherine Jackson ’25\n   katherinejackson@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   James René Jolin ’24\n   jamesjolin@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Pranav Moudgalya ’26\n   pmoudgalya@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Jerry Min\n   jiemin@fas.harvard.edu\n\n\n\n\n\n\n\n\n\n   Christopher Shen ’26\n   christopher_shen@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Julio Solis Arce\n   jsolisarce@g.harvard.edu\n\n\n\n\n\n\n\n\n\n   Andy Wang ’23\n   azwang@college.harvard.edu\n\n\n\n\n\n\n\n\n\n   Shriya Yarlagadda ’25\n   syarlagadda1@college.harvard.edu"
   },
   {
     "objectID": "staff.html#course-assistants",
     "href": "staff.html#course-assistants",
     "title": "Course Staff",
     "section": "",
-    "text": "Frank T. Berrios ’25\n\n\n\n\n\n\n\n\n\n   Mitja Bof ’26\n\n\n\n\n\n\n\n\n\n   Kate De Groote ’24\n\n\n\n\n\n\n\n\n\n   Alex Heuss ’26\n\n\n\n\n\n\n\n\n\n   Katherine Jackson ’25\n\n\n\n\n\n\n\n\n\n   Zachary Mecca ’24\n\n\n\n\n\n\n\n\n\n   Pranav Moudgalya ’26\n\n\n\n\n\n\n\n\n\n   Vivian Nguyen ’24\n\n\n\n\n\n\n\n\n\n   Isa Peña ’24\n\n\n\n\n\n\n\n\n\n   Gowri Rangu ’26\n\n\n\n\n\n\n\n\n\n   Azeez Richardson ’25\n\n\n\n\n\n\n\n\n\n   Christopher Shen ’26\n\n\n\n\n\n\n\n\n\n   Jason Wang ’24"
+    "text": "Frank T. Berrios ’25\n\n\n\n\n\n\n\n\n\n   Mitja Bof ’26\n\n\n\n\n\n\n\n\n\n   Kate De Groote ’24\n\n\n\n\n\n\n\n\n\n   Alina Esanu ’24\n\n\n\n\n\n\n\n\n\n   Eric Forteza ’24\n\n\n\n\n\n\n\n\n\n   Alex Heuss ’26\n\n\n\n\n\n\n\n\n\n   Tracy Jiang ’24\n\n\n\n\n\n\n\n\n\n   Zachary Mecca ’24\n\n\n\n\n\n\n\n\n\n   Vivian Nguyen ’24\n\n\n\n\n\n\n\n\n\n   Isa Peña ’24\n\n\n\n\n\n\n\n\n\n   Julia Poulson ’26\n\n\n\n\n\n\n\n\n\n   Gowri Rangu ’26\n\n\n\n\n\n\n\n\n\n   Azeez Richardson ’25\n\n\n\n\n\n\n\n\n\n   Jason Wang ’24"
   }
 ]
