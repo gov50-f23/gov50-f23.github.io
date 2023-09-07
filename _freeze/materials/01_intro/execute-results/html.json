@@ -1,0 +1,14 @@
+{
+  "hash": "e4b6cbb0d0872eaebc83d1497aaeeb60",
+  "result": {
+    "markdown": "---\ntitle: \"Introduction to Gov 50\"\ndate: 2023-09-05\n---\n\n\n\n## Readings \n\n- The [syllabus](/syllabus.qmd) and [schedule](/schedule.qmd) pages. \n- Review and try to start [Problem Set 0](/assignments/00-problem-set.html)\n\n## Code \n\nTo follow along with the visualization material on Thursday, run the following code at the R Console in RStudio:\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"gapminder\", repos = \"http://cran.rstudio.com\")\n```\n:::\n\n\n\n## Slides\n\n- Tuesday (9/5) lecture: \n  - [PDF of slides as I present them](/slides/01_intro.pdf)\n  - [PDF of handout version of slides](/slides/01_intro_handout.pdf) (no incremental slides)\n\n- Thursday (9/7) lecture: \n  - [PDF of slides as I present them](/slides/02_rintro_data_viz.pdf)\n  - [PDF of handout version of slides](/slides/02_rintro_data_viz_handout.pdf) (no incremental slides)\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

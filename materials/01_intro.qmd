@@ -9,6 +9,14 @@ date: 2023-09-05
 - The [syllabus](/syllabus.qmd) and [schedule](/schedule.qmd) pages. 
 - Review and try to start [Problem Set 0](/assignments/00-problem-set.html)
 
+## Code 
+
+To follow along with the visualization material on Thursday, run the following code at the R Console in RStudio:
+
+```{r eval = FALSE}
+install.packages("gapminder", repos = "http://cran.rstudio.com")
+```
+
 
 ## Slides
 
