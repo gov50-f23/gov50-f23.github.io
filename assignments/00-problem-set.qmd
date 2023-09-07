@@ -17,9 +17,10 @@ In this problem set, we're going to get R, RStudio, and R Markdown set up on you
 
 ```{r, eval = FALSE}
 my_packages <- c("tidyverse", "usethis", "devtools", "learnr",
-                 "tinytex", "gitcreds")
+                 "tinytex", "gitcreds", "gapminder")
 install.packages(my_packages, repos = "http://cran.rstudio.com")
 remotes::install_github("kosukeimai/qss-package", build_vignettes = TRUE)
+remotes::install_github("mattblackwell/gov50data")
 ```
   
 
@@ -61,9 +62,20 @@ git config --global user.name "John Harvard"
 git config --global user.email "john@harvard.edu"
 ```
 
+
+You will not see any output when you enter these commands. To check that they worked, enter the following command at the Terminal:
+
+```
+git config --list
+```
+
+
+You should see your name and email address listed in the output. 
+
+
 ### Set up RStudio to talk to GitHub
 
-We also need to set up RStudio to be able to communicate with GitHub securely. This requires a bit of fidily configuration that we luckily only have to do once. Basically, we need to get a secret code from GitHub and store it in RStudio (kind of like a app-specific password when you're using two-factor authentication). We can start the process from by doing:
+We also need to set up RStudio to be able to communicate with GitHub securely. This requires a bit of fidily configuration that we luckily only have to do once. Basically, we need to get a secret code from GitHub and store it in RStudio (kind of like a app-specific password when you're using two-factor authentication). We can start the process from by entering the following code at the R Console (not the Terminal):
 
 ```{r eval = FALSE}
 usethis::create_github_token()
