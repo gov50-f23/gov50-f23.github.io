@@ -287,6 +287,13 @@
     "text": "The syllabus and schedule pages.\nReview and try to start Problem Set 0"
   },
   {
+    "objectID": "materials/01_intro.html#code",
+    "href": "materials/01_intro.html#code",
+    "title": "Introduction to Gov 50",
+    "section": "Code",
+    "text": "Code\nTo follow along with the visualization material on Thursday, run the following code at the R Console in RStudio:\n\ninstall.packages(\"gapminder\", repos = \"http://cran.rstudio.com\")"
+  },
+  {
     "objectID": "materials/01_intro.html#slides",
     "href": "materials/01_intro.html#slides",
     "title": "Introduction to Gov 50",
