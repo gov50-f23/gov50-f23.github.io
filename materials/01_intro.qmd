@@ -12,6 +12,11 @@ date: 2023-09-05
 
 ## Slides
 
-- [PDF of slides as I present them](/slides/01_intro.pdf)
-- [PDF of handout version of slides](/slides/01_intro_handout.pdf) (no incremental slides)
- 
+- Tuesday (9/5) lecture: 
+  - [PDF of slides as I present them](/slides/01_intro.pdf)
+  - [PDF of handout version of slides](/slides/01_intro_handout.pdf) (no incremental slides)
+
+- Thursday (9/7) lecture: 
+  - [PDF of slides as I present them](/slides/02_rintro_data_viz.pdf)
+  - [PDF of handout version of slides](/slides/02_rintro_data_viz_handout.pdf) (no incremental slides)
+
