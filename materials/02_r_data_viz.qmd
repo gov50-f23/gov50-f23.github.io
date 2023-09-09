@@ -1,22 +1,35 @@
 ---
-title: "R Introduction, Data Visualization"
-date: 2022-09-06
+title: "Data Visualization and Data Wrangling"
+date: 2023-09-11
 ---
 
 
 ## Readings 
 
-- [Chapter 1 of Modern Dive](https://moderndive.com/1-getting-started.html)
-- Review and try to start [Problem Set 0](/assignments/00-problem-set.html)
+- Tuesday: [Chapter 2 of Modern Dive](https://moderndive.com/2-viz.html)
+- Thursday: [Chapter 3 of Modern Dive](https://moderndive.com/3-wrangling.html)
+- Finish [Problem Set 0](/assignments/00-problem-set.html)
+
+
+
+## Data
+
+- Install the Gov 50 data package that has new data for this week:
+```{r}
+#| eval: false
+remotes::install_github("mattblackwell/gov50data")
+```
 
 
 ## Slides and Code
 
-- Tuesday (9/6) lecture: 
-  - [PDF of slides as I present them](/slides/02_rintro_data_viz.pdf)
-  - [PDF of handout version of slides](/slides/02_rintro_data_viz_handout.pdf) (no incremental slides)
  
-- Thursday (9/8) lecture:
+- Tuesday (9/12) lecture:
   - [PDF of slides as I present them](/slides/03_data_viz.pdf)
   - [PDF of handout version of slides](/slides/03_data_viz_handout.pdf) (no incremental slides)
-  - Code: [`lecture-3.Rmd`](/files/code/lecture-3.Rmd)
+  <!-- - Code: [`lecture-3.Rmd`](/files/code/lecture-3.Rmd) -->
+
+
+<!-- - Thursday (9/14) lecture: Data Wrangling -->
+<!--   - [PDF of slides as I present them](/slides/04_data_wrangling.pdf) -->
+<!--   - [PDF of handout version of slides](/slides/04_data_wrangling_handout.pdf) (no incremental slides) -->

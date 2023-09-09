@@ -16,9 +16,10 @@ library(glue)
 
 schedule <- read_csv("data/schedule.csv", show_col_types = FALSE) 
 ```
-   
+
+
 Below is the schedule for the semester. You can find the materials for each course meeting under the “Content” links for that week. You should generally: 
- 
+   
 - watch the lecture videos (if any) and complete the readings by Monday;
 - complete the tutorials by Monday evening at 11:59pm; and
 - submit the problem set or exam by Wednesday at 11:59pm.
