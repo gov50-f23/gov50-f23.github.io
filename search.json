@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials."
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization"
   },
   {
     "objectID": "materials/13_models.html",
@@ -527,23 +527,30 @@
   {
     "objectID": "materials/02_r_data_viz.html",
     "href": "materials/02_r_data_viz.html",
-    "title": "R Introduction, Data Visualization",
+    "title": "Data Visualization and Data Wrangling",
     "section": "",
-    "text": "Chapter 1 of Modern Dive\nReview and try to start Problem Set 0"
+    "text": "Tuesday: Chapter 2 of Modern Dive\nThursday: Chapter 3 of Modern Dive\nFinish Problem Set 0"
   },
   {
     "objectID": "materials/02_r_data_viz.html#readings",
     "href": "materials/02_r_data_viz.html#readings",
-    "title": "R Introduction, Data Visualization",
+    "title": "Data Visualization and Data Wrangling",
     "section": "",
-    "text": "Chapter 1 of Modern Dive\nReview and try to start Problem Set 0"
+    "text": "Tuesday: Chapter 2 of Modern Dive\nThursday: Chapter 3 of Modern Dive\nFinish Problem Set 0"
+  },
+  {
+    "objectID": "materials/02_r_data_viz.html#data",
+    "href": "materials/02_r_data_viz.html#data",
+    "title": "Data Visualization and Data Wrangling",
+    "section": "Data",
+    "text": "Data\n\nInstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")"
   },
   {
     "objectID": "materials/02_r_data_viz.html#slides-and-code",
     "href": "materials/02_r_data_viz.html#slides-and-code",
-    "title": "R Introduction, Data Visualization",
+    "title": "Data Visualization and Data Wrangling",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (9/6) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (9/8) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture-3.Rmd"
+    "text": "Slides and Code\n\nTuesday (9/12) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/04_causality.html",

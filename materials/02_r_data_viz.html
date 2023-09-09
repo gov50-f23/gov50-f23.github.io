@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-09-06">
+<meta name="dcterms.date" content="2023-09-11">
 
-<title>Gov 50 - R Introduction, Data Visualization</title>
+<title>Gov 50 - Data Visualization and Data Wrangling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -130,6 +164,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#readings" id="toc-readings" class="nav-link active" data-scroll-target="#readings">Readings</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#slides-and-code" id="toc-slides-and-code" class="nav-link" data-scroll-target="#slides-and-code">Slides and Code</a></li>
   </ul>
 </nav>
@@ -139,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R Introduction, Data Visualization</h1>
+<h1 class="title">Data Visualization and Data Wrangling</h1>
 </div>
 
 
@@ -150,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 6, 2022</p>
+      <p class="date">September 11, 2023</p>
     </div>
   </div>
   
@@ -163,25 +198,32 @@ ul.task-list li input[type="checkbox"] {
 <section id="readings" class="level2">
 <h2 class="anchored" data-anchor-id="readings">Readings</h2>
 <ul>
-<li><a href="https://moderndive.com/1-getting-started.html">Chapter 1 of Modern Dive</a></li>
-<li>Review and try to start <a href="../assignments/00-problem-set.html">Problem Set 0</a></li>
+<li>Tuesday: <a href="https://moderndive.com/2-viz.html">Chapter 2 of Modern Dive</a></li>
+<li>Thursday: <a href="https://moderndive.com/3-wrangling.html">Chapter 3 of Modern Dive</a></li>
+<li>Finish <a href="../assignments/00-problem-set.html">Problem Set 0</a></li>
 </ul>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<ul>
+<li>Install the Gov 50 data package that has new data for this week:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mattblackwell/gov50data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="slides-and-code" class="level2">
 <h2 class="anchored" data-anchor-id="slides-and-code">Slides and Code</h2>
 <ul>
-<li>Tuesday (9/6) lecture:
-<ul>
-<li><a href="../slides/02_rintro_data_viz.pdf">PDF of slides as I present them</a></li>
-<li><a href="../slides/02_rintro_data_viz_handout.pdf">PDF of handout version of slides</a> (no incremental slides)</li>
-</ul></li>
-<li>Thursday (9/8) lecture:
+<li>Tuesday (9/12) lecture:
 <ul>
 <li><a href="../slides/03_data_viz.pdf">PDF of slides as I present them</a></li>
-<li><a href="../slides/03_data_viz_handout.pdf">PDF of handout version of slides</a> (no incremental slides)</li>
-<li>Code: <a href="../files/code/lecture-3.Rmd"><code>lecture-3.Rmd</code></a></li>
+<li><a href="../slides/03_data_viz_handout.pdf">PDF of handout version of slides</a> (no incremental slides) <!-- - Code: [`lecture-3.Rmd`](/files/code/lecture-3.Rmd) --></li>
 </ul></li>
 </ul>
+<!-- - Thursday (9/14) lecture: Data Wrangling -->
+<!--   - [PDF of slides as I present them](/slides/04_data_wrangling.pdf) -->
+<!--   - [PDF of handout version of slides](/slides/04_data_wrangling_handout.pdf) (no incremental slides) -->
 
 
 </section>
