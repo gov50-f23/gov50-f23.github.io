@@ -19,7 +19,8 @@ schedule <- read_csv("../data/study-halls.csv", show_col_types = FALSE,
                      col_types = list(.default = col_character())) 
 ```
  
-
+ 
+  
  
 ```{r build-table, eval = TRUE, echo=FALSE, results="asis"}
 tbl <- schedule |>
@@ -27,7 +28,7 @@ tbl <- schedule |>
   select(name, day, start_time, end_time, location) |>
   rename(Name = name, `Start Time` = start_time, `End Time` = end_time, Location = location) |>  
   kbl(escap = FALSE, align = "llll", table.attr = 'class="schedule-table"') |>
-  kable_styling() |>  
+  kable_styling() |>   
   column_spec(1:4, width = "20%", extra_css = "padding-right: 20px;") |>  
   column_spec(5, width = "60%") 
 
