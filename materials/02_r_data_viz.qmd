@@ -27,7 +27,7 @@ remotes::install_github("mattblackwell/gov50data")
 - Tuesday (9/12) lecture:
   - [PDF of slides as I present them](/slides/03_data_viz.pdf)
   - [PDF of handout version of slides](/slides/03_data_viz_handout.pdf) (no incremental slides)
-  <!-- - Code: [`lecture-3.Rmd`](/files/code/lecture-3.Rmd) -->
+  - Code: [`lecture3.Rmd`](/files/code/lecture3.Rmd)
 
 
 <!-- - Thursday (9/14) lecture: Data Wrangling -->
