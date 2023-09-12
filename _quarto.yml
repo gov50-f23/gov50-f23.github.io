@@ -41,6 +41,8 @@ website:
           contents:
             - text: "0: Introduction to Gov 50"
               file: materials/01_intro.qmd
+            - text: "1: Data Visualization and Wrangling"
+              file: materials/02_r_data_viz.qmd
               
     - title: "Assignments"
       style: "docked"
