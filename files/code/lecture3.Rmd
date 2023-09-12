@@ -1,0 +1,103 @@
+---
+title: "Lecture 3 Notes"
+author: "Matt Blackwell"
+date: "2023-09-12"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Building plots
+
+```{r}
+library(ggplot2)
+midwest
+```
+
+```{r}
+p <- ggplot(data = midwest, 
+      mapping = aes(x = popdensity, y = percbelowpoverty)) + 
+  geom_point()
+p
+```
+
+
+```{r}
+p2 <- ggplot(data = midwest, 
+      mapping = aes(x = popdensity, y = percbelowpoverty)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_x_log10() +
+  labs(
+    x = "Population Density",
+    y = "Percent of County Below Poverty Line", 
+    title = "Poverty and Population Density",
+    subtitle = "Among US Midwestern Counties", 
+    caption = "US Census, 2000"
+  )
+p2
+```
+
+
+
+```{r}
+p3 <- ggplot(data = midwest, 
+      mapping = aes(x = popdensity, y = percbelowpoverty)) + 
+  geom_point(mapping = aes(color = state)) +
+  geom_smooth(color = "black", se = FALSE) +
+  scale_x_log10() 
+p3
+```
+
+
+
+## Histograms and boxplots
+
+```{r}
+p4 <- ggplot(data = midwest, 
+            mapping = aes(x = percbelowpoverty)) +
+  geom_histogram() + 
+  facet_wrap(~ state)
+p4
+```
+
+
+```{r}
+p5 <- ggplot(data = midwest, 
+            mapping = aes(x = percbelowpoverty, 
+                          color = state, fill = state)) +
+  geom_density(alpha = 0.3)
+p5
+```
+
+
+
+```{r}
+p6 <- ggplot(data = midwest,
+       mapping = aes(x = state, 
+                     y = percbelowpoverty)) + 
+  geom_boxplot()
+p6
+```
+
+
+## Back to the gapminder
+
+
+```{r}
+library(gapminder)
+gapminder
+```
+
+```{r}
+p7 <- ggplot(data = gapminder,
+             mapping = aes(x = year, 
+                           y = gdpPercap)) + 
+  geom_line(mapping = aes(group = country), color = "grey70") +
+  geom_smooth(method = "loess") + 
+  scale_y_log10()
+p7
+```
