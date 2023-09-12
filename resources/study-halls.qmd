@@ -20,7 +20,7 @@ schedule <- read_csv("../data/study-halls.csv", show_col_types = FALSE,
 ```
  
  
-  
+    
  
 ```{r build-table, eval = TRUE, echo=FALSE, results="asis"}
 tbl <- schedule |>
