@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gov 50 - Gov 50 R Tutorials Instructions</title>
+<title>Gov 50 - Problem Set 1: Data Visualization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Resources</a></li><li class="breadcrumb-item"><a href="../assignments/tutorials.html">Gov 50 R Tutorials Instructions</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/00-problem-set.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/01_hw_data_viz.html">Problem Set 1</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/tutorials.html" class="sidebar-item-text sidebar-link active">
+  <a href="../assignments/tutorials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Gov 50 R Tutorials Instructions</span></a>
   </div>
 </li>
@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/01_hw_data_viz.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/01_hw_data_viz.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Problem Set 1</span></a>
   </div>
 </li>
@@ -231,14 +231,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#submitting-tutorial-reports-to-gradescope" id="toc-submitting-tutorial-reports-to-gradescope" class="nav-link active" data-scroll-target="#submitting-tutorial-reports-to-gradescope">Submitting Tutorial Reports to Gradescope</a></li>
-  <li><a href="#installing-the-gov-50-tutorials-package" id="toc-installing-the-gov-50-tutorials-package" class="nav-link" data-scroll-target="#installing-the-gov-50-tutorials-package">Installing the Gov 50 tutorials package</a></li>
-  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs">FAQs</a>
-  <ul class="collapse">
-  <li><a href="#what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download" id="toc-what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download" class="nav-link" data-scroll-target="#what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download">What if I receive an error about <code>pdflatex</code> and the submission report doesn’t download?</a></li>
-  <li><a href="#what-if-i-dont-see-a-tutorial-tab-in-rstudio" id="toc-what-if-i-dont-see-a-tutorial-tab-in-rstudio" class="nav-link" data-scroll-target="#what-if-i-dont-see-a-tutorial-tab-in-rstudio">What if I don’t see a Tutorial tab in RStudio?</a></li>
-  <li><a href="#what-if-my-submission-report-misses-some-of-my-attempts" id="toc-what-if-my-submission-report-misses-some-of-my-attempts" class="nav-link" data-scroll-target="#what-if-my-submission-report-misses-some-of-my-attempts">What if my submission report misses some of my attempts?</a></li>
-  </ul></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#question-1-5-points" id="toc-question-1-5-points" class="nav-link" data-scroll-target="#question-1-5-points">Question 1 (5 points)</a></li>
+  <li><a href="#question-2-10-points" id="toc-question-2-10-points" class="nav-link" data-scroll-target="#question-2-10-points">Question 2 (10 points)</a></li>
+  <li><a href="#question-3-5-points" id="toc-question-3-5-points" class="nav-link" data-scroll-target="#question-3-5-points">Question 3 (5 points)</a></li>
+  <li><a href="#question-4-15-points" id="toc-question-4-15-points" class="nav-link" data-scroll-target="#question-4-15-points">Question 4 (15 points)</a></li>
   </ul>
 </nav>
     </div>
@@ -247,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Gov 50 R Tutorials Instructions</h1>
+<h1 class="title">Problem Set 1: Data Visualization</h1>
 </div>
 
 
@@ -262,45 +259,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="submitting-tutorial-reports-to-gradescope" class="level2">
-<h2 class="anchored" data-anchor-id="submitting-tutorial-reports-to-gradescope">Submitting Tutorial Reports to Gradescope</h2>
-<p>Once you have completed the tutorial you will see a screen that prompts you to enter your name (as it appears on Gradescope) and produce a submission report. Clicking “Download” should place a report into the folder of your choosing. Find that PDF and upload it to Gradescope (see the link at the top of every page).</p>
-<p><img src="../files/img/assignments/tutorial-report.png" class="img-fluid" alt="RStudio Tutorial Report"></p>
-<p>Note that we do not grade these reports on correctness, just that you attempted the tutorial. That said, going slowly and making sure that you understand each question and its answer is a good practice to ensure you are mastering the course material.</p>
+<p>This problem set is due on <strong>September 20, 2023 at 11:59pm</strong>.</p>
+<p>You can find instructions for obtaining and submitting problem sets <a href="../assignments/problem-sets.html">here</a>.</p>
+<p>You can find the GitHub Classroom link to download the template repository on the <a href="https://edstem.org/us/courses/43339/resources">Ed Board</a></p>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>In this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using <code>ggplot</code>. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.</p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>country</code></td>
+<td style="text-align: left;">name of the country</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>continent</code></td>
+<td style="text-align: left;">name of the country’s continent</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>year</code></td>
+<td style="text-align: left;">year of the measurement, ranging from 1952 to 2007 in 5-year increments</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>lifeExp</code></td>
+<td style="text-align: left;">life expectancy at birth, in years</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pop</code></td>
+<td style="text-align: left;">population</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>gdpPercap</code></td>
+<td style="text-align: left;">GDP per capita (US dollars, inflation-adjusted)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTE</strong>: In the template you’ll get from GitHub Classroom, the default settings for chunks is to only show the output of the chunk, not the code that generated it (<code>echo = FALSE</code>). This is to give your answers a clean look and to highlight the output rather than the source code. The template also has a part that will dump all of the R code at the end so that we can look at it if needed.</p>
 </section>
-<section id="installing-the-gov-50-tutorials-package" class="level2">
-<h2 class="anchored" data-anchor-id="installing-the-gov-50-tutorials-package">Installing the Gov 50 tutorials package</h2>
-<p>Our tutorials will be hosted on an external website so that you should not have to install any packages on your own computer. However, occasionally the server will become slow or unresponsive when there are many students trying to complete the tutorial at once. When this happens, you can install the tutorials locally to your RStudio. To install the package that contains the tutorials for the class run the following lines of code, each entered separately. Note that you may be asked to update packages when you enter this code. You can select 1 for “All” to perform any updates.</p>
+<section id="question-1-5-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-5-points">Question 1 (5 points)</h2>
+<p>Make sure that you load the <code>gapminder</code> and <code>tidyverse</code> packages in the setup chunk (right after the header). For this question, use the <code>glimpse</code> function to show basic information about the <code>gapminder</code> dataset. In the main text (that is, outside of a code chunk), tell us how many rows and columns there are in the data set and which of the variables are factors.</p>
+<p><strong>Rubric</strong>: 2 write-up points for using the glimpse function; 2 points for reporting the dimension of the data; 1 point for identifying factors.</p>
+</section>
+<section id="question-2-10-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-10-points">Question 2 (10 points)</h2>
+<p>Let’s investigate how life expectancy varies across the continents. Using <code>ggplot</code>, we want you to recreate the following figure:</p>
+<p><img src="figures/life_exp_boxplot.png" class="img-fluid"></p>
+<p>These are boxplots of the distribution of life expectancy in each continent. Please make sure that you include the labels as shown in this figure. For the autograder to be able to process your plot, you should assign your the output of your <code>ggplot</code> call to <code>plot_q2</code> and then evaluate <code>plot_q2</code> to ensure that the plot is produced in the output. That is, your code should look like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"kosukeimai/qss-package"</span>, <span class="at">build_vignettes =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"rstudio/learnr"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"rstudio-education/gradethis"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mattblackwell/gov50tutor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plot_q2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="sc">&lt;</span>arguments<span class="sc">&gt;</span>) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  geom_<span class="sc">&lt;</span>type<span class="sc">&gt;</span>(<span class="sc">&lt;</span>arguments<span class="sc">&gt;</span>) <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  ...</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>plot_q2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>After the package has been installed, you should be able to find all of the tutorials for the course in the “Tutorials” tab in the top-right pane of RStudio. Scroll down to find a Gov 50 tutorial and click “Start Tutorial” to launch a tutorial:</p>
-<p><img src="../files/img/assignments/rstudio-tutorials.png" class="img-fluid" alt="RStudio Tutorials Tab"></p>
-<p>If you do not see any QSS tutorials after scrolling to the bottom, try to restart RStudio, and check again. If you still don’t see any tutorials, confirm that you have installed the package by running <code>library(gov50tutor)</code>. If you get an error about the package not being installed, try the above installation procedure again and note any error messages you receive before reaching out to the teaching staff for assistance.</p>
+<p><strong>Note:</strong> in the raw Rmd file for this problem set, you’ll notice the above code chunk has the argument <code>eval = FALSE</code>. This tells Rmarkdown not to try to run the code, since it’s not complete. If you copy and paste this chunk below, be sure to remove that argument to ensure the code runs properly.</p>
+<p><strong>Rubric</strong>: 10 autograder points.</p>
 </section>
-<section id="faqs" class="level2">
-<h2 class="anchored" data-anchor-id="faqs">FAQs</h2>
-<section id="what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download" class="level3">
-<h3 class="anchored" data-anchor-id="what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download">What if I receive an error about <code>pdflatex</code> and the submission report doesn’t download?</h3>
-<p>To generate the reports, you need something called LaTeX. You should have installed this with <a href="../assignments/00-problem-set.html">Problem Set 0</a>, but the following command will install it:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="question-3-5-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-5-points">Question 3 (5 points)</h2>
+<p>Looking at the previous plot, which continent has the highest median life expectancy? Which part of the boxplot can we determine this from?</p>
+<p><strong>Rubric</strong>: 5 write up points (2 for identifying the correct continent, 3 for correctly identifying how to find this on the boxplot)</p>
 </section>
-<section id="what-if-i-dont-see-a-tutorial-tab-in-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="what-if-i-dont-see-a-tutorial-tab-in-rstudio">What if I don’t see a Tutorial tab in RStudio?</h3>
-<p>Make sure that you have RStudio version 1.3 or higher installed on your computer. On a Mac, you can check the version by going to the top left of the menu bar (next to the Apple logo) and clicking on “RStudio” then “About RStudio”. On a Windows PC, you can find the same item under File &gt; About.</p>
-</section>
-<section id="what-if-my-submission-report-misses-some-of-my-attempts" class="level3">
-<h3 class="anchored" data-anchor-id="what-if-my-submission-report-misses-some-of-my-attempts">What if my submission report misses some of my attempts?</h3>
-<p>The submission report isn’t perfect and will sometimes say you didn’t attempt a question when you actually did. We do not grade strictly on this and are mostly looking for a confirmation that you made a good-faith effort to complete the tutorial.</p>
+<section id="question-4-15-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-4-15-points">Question 4 (15 points)</h2>
+<p>The previous boxplot groups all the years together into one boxplot, but what if we want to understand how life expectancy is changing over time? Next, we will recreate the following plot:</p>
+<p><img src="figures/life_exp_facet.png" class="img-fluid"></p>
+<p>The plot shows each country’s life expectancy trajectory over time, broken out by continent with smoothed average lines overlayed for each continent. To get started, we’ll give you a few clues about what we’ve done here:</p>
+<ul>
+<li>The lines for each country use the color <code>"gray70"</code>.</li>
+<li>The <code>linewidth</code> of the smoothed line is 1.1 and the method used is the loess smoother. We also have turned off the standard errors.</li>
+<li>Make sure that the facets are all on one row. Look at the <a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html"><code>facet_wrap</code></a> documentation if need help with this.</li>
+<li>Make sure that the labels are correctly specified.</li>
+<li>Use the chunk options <code>fig.width = 11</code> and <code>fig.height = 4</code> to shrink the font size so the year labels will not overlap.</li>
+</ul>
+<p>Finally, assign the output of your <code>ggplot</code> call to <code>plot_q4</code> and then evaluate <code>plot_q4</code> (similarly to what you did in Question 2).</p>
+<p><strong>Rubric</strong>: 15 autograder points.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

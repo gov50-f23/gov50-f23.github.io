@@ -347,7 +347,7 @@
     "href": "assignments/index.html#problem-sets",
     "title": "Assignments",
     "section": "Problem Sets",
-    "text": "Problem Sets\n\nSubmission guide for problem sets\nProblem set 0: Setting up R, RStudio, and GitHub"
+    "text": "Problem Sets\n\nSubmission guide for problem sets\nProblem set 0: Setting up R, RStudio, and GitHub\nProblem set 1: Data visualization"
   },
   {
     "objectID": "assignments/index.html#final-project",
@@ -406,13 +406,6 @@
     "text": "More information on distill authoring\nThe basics of distill are very similar to the basics of the Rmd files that you have been working with. You can also check out the distill website for more information on the basics of authoring distill articles."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "assignments/00-problem-set.html",
     "href": "assignments/00-problem-set.html",
     "title": "Getting Started with R, R Studio, Git, and Github",
@@ -439,6 +432,55 @@
     "title": "Getting Started with R, R Studio, Git, and Github",
     "section": "Working with a project in RStudio",
     "text": "Working with a project in RStudio\nYou’ll see in the bottom right window of RStudio you’ll now see the files from your Github project.\n\nLet’s edit the README file by clicking on README.md in that file pane and you’ll be able to edit it in the top-left pane. Change the header from # gov-50-problem-set0 to # Introduction and save the file (⌘+S or Ctrl+S). If you click on the “Git” tab in the top right panel, you will a list of the changes you’ve made to the repo since the last commit (you can think of a commit as a more permanent type of saving work to the git repo).\n\nOne thing you’ll notice here is that git thinks that gov50-problem-set0.Rproj is a file that maybe should go into the repo. But this file is just for our local copy of RStudio and shouldn’t really go into the repo. To prevent git from bothering us about it every time we open something, we can modify the .gitignore file to tell git to ignore certain files. Open .gitignore and add a new line with *.Rproj on it to tell git to ignore any file with the extension .Rproj. Make sure to save the file.\n\nIf you go back to the Git tab in the top right and refresh (little circular arrow in the top right corner), you see that gov50-problem-set0.Rproj is removed from our list. Now we are ready to commit our changes. Click the “Staged” box for .gitignore and README.md and hit the “Commit” button just above the file list. You’ll see a window with the changes that you are about to commit.\n\nYou can click on different files to see what exactly you are changing. Add a short but informative commit message that describes what you are committing and hit “Commit”. Once this completes, you can hit the “Push” button in the top right to push that commit back to Github.\n\nIf you go back to your repo’s homepage on Github and refresh the page, you’ll see the updates to your README file and the new .gitignore.\n\nAnd you’re done! You’ve just created your first repo."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html",
+    "href": "assignments/01_hw_data_viz.html",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "",
+    "text": "This problem set is due on September 20, 2023 at 11:59pm.\nYou can find instructions for obtaining and submitting problem sets here.\nYou can find the GitHub Classroom link to download the template repository on the Ed Board"
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#background",
+    "href": "assignments/01_hw_data_viz.html#background",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Background",
+    "text": "Background\nIn this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using ggplot. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncountry\nname of the country\n\n\ncontinent\nname of the country’s continent\n\n\nyear\nyear of the measurement, ranging from 1952 to 2007 in 5-year increments\n\n\nlifeExp\nlife expectancy at birth, in years\n\n\npop\npopulation\n\n\ngdpPercap\nGDP per capita (US dollars, inflation-adjusted)\n\n\n\n\n\n\n\nNOTE: In the template you’ll get from GitHub Classroom, the default settings for chunks is to only show the output of the chunk, not the code that generated it (echo = FALSE). This is to give your answers a clean look and to highlight the output rather than the source code. The template also has a part that will dump all of the R code at the end so that we can look at it if needed."
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#question-1-5-points",
+    "href": "assignments/01_hw_data_viz.html#question-1-5-points",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Question 1 (5 points)",
+    "text": "Question 1 (5 points)\nMake sure that you load the gapminder and tidyverse packages in the setup chunk (right after the header). For this question, use the glimpse function to show basic information about the gapminder dataset. In the main text (that is, outside of a code chunk), tell us how many rows and columns there are in the data set and which of the variables are factors.\nRubric: 2 write-up points for using the glimpse function; 2 points for reporting the dimension of the data; 1 point for identifying factors."
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#question-2-10-points",
+    "href": "assignments/01_hw_data_viz.html#question-2-10-points",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Question 2 (10 points)",
+    "text": "Question 2 (10 points)\nLet’s investigate how life expectancy varies across the continents. Using ggplot, we want you to recreate the following figure:\n\nThese are boxplots of the distribution of life expectancy in each continent. Please make sure that you include the labels as shown in this figure. For the autograder to be able to process your plot, you should assign your the output of your ggplot call to plot_q2 and then evaluate plot_q2 to ensure that the plot is produced in the output. That is, your code should look like this:\n\nplot_q2 &lt;- ggplot(&lt;arguments&gt;) +\n  geom_&lt;type&gt;(&lt;arguments&gt;) +\n  ...\n\nplot_q2\n\nNote: in the raw Rmd file for this problem set, you’ll notice the above code chunk has the argument eval = FALSE. This tells Rmarkdown not to try to run the code, since it’s not complete. If you copy and paste this chunk below, be sure to remove that argument to ensure the code runs properly.\nRubric: 10 autograder points."
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#question-3-5-points",
+    "href": "assignments/01_hw_data_viz.html#question-3-5-points",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Question 3 (5 points)",
+    "text": "Question 3 (5 points)\nLooking at the previous plot, which continent has the highest median life expectancy? Which part of the boxplot can we determine this from?\nRubric: 5 write up points (2 for identifying the correct continent, 3 for correctly identifying how to find this on the boxplot)"
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#question-4-15-points",
+    "href": "assignments/01_hw_data_viz.html#question-4-15-points",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Question 4 (15 points)",
+    "text": "Question 4 (15 points)\nThe previous boxplot groups all the years together into one boxplot, but what if we want to understand how life expectancy is changing over time? Next, we will recreate the following plot:\n\nThe plot shows each country’s life expectancy trajectory over time, broken out by continent with smoothed average lines overlayed for each continent. To get started, we’ll give you a few clues about what we’ve done here:\n\nThe lines for each country use the color \"gray70\".\nThe linewidth of the smoothed line is 1.1 and the method used is the loess smoother. We also have turned off the standard errors.\nMake sure that the facets are all on one row. Look at the facet_wrap documentation if need help with this.\nMake sure that the labels are correctly specified.\nUse the chunk options fig.width = 11 and fig.height = 4 to shrink the font size so the year labels will not overlap.\n\nFinally, assign the output of your ggplot call to plot_q4 and then evaluate plot_q4 (similarly to what you did in Question 2).\nRubric: 15 autograder points."
   },
   {
     "objectID": "assignments/final-project.html",
