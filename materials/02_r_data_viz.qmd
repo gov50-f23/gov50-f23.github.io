@@ -30,6 +30,6 @@ remotes::install_github("mattblackwell/gov50data")
   - Code: [`lecture3.Rmd`](/files/code/lecture3.Rmd)
 
 
-<!-- - Thursday (9/14) lecture: Data Wrangling -->
-<!--   - [PDF of slides as I present them](/slides/04_data_wrangling.pdf) -->
-<!--   - [PDF of handout version of slides](/slides/04_data_wrangling_handout.pdf) (no incremental slides) -->
+- Thursday (9/14) lecture: Data Wrangling
+  - [PDF of slides as I present them](/slides/04_data_wrangling.pdf)
+  - [PDF of handout version of slides](/slides/04_data_wrangling_handout.pdf) (no incremental slides)

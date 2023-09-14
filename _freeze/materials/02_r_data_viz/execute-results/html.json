@@ -1,8 +1,10 @@
 {
-  "hash": "c2ed0954a1665f2f88b1262b3d1f2f54",
+  "hash": "92dff4ce9b10ed36d27570c777840305",
   "result": {
-    "markdown": "---\ntitle: \"Data Visualization and Data Wrangling\"\ndate: 2023-09-11\n---\n\n\n\n## Readings \n\n- Tuesday: [Chapter 2 of Modern Dive](https://moderndive.com/2-viz.html)\n- Thursday: [Chapter 3 of Modern Dive](https://moderndive.com/3-wrangling.html)\n- Finish [Problem Set 0](/assignments/00-problem-set.html)\n\n\n\n## Data\n\n- Install the Gov 50 data package that has new data for this week:\n\n::: {.cell}\n\n```{.r .cell-code}\nremotes::install_github(\"mattblackwell/gov50data\")\n```\n:::\n\n\n\n## Slides and Code\n\n \n- Tuesday (9/12) lecture:\n  - [PDF of slides as I present them](/slides/03_data_viz.pdf)\n  - [PDF of handout version of slides](/slides/03_data_viz_handout.pdf) (no incremental slides)\n  - Code: [`lecture3.Rmd`](/files/code/lecture3.Rmd)\n\n\n<!-- - Thursday (9/14) lecture: Data Wrangling -->\n<!--   - [PDF of slides as I present them](/slides/04_data_wrangling.pdf) -->\n<!--   - [PDF of handout version of slides](/slides/04_data_wrangling_handout.pdf) (no incremental slides) -->\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Data Visualization and Data Wrangling\"\ndate: 2023-09-11\n---\n\n\n\n## Readings \n\n- Tuesday: [Chapter 2 of Modern Dive](https://moderndive.com/2-viz.html)\n- Thursday: [Chapter 3 of Modern Dive](https://moderndive.com/3-wrangling.html)\n- Finish [Problem Set 0](/assignments/00-problem-set.html)\n\n\n\n## Data\n\n- Install the Gov 50 data package that has new data for this week:\n\n::: {.cell}\n\n```{.r .cell-code}\nremotes::install_github(\"mattblackwell/gov50data\")\n```\n:::\n\n\n\n## Slides and Code\n\n \n- Tuesday (9/12) lecture:\n  - [PDF of slides as I present them](/slides/03_data_viz.pdf)\n  - [PDF of handout version of slides](/slides/03_data_viz_handout.pdf) (no incremental slides)\n  - Code: [`lecture3.Rmd`](/files/code/lecture3.Rmd)\n\n\n- Thursday (9/14) lecture: Data Wrangling\n  - [PDF of slides as I present them](/slides/04_data_wrangling.pdf)\n  - [PDF of handout version of slides](/slides/04_data_wrangling_handout.pdf) (no incremental slides)\n",
+    "supporting": [
+      "02_r_data_viz_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
