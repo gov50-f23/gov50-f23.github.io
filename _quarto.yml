@@ -58,6 +58,23 @@ website:
           contents:
             - text: "Problem Set 0"
               file: assignments/00-problem-set.qmd
+            - text: "Problem Set 1"
+              file: assignments/01_hw_data_viz.qmd
+            # - text: "Problem Set 2"
+            #   file: assignments/02_hw_data_wrangling.qmd
+            # - text: "Problem Set 3"
+            #   file: assignments/03_hw_causality.qmd
+            # - text: "Problem Set 4"
+            #   file: assignments/04_hw_summarizing.qmd
+            # - text: "Problem Set 5"
+            #   file: assignments/05_hw_regression.qmd
+            # - text: "Problem Set 6"
+            #   file: assignments/06_hw_sampling.qmd              
+            # - text: "Problem Set 7"
+            #   file: assignments/07_hw_bootstrap.qmd              
+            # - text: "Problem Set 8"
+            #   file: assignments/08_hw_hyp_tests.qmd              
+
 format:
   html:
     theme:

@@ -18,7 +18,7 @@ title: "Assignments"
 
 - [Submission guide for problem sets](/assignments/problem-sets.html)
 - [Problem set 0: Setting up R, RStudio, and GitHub](/assignments/00-problem-set.html)
-
+- [Problem set 1: Data visualization](/assignments/01_hw_data_viz.qmd)
 
 ## Final Project 
 
