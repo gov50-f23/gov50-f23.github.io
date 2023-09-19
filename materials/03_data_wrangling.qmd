@@ -1,12 +1,14 @@
 ---
-title: "Data Transformation and Wrangling"
-date: 2022-09-13
+title: "Data Transformation and Causality"
+date: 2023-09-18
 ---
 
 
 ## Readings 
 
 - [Chapter 3 of Modern Dive](https://moderndive.com/3-wrangling.html)
+- [Chapter 2.1-2.2 of QSS](https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science)
+
 
 ## Data
 
@@ -18,11 +20,13 @@ remotes::install_github("mattblackwell/gov50data")
 
 ## Slides and Code
 
-- Tuesday (9/13) lecture: Data Wrangling
-  - [PDF of slides as I present them](/slides/04_data_wrangling.pdf)
-  - [PDF of handout version of slides](/slides/04_data_wrangling_handout.pdf) (no incremental slides)
 
-- Thursday (9/15) lecture: Data Wrangling and Barplots
+- Tuesday (9/19) lecture: Data Wrangling and Barplots
   - [PDF of slides as I present them](/slides/05_data_wrangling.pdf)
   - [PDF of handout version of slides](/slides/05_data_wrangling_handout.pdf) (no incremental slides)
-  - Code: [`news.Rmd`](/files/code/news.Rmd) 
+  <!-- - Code: [`news.Rmd`](/files/code/news.Rmd)  -->
+
+<!-- - Thursday (9/21) lecture: Causality -->
+<!--   - [PDF of slides as I present them](/slides/06_causality.pdf) -->
+<!--   - [PDF of handout version of slides](/slides/06_causality_handout.pdf) (no incremental slides) -->
+<!--   - Code: [`transphobia.Rmd`](/files/code/transphobia.Rmd) -->

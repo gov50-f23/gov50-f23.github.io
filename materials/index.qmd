@@ -11,3 +11,4 @@ Each class session has a set of required readings that you should complete ***be
 2. [Introduction to R and RStudio](/slides/02_rintro_data_viz_handout.pdf)
 3. [Data Visualization](/slides/03_data_viz_handout.pdf)
 4. [Data Wrangling](/slides/04_data_wrangling_handout.pdf)
+5. [Data Wrangling and Barplots](/slides/05_data_wrangling_handout.pdf)

@@ -39,10 +39,34 @@ website:
             - materials/index.qmd
         - section: "Course Materials"
           contents:
-            - text: "0: Introduction to Gov 50"
+            - text: "1: Introduction to Gov 50"
               file: materials/01_intro.qmd
-            - text: "1: Data Visualization and Wrangling"
+            - text: "2: Data Visualization and Wrangling"
               file: materials/02_r_data_viz.qmd
+            - text: "3: Data Wrangling and Causality"
+              file: materials/03_data_wrangling.qmd
+            # - text: "3: Causality"
+            #   file: materials/04_causality.qmd
+            # - text: "4: Summarizing and Measurement"
+            #   file: materials/05_measurement.qmd
+            # - text: "5: Relationships, Functions, and Importing/Tidying Data"
+            #   file: materials/06_bivariate_tidying.qmd
+            # - text: "6: Prediction and Regression"
+            #   file: materials/07_prediction.qmd
+            # - text: "7: More Regression"
+            #   file: materials/08_regression.qmd
+            # - text: "8: Sampling"
+            #   file: materials/09_sampling.qmd
+            # - text: "9: Bootstrap and Confidence Intervals"
+            #   file: materials/10_bootstrap.qmd
+            # - text: "10: Hypothesis Testing"
+            #   file: materials/11_hyp_tests.qmd
+            # - text: "11: More Tests and Mathematical Models"
+            #   file: materials/12_tests_models.qmd
+            # - text: "12: More Mathematical Models"
+            #   file: materials/13_models.qmd
+            # - text: "13: Inference for Regression"
+            #   file: materials/14_ols_inference.qmd
               
     - title: "Assignments"
       style: "docked"
