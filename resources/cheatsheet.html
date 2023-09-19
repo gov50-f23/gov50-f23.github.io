@@ -168,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#installing-and-loading-a-package" id="toc-installing-and-loading-a-package" class="nav-link" data-scroll-target="#installing-and-loading-a-package">Installing and loading a package</a></li>
   <li><a href="#calling-functions-from-specific-packages" id="toc-calling-functions-from-specific-packages" class="nav-link" data-scroll-target="#calling-functions-from-specific-packages">Calling functions from specific packages</a></li>
   </ul></li>
-  <li><a href="#data-visualization-week-1" id="toc-data-visualization-week-1" class="nav-link" data-scroll-target="#data-visualization-week-1">Data Visualization (week 1)</a>
+  <li><a href="#data-visualization-week-2" id="toc-data-visualization-week-2" class="nav-link" data-scroll-target="#data-visualization-week-2">Data Visualization (Week 2)</a>
   <ul class="collapse">
   <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot">Scatter plot</a></li>
   <li><a href="#smoothed-curves" id="toc-smoothed-curves" class="nav-link" data-scroll-target="#smoothed-curves">Smoothed curves</a></li>
@@ -179,6 +179,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#mapping-aesthetics-for-a-single-geom" id="toc-mapping-aesthetics-for-a-single-geom" class="nav-link" data-scroll-target="#mapping-aesthetics-for-a-single-geom">Mapping aesthetics for a single geom</a></li>
   <li><a href="#setting-the-aesthetics-for-all-observations" id="toc-setting-the-aesthetics-for-all-observations" class="nav-link" data-scroll-target="#setting-the-aesthetics-for-all-observations">Setting the aesthetics for all observations</a></li>
   <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
+  </ul></li>
+  <li><a href="#data-wrangling-week-2-3" id="toc-data-wrangling-week-2-3" class="nav-link" data-scroll-target="#data-wrangling-week-2-3">Data Wrangling (week 2-3)</a>
+  <ul class="collapse">
+  <li><a href="#subsetting-a-data-frame" id="toc-subsetting-a-data-frame" class="nav-link" data-scroll-target="#subsetting-a-data-frame">Subsetting a data frame</a></li>
+  <li><a href="#filtering-to-the-largestsmallest-values-of-a-variable" id="toc-filtering-to-the-largestsmallest-values-of-a-variable" class="nav-link" data-scroll-target="#filtering-to-the-largestsmallest-values-of-a-variable">Filtering to the largest/smallest values of a variable</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -363,8 +368,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="data-visualization-week-1" class="level2">
-<h2 class="anchored" data-anchor-id="data-visualization-week-1">Data Visualization (week 1)</h2>
+<section id="data-visualization-week-2" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualization-week-2">Data Visualization (Week 2)</h2>
 <section id="scatter-plot" class="level3">
 <h3 class="anchored" data-anchor-id="scatter-plot">Scatter plot</h3>
 <p>You can produce a scatter plot with using the <code>x</code> and <code>y</code> aesthetics along with the <code>geom_point()</code> function.</p>
@@ -387,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</code></pre>
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="cheatsheet_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
@@ -403,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> percbelowpoverty)) <span class="sc">+</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula 'y ~ x'</code></pre>
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="cheatsheet_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
@@ -421,7 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula 'y ~ x'</code></pre>
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="cheatsheet_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
@@ -444,7 +449,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Among Counties in the Midwest"</span>,</span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">source =</span> <span class="st">"US Census, 2000"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula 'y ~ x'</code></pre>
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="cheatsheet_files/figure-html/labels-1.png" class="img-fluid" width="672"></p>
@@ -464,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</code></pre>
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="cheatsheet_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
@@ -482,7 +487,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</code></pre>
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="cheatsheet_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
@@ -500,7 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'loess' and formula 'y ~ x'</code></pre>
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="cheatsheet_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
@@ -518,6 +523,169 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output-display">
 <p><img src="cheatsheet_files/figure-html/histogram-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="data-wrangling-week-2-3" class="level2">
+<h2 class="anchored" data-anchor-id="data-wrangling-week-2-3">Data Wrangling (week 2-3)</h2>
+<section id="subsetting-a-data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="subsetting-a-data-frame">Subsetting a data frame</h3>
+<p>Use the <code>filter()</code> function from the <code>dplyr</code> package to subset a data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gov50data)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weekday <span class="sc">==</span> <span class="st">"Tue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 626 × 10
+   callsign affiliation date       weekday ideology national_politics
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+ 1 KPAX     CBS         2017-06-06 Tue     NA                 0.00357
+ 2 KTAB     CBS         2017-06-06 Tue     NA                 0.0945 
+ 3 KAEF     ABC         2017-06-13 Tue      0.0242            0.180  
+ 4 KBVU     FOX         2017-06-13 Tue      0.00894           0.186  
+ 5 KBZK     CBS         2017-06-13 Tue      0.129             0.306  
+ 6 KCVU     FOX         2017-06-13 Tue      0.114             0.124  
+ 7 KECI     NBC         2017-06-13 Tue      0.115             0.283  
+ 8 KHSL     CBS         2017-06-13 Tue      0.0821            0.274  
+ 9 KNVN     NBC         2017-06-13 Tue      0.120             0.261  
+10 KPAX     CBS         2017-06-13 Tue      0.0984            0.208  
+# ℹ 616 more rows
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+<p>You can filter based on multiple conditions to subset to the rows that meet all conditions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weekday <span class="sc">==</span> <span class="st">"Tue"</span>,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>         affiliation <span class="sc">==</span> <span class="st">"FOX"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 130 × 10
+   callsign affiliation date       weekday ideology national_politics
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+ 1 KBVU     FOX         2017-06-13 Tue      0.00894            0.186 
+ 2 KCVU     FOX         2017-06-13 Tue      0.114              0.124 
+ 3 WEMT     FOX         2017-06-13 Tue      0.235              0.149 
+ 4 WYDO     FOX         2017-06-13 Tue      0.0949             0.182 
+ 5 KBVU     FOX         2017-06-20 Tue     NA                  0.0229
+ 6 KCVU     FOX         2017-06-20 Tue     NA                  0.0170
+ 7 KXVA     FOX         2017-06-20 Tue     NA                  0.0203
+ 8 WEMT     FOX         2017-06-20 Tue      0.268              0.134 
+ 9 WYDO     FOX         2017-06-20 Tue      0.0590             0.155 
+10 KBVU     FOX         2017-06-27 Tue     NA                  0.0601
+# ℹ 120 more rows
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+<p>You can use the <code>|</code> operator to match one of two conditions (“OR” rather than “AND”):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(affiliation <span class="sc">==</span> <span class="st">"FOX"</span> <span class="sc">|</span> affiliation <span class="sc">==</span> <span class="st">"ABC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,525 × 10
+   callsign affiliation date       weekday  ideology national_politics
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;       &lt;dbl&gt;             &lt;dbl&gt;
+ 1 KXVA     FOX         2017-06-05 Mon     NA                  0.0393 
+ 2 KTMF     ABC         2017-06-07 Wed      0.0842             0.152  
+ 3 KTXS     ABC         2017-06-07 Wed     -0.000488           0.0925 
+ 4 KXVA     FOX         2017-06-07 Wed     NA                  0.00718
+ 5 KAEF     ABC         2017-06-08 Thu      0.0426             0.213  
+ 6 KBVU     FOX         2017-06-08 Thu     -0.0860             0.169  
+ 7 KTMF     ABC         2017-06-08 Thu      0.0433             0.179  
+ 8 KTXS     ABC         2017-06-08 Thu      0.0627             0.158  
+ 9 KXVA     FOX         2017-06-08 Thu     NA                  0.0124 
+10 WCTI     ABC         2017-06-08 Thu      0.139              0.225  
+# ℹ 1,515 more rows
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+<p>To test if a variable is one of several possible values, you can also use the <code>%in%</code> command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weekday <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Mon"</span>, <span class="st">"Fri"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,253 × 10
+   callsign affiliation date       weekday ideology national_politics
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+ 1 KRBC     NBC         2017-06-05 Mon      NA                 0.0286
+ 2 KTAB     CBS         2017-06-05 Mon      NA                 0.0286
+ 3 KXVA     FOX         2017-06-05 Mon      NA                 0.0393
+ 4 KAEF     ABC         2017-06-09 Fri       0.0870            0.153 
+ 5 KBVU     FOX         2017-06-09 Fri      NA                 0.0553
+ 6 KECI     NBC         2017-06-09 Fri       0.115             0.216 
+ 7 KPAX     CBS         2017-06-09 Fri       0.0882            0.315 
+ 8 KRBC     NBC         2017-06-09 Fri       0.0929            0.152 
+ 9 KTAB     CBS         2017-06-09 Fri       0.0588            0.0711
+10 KTMF     ABC         2017-06-09 Fri      NA                 0.0495
+# ℹ 1,243 more rows
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+<p>If you want to subset to a set of specific row numbers, you can use the <code>slice</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="do">## subset to the first 5 rows</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 10
+  callsign affiliation date       weekday ideology national_politics
+  &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+1 KRBC     NBC         2017-06-05 Mon           NA           0.0286 
+2 KTAB     CBS         2017-06-05 Mon           NA           0.0286 
+3 KXVA     FOX         2017-06-05 Mon           NA           0.0393 
+4 KPAX     CBS         2017-06-06 Tue           NA           0.00357
+5 KTAB     CBS         2017-06-06 Tue           NA           0.0945 
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+<p>Here the <code>1:5</code> syntax tells R to produce a vector that starts at 1 and ends at 5, incrementing by 1:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+</section>
+<section id="filtering-to-the-largestsmallest-values-of-a-variable" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-to-the-largestsmallest-values-of-a-variable">Filtering to the largest/smallest values of a variable</h3>
+<p>To subset to the rows that have the largest or smallest values of a given variable, use the <code>slice_max</code> and <code>slice_max</code> functions. For the largest values, use <code>slice_max</code> and use the <code>n</code> argument to specify how many rows you want:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(ideology, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 10
+  callsign affiliation date       weekday ideology national_politics
+  &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+1 KAEF     ABC         2017-06-19 Mon        0.778            0.0823
+2 WYDO     FOX         2017-07-19 Wed        0.580            0.126 
+3 KRCR     ABC         2017-10-03 Tue        0.566            0.123 
+4 KAEF     ABC         2017-10-18 Wed        0.496            0.0892
+5 KBVU     FOX         2017-11-16 Thu        0.491            0.159 
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+<p>To get lowest values, use <code>slice_min</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(ideology, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 10
+  callsign affiliation date       weekday ideology national_politics
+  &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+1 KRBC     NBC         2017-10-19 Thu       -0.674            0.0731
+2 WJHL     CBS         2017-12-08 Fri       -0.673            0.0364
+3 KRBC     NBC         2017-10-18 Wed       -0.586            0.0470
+4 KCVU     FOX         2017-06-22 Thu       -0.414            0.158 
+5 KRBC     NBC         2017-12-11 Mon       -0.365            0.0674
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
 </div>
 </div>
 
