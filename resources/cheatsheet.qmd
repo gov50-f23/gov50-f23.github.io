@@ -50,7 +50,7 @@ We can also use the `mypackage::` prefix to access package functions without loa
 knitr::kable(head(mtcars))
 ```
 
-## Data Visualization (week 1)
+## Data Visualization (Week 2)
 
 ### Scatter plot
 
@@ -169,4 +169,75 @@ ggplot(data = midwest,
 ggplot(data = midwest,
        mapping = aes(x = percbelowpoverty)) +
   geom_histogram()
+```
+
+
+## Data Wrangling (week 2-3)
+
+### Subsetting a data frame
+
+Use the `filter()` function from the `dplyr` package to subset a data frame.
+
+
+```{r}
+library(gov50data)
+
+news |>
+  filter(weekday == "Tue")
+```
+
+
+You can filter based on multiple conditions to subset to the rows that meet all conditions:
+
+
+```{r}
+news |>
+  filter(weekday == "Tue",
+         affiliation == "FOX")
+```
+
+
+You can use the `|` operator to match one of two conditions ("OR" rather than "AND"):
+
+```{r}
+news |>
+  filter(affiliation == "FOX" | affiliation == "ABC")
+```
+
+To test if a variable is one of several possible values, you can also use the `%in%` command:
+
+```{r}
+news |>
+  filter(weekday %in% c("Mon", "Fri"))
+```
+
+If you want to subset to a set of specific row numbers, you can use the `slice` function:
+
+```{r}
+## subset to the first 5 rows
+news |>
+  slice(1:5)
+```
+
+
+Here the `1:5` syntax tells R to produce a vector that starts at 1 and ends at 5, incrementing by 1:
+
+```{r}
+1:5
+```
+
+### Filtering to the largest/smallest values of a variable
+
+To subset to the rows that have the largest or smallest values of a given variable, use the `slice_max` and `slice_max` functions. For the largest  values, use `slice_max` and use the `n` argument to specify how many rows you want:
+
+```{r}
+news |>
+  slice_max(ideology, n = 5)
+```
+
+To get lowest values, use `slice_min`:
+
+```{r}
+news |>
+  slice_min(ideology, n = 5)
 ```
