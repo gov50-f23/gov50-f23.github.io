@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots"
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality"
   },
   {
     "objectID": "materials/13_models.html",
@@ -270,7 +270,7 @@
     "href": "materials/03_data_wrangling.html#slides-and-code",
     "title": "Data Transformation and Causality",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (9/19) lecture: Data Wrangling and Barplots\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (9/19) lecture: Data Wrangling and Barplots\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides) \n\nThursday (9/21) lecture: Causality\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/01_intro.html",
