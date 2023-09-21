@@ -2,130 +2,134 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/syllabus.html</loc>
-    <lastmod>2023-09-20T19:15:35.011Z</lastmod>
+    <lastmod>2023-09-21T14:16:50.188Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/schedule.html</loc>
-    <lastmod>2023-09-20T19:15:33.367Z</lastmod>
+    <lastmod>2023-09-21T14:16:48.476Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/resources/speaker-series.html</loc>
-    <lastmod>2023-09-20T19:15:31.127Z</lastmod>
+    <lastmod>2023-09-21T14:16:46.228Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/resources/index.html</loc>
-    <lastmod>2023-09-20T19:15:30.331Z</lastmod>
+    <lastmod>2023-09-21T14:16:45.408Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/index.html</loc>
-    <lastmod>2023-09-20T19:15:29.111Z</lastmod>
+    <lastmod>2023-09-21T14:16:44.224Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/13_models.html</loc>
-    <lastmod>2023-09-20T19:15:28.179Z</lastmod>
+    <lastmod>2023-09-21T14:16:43.288Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/11_hyp_tests.html</loc>
-    <lastmod>2023-09-20T19:15:27.503Z</lastmod>
+    <lastmod>2023-09-21T14:16:42.592Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/09_sampling.html</loc>
-    <lastmod>2023-09-20T19:15:26.331Z</lastmod>
+    <lastmod>2023-09-21T14:16:41.396Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/07_prediction.html</loc>
-    <lastmod>2023-09-20T19:15:25.191Z</lastmod>
+    <lastmod>2023-09-21T14:16:40.212Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/05_measurement.html</loc>
-    <lastmod>2023-09-20T19:15:23.935Z</lastmod>
+    <lastmod>2023-09-21T14:16:38.912Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/03_data_wrangling.html</loc>
-    <lastmod>2023-09-20T19:15:22.803Z</lastmod>
+    <lastmod>2023-09-21T14:16:37.748Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/01_intro.html</loc>
-    <lastmod>2023-09-20T19:15:21.659Z</lastmod>
+    <lastmod>2023-09-21T14:16:36.576Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/assignments/tutorials.html</loc>
-    <lastmod>2023-09-20T19:15:20.667Z</lastmod>
+    <lastmod>2023-09-21T14:16:35.528Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/assignments/index.html</loc>
-    <lastmod>2023-09-20T19:15:19.427Z</lastmod>
+    <lastmod>2023-09-21T14:16:34.280Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/assignments/distill.html</loc>
-    <lastmod>2023-09-20T19:15:18.347Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/gov50-f23/gov50-f23.github.io/assignments/00-problem-set.html</loc>
-    <lastmod>2023-09-20T19:15:16.991Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/gov50-f23/gov50-f23.github.io/about.html</loc>
-    <lastmod>2023-09-20T19:15:15.703Z</lastmod>
+    <lastmod>2023-09-21T14:16:33.207Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/assignments/01_hw_data_viz.html</loc>
-    <lastmod>2023-09-20T19:15:17.715Z</lastmod>
+    <lastmod>2023-09-21T14:16:31.795Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/gov50-f23/gov50-f23.github.io/about.html</loc>
+    <lastmod>2023-09-21T14:16:29.767Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/gov50-f23/gov50-f23.github.io/assignments/00-problem-set.html</loc>
+    <lastmod>2023-09-21T14:16:31.055Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/gov50-f23/gov50-f23.github.io/assignments/02_hw_data_wrangling.html</loc>
+    <lastmod>2023-09-21T14:16:32.571Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/assignments/final-project.html</loc>
-    <lastmod>2023-09-20T19:15:19.023Z</lastmod>
+    <lastmod>2023-09-21T14:16:33.899Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/assignments/problem-sets.html</loc>
-    <lastmod>2023-09-20T19:15:20.039Z</lastmod>
+    <lastmod>2023-09-21T14:16:34.888Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/index.html</loc>
-    <lastmod>2023-09-20T19:15:21.111Z</lastmod>
+    <lastmod>2023-09-21T14:16:35.988Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/02_r_data_viz.html</loc>
-    <lastmod>2023-09-20T19:15:22.247Z</lastmod>
+    <lastmod>2023-09-21T14:16:37.148Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/04_causality.html</loc>
-    <lastmod>2023-09-20T19:15:23.363Z</lastmod>
+    <lastmod>2023-09-21T14:16:38.320Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/06_bivariate_tidying.html</loc>
-    <lastmod>2023-09-20T19:15:24.575Z</lastmod>
+    <lastmod>2023-09-21T14:16:39.556Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/08_regression.html</loc>
-    <lastmod>2023-09-20T19:15:25.767Z</lastmod>
+    <lastmod>2023-09-21T14:16:40.816Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/10_bootstrap.html</loc>
-    <lastmod>2023-09-20T19:15:26.939Z</lastmod>
+    <lastmod>2023-09-21T14:16:41.992Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/12_tests_models.html</loc>
-    <lastmod>2023-09-20T19:15:27.847Z</lastmod>
+    <lastmod>2023-09-21T14:16:42.948Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/materials/14_ols_inference.html</loc>
-    <lastmod>2023-09-20T19:15:28.775Z</lastmod>
+    <lastmod>2023-09-21T14:16:43.888Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/resources/cheatsheet.html</loc>
-    <lastmod>2023-09-20T19:15:30.003Z</lastmod>
+    <lastmod>2023-09-21T14:16:45.068Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/resources/office-hours.html</loc>
-    <lastmod>2023-09-20T19:15:30.815Z</lastmod>
+    <lastmod>2023-09-21T14:16:45.900Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/resources/study-halls.html</loc>
-    <lastmod>2023-09-20T19:15:31.687Z</lastmod>
+    <lastmod>2023-09-21T14:16:46.796Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/gov50-f23/gov50-f23.github.io/staff.html</loc>
-    <lastmod>2023-09-20T19:15:34.023Z</lastmod>
+    <lastmod>2023-09-21T14:16:49.188Z</lastmod>
   </url>
 </urlset>
