@@ -84,8 +84,8 @@ website:
               file: assignments/00-problem-set.qmd
             - text: "Problem Set 1"
               file: assignments/01_hw_data_viz.qmd
-            # - text: "Problem Set 2"
-            #   file: assignments/02_hw_data_wrangling.qmd
+            - text: "Problem Set 2"
+              file: assignments/02_hw_data_wrangling.qmd
             # - text: "Problem Set 3"
             #   file: assignments/03_hw_causality.qmd
             # - text: "Problem Set 4"
