@@ -204,10 +204,14 @@ The data collection and cleaning must be meaningful---it's not sufficient to sim
 
 ## Course Policies
 
+### Late Policy
+
+For problem sets, late submissions will be penalized 10% if submitted 0-24 hours late and penalized 20% if submitted 24-48 hours late. We will not accept any submissions after 48 hours. This penalty will be waived **one time** throughout the semester. To use your late penalty waiver, submit a Gradescope regrade request for the assignment to which you would like it to apply. 
+
+
 ### Regrading Policy
 
 If you feel there has been an error in the grading of one your assignment, you may request (in writing) a regrade of the assignment. Please send your request in an email to Professor Blackwell and the Head TF. A member of the teaching staff will regrade the entire assignment, not just the part you are disputing. Therefore, your regrade might increase or decrease the overall grade on the assignment. 
-
 
 
 ### Office Hours and Availability
