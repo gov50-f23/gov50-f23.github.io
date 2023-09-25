@@ -9,9 +9,9 @@
 3,2022-09-19,,Data wrangling,,,"materials/03_data_wrangling",,
 3,2022-09-20,,Problem Set 1,11:59 PM,,,,"/assignments/01_hw_data_viz"
 3,2022-09-21,,Causal inference,,QSS Ch 2.3,"materials/03_data_wrangling",,
-4,2022-09-26,,Causal inference and randomized experiments,,QSS 2.4,,,
+4,2022-09-26,,Causal inference and randomized experiments,,QSS 2.4,"/materials/04_causality",,
 4,2022-09-27,,Problem Set 2,11:59 PM,,,,"/assignments/02_hw_data_wrangling"
-4,2022-09-28,,Causal inference and observational studies,,QSS 2.5,,,
+4,2022-09-28,,Causal inference and observational studies,,QSS 2.5,"/materials/04_causality",,
 4,2022-09-29,,Final Project Milestone 1,11:59 PM,,,,assignments/distill
 5,2022-10-02,,Tutorial 4,11:59 PM,QSS Ch 2.6-3.3,,https://mblackwell.shinyapps.io/04-summarizing-data/,
 5,2022-10-03,,Summarizing data,,,,,

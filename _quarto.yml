@@ -45,8 +45,8 @@ website:
               file: materials/02_r_data_viz.qmd
             - text: "3: Data Wrangling and Causality"
               file: materials/03_data_wrangling.qmd
-            # - text: "3: Causality"
-            #   file: materials/04_causality.qmd
+            - text: "3: Causality"
+              file: materials/04_causality.qmd
             # - text: "4: Summarizing and Measurement"
             #   file: materials/05_measurement.qmd
             # - text: "5: Relationships, Functions, and Importing/Tidying Data"
