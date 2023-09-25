@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality"
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments"
   },
   {
     "objectID": "materials/13_models.html",
@@ -651,18 +651,11 @@
     "text": "Chapter 2 of QSS"
   },
   {
-    "objectID": "materials/04_causality.html#data",
-    "href": "materials/04_causality.html#data",
-    "title": "Causality and Pivoting",
-    "section": "Data",
-    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")"
-  },
-  {
     "objectID": "materials/04_causality.html#slides-and-code",
     "href": "materials/04_causality.html#slides-and-code",
     "title": "Causality and Pivoting",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (9/20) lecture: Causality\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: transphobia.Rmd\n\nTuesday (9/22) lecture: Observational Studies\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (9/26) lecture: Randomized Experiments\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/06_bivariate_tidying.html",
