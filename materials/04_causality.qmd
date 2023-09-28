@@ -16,7 +16,7 @@ date: 2023-09-25
   - [PDF of handout version of slides](/slides/07_rand_exp_handout.pdf) (no incremental slides)
   <!-- - Code: [`transphobia.Rmd`](/files/code/transphobia.Rmd) -->
 
-<!-- - Tuesday (9/22) lecture: Observational Studies -->
-<!--   - [PDF of slides as I present them](/slides/07_obs_studies.pdf) -->
-<!--   - [PDF of handout version of slides](/slides/07_obs_studies_handout.pdf) (no incremental slides) -->
+- Tuesday (9/28) lecture: Observational Studies
+  - [PDF of slides as I present them](/slides/08_obs_studies.pdf)
+  - [PDF of handout version of slides](/slides/08_obs_studies_handout.pdf) (no incremental slides)
   

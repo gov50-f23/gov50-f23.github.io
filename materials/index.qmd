@@ -14,3 +14,4 @@ Each class session has a set of required readings that you should complete ***be
 5. [Data Wrangling and Barplots](/slides/05_data_wrangling_handout.pdf)
 6. [Causality](/slides/06_causality_handout.pdf)
 7. [Randomized Experiments](/slides/07_rand_exp_handout.pdf)
+8. [Observational Studies](/slides/08_obs_studies_handout.pdf)
