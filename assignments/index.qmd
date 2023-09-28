@@ -20,6 +20,7 @@ title: "Assignments"
 - [Problem set 0: Setting up R, RStudio, and GitHub](/assignments/00-problem-set.html)
 - [Problem set 1: Data visualization](/assignments/01_hw_data_viz.qmd)
 - [Problem set 2: Data wrangling](/assignments/02_hw_data_wrangling.qmd)
+- [Problem set 3: Causality](/assignments/03_hw_causality.qmd)
 
 ## Final Project 
 

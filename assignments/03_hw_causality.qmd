@@ -1,0 +1,139 @@
+---
+title: "Problem Set 3: Causality"
+due_date: "October 4, 2023"
+
+---
+
+
+This problem set is due on **{{< meta due_date >}} at 11:59pm**. 
+
+You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets.qmd).
+
+You can find the GitHub Classroom link to download the template repository on the [Ed Board](https://edstem.org/us/courses/43339/resources)
+
+
+## Background
+
+A professor in the Government department here at Harvard, Ryan Enos, conducted a randomized field experiment assessing the extent to which exposure to demographic change affected the political views of individuals living in suburban communities around Boston, Massachusetts.
+
+> This exercise is based on: Enos, R. D. 2014. “[Causal Effect of  Intergroup Contact on Exclusionary Attitudes.](http://dx.doi.org/10.1073/pnas.1317670111)” *Proceedings of the National Academy of Sciences* 111(10): 3699–3704.
+
+Subjects in the experiment were individuals riding on the commuter rail line and overwhelmingly white. Every morning, multiple trains pass through various stations in suburban communities that were used for this study. For pairs of trains leaving the same station at roughly the same time, one was randomly assigned to receive the treatment and one was designated as a control. By doing so all the benefits of randomization apply for this dataset.
+
+The treatment in this experiment was the presence of two native Spanish-speaking 'confederates' (a term used in experiments to indicate that these individuals worked for the researcher, unbeknownst to the subjects) on the platform each morning prior to the train's arrival. The presence of these confederates, who would appear as Hispanic foreigners to the subjects, was intended to simulate the kind of demographic change anticipated for the United States in coming years. For those individuals in the control group, no such confederates were present on the platform. The treatment was administered for 10 days. Participants were asked questions related to immigration policy both before the experiment started and after the experiment had ended. The names and descriptions of variables in the data set `boston.csv` are:
+
+ -------------------- ----------------------------------------------------------
+ Name                 Description
+ -------------------- ----------------------------------------------------------
+ `age`                Age of individual at time of experiment
+
+ `male`               Sex of individual, male (1) or female (0)
+
+ `income`             Income group in dollars (not exact income)
+
+ `white`              Indicator variable for whether individual
+                      identifies as white (1) or not (0)
+
+ `college`            Indicator variable for whether individual
+                      attended college (1) or not (0)
+
+ `usborn`             Indicator variable for whether individual was
+                      born in the US (1) or not (0)
+
+ `treatment`          Indicator variable for whether an individual
+                      was treated (1) or not (0)
+
+ `ideology`           Self-placement on ideology spectrum from Very Liberal (1)
+                      through Moderate (3) to Very Conservative (5)
+
+ `numberim.pre`       Policy opinion on question about increasing the number
+                      immigrants allowed in the country from Increased (1) to Decreased (5)
+
+ `numberim.post`      Same question as above, asked later
+
+ `remain.pre`         Policy opinion on question about allowing the children of
+                      undocumented immigrants to remain in the country from
+                      Allow (1) to Not Allow (5)
+
+ `remain.post`        Same question as above, asked later
+
+ `english.pre`        Policy opinion on question about passing a law establishing
+                      English as the official language from Not Favor (1) to Favor (5)
+
+ `english.post`       Same question as above, asked later
+
+ ------------------------------------------------------------------------------
+
+## Question 1 (6 points)
+
+The benefit of randomly assigning individuals to the treatment or control groups is that the two groups should be similar, on average, in terms of their covariates. This is referred to as 'covariate balance.'
+
+
+Load the `tidyverse` package in the setup chunk. Read the data `"data/boston.csv"` into R using `read_csv` and call the resulting tibble `trains`. Using the `group_by` and `summarize` functions, create a tibble called `balance_table` that shows the sample average of the `age` and `college` variables by whether participants were in the  treatment or control groups. 
+
+Then use the `knitr::kable()` function to create a nice-looking table, including some informative column names. Briefly comment on the whether you think these variables appear balanced.
+
+ **Rubric:** 1pt for successful knitting (autograder); 3pts for correct `balance_table` object (autograder); 1pt for nicely formatted table (PDF); 1pt for brief comments (PDF)
+
+## Question 2 (7 points)
+
+Individuals in the experiment were asked a series of questions both at the beginning and the end of the experiment. One such question was "Do you think the number of immigrants from Mexico who are permitted to come to the United States to live should be increased, left the same, or decreased?"
+
+The response to this question prior to the experiment is in the variable `numberim.pre`. The response to this question after the experiment is in the variable `numberim.post`. In both cases the variable is coded on a 1 -- 5 scale. Responses with values of 1 are inclusionary ('pro-immigration') and responses with values of 5 are exclusionary ('anti-immigration'). Take the following steps:
+
+- Create a new variable in the `trains` data called `change` and define it as the change in immigration attitudes between pre- and post-experiment (post minus pre). Be sure to assign the output of your data wrangling call back to `trains`. 
+- Calculate the average change in attitudes about immigration in the treated group and save this output as `trt_change`. This should be a 1 x 1 tibble. 
+- Calculate the average change in attitudes about immigration in the control group and save this output as `ctr_change`. This should be a 1 x 1 tibble.
+- Compute the average treatment effect from these two objects and store it as `ate`.  This should be a 1 x 1 tibble.
+
+Report these estimates in the main text (that is, outside the chunk) and describe what they mean substantively with respect to the study. 
+
+ **Rubric:** 1pt for creating `change` variable (autograder); 2pts for `trt_change` object (autograder); 2pts for `ctr_change` object (autograder); 1pt for `ate` object (autograder); 1pt for write up about the results (PDF).
+
+## Question 3 (3 points)
+
+Thinking about the causal effect of the confederate treatment, describe, in words, what the potential outcomes for a particular person are in the analysis for the last problem (remember that potential outcomes are different than the possible values of the outcome!). Substantively, what does the fundamental problem of causal inference refer to in this context? Make sure to refer to what treatment and control means in this experiment rather than just mention the "treatment" and "control" groups.
+
+ **Rubric:** 3pts for answer (PDF); no autograder points
+
+## Question 4 (2 points)
+
+In your data science group, two members have alternative ideas for what the outcome should have been instead of the change in attitudes on immigration between the beginning and end of the experiment. Jimmy Q. Boxplot thinks that you should have used `numberim.pre` as the outcome and Suzy T. Histogram thinks that you should have used `numberim.post`. Are either of these two valid and interesting outcomes to explore in this study? Briefly explain why or why not.
+
+ **Rubric:** 2pts for answer (PDF); no autograder points.
+
+## Question 5 (7 points)
+
+Does having attended college influence the effect of being exposed to 'outsiders' on exclusionary attitudes? Another way to ask the same question is this: is there evidence of a differential impact of treatment, conditional on attending college versus not attending college?
+
+
+Use `group_by`, `summarize`, `pivot_wider`, and `mutate` to create a tibble called `ate_college` where each row corresponds to a unique value of the `college` variable (so two rows total) and that has the following four columns:
+
+- `college`: the unique value of the college variable for this row, labelled as either "College Grad" or "Non-College Grad". 
+- `Treated`: the mean of the `change` variable for each unique value of college in the treated group. 
+- `Control`: the mean of the `change` variable for each unique value of college in the control group. 
+- `ATE`: the difference between the treatment and control means for this value of college. 
+
+
+In the first step of building `ate_college`, you should pipe the data to a `mutate()` call that (a) modifies the `treatment` to be `"Treated"` when `treatment == 1` and `"Control"` when `treatment == 0` and (b) modifies the `college` variable to be `"College Grad"` when `college == 1` and `"Non-College Grad"` when `college == 0`. When you do this, be sure **not** to overwrite the `trains` data with these changes, simply pipe this to the next step. 
+
+Pass the table to `knitr::kable()` to produce a nicely formatted table. Report the ATEs in text and comment on whether or not you see evidence of a differential effect of treatment.
+
+ **Rubric:** 5pts for `ate_college` object (autograder); 1pt for nicely formatted table (PDF); 1pt for brief write-up (PDF)
+
+## Question 6 (10 points)
+
+Repeat the same analysis as in the previous question but this time with respect to income. For age, use `case_when` and logical vectors to create a new variable `income_group` that has the following values:
+
+- `"1. Under $100k"` when `income` is below \$100,000,
+- `"2. $100k - $150k"` when `income` is between \$100,000 and \$150,000, and
+- `"3. Over $150k"` when `income` is over \$150,000.
+
+Remember to save the output to the `trains` name. Use this variable along with the approach in the previous question to create a tibble called `ate_income` (replacing `college` with `income_group`) that has four rows corresponding to the three unique values of `income_group` and four columns:  `income_group`, `Treated`,  `Control`, and `ATE` (all defined similarly to the previous question). 
+
+Use the `ate_income` tibble to produce a barplot (using `ggplot`) of the ATE for each income group and assigning the plot to the name `income_plot`. Be sure to include informative labels for the x and y axes, along with a title. 
+
+In the text, answer these question: Do there appear to be systematic relationships between the treatment effects and income? If so, what patterns do you see?
+
+ **Rubric:** 2pts for `income_group` variable (autograder); 5pts for `ate_income` object (autograder); 2pts for `income_plot` ggplot object (autograder); 1pt descriptions of the results (PDF)
+
