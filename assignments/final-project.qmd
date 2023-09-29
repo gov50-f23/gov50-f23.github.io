@@ -10,11 +10,11 @@ The final project is a data analysis project about whatever data excites you. Th
 
 Here is a list of milestones that we will have to keep you on track:
 
-- Milestone 1: Create a new public GitHub repository that will host the article (10/21)
-- Milestone 2: Find a data source and write a short proposal on your research question (10/28)
-- Milestone 3: Add one polished data visualization on your distill article (11/11)
-- Milestone 4: Add results from one set of analyses (11/18)
-- Final project due (12/14)
+- Milestone 1: Create a new public GitHub repository that will host the article (9/29)
+- Milestone 2: Find a data source and write a short proposal on your research question (10/13)
+- Milestone 3: Add one polished data visualization on your distill article (10/27)
+- Milestone 4: Add results from one set of analyses (11/10)
+- Final project due (12/13)
 
 ## Milestone 1: Create public GitHub repository (due 9/29)
 
@@ -91,7 +91,7 @@ The next milestone will require that your Distill article  loads the data you ha
 By this time, your article should contain one visualization and one analysis that attempts to answer your research question. There does not need to be a long discussion, but the results should be presented in either a second visualization or a nicely formatted table. 
 
 
-## Final step: Write up final report (due date TBD)
+## Final step: Write up final report (due 12/13)
 
 
 The final report will include the following sections: (1) an introduction where you introduce the research question and hypothesis and briefly describe why it is interesting; (2) a data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; (3) a results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; and (4) a brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect). 

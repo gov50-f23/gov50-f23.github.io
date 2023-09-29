@@ -196,7 +196,7 @@ The data collection and cleaning must be meaningful---it's not sufficient to sim
 | Data and Proposal            | Fri, Oct 13th 11:59pm ET |
 | First Visualization          | Fri, Oct 27th 11:59pm ET |
 | First Analysis               | Fri, Nov 10th 11:59pm ET |
-| Final Report                 | Dec TBD 11:59pm ET       |
+| Final Report                 | Wed, Dec 13th 11:59pm ET       |
 
 
 
