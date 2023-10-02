@@ -1,6 +1,6 @@
 ---
 title: "Measuring and Summarizing Data"
-date: 2022-09-27
+date: 2023-10-02
 ---
 
 
@@ -8,21 +8,14 @@ date: 2022-09-27
 
 - [Chapter 3 of QSS](https://press.princeton.edu/books/hardcover/9780691222271/quantitative-social-science) (though 3.6)
 
-## Data
-
-- Reinstall the Gov 50 data package that has new data for this week:
-```{r}
-#| eval: false
-remotes::install_github("mattblackwell/gov50data")
-```
 
 ## Slides and Code
 
-- Tuesday (9/27) lecture: Summarizing data
-  - [PDF of slides as I present them](/slides/08_summarizing_data.pdf)
-  - [PDF of handout version of slides](/slides/08_summarizing_data_handout.pdf) (no incremental slides)
+- Tuesday (10/3) lecture: Summarizing data
+  - [PDF of slides as I present them](/slides/09_summarizing_data.pdf)
+  - [PDF of handout version of slides](/slides/09_summarizing_data_handout.pdf) (no incremental slides)
 
-- Thursday (9/29) lecture: Survey Sampling
-  - [PDF of slides as I present them](/slides/09_survey_sampling.pdf)
-  - [PDF of handout version of slides](/slides/09_survey_sampling_handout.pdf) (no incremental slides)
-  - Code: [`cces.Rmd`](/files/code/cces.Rmd)
+<!-- - Thursday (9/29) lecture: Survey Sampling -->
+<!--   - [PDF of slides as I present them](/slides/09_survey_sampling.pdf) -->
+<!--   - [PDF of handout version of slides](/slides/09_survey_sampling_handout.pdf) (no incremental slides) -->
+<!--   - Code: [`cces.Rmd`](/files/code/cces.Rmd) -->

@@ -16,7 +16,7 @@ library(glue)
 
 schedule <- read_csv("data/schedule.csv", show_col_types = FALSE) 
 ```
-      
+       
 
 Below is the schedule for the semester. You can find the materials for each course meeting under the “Content” links for that week. You should generally: 
    

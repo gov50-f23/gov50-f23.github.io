@@ -15,3 +15,4 @@ Each class session has a set of required readings that you should complete ***be
 6. [Causality](/slides/06_causality_handout.pdf)
 7. [Randomized Experiments](/slides/07_rand_exp_handout.pdf)
 8. [Observational Studies](/slides/08_obs_studies_handout.pdf)
+9. [Summarizing Data](/slides/09_summarizing_data_handout.pdf)
