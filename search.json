@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies"
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data"
   },
   {
     "objectID": "materials/13_models.html",
@@ -231,18 +231,11 @@
     "text": "Chapter 3 of QSS (though 3.6)"
   },
   {
-    "objectID": "materials/05_measurement.html#data",
-    "href": "materials/05_measurement.html#data",
-    "title": "Measuring and Summarizing Data",
-    "section": "Data",
-    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")"
-  },
-  {
     "objectID": "materials/05_measurement.html#slides-and-code",
     "href": "materials/05_measurement.html#slides-and-code",
     "title": "Measuring and Summarizing Data",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (9/27) lecture: Summarizing data\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (9/29) lecture: Survey Sampling\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: cces.Rmd"
+    "text": "Slides and Code\n\nTuesday (10/3) lecture: Summarizing data\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/03_data_wrangling.html",
