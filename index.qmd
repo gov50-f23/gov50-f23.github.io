@@ -38,7 +38,7 @@ course-logo: /files/img/gov50-icon-512.png
 - {{< fa brands slack >}} &nbsp; [Slack]({{< var course.slack >}})
 - {{< fa wrench >}} &nbsp; [Study Hall Schedule](resources/study-halls.qmd)
 - {{< fa person-circle-question >}} &nbsp; [Office Hours Schedule](resources/office-hours.qmd)
-- {{< fa person-chalkboard >}} &nbsp; [Gov 50 Speaker Series](resources/speaker-series.qmd)
+- {{< fa calendar >}} &nbsp; [Gov 50 Google Calendar](https://tinyurl.com/gov50calendar)
 :::
 
 ::: {.g-col-12 .g-col-md-4 .contact-policy}

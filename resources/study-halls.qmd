@@ -18,8 +18,10 @@ library(glue)
 schedule <- read_csv("../data/study-halls.csv", show_col_types = FALSE,
                      col_types = list(.default = col_character())) 
 ```
- 
-   
+  
+  
+  
+For the latest schedule, including changes to the schedule, please check Ed or the [Gov 50 Google calendar](https://tinyurl.com/gov50calendar).
     
  
 ```{r build-table, eval = TRUE, echo=FALSE, results="asis"}
