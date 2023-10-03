@@ -206,7 +206,7 @@ The data collection and cleaning must be meaningful---it's not sufficient to sim
 
 ### Late Policy
 
-For problem sets, late submissions will be penalized 10% if submitted 0-24 hours late and penalized 20% if submitted 24-48 hours late. We will not accept any submissions after 48 hours. This penalty will be waived **one time** throughout the semester. To use your late penalty waiver, submit a Gradescope regrade request for the assignment to which you would like it to apply. 
+For problem sets, late submissions will be penalized 10% if submitted 0-24 hours late and penalized 20% if submitted 24-48 hours late. We will not accept any submissions after 48 hours. This penalty will be waived the **first time** a submission is late. 
 
 
 ### Regrading Policy

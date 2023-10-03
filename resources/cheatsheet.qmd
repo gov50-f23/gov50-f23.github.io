@@ -345,3 +345,206 @@ news |>
   select(callsign, affiliation, date, sinclair2017, Ownership)
 ```
 
+
+### Summarizing a variable 
+
+You can calculate summaries of variables in the data set using the `summarize()` function.
+
+
+```{r}
+news |>
+  summarize(
+    avg_ideology = mean(ideology),
+    sd_ideology = sd(ideology),
+    median_ideology = median(ideology)
+  )
+```
+
+
+
+### Summarizing variables by groups of rows
+
+By default, `summarize()` calculates the summaries of variables for all rows in the data frame. You can also calculate these summaries within groups of rows defined by another variable in the data frame using the `group_by()` function before summarizing. 
+
+
+```{r}
+news |>
+  group_by(month) |>
+  summarize(
+    avg_ideology = mean(ideology),
+    sd_ideology = sd(ideology),
+    median_ideology = median(ideology)
+  )
+```
+
+Here, the `summarize()` function breaks apart the original data into smaller data frames for each month and applies the summary functions to those, then combines everything into one tibble. 
+
+
+### Summarizing by multiple variables
+
+You can group by multiple variables and `summarize()` will create groups based on every combination of each variable: 
+
+```{r}
+news |>
+  group_by(sinclair2017, post) |>
+  summarize(
+    avg_ideology = mean(ideology)
+  )
+```
+
+You'll notice the message that `summarize()` sends after using to let us know that resulting tibble is grouped by `sinclair2017`. By default, `summarize()` drops the last group you provided in `group_by` (`post` in this case).  This isn't an error message, it's just letting us know some helpful information. If you want to avoid this messaging displaying, you need to specify what grouping you want after using the `.groups` argument:
+
+
+```{r}
+news |>
+  group_by(sinclair2017, post) |>
+  summarize(
+    avg_ideology = mean(ideology),
+    .groups = "drop_last"
+  )
+```
+
+
+### Summarizing across many variables
+
+
+If you want to apply the same summary to multiple variables, you can use the `across(vars, fun)` function, where `vars` is a vector of variable names (specified like with `select()`) and `fun` is a summary function to apply to those variables.
+
+```{r}
+news |>
+  group_by(sinclair2017, post) |>
+  summarize(
+    across(c(ideology, national_politics), mean)
+  )
+```
+
+As with `select()`, you can use the `:` operator to select a range of variables 
+
+```{r}
+news |>
+  group_by(sinclair2017, post) |>
+  summarize(
+    across(ideology:local_politics, mean)
+  )
+```
+
+
+### Table of counts of a categorical variable
+
+There are two way to produce a table of counts of each category of a variable. The first is to use `group_by` and `summarize` along with the summary function `n()`, which returns the numbers of rows in each grouping (that is, each combination of the grouping variables):
+
+
+```{r}
+news |>
+  group_by(affiliation) |>
+  summarize(n = n())
+```
+
+A simpler way to acheive the same outcome is to use the `count()` function, which implements these two steps:
+
+
+```{r}
+news |>
+  count(affiliation)
+```
+
+
+
+
+### Producing nicely formatted tables with `kable()`
+
+You can take any tibble in R and convert it into a more readable output by passing it to `knitr::kable()`. In our homework, generally, we will save the tibble as an object and then pass it to this function. 
+
+```{r}
+month_summary <- news |>
+  group_by(month) |>
+  summarize(
+    avg_ideology = mean(ideology),
+    sd_ideology = sd(ideology)
+  )
+
+knitr::kable(month_summary)
+```
+
+
+You can add informative column names to the table using the `col.names` argument. 
+
+```{r}
+knitr::kable(
+  month_summary,
+  col.names = c("Month", "Average Ideology", "SD of Ideology")
+)
+```
+
+Finally, we can round the numbers in the table to be a bit nicer using the `digits` argument. This will tell `kable()` how many significant digiits to show. 
+
+
+```{r}
+knitr::kable(
+  month_summary,
+  col.names = c("Month", "Average Ideology", "SD of Ideology"),
+  digits = 3
+)
+```
+
+
+### Barplots of counts
+
+You can visualize counts of a variable using a barplot:
+
+
+```{r}
+news |>
+  ggplot(mapping = aes(x = affiliation)) +
+  geom_bar()
+```
+
+
+### Barplots of other summaries 
+
+We can use barplots to visualize  other grouped summaries like means, but we need to use the `geom_col()` geom instead and specify the variable you want to be the height of the bars .
+
+
+```{r}
+news |>
+  group_by(affiliation) |>
+  summarize(
+    avg_ideology = mean(ideology)
+  ) |>
+  ggplot(mapping = aes(x = affiliation, y = avg_ideology)) +
+  geom_col()
+```
+
+
+### Reordering/sorting barplot axes 
+
+Often we want to sort the barplot axes to be in the order of the variable of interest so we can quickly compare them. We can use the `fct_reorder(group_var, ordering_var)` function to do this where the `group_var` is the grouping variable that is going on the axes and the `ordering_var` is the variable that we will sort the groups on. 
+
+```{r}
+news |>
+  group_by(affiliation) |>
+  summarize(
+    avg_ideology = mean(ideology)
+  ) |>
+  ggplot(mapping = aes(x = fct_reorder(affiliation, avg_ideology),
+                       y = avg_ideology)) +
+  geom_col()
+
+```
+
+
+### Coloring barplots by another variable 
+
+You can color the barplots by a another variable using the `fill` aesthetic:
+
+```{r}
+news |>
+  group_by(callsign, affiliation) |>
+  summarize(
+    avg_ideology = mean(ideology)
+  ) |>
+  slice_max(avg_ideology, n = 10) |>
+  ggplot(mapping = aes(y = fct_reorder(callsign, avg_ideology),
+                       x = avg_ideology)) +
+  geom_col(mapping = aes(fill = affiliation))
+```
