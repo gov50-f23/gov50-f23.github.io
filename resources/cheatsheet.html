@@ -189,6 +189,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#renaming-a-variable" id="toc-renaming-a-variable" class="nav-link" data-scroll-target="#renaming-a-variable">Renaming a variable</a></li>
   <li><a href="#creating-new-variables" id="toc-creating-new-variables" class="nav-link" data-scroll-target="#creating-new-variables">Creating new variables</a></li>
   <li><a href="#creating-new-variables-based-on-yesno-conditions" id="toc-creating-new-variables-based-on-yesno-conditions" class="nav-link" data-scroll-target="#creating-new-variables-based-on-yesno-conditions">Creating new variables based on yes/no conditions</a></li>
+  <li><a href="#summarizing-a-variable" id="toc-summarizing-a-variable" class="nav-link" data-scroll-target="#summarizing-a-variable">Summarizing a variable</a></li>
+  <li><a href="#summarizing-variables-by-groups-of-rows" id="toc-summarizing-variables-by-groups-of-rows" class="nav-link" data-scroll-target="#summarizing-variables-by-groups-of-rows">Summarizing variables by groups of rows</a></li>
+  <li><a href="#summarizing-by-multiple-variables" id="toc-summarizing-by-multiple-variables" class="nav-link" data-scroll-target="#summarizing-by-multiple-variables">Summarizing by multiple variables</a></li>
+  <li><a href="#summarizing-across-many-variables" id="toc-summarizing-across-many-variables" class="nav-link" data-scroll-target="#summarizing-across-many-variables">Summarizing across many variables</a></li>
+  <li><a href="#table-of-counts-of-a-categorical-variable" id="toc-table-of-counts-of-a-categorical-variable" class="nav-link" data-scroll-target="#table-of-counts-of-a-categorical-variable">Table of counts of a categorical variable</a></li>
+  <li><a href="#producing-nicely-formatted-tables-with-kable" id="toc-producing-nicely-formatted-tables-with-kable" class="nav-link" data-scroll-target="#producing-nicely-formatted-tables-with-kable">Producing nicely formatted tables with <code>kable()</code></a></li>
+  <li><a href="#barplots-of-counts" id="toc-barplots-of-counts" class="nav-link" data-scroll-target="#barplots-of-counts">Barplots of counts</a></li>
+  <li><a href="#barplots-of-other-summaries" id="toc-barplots-of-other-summaries" class="nav-link" data-scroll-target="#barplots-of-other-summaries">Barplots of other summaries</a></li>
+  <li><a href="#reorderingsorting-barplot-axes" id="toc-reorderingsorting-barplot-axes" class="nav-link" data-scroll-target="#reorderingsorting-barplot-axes">Reordering/sorting barplot axes</a></li>
+  <li><a href="#coloring-barplots-by-another-variable" id="toc-coloring-barplots-by-another-variable" class="nav-link" data-scroll-target="#coloring-barplots-by-another-variable">Coloring barplots by another variable</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -543,20 +553,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weekday <span class="sc">==</span> <span class="st">"Tue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 626 × 10
+<pre><code># A tibble: 509 × 10
    callsign affiliation date       weekday ideology national_politics
    &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
- 1 KPAX     CBS         2017-06-06 Tue     NA                 0.00357
- 2 KTAB     CBS         2017-06-06 Tue     NA                 0.0945 
- 3 KAEF     ABC         2017-06-13 Tue      0.0242            0.180  
- 4 KBVU     FOX         2017-06-13 Tue      0.00894           0.186  
- 5 KBZK     CBS         2017-06-13 Tue      0.129             0.306  
- 6 KCVU     FOX         2017-06-13 Tue      0.114             0.124  
- 7 KECI     NBC         2017-06-13 Tue      0.115             0.283  
- 8 KHSL     CBS         2017-06-13 Tue      0.0821            0.274  
- 9 KNVN     NBC         2017-06-13 Tue      0.120             0.261  
-10 KPAX     CBS         2017-06-13 Tue      0.0984            0.208  
-# ℹ 616 more rows
+ 1 KAEF     ABC         2017-06-13 Tue      0.0242              0.180
+ 2 KBVU     FOX         2017-06-13 Tue      0.00894             0.186
+ 3 KBZK     CBS         2017-06-13 Tue      0.129               0.306
+ 4 KCVU     FOX         2017-06-13 Tue      0.114               0.124
+ 5 KECI     NBC         2017-06-13 Tue      0.115               0.283
+ 6 KHSL     CBS         2017-06-13 Tue      0.0821              0.274
+ 7 KNVN     NBC         2017-06-13 Tue      0.120               0.261
+ 8 KPAX     CBS         2017-06-13 Tue      0.0984              0.208
+ 9 KRCR     ABC         2017-06-13 Tue      0.0187              0.206
+10 KTMF     ABC         2017-06-13 Tue      0.233               0.101
+# ℹ 499 more rows
 # ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
 #   month &lt;ord&gt;</code></pre>
 </div>
@@ -567,20 +577,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weekday <span class="sc">==</span> <span class="st">"Tue"</span>,</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>         affiliation <span class="sc">==</span> <span class="st">"FOX"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 130 × 10
+<pre><code># A tibble: 70 × 10
    callsign affiliation date       weekday ideology national_politics
    &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
  1 KBVU     FOX         2017-06-13 Tue      0.00894            0.186 
  2 KCVU     FOX         2017-06-13 Tue      0.114              0.124 
  3 WEMT     FOX         2017-06-13 Tue      0.235              0.149 
  4 WYDO     FOX         2017-06-13 Tue      0.0949             0.182 
- 5 KBVU     FOX         2017-06-20 Tue     NA                  0.0229
- 6 KCVU     FOX         2017-06-20 Tue     NA                  0.0170
- 7 KXVA     FOX         2017-06-20 Tue     NA                  0.0203
- 8 WEMT     FOX         2017-06-20 Tue      0.268              0.134 
- 9 WYDO     FOX         2017-06-20 Tue      0.0590             0.155 
-10 KBVU     FOX         2017-06-27 Tue     NA                  0.0601
-# ℹ 120 more rows
+ 5 WEMT     FOX         2017-06-20 Tue      0.268              0.134 
+ 6 WYDO     FOX         2017-06-20 Tue      0.0590             0.155 
+ 7 WEMT     FOX         2017-06-27 Tue      0.0457             0.164 
+ 8 WYDO     FOX         2017-06-27 Tue     -0.0588             0.147 
+ 9 WEMT     FOX         2017-07-04 Tue      0.0801             0.0986
+10 WYDO     FOX         2017-07-04 Tue      0.0555             0.0910
+# ℹ 60 more rows
 # ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
 #   month &lt;ord&gt;</code></pre>
 </div>
@@ -590,20 +600,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(affiliation <span class="sc">==</span> <span class="st">"FOX"</span> <span class="sc">|</span> affiliation <span class="sc">==</span> <span class="st">"ABC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,525 × 10
+<pre><code># A tibble: 1,033 × 10
    callsign affiliation date       weekday  ideology national_politics
    &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;       &lt;dbl&gt;             &lt;dbl&gt;
- 1 KXVA     FOX         2017-06-05 Mon     NA                  0.0393 
- 2 KTMF     ABC         2017-06-07 Wed      0.0842             0.152  
- 3 KTXS     ABC         2017-06-07 Wed     -0.000488           0.0925 
- 4 KXVA     FOX         2017-06-07 Wed     NA                  0.00718
- 5 KAEF     ABC         2017-06-08 Thu      0.0426             0.213  
- 6 KBVU     FOX         2017-06-08 Thu     -0.0860             0.169  
- 7 KTMF     ABC         2017-06-08 Thu      0.0433             0.179  
- 8 KTXS     ABC         2017-06-08 Thu      0.0627             0.158  
- 9 KXVA     FOX         2017-06-08 Thu     NA                  0.0124 
-10 WCTI     ABC         2017-06-08 Thu      0.139              0.225  
-# ℹ 1,515 more rows
+ 1 KTMF     ABC         2017-06-07 Wed      0.0842              0.152 
+ 2 KTXS     ABC         2017-06-07 Wed     -0.000488            0.0925
+ 3 KAEF     ABC         2017-06-08 Thu      0.0426              0.213 
+ 4 KBVU     FOX         2017-06-08 Thu     -0.0860              0.169 
+ 5 KTMF     ABC         2017-06-08 Thu      0.0433              0.179 
+ 6 KTXS     ABC         2017-06-08 Thu      0.0627              0.158 
+ 7 WCTI     ABC         2017-06-08 Thu      0.139               0.225 
+ 8 KAEF     ABC         2017-06-09 Fri      0.0870              0.153 
+ 9 KTXS     ABC         2017-06-09 Fri      0.0879              0.0790
+10 WCTI     ABC         2017-06-09 Fri      0.0667              0.182 
+# ℹ 1,023 more rows
 # ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
 #   month &lt;ord&gt;</code></pre>
 </div>
@@ -613,20 +623,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(weekday <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Mon"</span>, <span class="st">"Fri"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,253 × 10
+<pre><code># A tibble: 1,021 × 10
    callsign affiliation date       weekday ideology national_politics
    &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
- 1 KRBC     NBC         2017-06-05 Mon      NA                 0.0286
- 2 KTAB     CBS         2017-06-05 Mon      NA                 0.0286
- 3 KXVA     FOX         2017-06-05 Mon      NA                 0.0393
- 4 KAEF     ABC         2017-06-09 Fri       0.0870            0.153 
- 5 KBVU     FOX         2017-06-09 Fri      NA                 0.0553
- 6 KECI     NBC         2017-06-09 Fri       0.115             0.216 
- 7 KPAX     CBS         2017-06-09 Fri       0.0882            0.315 
- 8 KRBC     NBC         2017-06-09 Fri       0.0929            0.152 
- 9 KTAB     CBS         2017-06-09 Fri       0.0588            0.0711
-10 KTMF     ABC         2017-06-09 Fri      NA                 0.0495
-# ℹ 1,243 more rows
+ 1 KAEF     ABC         2017-06-09 Fri       0.0870            0.153 
+ 2 KECI     NBC         2017-06-09 Fri       0.115             0.216 
+ 3 KPAX     CBS         2017-06-09 Fri       0.0882            0.315 
+ 4 KRBC     NBC         2017-06-09 Fri       0.0929            0.152 
+ 5 KTAB     CBS         2017-06-09 Fri       0.0588            0.0711
+ 6 KTXS     ABC         2017-06-09 Fri       0.0879            0.0790
+ 7 WCTI     ABC         2017-06-09 Fri       0.0667            0.182 
+ 8 WITN     NBC         2017-06-09 Fri      -0.0683            0.146 
+ 9 WNCT     CBS         2017-06-09 Fri      -0.0181            0.126 
+10 WYDO     FOX         2017-06-09 Fri      -0.0330            0.0802
+# ℹ 1,011 more rows
 # ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
 #   month &lt;ord&gt;</code></pre>
 </div>
@@ -640,11 +650,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 5 × 10
   callsign affiliation date       weekday ideology national_politics
   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
-1 KRBC     NBC         2017-06-05 Mon           NA           0.0286 
-2 KTAB     CBS         2017-06-05 Mon           NA           0.0286 
-3 KXVA     FOX         2017-06-05 Mon           NA           0.0393 
-4 KPAX     CBS         2017-06-06 Tue           NA           0.00357
-5 KTAB     CBS         2017-06-06 Tue           NA           0.0945 
+1 KECI     NBC         2017-06-07 Wed       0.0655            0.225 
+2 KPAX     CBS         2017-06-07 Wed       0.0853            0.283 
+3 KRBC     NBC         2017-06-07 Wed       0.0183            0.130 
+4 KTAB     CBS         2017-06-07 Wed       0.0850            0.0901
+5 KTMF     ABC         2017-06-07 Wed       0.0842            0.152 
 # ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
 #   month &lt;ord&gt;</code></pre>
 </div>
@@ -701,7 +711,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ideology)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 10
+<pre><code># A tibble: 2,560 × 10
    callsign affiliation date       weekday ideology national_politics
    &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
  1 KRBC     NBC         2017-10-19 Thu       -0.674            0.0731
@@ -714,7 +724,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  8 KWYB     ABC         2017-12-01 Fri       -0.303            0.160 
  9 KTVM     NBC         2017-09-01 Fri       -0.302            0.0507
 10 KNVN     NBC         2017-12-08 Fri       -0.299            0.121 
-# ℹ 3,127 more rows
+# ℹ 2,550 more rows
 # ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
 #   month &lt;ord&gt;</code></pre>
 </div>
@@ -724,7 +734,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(ideology))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 10
+<pre><code># A tibble: 2,560 × 10
    callsign affiliation date       weekday ideology national_politics
    &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
  1 KAEF     ABC         2017-06-19 Mon        0.778            0.0823
@@ -737,7 +747,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  8 KPAX     CBS         2017-11-23 Thu        0.437            0.125 
  9 KTAB     CBS         2017-11-16 Thu        0.427            0.0631
 10 KCVU     FOX         2017-07-06 Thu        0.406            0.154 
-# ℹ 3,127 more rows
+# ℹ 2,550 more rows
 # ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
 #   month &lt;ord&gt;</code></pre>
 </div>
@@ -750,20 +760,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(callsign, date, ideology)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 3
-   callsign date       ideology
-   &lt;chr&gt;    &lt;date&gt;        &lt;dbl&gt;
- 1 KRBC     2017-06-05  NA     
- 2 KTAB     2017-06-05  NA     
- 3 KXVA     2017-06-05  NA     
- 4 KPAX     2017-06-06  NA     
- 5 KTAB     2017-06-06  NA     
- 6 KECI     2017-06-07   0.0655
- 7 KPAX     2017-06-07   0.0853
- 8 KRBC     2017-06-07   0.0183
- 9 KTAB     2017-06-07   0.0850
-10 KTMF     2017-06-07   0.0842
-# ℹ 3,127 more rows</code></pre>
+<pre><code># A tibble: 2,560 × 3
+   callsign date        ideology
+   &lt;chr&gt;    &lt;date&gt;         &lt;dbl&gt;
+ 1 KECI     2017-06-07  0.0655  
+ 2 KPAX     2017-06-07  0.0853  
+ 3 KRBC     2017-06-07  0.0183  
+ 4 KTAB     2017-06-07  0.0850  
+ 5 KTMF     2017-06-07  0.0842  
+ 6 KTXS     2017-06-07 -0.000488
+ 7 KAEF     2017-06-08  0.0426  
+ 8 KBVU     2017-06-08 -0.0860  
+ 9 KECI     2017-06-08  0.0902  
+10 KPAX     2017-06-08  0.0668  
+# ℹ 2,550 more rows</code></pre>
 </div>
 </div>
 <p>If you want to select a range of columns from, say, <code>callsign</code> to <code>ideology</code>, you can use the <code>:</code> operator:</p>
@@ -771,20 +781,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(callsign<span class="sc">:</span>ideology)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 5
-   callsign affiliation date       weekday ideology
-   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;
- 1 KRBC     NBC         2017-06-05 Mon      NA     
- 2 KTAB     CBS         2017-06-05 Mon      NA     
- 3 KXVA     FOX         2017-06-05 Mon      NA     
- 4 KPAX     CBS         2017-06-06 Tue      NA     
- 5 KTAB     CBS         2017-06-06 Tue      NA     
- 6 KECI     NBC         2017-06-07 Wed       0.0655
- 7 KPAX     CBS         2017-06-07 Wed       0.0853
- 8 KRBC     NBC         2017-06-07 Wed       0.0183
- 9 KTAB     CBS         2017-06-07 Wed       0.0850
-10 KTMF     ABC         2017-06-07 Wed       0.0842
-# ℹ 3,127 more rows</code></pre>
+<pre><code># A tibble: 2,560 × 5
+   callsign affiliation date       weekday  ideology
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;       &lt;dbl&gt;
+ 1 KECI     NBC         2017-06-07 Wed      0.0655  
+ 2 KPAX     CBS         2017-06-07 Wed      0.0853  
+ 3 KRBC     NBC         2017-06-07 Wed      0.0183  
+ 4 KTAB     CBS         2017-06-07 Wed      0.0850  
+ 5 KTMF     ABC         2017-06-07 Wed      0.0842  
+ 6 KTXS     ABC         2017-06-07 Wed     -0.000488
+ 7 KAEF     ABC         2017-06-08 Thu      0.0426  
+ 8 KBVU     FOX         2017-06-08 Thu     -0.0860  
+ 9 KECI     NBC         2017-06-08 Thu      0.0902  
+10 KPAX     CBS         2017-06-08 Thu      0.0668  
+# ℹ 2,550 more rows</code></pre>
 </div>
 </div>
 <p>You can remove a variable from the data set by using the minus sign <code>-</code> in front of it:</p>
@@ -792,20 +802,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>callsign)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 9
-   affiliation date       weekday ideology national_politics local_politics
-   &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;          &lt;dbl&gt;
- 1 NBC         2017-06-05 Mon      NA                0.0286          0.0190
- 2 CBS         2017-06-05 Mon      NA                0.0286          0.0190
- 3 FOX         2017-06-05 Mon      NA                0.0393          0.0262
- 4 CBS         2017-06-06 Tue      NA                0.00357         0.194 
- 5 CBS         2017-06-06 Tue      NA                0.0945          0.109 
- 6 NBC         2017-06-07 Wed       0.0655           0.225           0.148 
- 7 CBS         2017-06-07 Wed       0.0853           0.283           0.123 
- 8 NBC         2017-06-07 Wed       0.0183           0.130           0.189 
- 9 CBS         2017-06-07 Wed       0.0850           0.0901          0.138 
-10 ABC         2017-06-07 Wed       0.0842           0.152           0.129 
-# ℹ 3,127 more rows
+<pre><code># A tibble: 2,560 × 9
+   affiliation date       weekday  ideology national_politics local_politics
+   &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;       &lt;dbl&gt;             &lt;dbl&gt;          &lt;dbl&gt;
+ 1 NBC         2017-06-07 Wed      0.0655              0.225          0.148 
+ 2 CBS         2017-06-07 Wed      0.0853              0.283          0.123 
+ 3 NBC         2017-06-07 Wed      0.0183              0.130          0.189 
+ 4 CBS         2017-06-07 Wed      0.0850              0.0901         0.138 
+ 5 ABC         2017-06-07 Wed      0.0842              0.152          0.129 
+ 6 ABC         2017-06-07 Wed     -0.000488            0.0925         0.0791
+ 7 ABC         2017-06-08 Thu      0.0426              0.213          0.228 
+ 8 FOX         2017-06-08 Thu     -0.0860              0.169          0.247 
+ 9 NBC         2017-06-08 Thu      0.0902              0.276          0.152 
+10 CBS         2017-06-08 Thu      0.0668              0.305          0.124 
+# ℹ 2,550 more rows
 # ℹ 3 more variables: sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;, month &lt;ord&gt;</code></pre>
 </div>
 </div>
@@ -814,38 +824,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(callsign, date, ideology))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 7
+<pre><code># A tibble: 2,560 × 7
    affiliation weekday national_politics local_politics sinclair2017  post month
    &lt;chr&gt;       &lt;ord&gt;               &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt;
- 1 NBC         Mon               0.0286          0.0190            0     0 Jun  
- 2 CBS         Mon               0.0286          0.0190            0     0 Jun  
- 3 FOX         Mon               0.0393          0.0262            0     0 Jun  
- 4 CBS         Tue               0.00357         0.194             0     0 Jun  
- 5 CBS         Tue               0.0945          0.109             0     0 Jun  
- 6 NBC         Wed               0.225           0.148             1     0 Jun  
- 7 CBS         Wed               0.283           0.123             0     0 Jun  
- 8 NBC         Wed               0.130           0.189             0     0 Jun  
- 9 CBS         Wed               0.0901          0.138             0     0 Jun  
-10 ABC         Wed               0.152           0.129             0     0 Jun  
-# ℹ 3,127 more rows</code></pre>
+ 1 NBC         Wed                0.225          0.148             1     0 Jun  
+ 2 CBS         Wed                0.283          0.123             0     0 Jun  
+ 3 NBC         Wed                0.130          0.189             0     0 Jun  
+ 4 CBS         Wed                0.0901         0.138             0     0 Jun  
+ 5 ABC         Wed                0.152          0.129             0     0 Jun  
+ 6 ABC         Wed                0.0925         0.0791            1     0 Jun  
+ 7 ABC         Thu                0.213          0.228             1     0 Jun  
+ 8 FOX         Thu                0.169          0.247             1     0 Jun  
+ 9 NBC         Thu                0.276          0.152             1     0 Jun  
+10 CBS         Thu                0.305          0.124             0     0 Jun  
+# ℹ 2,550 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>(callsign<span class="sc">:</span>ideology))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 5
+<pre><code># A tibble: 2,560 × 5
    national_politics local_politics sinclair2017  post month
                &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt;
- 1           0.0286          0.0190            0     0 Jun  
- 2           0.0286          0.0190            0     0 Jun  
- 3           0.0393          0.0262            0     0 Jun  
- 4           0.00357         0.194             0     0 Jun  
- 5           0.0945          0.109             0     0 Jun  
- 6           0.225           0.148             1     0 Jun  
- 7           0.283           0.123             0     0 Jun  
- 8           0.130           0.189             0     0 Jun  
- 9           0.0901          0.138             0     0 Jun  
-10           0.152           0.129             0     0 Jun  
-# ℹ 3,127 more rows</code></pre>
+ 1            0.225          0.148             1     0 Jun  
+ 2            0.283          0.123             0     0 Jun  
+ 3            0.130          0.189             0     0 Jun  
+ 4            0.0901         0.138             0     0 Jun  
+ 5            0.152          0.129             0     0 Jun  
+ 6            0.0925         0.0791            1     0 Jun  
+ 7            0.213          0.228             1     0 Jun  
+ 8            0.169          0.247             1     0 Jun  
+ 9            0.276          0.152             1     0 Jun  
+10            0.305          0.124             0     0 Jun  
+# ℹ 2,550 more rows</code></pre>
 </div>
 </div>
 <p>You can also select columns based on matching patterns in the names with functions like <code>starts_with()</code> or <code>ends_with()</code>:</p>
@@ -853,20 +863,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">"politics"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 2
+<pre><code># A tibble: 2,560 × 2
    national_politics local_politics
                &lt;dbl&gt;          &lt;dbl&gt;
- 1           0.0286          0.0190
- 2           0.0286          0.0190
- 3           0.0393          0.0262
- 4           0.00357         0.194 
- 5           0.0945          0.109 
- 6           0.225           0.148 
- 7           0.283           0.123 
- 8           0.130           0.189 
- 9           0.0901          0.138 
-10           0.152           0.129 
-# ℹ 3,127 more rows</code></pre>
+ 1            0.225          0.148 
+ 2            0.283          0.123 
+ 3            0.130          0.189 
+ 4            0.0901         0.138 
+ 5            0.152          0.129 
+ 6            0.0925         0.0791
+ 7            0.213          0.228 
+ 8            0.169          0.247 
+ 9            0.276          0.152 
+10            0.305          0.124 
+# ℹ 2,550 more rows</code></pre>
 </div>
 </div>
 <p>This code finds all variables with column names that end with the string “politics”. See the <a href="https://dplyr.tidyverse.org/reference/select.html">help page for <code>select()</code></a> for more information on different ways to select.</p>
@@ -878,20 +888,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">call_sign =</span> callsign)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 10
-   call_sign affiliation date       weekday ideology national_politics
-   &lt;chr&gt;     &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
- 1 KRBC      NBC         2017-06-05 Mon      NA                0.0286 
- 2 KTAB      CBS         2017-06-05 Mon      NA                0.0286 
- 3 KXVA      FOX         2017-06-05 Mon      NA                0.0393 
- 4 KPAX      CBS         2017-06-06 Tue      NA                0.00357
- 5 KTAB      CBS         2017-06-06 Tue      NA                0.0945 
- 6 KECI      NBC         2017-06-07 Wed       0.0655           0.225  
- 7 KPAX      CBS         2017-06-07 Wed       0.0853           0.283  
- 8 KRBC      NBC         2017-06-07 Wed       0.0183           0.130  
- 9 KTAB      CBS         2017-06-07 Wed       0.0850           0.0901 
-10 KTMF      ABC         2017-06-07 Wed       0.0842           0.152  
-# ℹ 3,127 more rows
+<pre><code># A tibble: 2,560 × 10
+   call_sign affiliation date       weekday  ideology national_politics
+   &lt;chr&gt;     &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;       &lt;dbl&gt;             &lt;dbl&gt;
+ 1 KECI      NBC         2017-06-07 Wed      0.0655              0.225 
+ 2 KPAX      CBS         2017-06-07 Wed      0.0853              0.283 
+ 3 KRBC      NBC         2017-06-07 Wed      0.0183              0.130 
+ 4 KTAB      CBS         2017-06-07 Wed      0.0850              0.0901
+ 5 KTMF      ABC         2017-06-07 Wed      0.0842              0.152 
+ 6 KTXS      ABC         2017-06-07 Wed     -0.000488            0.0925
+ 7 KAEF      ABC         2017-06-08 Thu      0.0426              0.213 
+ 8 KBVU      FOX         2017-06-08 Thu     -0.0860              0.169 
+ 9 KECI      NBC         2017-06-08 Thu      0.0902              0.276 
+10 KPAX      CBS         2017-06-08 Thu      0.0668              0.305 
+# ℹ 2,550 more rows
 # ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
 #   month &lt;ord&gt;</code></pre>
 </div>
@@ -906,20 +916,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(callsign, date, national_politics, local_politics,</span>
 <span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>         national_local_diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 5
+<pre><code># A tibble: 2,560 × 5
    callsign date       national_politics local_politics national_local_diff
    &lt;chr&gt;    &lt;date&gt;                 &lt;dbl&gt;          &lt;dbl&gt;               &lt;dbl&gt;
- 1 KRBC     2017-06-05           0.0286          0.0190             0.00952
- 2 KTAB     2017-06-05           0.0286          0.0190             0.00952
- 3 KXVA     2017-06-05           0.0393          0.0262             0.0131 
- 4 KPAX     2017-06-06           0.00357         0.194             -0.191  
- 5 KTAB     2017-06-06           0.0945          0.109             -0.0145 
- 6 KECI     2017-06-07           0.225           0.148              0.0761 
- 7 KPAX     2017-06-07           0.283           0.123              0.160  
- 8 KRBC     2017-06-07           0.130           0.189             -0.0589 
- 9 KTAB     2017-06-07           0.0901          0.138             -0.0476 
-10 KTMF     2017-06-07           0.152           0.129              0.0229 
-# ℹ 3,127 more rows</code></pre>
+ 1 KECI     2017-06-07            0.225          0.148               0.0761
+ 2 KPAX     2017-06-07            0.283          0.123               0.160 
+ 3 KRBC     2017-06-07            0.130          0.189              -0.0589
+ 4 KTAB     2017-06-07            0.0901         0.138              -0.0476
+ 5 KTMF     2017-06-07            0.152          0.129               0.0229
+ 6 KTXS     2017-06-07            0.0925         0.0791              0.0134
+ 7 KAEF     2017-06-08            0.213          0.228              -0.0151
+ 8 KBVU     2017-06-08            0.169          0.247              -0.0781
+ 9 KECI     2017-06-08            0.276          0.152               0.124 
+10 KPAX     2017-06-08            0.305          0.124               0.180 
+# ℹ 2,550 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -933,20 +943,427 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Not Acquired"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(callsign, affiliation, date, sinclair2017, Ownership)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,137 × 5
+<pre><code># A tibble: 2,560 × 5
    callsign affiliation date       sinclair2017 Ownership           
    &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;            &lt;dbl&gt; &lt;chr&gt;               
- 1 KRBC     NBC         2017-06-05            0 Not Acquired        
- 2 KTAB     CBS         2017-06-05            0 Not Acquired        
- 3 KXVA     FOX         2017-06-05            0 Not Acquired        
- 4 KPAX     CBS         2017-06-06            0 Not Acquired        
- 5 KTAB     CBS         2017-06-06            0 Not Acquired        
- 6 KECI     NBC         2017-06-07            1 Acquired by Sinclair
- 7 KPAX     CBS         2017-06-07            0 Not Acquired        
- 8 KRBC     NBC         2017-06-07            0 Not Acquired        
- 9 KTAB     CBS         2017-06-07            0 Not Acquired        
-10 KTMF     ABC         2017-06-07            0 Not Acquired        
-# ℹ 3,127 more rows</code></pre>
+ 1 KECI     NBC         2017-06-07            1 Acquired by Sinclair
+ 2 KPAX     CBS         2017-06-07            0 Not Acquired        
+ 3 KRBC     NBC         2017-06-07            0 Not Acquired        
+ 4 KTAB     CBS         2017-06-07            0 Not Acquired        
+ 5 KTMF     ABC         2017-06-07            0 Not Acquired        
+ 6 KTXS     ABC         2017-06-07            1 Acquired by Sinclair
+ 7 KAEF     ABC         2017-06-08            1 Acquired by Sinclair
+ 8 KBVU     FOX         2017-06-08            1 Acquired by Sinclair
+ 9 KECI     NBC         2017-06-08            1 Acquired by Sinclair
+10 KPAX     CBS         2017-06-08            0 Not Acquired        
+# ℹ 2,550 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="summarizing-a-variable" class="level3">
+<h3 class="anchored" data-anchor-id="summarizing-a-variable">Summarizing a variable</h3>
+<p>You can calculate summaries of variables in the data set using the <code>summarize()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_ideology =</span> <span class="fu">mean</span>(ideology),</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_ideology =</span> <span class="fu">sd</span>(ideology),</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_ideology =</span> <span class="fu">median</span>(ideology)</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  avg_ideology sd_ideology median_ideology
+         &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;
+1       0.0907      0.0962          0.0929</code></pre>
+</div>
+</div>
+</section>
+<section id="summarizing-variables-by-groups-of-rows" class="level3">
+<h3 class="anchored" data-anchor-id="summarizing-variables-by-groups-of-rows">Summarizing variables by groups of rows</h3>
+<p>By default, <code>summarize()</code> calculates the summaries of variables for all rows in the data frame. You can also calculate these summaries within groups of rows defined by another variable in the data frame using the <code>group_by()</code> function before summarizing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(month) <span class="sc">|&gt;</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_ideology =</span> <span class="fu">mean</span>(ideology),</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_ideology =</span> <span class="fu">sd</span>(ideology),</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_ideology =</span> <span class="fu">median</span>(ideology)</span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 4
+  month avg_ideology sd_ideology median_ideology
+  &lt;ord&gt;        &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;
+1 Jun         0.0786      0.0979          0.0838
+2 Jul         0.103       0.0888          0.0992
+3 Aug         0.105       0.0811          0.106 
+4 Sep         0.0751      0.0902          0.0768
+5 Oct         0.0862      0.110           0.0853
+6 Nov         0.0972      0.0893          0.102 
+7 Dec         0.0774      0.125           0.0878</code></pre>
+</div>
+</div>
+<p>Here, the <code>summarize()</code> function breaks apart the original data into smaller data frames for each month and applies the summary functions to those, then combines everything into one tibble.</p>
+</section>
+<section id="summarizing-by-multiple-variables" class="level3">
+<h3 class="anchored" data-anchor-id="summarizing-by-multiple-variables">Summarizing by multiple variables</h3>
+<p>You can group by multiple variables and <code>summarize()</code> will create groups based on every combination of each variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sinclair2017, post) <span class="sc">|&gt;</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_ideology =</span> <span class="fu">mean</span>(ideology)</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'sinclair2017'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+# Groups:   sinclair2017 [2]
+  sinclair2017  post avg_ideology
+         &lt;dbl&gt; &lt;dbl&gt;        &lt;dbl&gt;
+1            0     0       0.100 
+2            0     1       0.0768
+3            1     0       0.0936
+4            1     1       0.0938</code></pre>
+</div>
+</div>
+<p>You’ll notice the message that <code>summarize()</code> sends after using to let us know that resulting tibble is grouped by <code>sinclair2017</code>. By default, <code>summarize()</code> drops the last group you provided in <code>group_by</code> (<code>post</code> in this case). This isn’t an error message, it’s just letting us know some helpful information. If you want to avoid this messaging displaying, you need to specify what grouping you want after using the <code>.groups</code> argument:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sinclair2017, post) <span class="sc">|&gt;</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_ideology =</span> <span class="fu">mean</span>(ideology),</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop_last"</span></span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+# Groups:   sinclair2017 [2]
+  sinclair2017  post avg_ideology
+         &lt;dbl&gt; &lt;dbl&gt;        &lt;dbl&gt;
+1            0     0       0.100 
+2            0     1       0.0768
+3            1     0       0.0936
+4            1     1       0.0938</code></pre>
+</div>
+</div>
+</section>
+<section id="summarizing-across-many-variables" class="level3">
+<h3 class="anchored" data-anchor-id="summarizing-across-many-variables">Summarizing across many variables</h3>
+<p>If you want to apply the same summary to multiple variables, you can use the <code>across(vars, fun)</code> function, where <code>vars</code> is a vector of variable names (specified like with <code>select()</code>) and <code>fun</code> is a summary function to apply to those variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sinclair2017, post) <span class="sc">|&gt;</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">c</span>(ideology, national_politics), mean)</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'sinclair2017'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   sinclair2017 [2]
+  sinclair2017  post ideology national_politics
+         &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;             &lt;dbl&gt;
+1            0     0   0.100              0.134
+2            0     1   0.0768             0.126
+3            1     0   0.0936             0.137
+4            1     1   0.0938             0.155</code></pre>
+</div>
+</div>
+<p>As with <code>select()</code>, you can use the <code>:</code> operator to select a range of variables</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sinclair2017, post) <span class="sc">|&gt;</span></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(ideology<span class="sc">:</span>local_politics, mean)</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'sinclair2017'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+# Groups:   sinclair2017 [2]
+  sinclair2017  post ideology national_politics local_politics
+         &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;             &lt;dbl&gt;          &lt;dbl&gt;
+1            0     0   0.100              0.134          0.168
+2            0     1   0.0768             0.126          0.167
+3            1     0   0.0936             0.137          0.157
+4            1     1   0.0938             0.155          0.139</code></pre>
+</div>
+</div>
+</section>
+<section id="table-of-counts-of-a-categorical-variable" class="level3">
+<h3 class="anchored" data-anchor-id="table-of-counts-of-a-categorical-variable">Table of counts of a categorical variable</h3>
+<p>There are two way to produce a table of counts of each category of a variable. The first is to use <code>group_by</code> and <code>summarize</code> along with the summary function <code>n()</code>, which returns the numbers of rows in each grouping (that is, each combination of the grouping variables):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(affiliation) <span class="sc">|&gt;</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  affiliation     n
+  &lt;chr&gt;       &lt;int&gt;
+1 ABC           687
+2 CBS           758
+3 FOX           346
+4 NBC           769</code></pre>
+</div>
+</div>
+<p>A simpler way to acheive the same outcome is to use the <code>count()</code> function, which implements these two steps:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(affiliation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  affiliation     n
+  &lt;chr&gt;       &lt;int&gt;
+1 ABC           687
+2 CBS           758
+3 FOX           346
+4 NBC           769</code></pre>
+</div>
+</div>
+</section>
+<section id="producing-nicely-formatted-tables-with-kable" class="level3">
+<h3 class="anchored" data-anchor-id="producing-nicely-formatted-tables-with-kable">Producing nicely formatted tables with <code>kable()</code></h3>
+<p>You can take any tibble in R and convert it into a more readable output by passing it to <code>knitr::kable()</code>. In our homework, generally, we will save the tibble as an object and then pass it to this function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>month_summary <span class="ot">&lt;-</span> news <span class="sc">|&gt;</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(month) <span class="sc">|&gt;</span></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_ideology =</span> <span class="fu">mean</span>(ideology),</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_ideology =</span> <span class="fu">sd</span>(ideology)</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(month_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">month</th>
+<th style="text-align: right;">avg_ideology</th>
+<th style="text-align: right;">sd_ideology</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jun</td>
+<td style="text-align: right;">0.0785518</td>
+<td style="text-align: right;">0.0979339</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jul</td>
+<td style="text-align: right;">0.1032917</td>
+<td style="text-align: right;">0.0888328</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aug</td>
+<td style="text-align: right;">0.1049908</td>
+<td style="text-align: right;">0.0811141</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sep</td>
+<td style="text-align: right;">0.0751067</td>
+<td style="text-align: right;">0.0902003</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oct</td>
+<td style="text-align: right;">0.0861639</td>
+<td style="text-align: right;">0.1098108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nov</td>
+<td style="text-align: right;">0.0971796</td>
+<td style="text-align: right;">0.0892845</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dec</td>
+<td style="text-align: right;">0.0773873</td>
+<td style="text-align: right;">0.1246451</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>You can add informative column names to the table using the <code>col.names</code> argument.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>  month_summary,</span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Month"</span>, <span class="st">"Average Ideology"</span>, <span class="st">"SD of Ideology"</span>)</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Month</th>
+<th style="text-align: right;">Average Ideology</th>
+<th style="text-align: right;">SD of Ideology</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jun</td>
+<td style="text-align: right;">0.0785518</td>
+<td style="text-align: right;">0.0979339</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jul</td>
+<td style="text-align: right;">0.1032917</td>
+<td style="text-align: right;">0.0888328</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aug</td>
+<td style="text-align: right;">0.1049908</td>
+<td style="text-align: right;">0.0811141</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sep</td>
+<td style="text-align: right;">0.0751067</td>
+<td style="text-align: right;">0.0902003</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oct</td>
+<td style="text-align: right;">0.0861639</td>
+<td style="text-align: right;">0.1098108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nov</td>
+<td style="text-align: right;">0.0971796</td>
+<td style="text-align: right;">0.0892845</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dec</td>
+<td style="text-align: right;">0.0773873</td>
+<td style="text-align: right;">0.1246451</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Finally, we can round the numbers in the table to be a bit nicer using the <code>digits</code> argument. This will tell <code>kable()</code> how many significant digiits to show.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>  month_summary,</span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Month"</span>, <span class="st">"Average Ideology"</span>, <span class="st">"SD of Ideology"</span>),</span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">3</span></span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Month</th>
+<th style="text-align: right;">Average Ideology</th>
+<th style="text-align: right;">SD of Ideology</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jun</td>
+<td style="text-align: right;">0.079</td>
+<td style="text-align: right;">0.098</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jul</td>
+<td style="text-align: right;">0.103</td>
+<td style="text-align: right;">0.089</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aug</td>
+<td style="text-align: right;">0.105</td>
+<td style="text-align: right;">0.081</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sep</td>
+<td style="text-align: right;">0.075</td>
+<td style="text-align: right;">0.090</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oct</td>
+<td style="text-align: right;">0.086</td>
+<td style="text-align: right;">0.110</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nov</td>
+<td style="text-align: right;">0.097</td>
+<td style="text-align: right;">0.089</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dec</td>
+<td style="text-align: right;">0.077</td>
+<td style="text-align: right;">0.125</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="barplots-of-counts" class="level3">
+<h3 class="anchored" data-anchor-id="barplots-of-counts">Barplots of counts</h3>
+<p>You can visualize counts of a variable using a barplot:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> affiliation)) <span class="sc">+</span></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="barplots-of-other-summaries" class="level3">
+<h3 class="anchored" data-anchor-id="barplots-of-other-summaries">Barplots of other summaries</h3>
+<p>We can use barplots to visualize other grouped summaries like means, but we need to use the <code>geom_col()</code> geom instead and specify the variable you want to be the height of the bars .</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(affiliation) <span class="sc">|&gt;</span></span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_ideology =</span> <span class="fu">mean</span>(ideology)</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> affiliation, <span class="at">y =</span> avg_ideology)) <span class="sc">+</span></span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/unnamed-chunk-45-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="reorderingsorting-barplot-axes" class="level3">
+<h3 class="anchored" data-anchor-id="reorderingsorting-barplot-axes">Reordering/sorting barplot axes</h3>
+<p>Often we want to sort the barplot axes to be in the order of the variable of interest so we can quickly compare them. We can use the <code>fct_reorder(group_var, ordering_var)</code> function to do this where the <code>group_var</code> is the grouping variable that is going on the axes and the <code>ordering_var</code> is the variable that we will sort the groups on.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(affiliation) <span class="sc">|&gt;</span></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_ideology =</span> <span class="fu">mean</span>(ideology)</span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(affiliation, avg_ideology),</span>
+<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y =</span> avg_ideology)) <span class="sc">+</span></span>
+<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="coloring-barplots-by-another-variable" class="level3">
+<h3 class="anchored" data-anchor-id="coloring-barplots-by-another-variable">Coloring barplots by another variable</h3>
+<p>You can color the barplots by a another variable using the <code>fill</code> aesthetic:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(callsign, affiliation) <span class="sc">|&gt;</span></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_ideology =</span> <span class="fu">mean</span>(ideology)</span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(avg_ideology, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">fct_reorder</span>(callsign, avg_ideology),</span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">x =</span> avg_ideology)) <span class="sc">+</span></span>
+<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">fill =</span> affiliation))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'callsign'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
