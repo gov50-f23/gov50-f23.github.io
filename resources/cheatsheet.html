@@ -184,6 +184,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#subsetting-a-data-frame" id="toc-subsetting-a-data-frame" class="nav-link" data-scroll-target="#subsetting-a-data-frame">Subsetting a data frame</a></li>
   <li><a href="#filtering-to-the-largestsmallest-values-of-a-variable" id="toc-filtering-to-the-largestsmallest-values-of-a-variable" class="nav-link" data-scroll-target="#filtering-to-the-largestsmallest-values-of-a-variable">Filtering to the largest/smallest values of a variable</a></li>
+  <li><a href="#sorting-rows-by-a-variable" id="toc-sorting-rows-by-a-variable" class="nav-link" data-scroll-target="#sorting-rows-by-a-variable">Sorting rows by a variable</a></li>
+  <li><a href="#selectingsubsetting-the-columns" id="toc-selectingsubsetting-the-columns" class="nav-link" data-scroll-target="#selectingsubsetting-the-columns">Selecting/subsetting the columns</a></li>
+  <li><a href="#renaming-a-variable" id="toc-renaming-a-variable" class="nav-link" data-scroll-target="#renaming-a-variable">Renaming a variable</a></li>
+  <li><a href="#creating-new-variables" id="toc-creating-new-variables" class="nav-link" data-scroll-target="#creating-new-variables">Creating new variables</a></li>
+  <li><a href="#creating-new-variables-based-on-yesno-conditions" id="toc-creating-new-variables-based-on-yesno-conditions" class="nav-link" data-scroll-target="#creating-new-variables-based-on-yesno-conditions">Creating new variables based on yes/no conditions</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -686,6 +691,262 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5 KRBC     NBC         2017-12-11 Mon       -0.365            0.0674
 # ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
 #   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="sorting-rows-by-a-variable" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-rows-by-a-variable">Sorting rows by a variable</h3>
+<p>You can sort the rows of a data set using the <code>arrange()</code> function. By default, this will sort the rows from smallest to largest.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(ideology)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 10
+   callsign affiliation date       weekday ideology national_politics
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+ 1 KRBC     NBC         2017-10-19 Thu       -0.674            0.0731
+ 2 WJHL     CBS         2017-12-08 Fri       -0.673            0.0364
+ 3 KRBC     NBC         2017-10-18 Wed       -0.586            0.0470
+ 4 KCVU     FOX         2017-06-22 Thu       -0.414            0.158 
+ 5 KRBC     NBC         2017-12-11 Mon       -0.365            0.0674
+ 6 KAEF     ABC         2017-06-21 Wed       -0.315            0.130 
+ 7 KTMF     ABC         2017-12-01 Fri       -0.303            0.179 
+ 8 KWYB     ABC         2017-12-01 Fri       -0.303            0.160 
+ 9 KTVM     NBC         2017-09-01 Fri       -0.302            0.0507
+10 KNVN     NBC         2017-12-08 Fri       -0.299            0.121 
+# ℹ 3,127 more rows
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+<p>If you would like to sort the rows from largest to smallest (descending order), you can wrap the variable name with <code>desc()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(ideology))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 10
+   callsign affiliation date       weekday ideology national_politics
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+ 1 KAEF     ABC         2017-06-19 Mon        0.778            0.0823
+ 2 WYDO     FOX         2017-07-19 Wed        0.580            0.126 
+ 3 KRCR     ABC         2017-10-03 Tue        0.566            0.123 
+ 4 KAEF     ABC         2017-10-18 Wed        0.496            0.0892
+ 5 KBVU     FOX         2017-11-16 Thu        0.491            0.159 
+ 6 KTMF     ABC         2017-11-06 Mon        0.455            0.138 
+ 7 KAEF     ABC         2017-06-29 Thu        0.447            0.126 
+ 8 KPAX     CBS         2017-11-23 Thu        0.437            0.125 
+ 9 KTAB     CBS         2017-11-16 Thu        0.427            0.0631
+10 KCVU     FOX         2017-07-06 Thu        0.406            0.154 
+# ℹ 3,127 more rows
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="selectingsubsetting-the-columns" class="level3">
+<h3 class="anchored" data-anchor-id="selectingsubsetting-the-columns">Selecting/subsetting the columns</h3>
+<p>You can subset the data to only certain columns using the <code>select()</code> command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(callsign, date, ideology)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 3
+   callsign date       ideology
+   &lt;chr&gt;    &lt;date&gt;        &lt;dbl&gt;
+ 1 KRBC     2017-06-05  NA     
+ 2 KTAB     2017-06-05  NA     
+ 3 KXVA     2017-06-05  NA     
+ 4 KPAX     2017-06-06  NA     
+ 5 KTAB     2017-06-06  NA     
+ 6 KECI     2017-06-07   0.0655
+ 7 KPAX     2017-06-07   0.0853
+ 8 KRBC     2017-06-07   0.0183
+ 9 KTAB     2017-06-07   0.0850
+10 KTMF     2017-06-07   0.0842
+# ℹ 3,127 more rows</code></pre>
+</div>
+</div>
+<p>If you want to select a range of columns from, say, <code>callsign</code> to <code>ideology</code>, you can use the <code>:</code> operator:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(callsign<span class="sc">:</span>ideology)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 5
+   callsign affiliation date       weekday ideology
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;
+ 1 KRBC     NBC         2017-06-05 Mon      NA     
+ 2 KTAB     CBS         2017-06-05 Mon      NA     
+ 3 KXVA     FOX         2017-06-05 Mon      NA     
+ 4 KPAX     CBS         2017-06-06 Tue      NA     
+ 5 KTAB     CBS         2017-06-06 Tue      NA     
+ 6 KECI     NBC         2017-06-07 Wed       0.0655
+ 7 KPAX     CBS         2017-06-07 Wed       0.0853
+ 8 KRBC     NBC         2017-06-07 Wed       0.0183
+ 9 KTAB     CBS         2017-06-07 Wed       0.0850
+10 KTMF     ABC         2017-06-07 Wed       0.0842
+# ℹ 3,127 more rows</code></pre>
+</div>
+</div>
+<p>You can remove a variable from the data set by using the minus sign <code>-</code> in front of it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>callsign)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 9
+   affiliation date       weekday ideology national_politics local_politics
+   &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;          &lt;dbl&gt;
+ 1 NBC         2017-06-05 Mon      NA                0.0286          0.0190
+ 2 CBS         2017-06-05 Mon      NA                0.0286          0.0190
+ 3 FOX         2017-06-05 Mon      NA                0.0393          0.0262
+ 4 CBS         2017-06-06 Tue      NA                0.00357         0.194 
+ 5 CBS         2017-06-06 Tue      NA                0.0945          0.109 
+ 6 NBC         2017-06-07 Wed       0.0655           0.225           0.148 
+ 7 CBS         2017-06-07 Wed       0.0853           0.283           0.123 
+ 8 NBC         2017-06-07 Wed       0.0183           0.130           0.189 
+ 9 CBS         2017-06-07 Wed       0.0850           0.0901          0.138 
+10 ABC         2017-06-07 Wed       0.0842           0.152           0.129 
+# ℹ 3,127 more rows
+# ℹ 3 more variables: sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;, month &lt;ord&gt;</code></pre>
+</div>
+</div>
+<p>You can also drop several variables using the <code>c()</code> function or the <code>(a:b)</code> syntax:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(callsign, date, ideology))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 7
+   affiliation weekday national_politics local_politics sinclair2017  post month
+   &lt;chr&gt;       &lt;ord&gt;               &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt;
+ 1 NBC         Mon               0.0286          0.0190            0     0 Jun  
+ 2 CBS         Mon               0.0286          0.0190            0     0 Jun  
+ 3 FOX         Mon               0.0393          0.0262            0     0 Jun  
+ 4 CBS         Tue               0.00357         0.194             0     0 Jun  
+ 5 CBS         Tue               0.0945          0.109             0     0 Jun  
+ 6 NBC         Wed               0.225           0.148             1     0 Jun  
+ 7 CBS         Wed               0.283           0.123             0     0 Jun  
+ 8 NBC         Wed               0.130           0.189             0     0 Jun  
+ 9 CBS         Wed               0.0901          0.138             0     0 Jun  
+10 ABC         Wed               0.152           0.129             0     0 Jun  
+# ℹ 3,127 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>(callsign<span class="sc">:</span>ideology))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 5
+   national_politics local_politics sinclair2017  post month
+               &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;ord&gt;
+ 1           0.0286          0.0190            0     0 Jun  
+ 2           0.0286          0.0190            0     0 Jun  
+ 3           0.0393          0.0262            0     0 Jun  
+ 4           0.00357         0.194             0     0 Jun  
+ 5           0.0945          0.109             0     0 Jun  
+ 6           0.225           0.148             1     0 Jun  
+ 7           0.283           0.123             0     0 Jun  
+ 8           0.130           0.189             0     0 Jun  
+ 9           0.0901          0.138             0     0 Jun  
+10           0.152           0.129             0     0 Jun  
+# ℹ 3,127 more rows</code></pre>
+</div>
+</div>
+<p>You can also select columns based on matching patterns in the names with functions like <code>starts_with()</code> or <code>ends_with()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">"politics"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 2
+   national_politics local_politics
+               &lt;dbl&gt;          &lt;dbl&gt;
+ 1           0.0286          0.0190
+ 2           0.0286          0.0190
+ 3           0.0393          0.0262
+ 4           0.00357         0.194 
+ 5           0.0945          0.109 
+ 6           0.225           0.148 
+ 7           0.283           0.123 
+ 8           0.130           0.189 
+ 9           0.0901          0.138 
+10           0.152           0.129 
+# ℹ 3,127 more rows</code></pre>
+</div>
+</div>
+<p>This code finds all variables with column names that end with the string “politics”. See the <a href="https://dplyr.tidyverse.org/reference/select.html">help page for <code>select()</code></a> for more information on different ways to select.</p>
+</section>
+<section id="renaming-a-variable" class="level3">
+<h3 class="anchored" data-anchor-id="renaming-a-variable">Renaming a variable</h3>
+<p>You can rename a variable useing the function <code>rename(new_name = old_name)</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">call_sign =</span> callsign)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 10
+   call_sign affiliation date       weekday ideology national_politics
+   &lt;chr&gt;     &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+ 1 KRBC      NBC         2017-06-05 Mon      NA                0.0286 
+ 2 KTAB      CBS         2017-06-05 Mon      NA                0.0286 
+ 3 KXVA      FOX         2017-06-05 Mon      NA                0.0393 
+ 4 KPAX      CBS         2017-06-06 Tue      NA                0.00357
+ 5 KTAB      CBS         2017-06-06 Tue      NA                0.0945 
+ 6 KECI      NBC         2017-06-07 Wed       0.0655           0.225  
+ 7 KPAX      CBS         2017-06-07 Wed       0.0853           0.283  
+ 8 KRBC      NBC         2017-06-07 Wed       0.0183           0.130  
+ 9 KTAB      CBS         2017-06-07 Wed       0.0850           0.0901 
+10 KTMF      ABC         2017-06-07 Wed       0.0842           0.152  
+# ℹ 3,127 more rows
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-new-variables" class="level3">
+<h3 class="anchored" data-anchor-id="creating-new-variables">Creating new variables</h3>
+<p>You can create new variables that are functions of old variables using the <code>mutate()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span> <span class="fu">mutate</span>(</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">national_local_diff =</span> national_politics <span class="sc">-</span> local_politics) <span class="sc">|&gt;</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(callsign, date, national_politics, local_politics,</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>         national_local_diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 5
+   callsign date       national_politics local_politics national_local_diff
+   &lt;chr&gt;    &lt;date&gt;                 &lt;dbl&gt;          &lt;dbl&gt;               &lt;dbl&gt;
+ 1 KRBC     2017-06-05           0.0286          0.0190             0.00952
+ 2 KTAB     2017-06-05           0.0286          0.0190             0.00952
+ 3 KXVA     2017-06-05           0.0393          0.0262             0.0131 
+ 4 KPAX     2017-06-06           0.00357         0.194             -0.191  
+ 5 KTAB     2017-06-06           0.0945          0.109             -0.0145 
+ 6 KECI     2017-06-07           0.225           0.148              0.0761 
+ 7 KPAX     2017-06-07           0.283           0.123              0.160  
+ 8 KRBC     2017-06-07           0.130           0.189             -0.0589 
+ 9 KTAB     2017-06-07           0.0901          0.138             -0.0476 
+10 KTMF     2017-06-07           0.152           0.129              0.0229 
+# ℹ 3,127 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-new-variables-based-on-yesno-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="creating-new-variables-based-on-yesno-conditions">Creating new variables based on yes/no conditions</h3>
+<p>If you want to create a new variable that can take on two values based on a logical conditional, you should use the <code>if_else()</code> function inside of <code>mutate()</code>. For instance, if we want to create a more nicely labeled version of the <code>sinclair2017</code> variable (which is 0/1), we could do:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Ownership =</span> <span class="fu">if_else</span>(sinclair2017 <span class="sc">==</span> <span class="dv">1</span>,</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Acquired by Sinclair"</span>,</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Not Acquired"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(callsign, affiliation, date, sinclair2017, Ownership)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,137 × 5
+   callsign affiliation date       sinclair2017 Ownership           
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;            &lt;dbl&gt; &lt;chr&gt;               
+ 1 KRBC     NBC         2017-06-05            0 Not Acquired        
+ 2 KTAB     CBS         2017-06-05            0 Not Acquired        
+ 3 KXVA     FOX         2017-06-05            0 Not Acquired        
+ 4 KPAX     CBS         2017-06-06            0 Not Acquired        
+ 5 KTAB     CBS         2017-06-06            0 Not Acquired        
+ 6 KECI     NBC         2017-06-07            1 Acquired by Sinclair
+ 7 KPAX     CBS         2017-06-07            0 Not Acquired        
+ 8 KRBC     NBC         2017-06-07            0 Not Acquired        
+ 9 KTAB     CBS         2017-06-07            0 Not Acquired        
+10 KTMF     ABC         2017-06-07            0 Not Acquired        
+# ℹ 3,127 more rows</code></pre>
 </div>
 </div>
 
