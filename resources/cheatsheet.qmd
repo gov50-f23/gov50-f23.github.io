@@ -241,3 +241,107 @@ To get lowest values, use `slice_min`:
 news |>
   slice_min(ideology, n = 5)
 ```
+
+
+### Sorting rows by a variable
+
+You can sort the rows of a data set using the `arrange()` function. By default, this will sort the rows from smallest to largest. 
+
+```{r}
+news |>
+  arrange(ideology)
+```
+
+If you would like to sort the rows from largest to smallest (descending order), you can wrap the variable name with `desc()`:
+
+```{r}
+news |>
+  arrange(desc(ideology))
+```
+
+
+### Selecting/subsetting the columns
+
+You can subset the data to only certain columns using the `select()` command:
+
+```{r}
+#| label: "select"
+news |>
+  select(callsign, date, ideology)
+```
+
+If you want to select a range of columns from, say, `callsign` to `ideology`, you can use the `:` operator:
+
+```{r}
+#| label: "select-range"
+news |>
+  select(callsign:ideology)
+```
+
+You can remove a variable from the data set by using the minus sign `-` in front of it:
+
+```{r}
+#| label: "select-minus"
+news |>
+  select(-callsign)
+```
+
+You can also drop several variables using the `c()` function or the `(a:b)` syntax:
+
+```{r}
+news |>
+  select(-c(callsign, date, ideology))
+
+news |>
+  select(-(callsign:ideology))
+```
+
+
+You can also select columns based on matching patterns in the names with functions like `starts_with()` or `ends_with()`:
+
+```{r}
+#| label: "ends_with"
+
+news |>
+  select(ends_with("politics"))
+```
+
+
+This code finds all variables with column names that end with the string "politics". See the [help page for `select()`](https://dplyr.tidyverse.org/reference/select.html) for more information on different ways to select. 
+
+
+### Renaming a variable 
+
+You can rename a variable useing the function `rename(new_name = old_name)`:
+
+```{r}
+news |>
+  rename(call_sign = callsign)
+```
+
+
+### Creating new variables 
+
+You can create new variables that are functions of old variables using the `mutate()` function:
+
+
+```{r}
+news |> mutate(
+  national_local_diff = national_politics - local_politics) |>
+  select(callsign, date, national_politics, local_politics,
+         national_local_diff)
+```
+
+
+### Creating new variables based on yes/no conditions
+
+If you want to create a new variable that can take on two values based on a logical conditional, you should use the `if_else()` function inside of `mutate()`. For instance, if we want to create a more nicely labeled version of the `sinclair2017` variable (which is 0/1), we could do:
+
+```{r}
+news |>
+  mutate(Ownership = if_else(sinclair2017 == 1,
+                             "Acquired by Sinclair",
+                             "Not Acquired")) |>
+  select(callsign, affiliation, date, sinclair2017, Ownership)
+```
+
