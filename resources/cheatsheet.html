@@ -199,6 +199,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#barplots-of-other-summaries" id="toc-barplots-of-other-summaries" class="nav-link" data-scroll-target="#barplots-of-other-summaries">Barplots of other summaries</a></li>
   <li><a href="#reorderingsorting-barplot-axes" id="toc-reorderingsorting-barplot-axes" class="nav-link" data-scroll-target="#reorderingsorting-barplot-axes">Reordering/sorting barplot axes</a></li>
   <li><a href="#coloring-barplots-by-another-variable" id="toc-coloring-barplots-by-another-variable" class="nav-link" data-scroll-target="#coloring-barplots-by-another-variable">Coloring barplots by another variable</a></li>
+  <li><a href="#creating-logical-vectors" id="toc-creating-logical-vectors" class="nav-link" data-scroll-target="#creating-logical-vectors">Creating logical vectors</a></li>
+  <li><a href="#using-to-negate-logicals" id="toc-using-to-negate-logicals" class="nav-link" data-scroll-target="#using-to-negate-logicals">Using <code>!</code> to negate logicals</a></li>
+  <li><a href="#grouped-summaries-with-any-and-all" id="toc-grouped-summaries-with-any-and-all" class="nav-link" data-scroll-target="#grouped-summaries-with-any-and-all">Grouped summaries with <code>any()</code> and <code>all()</code></a></li>
+  <li><a href="#converting-logicals" id="toc-converting-logicals" class="nav-link" data-scroll-target="#converting-logicals">Converting logicals</a></li>
+  <li><a href="#grouped-logical-summaries-with-sums-and-means" id="toc-grouped-logical-summaries-with-sums-and-means" class="nav-link" data-scroll-target="#grouped-logical-summaries-with-sums-and-means">Grouped logical summaries with sums and means</a></li>
+  </ul></li>
+  <li><a href="#causality-week-4" id="toc-causality-week-4" class="nav-link" data-scroll-target="#causality-week-4">Causality (Week 4)</a>
+  <ul class="collapse">
+  <li><a href="#calculating-a-difference-in-means-by-filtering" id="toc-calculating-a-difference-in-means-by-filtering" class="nav-link" data-scroll-target="#calculating-a-difference-in-means-by-filtering">Calculating a difference in means by filtering</a></li>
+  <li><a href="#pivoting-a-tibble-to-make-a-cross-tab" id="toc-pivoting-a-tibble-to-make-a-cross-tab" class="nav-link" data-scroll-target="#pivoting-a-tibble-to-make-a-cross-tab">Pivoting a tibble to make a cross-tab</a></li>
+  <li><a href="#calculating-difference-in-means-by-pivoting" id="toc-calculating-difference-in-means-by-pivoting" class="nav-link" data-scroll-target="#calculating-difference-in-means-by-pivoting">Calculating difference in means by pivoting</a></li>
+  <li><a href="#creating-new-labels-for-variables-to-make-nicer-tables" id="toc-creating-new-labels-for-variables-to-make-nicer-tables" class="nav-link" data-scroll-target="#creating-new-labels-for-variables-to-make-nicer-tables">Creating new labels for variables to make nicer tables</a></li>
+  <li><a href="#calculating-difference-in-means-by-two-level-grouping-variable" id="toc-calculating-difference-in-means-by-two-level-grouping-variable" class="nav-link" data-scroll-target="#calculating-difference-in-means-by-two-level-grouping-variable">Calculating difference in means by two-level grouping variable</a></li>
+  <li><a href="#creating-grouping-variables-with-more-than-2-levels" id="toc-creating-grouping-variables-with-more-than-2-levels" class="nav-link" data-scroll-target="#creating-grouping-variables-with-more-than-2-levels">Creating grouping variables with more than 2 levels</a></li>
+  <li><a href="#calculating-difference-in-mean-by-grouping-variable-with-more-than-2-levels" id="toc-calculating-difference-in-mean-by-grouping-variable-with-more-than-2-levels" class="nav-link" data-scroll-target="#calculating-difference-in-mean-by-grouping-variable-with-more-than-2-levels">Calculating difference in mean by grouping variable with more than 2 levels</a></li>
+  <li><a href="#calculating-before-and-after-difference-in-means" id="toc-calculating-before-and-after-difference-in-means" class="nav-link" data-scroll-target="#calculating-before-and-after-difference-in-means">Calculating before and after difference in means</a></li>
+  <li><a href="#calculating-difference-in-differences-estimator" id="toc-calculating-difference-in-differences-estimator" class="nav-link" data-scroll-target="#calculating-difference-in-differences-estimator">Calculating difference-in-differences estimator</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1364,6 +1381,504 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output-display">
 <p><img src="cheatsheet_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="creating-logical-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="creating-logical-vectors">Creating logical vectors</h3>
+<p>You can create logical variables in your tibbles using mutate:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">right_leaning =</span> ideology <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fall =</span> month <span class="sc">==</span> <span class="st">"Sep"</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="st">"Oct"</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="st">"Nov"</span>,</span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.keep =</span> <span class="st">"used"</span></span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,560 × 4
+    ideology month right_leaning fall 
+       &lt;dbl&gt; &lt;ord&gt; &lt;lgl&gt;         &lt;lgl&gt;
+ 1  0.0655   Jun   TRUE          FALSE
+ 2  0.0853   Jun   TRUE          FALSE
+ 3  0.0183   Jun   TRUE          FALSE
+ 4  0.0850   Jun   TRUE          FALSE
+ 5  0.0842   Jun   TRUE          FALSE
+ 6 -0.000488 Jun   FALSE         FALSE
+ 7  0.0426   Jun   TRUE          FALSE
+ 8 -0.0860   Jun   FALSE         FALSE
+ 9  0.0902   Jun   TRUE          FALSE
+10  0.0668   Jun   TRUE          FALSE
+# ℹ 2,550 more rows</code></pre>
+</div>
+</div>
+<p>The <code>.keep = "used"</code> argument here tells mutate to only return the variables created and any variables used to create them. We’re using it here for display purposes.</p>
+<p>You can filter based on these logical variables. In particular, if we want to subset to rows where both <code>right_leaning</code> and <code>fall</code> were <code>TRUE</code> we could do the following filter:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">right_leaning =</span> ideology <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fall =</span> month <span class="sc">==</span> <span class="st">"Sep"</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="st">"Oct"</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="st">"Nov"</span>,</span>
+<span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.keep =</span> <span class="st">"used"</span></span>
+<span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(right_leaning <span class="sc">&amp;</span> fall)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,050 × 4
+   ideology month right_leaning fall 
+      &lt;dbl&gt; &lt;ord&gt; &lt;lgl&gt;         &lt;lgl&gt;
+ 1   0.121  Sep   TRUE          TRUE 
+ 2   0.0564 Sep   TRUE          TRUE 
+ 3   0.0564 Sep   TRUE          TRUE 
+ 4   0.324  Sep   TRUE          TRUE 
+ 5   0.0649 Sep   TRUE          TRUE 
+ 6   0.0613 Sep   TRUE          TRUE 
+ 7   0.187  Sep   TRUE          TRUE 
+ 8   0.0297 Sep   TRUE          TRUE 
+ 9   0.151  Sep   TRUE          TRUE 
+10   0.186  Sep   TRUE          TRUE 
+# ℹ 1,040 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="using-to-negate-logicals" class="level3">
+<h3 class="anchored" data-anchor-id="using-to-negate-logicals">Using <code>!</code> to negate logicals</h3>
+<p>Any time you place the exclamation point in front of a logical, it will turn any <code>TRUE</code> into a <code>FALSE</code> and vice versa. For instance, if we wanted left leaning days in the fall, we could used</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">right_leaning =</span> ideology <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fall =</span> month <span class="sc">==</span> <span class="st">"Sep"</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="st">"Oct"</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="st">"Nov"</span>,</span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.keep =</span> <span class="st">"used"</span></span>
+<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>right_leaning <span class="sc">&amp;</span> fall)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 167 × 4
+   ideology month right_leaning fall 
+      &lt;dbl&gt; &lt;ord&gt; &lt;lgl&gt;         &lt;lgl&gt;
+ 1 -0.0387  Sep   FALSE         TRUE 
+ 2 -0.302   Sep   FALSE         TRUE 
+ 3 -0.00694 Sep   FALSE         TRUE 
+ 4 -0.0140  Sep   FALSE         TRUE 
+ 5 -0.0294  Sep   FALSE         TRUE 
+ 6 -0.0113  Sep   FALSE         TRUE 
+ 7 -0.105   Sep   FALSE         TRUE 
+ 8 -0.0286  Sep   FALSE         TRUE 
+ 9 -0.0462  Sep   FALSE         TRUE 
+10 -0.0313  Sep   FALSE         TRUE 
+# ℹ 157 more rows</code></pre>
+</div>
+</div>
+<p>Or if we wanted to subset to any combination <strong>except</strong> right leaning and fall, we could negate the AND statement using parentheses:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">right_leaning =</span> ideology <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fall =</span> month <span class="sc">==</span> <span class="st">"Sep"</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="st">"Oct"</span> <span class="sc">|</span> month <span class="sc">==</span> <span class="st">"Nov"</span>,</span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.keep =</span> <span class="st">"used"</span></span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(right_leaning <span class="sc">&amp;</span> fall))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,510 × 4
+    ideology month right_leaning fall 
+       &lt;dbl&gt; &lt;ord&gt; &lt;lgl&gt;         &lt;lgl&gt;
+ 1  0.0655   Jun   TRUE          FALSE
+ 2  0.0853   Jun   TRUE          FALSE
+ 3  0.0183   Jun   TRUE          FALSE
+ 4  0.0850   Jun   TRUE          FALSE
+ 5  0.0842   Jun   TRUE          FALSE
+ 6 -0.000488 Jun   FALSE         FALSE
+ 7  0.0426   Jun   TRUE          FALSE
+ 8 -0.0860   Jun   FALSE         FALSE
+ 9  0.0902   Jun   TRUE          FALSE
+10  0.0668   Jun   TRUE          FALSE
+# ℹ 1,500 more rows</code></pre>
+</div>
+</div>
+<p>This is often used in combination with <code>%in%</code> to acheive a “not in” logical:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(affiliation <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"FOX"</span>, <span class="st">"ABC"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,527 × 10
+   callsign affiliation date       weekday ideology national_politics
+   &lt;chr&gt;    &lt;chr&gt;       &lt;date&gt;     &lt;ord&gt;      &lt;dbl&gt;             &lt;dbl&gt;
+ 1 KECI     NBC         2017-06-07 Wed       0.0655            0.225 
+ 2 KPAX     CBS         2017-06-07 Wed       0.0853            0.283 
+ 3 KRBC     NBC         2017-06-07 Wed       0.0183            0.130 
+ 4 KTAB     CBS         2017-06-07 Wed       0.0850            0.0901
+ 5 KECI     NBC         2017-06-08 Thu       0.0902            0.276 
+ 6 KPAX     CBS         2017-06-08 Thu       0.0668            0.305 
+ 7 KRBC     NBC         2017-06-08 Thu       0.108             0.156 
+ 8 KTAB     CBS         2017-06-08 Thu      -0.0178            0.0726
+ 9 KECI     NBC         2017-06-09 Fri       0.115             0.216 
+10 KPAX     CBS         2017-06-09 Fri       0.0882            0.315 
+# ℹ 1,517 more rows
+# ℹ 4 more variables: local_politics &lt;dbl&gt;, sinclair2017 &lt;dbl&gt;, post &lt;dbl&gt;,
+#   month &lt;ord&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="grouped-summaries-with-any-and-all" class="level3">
+<h3 class="anchored" data-anchor-id="grouped-summaries-with-any-and-all">Grouped summaries with <code>any()</code> and <code>all()</code></h3>
+<p>Once you group a tibble, you can summarize logicals within groups using two commands. <code>any()</code> will return <code>TRUE</code> if a logical is <code>TRUE</code> for any row in a group and <code>FALSE</code> otherwise. <code>all()</code> will return <code>TRUE</code> when the logical inside it is <code>TRUE</code> for all rows in a group and <code>FALSE</code> otherwise.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(callsign) <span class="sc">|&gt;</span></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">any_liberal =</span> <span class="fu">any</span>(ideology <span class="sc">&lt;</span> <span class="dv">0</span>),</span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">all_local =</span> <span class="fu">all</span>(national_politics <span class="sc">&lt;</span> local_politics)</span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 22 × 3
+   callsign any_liberal all_local
+   &lt;chr&gt;    &lt;lgl&gt;       &lt;lgl&gt;    
+ 1 KAEF     TRUE        FALSE    
+ 2 KBVU     TRUE        FALSE    
+ 3 KBZK     TRUE        FALSE    
+ 4 KCVU     TRUE        FALSE    
+ 5 KECI     TRUE        FALSE    
+ 6 KHSL     TRUE        FALSE    
+ 7 KNVN     TRUE        FALSE    
+ 8 KPAX     TRUE        FALSE    
+ 9 KRBC     TRUE        FALSE    
+10 KRCR     TRUE        FALSE    
+# ℹ 12 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="converting-logicals" class="level3">
+<h3 class="anchored" data-anchor-id="converting-logicals">Converting logicals</h3>
+<p>When passed to <code>sum()</code> or <code>mean()</code>, <code>TRUE</code> is converted to 1 and <code>FALSE</code> is converted to 0. This means that <code>sum()</code> will return the number of <code>TRUE</code> values in a vector and <code>mean()</code> will return the proportion of <code>TRUE</code> values.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5</code></pre>
+</div>
+</div>
+</section>
+<section id="grouped-logical-summaries-with-sums-and-means" class="level3">
+<h3 class="anchored" data-anchor-id="grouped-logical-summaries-with-sums-and-means">Grouped logical summaries with sums and means</h3>
+<p>After grouping, you can summarize using either the <code>sum()</code> or <code>mean()</code> function on a logical. In this case, the <code>sum()</code> will give you the number of time the statement is <code>TRUE</code> within a group, and <code>mean()</code> will give you the proportion of rows that are <code>TRUE</code> within a group.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>news <span class="sc">|&gt;</span></span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(callsign) <span class="sc">|&gt;</span></span>
+<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop_liberal =</span> <span class="fu">mean</span>(ideology <span class="sc">&lt;</span> <span class="dv">0</span>),</span>
+<span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">num_local_bigger =</span> <span class="fu">sum</span>(national_politics <span class="sc">&lt;</span> local_politics)</span>
+<span id="cb105-6"><a href="#cb105-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 22 × 3
+   callsign prop_liberal num_local_bigger
+   &lt;chr&gt;           &lt;dbl&gt;            &lt;int&gt;
+ 1 KAEF           0.138               111
+ 2 KBVU           0.143                31
+ 3 KBZK           0.0526               11
+ 4 KCVU           0.185                38
+ 5 KECI           0.137                44
+ 6 KHSL           0.132               127
+ 7 KNVN           0.115               130
+ 8 KPAX           0.0833               74
+ 9 KRBC           0.196               103
+10 KRCR           0.0992               99
+# ℹ 12 more rows</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="causality-week-4" class="level2">
+<h2 class="anchored" data-anchor-id="causality-week-4">Causality (Week 4)</h2>
+<p>For this week, we’ll use the data from the transphobia randomized experiment</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a>trans</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 565 × 9
+     age female voted_gen_14 voted_gen_12 treat_ind racename         democrat
+   &lt;dbl&gt;  &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;
+ 1    29      0            0            1         0 African American        1
+ 2    59      1            1            0         1 African American        1
+ 3    35      1            1            1         1 African American        1
+ 4    63      1            1            1         1 African American        1
+ 5    65      0            1            1         1 African American        0
+ 6    51      1            1            1         0 Caucasian               0
+ 7    26      1            1            1         0 African American        1
+ 8    62      1            1            1         1 African American        1
+ 9    37      0            1            1         0 Caucasian               0
+10    51      1            1            1         0 Caucasian               0
+# ℹ 555 more rows
+# ℹ 2 more variables: nondiscrim_pre &lt;dbl&gt;, nondiscrim_post &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<section id="calculating-a-difference-in-means-by-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-a-difference-in-means-by-filtering">Calculating a difference in means by filtering</h3>
+<p>You can calculate a difference in means by creating separate summaries of the treatment and control arms of an experiment or observational study and then taking the differences between them:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>treat_mean <span class="ot">&lt;-</span> trans <span class="sc">|&gt;</span></span>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(treat_ind <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">nondiscrim_mean =</span> <span class="fu">mean</span>(nondiscrim_post))</span>
+<span id="cb109-4"><a href="#cb109-4" aria-hidden="true" tabindex="-1"></a>treat_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  nondiscrim_mean
+            &lt;dbl&gt;
+1           0.687</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>control_mean <span class="ot">&lt;-</span> trans <span class="sc">|&gt;</span></span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(treat_ind <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">nondiscrim_mean =</span> <span class="fu">mean</span>(nondiscrim_post))</span>
+<span id="cb111-4"><a href="#cb111-4" aria-hidden="true" tabindex="-1"></a>control_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  nondiscrim_mean
+            &lt;dbl&gt;
+1           0.648</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>diff_in_means <span class="ot">&lt;-</span> treat_mean <span class="sc">-</span> control_mean</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>diff_in_means</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  nondiscrim_mean
+1      0.03896674</code></pre>
+</div>
+</div>
+</section>
+<section id="pivoting-a-tibble-to-make-a-cross-tab" class="level3">
+<h3 class="anchored" data-anchor-id="pivoting-a-tibble-to-make-a-cross-tab">Pivoting a tibble to make a cross-tab</h3>
+<p>When grouping by two variables, we sometimes would like the values of one variable to be in the rows and values of the other variable to be in the columns. But <code>group_by()</code> and <code>summarize()</code> by default puts each combination of values for the two variables into rows. We can use the <code>pivot_wider</code> function to move one of the variables (specified with the <code>names_from</code> argument) to the columns. The <code>values_from</code> argument tells R what variable should it use to fil in the data in the resulting table.</p>
+<p>So if we wanted to get counts of race (rows) by treatment group (columns), we could start with getting the counts:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>trans <span class="sc">|&gt;</span></span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treat_ind, racename) <span class="sc">|&gt;</span></span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'treat_ind'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 3
+# Groups:   treat_ind [2]
+  treat_ind racename             n
+      &lt;dbl&gt; &lt;chr&gt;            &lt;int&gt;
+1         0 African American    58
+2         0 Asian                2
+3         0 Caucasian           77
+4         0 Hispanic           150
+5         1 African American    68
+6         1 Asian                4
+7         1 Caucasian           75
+8         1 Hispanic           130
+9         1 Native American      1</code></pre>
+</div>
+</div>
+<p>Then we can pivot the treatment group to the columns:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a>trans <span class="sc">|&gt;</span></span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treat_ind, racename) <span class="sc">|&gt;</span></span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb118-5"><a href="#cb118-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> treat_ind,</span>
+<span id="cb118-6"><a href="#cb118-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> n</span>
+<span id="cb118-7"><a href="#cb118-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'treat_ind'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  racename           `0`   `1`
+  &lt;chr&gt;            &lt;int&gt; &lt;int&gt;
+1 African American    58    68
+2 Asian                2     4
+3 Caucasian           77    75
+4 Hispanic           150   130
+5 Native American     NA     1</code></pre>
+</div>
+</div>
+</section>
+<section id="calculating-difference-in-means-by-pivoting" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-difference-in-means-by-pivoting">Calculating difference in means by pivoting</h3>
+<p>Now that we know pivoting, we can use this to calculate difference in means instead of the filter approach. We first calculate the means by treatment group, pivot the rows to columns, and finally use <code>mutate()</code> to create the difference between the means.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a>trans <span class="sc">|&gt;</span></span>
+<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treat_ind) <span class="sc">|&gt;</span></span>
+<span id="cb121-3"><a href="#cb121-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">nondiscrim_mean =</span> <span class="fu">mean</span>(nondiscrim_post)) <span class="sc">|&gt;</span></span>
+<span id="cb121-4"><a href="#cb121-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb121-5"><a href="#cb121-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> treat_ind,</span>
+<span id="cb121-6"><a href="#cb121-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> nondiscrim_mean</span>
+<span id="cb121-7"><a href="#cb121-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb121-8"><a href="#cb121-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb121-9"><a href="#cb121-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_in_means =</span> <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">0</span><span class="st">`</span></span>
+<span id="cb121-10"><a href="#cb121-10" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+    `0`   `1` diff_in_means
+  &lt;dbl&gt; &lt;dbl&gt;         &lt;dbl&gt;
+1 0.648 0.687        0.0390</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-new-labels-for-variables-to-make-nicer-tables" class="level3">
+<h3 class="anchored" data-anchor-id="creating-new-labels-for-variables-to-make-nicer-tables">Creating new labels for variables to make nicer tables</h3>
+<p>Above we had to use the backticks to refer to the 1/0 variable names when calculating the differences in means. We can create slightly nicer output by relabeling the <code>treat_ind</code> variable using <code>if_else</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>trans <span class="sc">|&gt;</span></span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">treat_ind =</span> <span class="fu">if_else</span>(treat_ind <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Treated"</span>, <span class="st">"Control"</span>)</span>
+<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span>  </span>
+<span id="cb123-5"><a href="#cb123-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treat_ind) <span class="sc">|&gt;</span></span>
+<span id="cb123-6"><a href="#cb123-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">nondiscrim_mean =</span> <span class="fu">mean</span>(nondiscrim_post)) <span class="sc">|&gt;</span></span>
+<span id="cb123-7"><a href="#cb123-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb123-8"><a href="#cb123-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> treat_ind,</span>
+<span id="cb123-9"><a href="#cb123-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> nondiscrim_mean</span>
+<span id="cb123-10"><a href="#cb123-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb123-11"><a href="#cb123-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb123-12"><a href="#cb123-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_in_means =</span> Treated <span class="sc">-</span> Control</span>
+<span id="cb123-13"><a href="#cb123-13" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  Control Treated diff_in_means
+    &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;
+1   0.648   0.687        0.0390</code></pre>
+</div>
+</div>
+</section>
+<section id="calculating-difference-in-means-by-two-level-grouping-variable" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-difference-in-means-by-two-level-grouping-variable">Calculating difference in means by two-level grouping variable</h3>
+<p>If we have a two-level grouping variable like <code>democrat</code>, we can create nice labels for that variable and just add it to the <code>group_by</code> call to get the difference in means within levels of this variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>trans <span class="sc">|&gt;</span></span>
+<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">treat_ind =</span> <span class="fu">if_else</span>(treat_ind <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Treated"</span>, <span class="st">"Control"</span>),</span>
+<span id="cb125-4"><a href="#cb125-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">party =</span> <span class="fu">if_else</span>(democrat <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Democrat"</span>, <span class="st">"Non-Democrat"</span>)</span>
+<span id="cb125-5"><a href="#cb125-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb125-6"><a href="#cb125-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treat_ind, party) <span class="sc">|&gt;</span></span>
+<span id="cb125-7"><a href="#cb125-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">nondiscrim_mean =</span> <span class="fu">mean</span>(nondiscrim_post)) <span class="sc">|&gt;</span></span>
+<span id="cb125-8"><a href="#cb125-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb125-9"><a href="#cb125-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> treat_ind,</span>
+<span id="cb125-10"><a href="#cb125-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> nondiscrim_mean</span>
+<span id="cb125-11"><a href="#cb125-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span>  </span>
+<span id="cb125-12"><a href="#cb125-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb125-13"><a href="#cb125-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_in_means =</span> Treated <span class="sc">-</span> Control</span>
+<span id="cb125-14"><a href="#cb125-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'treat_ind'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  party        Control Treated diff_in_means
+  &lt;chr&gt;          &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;
+1 Democrat       0.704   0.754        0.0498
+2 Non-Democrat   0.605   0.628        0.0234</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-grouping-variables-with-more-than-2-levels" class="level3">
+<h3 class="anchored" data-anchor-id="creating-grouping-variables-with-more-than-2-levels">Creating grouping variables with more than 2 levels</h3>
+<p>You can use <a href="https://dplyr.tidyverse.org/reference/case_when.html"><code>case_when()</code></a> to create a variable that can take on more than 2 values based on conditions of a variable in the tibble:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>trans <span class="sc">|&gt;</span></span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"Under 25"</span>,</span>
+<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&gt;=</span><span class="dv">25</span> <span class="sc">&amp;</span> age <span class="sc">&lt;</span> <span class="dv">65</span> <span class="sc">~</span> <span class="st">"Bewteen 25 and 65"</span>,</span>
+<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&gt;=</span> <span class="dv">65</span> <span class="sc">~</span> <span class="st">"Older than 65"</span></span>
+<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb128-8"><a href="#cb128-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb128-9"><a href="#cb128-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, age_group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 565 × 2
+     age age_group        
+   &lt;dbl&gt; &lt;chr&gt;            
+ 1    29 Bewteen 25 and 65
+ 2    59 Bewteen 25 and 65
+ 3    35 Bewteen 25 and 65
+ 4    63 Bewteen 25 and 65
+ 5    65 Older than 65    
+ 6    51 Bewteen 25 and 65
+ 7    26 Bewteen 25 and 65
+ 8    62 Bewteen 25 and 65
+ 9    37 Bewteen 25 and 65
+10    51 Bewteen 25 and 65
+# ℹ 555 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="calculating-difference-in-mean-by-grouping-variable-with-more-than-2-levels" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-difference-in-mean-by-grouping-variable-with-more-than-2-levels">Calculating difference in mean by grouping variable with more than 2 levels</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>trans <span class="sc">|&gt;</span></span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">treat_ind =</span> <span class="fu">if_else</span>(treat_ind <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Treated"</span>, <span class="st">"Control"</span>),</span>
+<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">age_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">"Under 25"</span>,</span>
+<span id="cb130-6"><a href="#cb130-6" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&gt;=</span><span class="dv">25</span> <span class="sc">&amp;</span> age <span class="sc">&lt;</span> <span class="dv">65</span> <span class="sc">~</span> <span class="st">"Bewteen 25 and 65"</span>,</span>
+<span id="cb130-7"><a href="#cb130-7" aria-hidden="true" tabindex="-1"></a>      age <span class="sc">&gt;=</span> <span class="dv">65</span> <span class="sc">~</span> <span class="st">"Older than 65"</span></span>
+<span id="cb130-8"><a href="#cb130-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb130-9"><a href="#cb130-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb130-10"><a href="#cb130-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treat_ind, age_group) <span class="sc">|&gt;</span></span>
+<span id="cb130-11"><a href="#cb130-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">nondiscrim_mean =</span> <span class="fu">mean</span>(nondiscrim_post)) <span class="sc">|&gt;</span></span>
+<span id="cb130-12"><a href="#cb130-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb130-13"><a href="#cb130-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> treat_ind,</span>
+<span id="cb130-14"><a href="#cb130-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> nondiscrim_mean</span>
+<span id="cb130-15"><a href="#cb130-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span>  </span>
+<span id="cb130-16"><a href="#cb130-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb130-17"><a href="#cb130-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_in_means =</span> Treated <span class="sc">-</span> Control</span>
+<span id="cb130-18"><a href="#cb130-18" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'treat_ind'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  age_group         Control Treated diff_in_means
+  &lt;chr&gt;               &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;
+1 Bewteen 25 and 65   0.694   0.683       -0.0112
+2 Older than 65       0.576   0.614        0.0378
+3 Under 25            0.556   0.829        0.273 </code></pre>
+</div>
+</div>
+</section>
+<section id="calculating-before-and-after-difference-in-means" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-before-and-after-difference-in-means">Calculating before and after difference in means</h3>
+<p>When we’re estimating causal effects using a before and after design, we can usually create a variable that is the change in the outcome over time for each row and then take the mean of that. For example, in the newspapers data we have the vote for Labour outcome before the treatment (1992) and after (1997):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>newspapers <span class="sc">|&gt;</span></span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(to_labour <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb133-4"><a href="#cb133-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">vote_change =</span> vote_lab_97 <span class="sc">-</span> vote_lab_92</span>
+<span id="cb133-5"><a href="#cb133-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span>  </span>
+<span id="cb133-6"><a href="#cb133-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_change =</span> <span class="fu">mean</span>(vote_change))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  avg_change
+       &lt;dbl&gt;
+1      0.190</code></pre>
+</div>
+</div>
+</section>
+<section id="calculating-difference-in-differences-estimator" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-difference-in-differences-estimator">Calculating difference-in-differences estimator</h3>
+<p>When you want to use the difference in differences estimator, you simply need to take the difference between the average changes over time in the treatment group (<code>to_labour == 1</code>) and the control group (<code>to_labour == 0</code>). We can do this by adding a <code>group_by</code> step:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>newspapers <span class="sc">|&gt;</span></span>
+<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">vote_change =</span> vote_lab_97 <span class="sc">-</span> vote_lab_92,</span>
+<span id="cb135-4"><a href="#cb135-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">to_labour =</span> <span class="fu">if_else</span>(to_labour <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"switched"</span>, <span class="st">"unswitched"</span>)</span>
+<span id="cb135-5"><a href="#cb135-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb135-6"><a href="#cb135-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(to_labour) <span class="sc">|&gt;</span>  </span>
+<span id="cb135-7"><a href="#cb135-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_change =</span> <span class="fu">mean</span>(vote_change)) <span class="sc">|&gt;</span></span>
+<span id="cb135-8"><a href="#cb135-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb135-9"><a href="#cb135-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> to_labour,</span>
+<span id="cb135-10"><a href="#cb135-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> avg_change</span>
+<span id="cb135-11"><a href="#cb135-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb135-12"><a href="#cb135-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">DID =</span> switched <span class="sc">-</span> unswitched)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  switched unswitched    DID
+     &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;
+1    0.190      0.110 0.0796</code></pre>
 </div>
 </div>
 
