@@ -548,3 +548,306 @@ news |>
                        x = avg_ideology)) +
   geom_col(mapping = aes(fill = affiliation))
 ```
+
+
+### Creating logical vectors
+
+You can create logical variables in your tibbles using mutate:
+
+```{r}
+news |>
+  mutate(
+    right_leaning = ideology > 0,
+    fall = month == "Sep" | month == "Oct" | month == "Nov",
+    .keep = "used"
+)
+```
+
+
+The `.keep = "used"` argument here tells mutate to only return the variables created and any variables used to create them. We're using it here for display purposes. 
+
+You can filter based on these logical variables. In particular, if we want to subset to rows where both `right_leaning` and `fall` were `TRUE` we could do the following filter:
+
+```{r}
+news |>
+  mutate(
+    right_leaning = ideology > 0,
+    fall = month == "Sep" | month == "Oct" | month == "Nov",
+    .keep = "used"
+  ) |>
+  filter(right_leaning & fall)
+```
+
+### Using `!` to negate logicals
+
+Any time you place the exclamation point in front of a logical, it will turn any `TRUE` into a `FALSE` and vice versa. For instance, if we wanted left leaning days in the fall, we could used
+
+
+```{r}
+news |>
+  mutate(
+    right_leaning = ideology > 0,
+    fall = month == "Sep" | month == "Oct" | month == "Nov",
+    .keep = "used"
+  ) |>
+  filter(!right_leaning & fall)
+```
+
+Or if we wanted to subset to any combination **except** right leaning and fall, we could negate the AND statement using parentheses:
+
+
+```{r}
+news |>
+  mutate(
+    right_leaning = ideology > 0,
+    fall = month == "Sep" | month == "Oct" | month == "Nov",
+    .keep = "used"
+  ) |>
+  filter(!(right_leaning & fall))
+```
+
+This is often used in combination with `%in%` to acheive a "not in" logical:
+
+```{r}
+news |>
+  filter(!(affiliation %in% c("FOX", "ABC")))
+```
+
+
+### Grouped summaries with `any()` and `all()` 
+
+Once you group a tibble, you can summarize logicals within groups using two commands. `any()` will return `TRUE` if a logical is `TRUE` for any row in a group and `FALSE` otherwise. `all()` will return `TRUE` when the logical inside it is `TRUE` for all rows in a group and `FALSE` otherwise. 
+
+
+```{r}
+news |>
+  group_by(callsign) |>
+  summarize(
+    any_liberal = any(ideology < 0),
+    all_local = all(national_politics < local_politics)
+  )
+```
+
+
+### Converting logicals
+
+
+When passed to `sum()` or `mean()`, `TRUE` is converted to 1 and `FALSE` is converted to 0. This means that `sum()` will return the number of `TRUE` values in a vector and `mean()` will return the proportion of `TRUE` values. 
+
+
+```{r}
+sum(c(TRUE, FALSE, TRUE, FALSE))
+
+mean(c(TRUE, FALSE, TRUE, FALSE))
+```
+
+### Grouped logical summaries with sums and means
+
+After grouping, you can summarize using either the `sum()` or `mean()` function on a logical. In this case, the `sum()` will give you the number of time the statement is `TRUE` within a group, and `mean()` will give you the proportion of rows that are `TRUE` within a group. 
+
+
+```{r}
+news |>
+  group_by(callsign) |>
+  summarize(
+    prop_liberal = mean(ideology < 0),
+    num_local_bigger = sum(national_politics < local_politics)
+  )
+```
+
+
+## Causality (Week 4)
+
+For this week, we'll use the data from the transphobia randomized experiment 
+
+```{r}
+trans
+```
+
+### Calculating a difference in means by filtering
+
+You can calculate a difference in means by creating separate summaries of the treatment and control arms of an experiment or observational study and then taking the differences between them:
+
+
+```{r}
+treat_mean <- trans |>
+  filter(treat_ind == 1) |>
+  summarize(nondiscrim_mean = mean(nondiscrim_post))
+treat_mean
+
+
+control_mean <- trans |>
+  filter(treat_ind == 0) |>
+  summarize(nondiscrim_mean = mean(nondiscrim_post))
+control_mean
+
+diff_in_means <- treat_mean - control_mean
+diff_in_means
+```
+
+
+### Pivoting a tibble to make a cross-tab
+
+When grouping by two variables, we sometimes would like the values of one variable to be in the rows and values of the other variable to be in the columns. But `group_by()` and `summarize()` by default puts each combination of values for the two variables into rows. We can use the `pivot_wider` function to move one of the variables (specified with the `names_from` argument) to the columns. The `values_from` argument tells R what variable should it use to fil in the data in the resulting table. 
+
+So if we wanted to get counts of race (rows) by treatment group (columns), we could start with getting the counts:
+
+```{r}
+trans |>
+  group_by(treat_ind, racename) |>
+  summarize(n = n())
+```
+
+Then we can pivot the treatment group to the columns:
+
+```{r}
+trans |>
+  group_by(treat_ind, racename) |>
+  summarize(n = n()) |>
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = n
+  )
+```
+
+
+### Calculating difference in means by pivoting
+
+Now that we know pivoting, we can use this to calculate difference in means instead of the filter approach. We first calculate the means by treatment group, pivot the rows to columns, and finally use `mutate()` to create the difference between the means.
+
+
+```{r}
+trans |>
+  group_by(treat_ind) |>
+  summarize(nondiscrim_mean = mean(nondiscrim_post)) |>
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = nondiscrim_mean
+  ) |>
+  mutate(
+    diff_in_means = `1` - `0`
+  ) 
+```
+
+
+### Creating new labels for variables to make nicer tables
+
+Above we had to use the backticks to refer to the 1/0 variable names when calculating the differences in means. We can create slightly nicer output by relabeling the `treat_ind` variable using `if_else`:
+
+```{r}
+trans |>
+  mutate(
+    treat_ind = if_else(treat_ind == 1, "Treated", "Control")
+  ) |>  
+  group_by(treat_ind) |>
+  summarize(nondiscrim_mean = mean(nondiscrim_post)) |>
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = nondiscrim_mean
+  ) |>
+  mutate(
+    diff_in_means = Treated - Control
+  ) 
+```
+
+
+### Calculating difference in means by two-level grouping variable
+
+If we have a two-level grouping variable like `democrat`, we can create nice labels for that variable and just add it to the `group_by` call to get the difference in means within levels of this variable:
+
+```{r}
+trans |>
+  mutate(
+    treat_ind = if_else(treat_ind == 1, "Treated", "Control"),
+    party = if_else(democrat == 1, "Democrat", "Non-Democrat")
+  ) |>
+  group_by(treat_ind, party) |>
+  summarize(nondiscrim_mean = mean(nondiscrim_post)) |>
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = nondiscrim_mean
+  ) |>  
+  mutate(
+    diff_in_means = Treated - Control
+  )
+```
+
+
+### Creating grouping variables with more than 2 levels
+
+You can use [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) to create a variable that can take on more than 2 values based on conditions of a variable in the tibble:
+
+```{r}
+trans |>
+  mutate(
+    age_group = case_when(
+      age < 25 ~ "Under 25",
+      age >=25 & age < 65 ~ "Bewteen 25 and 65",
+      age >= 65 ~ "Older than 65"
+    )
+  ) |>
+  select(age, age_group)
+```
+
+
+### Calculating difference in mean by grouping variable with more than 2 levels
+
+
+```{r}
+trans |>
+  mutate(
+    treat_ind = if_else(treat_ind == 1, "Treated", "Control"),
+    age_group = case_when(
+      age < 25 ~ "Under 25",
+      age >=25 & age < 65 ~ "Bewteen 25 and 65",
+      age >= 65 ~ "Older than 65"
+    )
+  ) |>
+  group_by(treat_ind, age_group) |>
+  summarize(nondiscrim_mean = mean(nondiscrim_post)) |>
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = nondiscrim_mean
+  ) |>  
+  mutate(
+    diff_in_means = Treated - Control
+  )
+```
+
+
+### Calculating before and after difference in means
+
+
+When we're estimating causal effects using a before and after design, we can usually create a variable that is the change in the outcome over time for each row and then take the mean of that. For example, in the newspapers data we have the vote for Labour outcome before the treatment (1992) and after (1997):
+
+
+```{r}
+newspapers |>
+  filter(to_labour == 1) |>  
+  mutate(
+    vote_change = vote_lab_97 - vote_lab_92
+  ) |>  
+  summarize(avg_change = mean(vote_change))
+```
+
+
+### Calculating difference-in-differences estimator
+
+When you want to use the difference in differences estimator, you simply need to take the difference between the average changes over time in the treatment group (`to_labour == 1`) and the control group (`to_labour == 0`). We can do this by adding a `group_by` step:
+
+
+```{r}
+newspapers |>
+  mutate(
+    vote_change = vote_lab_97 - vote_lab_92,
+    to_labour = if_else(to_labour == 1, "switched", "unswitched")
+  ) |>
+  group_by(to_labour) |>  
+  summarize(avg_change = mean(vote_change)) |>
+  pivot_wider(
+    names_from = to_labour,
+    values_from = avg_change
+  ) |>
+  mutate(DID = switched - unswitched)
+```
+
