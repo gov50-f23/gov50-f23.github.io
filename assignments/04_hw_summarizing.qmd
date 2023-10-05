@@ -1,13 +1,16 @@
 ---
 title: "Problem Set 4: Sources of Empathy in the Circuit Courts "
-due_date: 2023-10-13
+due_date: "October 13, 2023"
 
 ---
 
 
-```{r setup, include = FALSE}
-options(width = 100)
-```
+This problem set is due on **{{< meta due_date >}} at 11:59pm**. 
+
+You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets.qmd).
+
+You can find the GitHub Classroom link to download the template repository on the [Ed Board](https://edstem.org/us/courses/43339/resources)
+
 
 ## Background
 
