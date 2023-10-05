@@ -15,7 +15,7 @@ date: 2023-10-02
   - [PDF of slides as I present them](/slides/09_summarizing_data.pdf)
   - [PDF of handout version of slides](/slides/09_summarizing_data_handout.pdf) (no incremental slides)
 
-<!-- - Thursday (9/29) lecture: Survey Sampling -->
-<!--   - [PDF of slides as I present them](/slides/09_survey_sampling.pdf) -->
-<!--   - [PDF of handout version of slides](/slides/09_survey_sampling_handout.pdf) (no incremental slides) -->
+- Thursday (10/5) lecture: Survey Sampling
+  - [PDF of slides as I present them](/slides/10_survey_sampling.pdf)
+  - [PDF of handout version of slides](/slides/10_survey_sampling_handout.pdf) (no incremental slides)
 <!--   - Code: [`cces.Rmd`](/files/code/cces.Rmd) -->
