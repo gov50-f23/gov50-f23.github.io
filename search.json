@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data"
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling"
   },
   {
     "objectID": "materials/13_models.html",
@@ -235,7 +235,7 @@
     "href": "materials/05_measurement.html#slides-and-code",
     "title": "Measuring and Summarizing Data",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (10/3) lecture: Summarizing data\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (10/3) lecture: Summarizing data\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (10/5) lecture: Survey Sampling\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/03_data_wrangling.html",
