@@ -8,6 +8,7 @@ slug: cheatsheet
 #| message: false
 library(tidyverse)
 library(gov50data)
+library(gapminder)
 ```
 
 
@@ -851,3 +852,250 @@ newspapers |>
   mutate(DID = switched - unswitched)
 ```
 
+
+## Summarizing data (Week 5)
+
+
+### Calculating the mean, median, and standard deviation
+
+Many of the summary functions have intuitive names:
+
+```{r}
+gapminder |>
+  summarize(
+    gdp_mean = mean(gdpPercap),
+    gdp_median = median(gdpPercap),
+    gdp_sd = sd(gdpPercap)
+  )
+```
+
+
+You can also use these functions outside of a `summarize()` call by accessing variables with the `$` operator:
+
+```{r}
+mean(gapminder$gdpPercap)
+```
+
+
+### Adding a vertical line to a plot
+
+You can layer on vertical lines to a ggplot using the [`geom_vline()`](https://ggplot2.tidyverse.org/reference/geom_abline.html) function. For horizontal lines, use `geom_hline()`. 
+
+```{r}
+ggplot(gapminder, aes(x = lifeExp)) +
+  geom_histogram(binwidth = 1) +
+  geom_vline(aes(xintercept = mean(lifeExp)), color = "indianred") +
+  geom_vline(aes(xintercept = median(lifeExp)), color = "dodgerblue")
+```
+
+
+### Dropping missing rows with missing data
+
+To drop any row of a data frame with missing values in any variable, you can use the `drop_na()` function. Here we use the `nrow()` function to show how many rows each tibble has.  
+
+```{r}
+cces_2020 |>
+  nrow()
+```
+
+
+```{r}
+cces_2020 |>
+  drop_na() |>
+  nrow()
+```
+
+By default `drop_na()` drops rows that have any missingness. If you want to drop rows based on being missing only for a particular variable, just pass the variable name to the function:
+
+```{r}
+cces_2020 |>
+  drop_na(turnout_self) |>
+  nrow()
+```
+
+
+### Removing missing values in summary functions
+
+Most summary functions have an argument `na.rm` (for "NA remove") that is `FALSE` by default, meaning it tries to calculate summaries with missing values included:
+
+```{r}
+cces_2020 |>
+  summarize(avg_turnout = mean(turnout_self))
+```
+
+To remove missing values and calculate the summary based on the observed values for that variable, set `na.rm = TRUE`:
+
+
+
+```{r}
+cces_2020 |>
+  summarize(avg_turnout = mean(turnout_self, na.rm = TRUE))
+```
+
+
+### Detecting missing values 
+
+You cannot use `x == NA` for detecting missing values in R because it treats missing values quite literally and just returns `NA` for all values:
+
+```{r}
+c(5, 6, NA, 0) == NA
+```
+
+
+Instead you can use `is.na()`:
+
+```{r}
+is.na(c(5, 6, NA, 0))
+```
+
+
+You can negate this to test for non-missing values:
+
+
+```{r}
+!is.na(c(5, 6, NA, 0))
+```
+
+
+### Using `is.na` to summarize missingness
+
+
+Applying `mean()` to  `is.na()` output will tell us the proportion of values in a vector that are missing. We can combine this with `group_by` and `summarize` to see what share of each party ID response are missing turnout:
+
+```{r}
+cces_2020 |>
+  group_by(pid3) |>
+  summarize(
+    missing_turnout = mean(is.na(turnout_self))
+  )
+```
+
+
+### Proportion table for one variable
+
+To get a proportion table for a single categorical variable, start with the approach to creating a table of counts of each category. Then just add a `mutate()` step to get the proportion:
+
+
+```{r}
+cces_2020 |>
+  group_by(pres_vote) |>
+  summarize(n = n()) |>
+  mutate(
+    prop = n / sum(n)
+  )
+```
+
+
+### Proportion table with two variables
+
+With two variables, we take the same approach as for one variable, but we need to be careful about the grouping:
+
+```{r}
+cces_2020 |>
+  filter(pres_vote %in% c("Joe Biden (Democrat)",
+                          "Donald J. Trump (Republican)")) |>  
+  group_by(pid3, pres_vote) |>
+  summarize(n = n()) |>
+  mutate(prop = n / sum(n))
+```
+
+After summarizing, the tibble drops the last grouping variable and groups the resulting tibble by the remaining variable(s). In this case, `pres_vote` is dropped and the tibble is now grouped by `pid3`. This means that when we call `mutate()`, the calculations will be done **within** levels of `pid3`. So the first row here is telling us the the share of Democrats that voted for Biden is 0.968. 
+
+
+If we want to have the proportion be as a share of the `pres_vote` instead, we can reorder the grouping variables:
+
+```{r}
+cces_2020 |>
+  filter(pres_vote %in% c("Joe Biden (Democrat)",
+                          "Donald J. Trump (Republican)")) |>  
+  group_by(pres_vote, pid3) |>
+  summarize(n = n()) |>
+  mutate(prop = n / sum(n))
+```
+
+
+Finally, if we want the proportions to be out of all rows of the data, we can tell `summarize()` to drop the grouping:
+
+```{r}
+cces_2020 |>
+  filter(pres_vote %in% c("Joe Biden (Democrat)",
+                          "Donald J. Trump (Republican)")) |>  
+  group_by(pid3, pres_vote) |>
+  summarize(n = n(), .groups = "drop") |>
+  mutate(prop = n / sum(n))
+```
+
+
+### Create cross-tab proportion tables
+
+We can pivot our proportion tables to create cross-tabs, but if we leave in the count variable, we get output that we don't expect:
+
+```{r}
+cces_2020 |>
+  filter(pres_vote %in% c("Joe Biden (Democrat)",
+                          "Donald J. Trump (Republican)")) |>  
+  group_by(pid3, pres_vote) |>
+  summarize(n = n()) |>
+  mutate(prop = n / sum(n)) |>
+  pivot_wider(
+    names_from = pres_vote,
+    values_from = prop
+  )
+```
+
+
+To combat this, we can either drop the count variable:
+
+```{r}
+cces_2020 |>
+  filter(pres_vote %in% c("Joe Biden (Democrat)",
+                          "Donald J. Trump (Republican)")) |>  
+  group_by(pid3, pres_vote) |>
+  summarize(n = n()) |>
+  mutate(prop = n / sum(n)) |>
+  select(-n) |>  
+  pivot_wider(
+    names_from = pres_vote,
+    values_from = prop
+  )
+```
+
+
+Or we can also be specific about what variables we want on the rows. We can use the `id_cols` argument to specify just the variables that will go on the rows:
+
+
+```{r}
+cces_2020 |>
+  filter(pres_vote %in% c("Joe Biden (Democrat)",
+                          "Donald J. Trump (Republican)")) |>  
+  group_by(pid3, pres_vote) |>
+  summarize(n = n()) |>
+  mutate(prop = n / sum(n)) |>
+  pivot_wider(
+    id_cols = pid3,
+    names_from = pres_vote,
+    values_from = prop
+  )
+```
+
+
+### Visualizing a proportion table
+
+We can visualize our proportion table using by mapping the grouping variable to the `x` axis and the non-grouped variable to the `fill` aesthetic. We also need to use the `position = "dodge"` argument to the `geom_col()` function so that the two columns in each group don't overlap.  
+
+```{r}
+#| label: "crosstab-plot"
+
+cces_2020 |>
+  filter(pres_vote %in% c("Joe Biden (Democrat)",
+                          "Donald J. Trump (Republican)")) |>
+  mutate(pres_vote = if_else(pres_vote == "Joe Biden (Democrat)",
+                             "Biden", "Trump")) |>  
+  group_by(pid3, pres_vote) |>
+  summarize(n = n()) |>
+  mutate(prop = n / sum(n)) |>
+  
+ggplot(aes(x = pid3, y = prop, fill = pres_vote)) +
+  geom_col(position = "dodge") +
+  scale_fill_manual(values = c(Biden = "steelblue1", Trump = "indianred1"))
+```
