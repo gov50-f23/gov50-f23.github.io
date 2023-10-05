@@ -217,6 +217,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#calculating-before-and-after-difference-in-means" id="toc-calculating-before-and-after-difference-in-means" class="nav-link" data-scroll-target="#calculating-before-and-after-difference-in-means">Calculating before and after difference in means</a></li>
   <li><a href="#calculating-difference-in-differences-estimator" id="toc-calculating-difference-in-differences-estimator" class="nav-link" data-scroll-target="#calculating-difference-in-differences-estimator">Calculating difference-in-differences estimator</a></li>
   </ul></li>
+  <li><a href="#summarizing-data-week-5" id="toc-summarizing-data-week-5" class="nav-link" data-scroll-target="#summarizing-data-week-5">Summarizing data (Week 5)</a>
+  <ul class="collapse">
+  <li><a href="#calculating-the-mean-median-and-standard-deviation" id="toc-calculating-the-mean-median-and-standard-deviation" class="nav-link" data-scroll-target="#calculating-the-mean-median-and-standard-deviation">Calculating the mean, median, and standard deviation</a></li>
+  <li><a href="#adding-a-vertical-line-to-a-plot" id="toc-adding-a-vertical-line-to-a-plot" class="nav-link" data-scroll-target="#adding-a-vertical-line-to-a-plot">Adding a vertical line to a plot</a></li>
+  <li><a href="#dropping-missing-rows-with-missing-data" id="toc-dropping-missing-rows-with-missing-data" class="nav-link" data-scroll-target="#dropping-missing-rows-with-missing-data">Dropping missing rows with missing data</a></li>
+  <li><a href="#removing-missing-values-in-summary-functions" id="toc-removing-missing-values-in-summary-functions" class="nav-link" data-scroll-target="#removing-missing-values-in-summary-functions">Removing missing values in summary functions</a></li>
+  <li><a href="#detecting-missing-values" id="toc-detecting-missing-values" class="nav-link" data-scroll-target="#detecting-missing-values">Detecting missing values</a></li>
+  <li><a href="#using-is.na-to-summarize-missingness" id="toc-using-is.na-to-summarize-missingness" class="nav-link" data-scroll-target="#using-is.na-to-summarize-missingness">Using <code>is.na</code> to summarize missingness</a></li>
+  <li><a href="#proportion-table-for-one-variable" id="toc-proportion-table-for-one-variable" class="nav-link" data-scroll-target="#proportion-table-for-one-variable">Proportion table for one variable</a></li>
+  <li><a href="#proportion-table-with-two-variables" id="toc-proportion-table-with-two-variables" class="nav-link" data-scroll-target="#proportion-table-with-two-variables">Proportion table with two variables</a></li>
+  <li><a href="#create-cross-tab-proportion-tables" id="toc-create-cross-tab-proportion-tables" class="nav-link" data-scroll-target="#create-cross-tab-proportion-tables">Create cross-tab proportion tables</a></li>
+  <li><a href="#visualizing-a-proportion-table" id="toc-visualizing-a-proportion-table" class="nav-link" data-scroll-target="#visualizing-a-proportion-table">Visualizing a proportion table</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -242,7 +255,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gov50data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gov50data)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="r-basics-week-1" class="level2">
 <h2 class="anchored" data-anchor-id="r-basics-week-1">R Basics (Week 1)</h2>
@@ -1879,6 +1893,374 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   switched unswitched    DID
      &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;
 1    0.190      0.110 0.0796</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="summarizing-data-week-5" class="level2">
+<h2 class="anchored" data-anchor-id="summarizing-data-week-5">Summarizing data (Week 5)</h2>
+<section id="calculating-the-mean-median-and-standard-deviation" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-the-mean-median-and-standard-deviation">Calculating the mean, median, and standard deviation</h3>
+<p>Many of the summary functions have intuitive names:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">gdp_mean =</span> <span class="fu">mean</span>(gdpPercap),</span>
+<span id="cb137-4"><a href="#cb137-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">gdp_median =</span> <span class="fu">median</span>(gdpPercap),</span>
+<span id="cb137-5"><a href="#cb137-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">gdp_sd =</span> <span class="fu">sd</span>(gdpPercap)</span>
+<span id="cb137-6"><a href="#cb137-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  gdp_mean gdp_median gdp_sd
+     &lt;dbl&gt;      &lt;dbl&gt;  &lt;dbl&gt;
+1    7215.      3532.  9857.</code></pre>
+</div>
+</div>
+<p>You can also use these functions outside of a <code>summarize()</code> call by accessing variables with the <code>$</code> operator:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gapminder<span class="sc">$</span>gdpPercap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7215.327</code></pre>
+</div>
+</div>
+</section>
+<section id="adding-a-vertical-line-to-a-plot" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-vertical-line-to-a-plot">Adding a vertical line to a plot</h3>
+<p>You can layer on vertical lines to a ggplot using the <a href="https://ggplot2.tidyverse.org/reference/geom_abline.html"><code>geom_vline()</code></a> function. For horizontal lines, use <code>geom_hline()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(lifeExp)), <span class="at">color =</span> <span class="st">"indianred"</span>) <span class="sc">+</span></span>
+<span id="cb141-4"><a href="#cb141-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(lifeExp)), <span class="at">color =</span> <span class="st">"dodgerblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/unnamed-chunk-69-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="dropping-missing-rows-with-missing-data" class="level3">
+<h3 class="anchored" data-anchor-id="dropping-missing-rows-with-missing-data">Dropping missing rows with missing data</h3>
+<p>To drop any row of a data frame with missing values in any variable, you can use the <code>drop_na()</code> function. Here we use the <code>nrow()</code> function to show how many rows each tibble has.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 51551</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 45651</code></pre>
+</div>
+</div>
+<p>By default <code>drop_na()</code> drops rows that have any missingness. If you want to drop rows based on being missing only for a particular variable, just pass the variable name to the function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(turnout_self) <span class="sc">|&gt;</span></span>
+<span id="cb146-3"><a href="#cb146-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 48462</code></pre>
+</div>
+</div>
+</section>
+<section id="removing-missing-values-in-summary-functions" class="level3">
+<h3 class="anchored" data-anchor-id="removing-missing-values-in-summary-functions">Removing missing values in summary functions</h3>
+<p>Most summary functions have an argument <code>na.rm</code> (for “NA remove”) that is <code>FALSE</code> by default, meaning it tries to calculate summaries with missing values included:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_turnout =</span> <span class="fu">mean</span>(turnout_self))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  avg_turnout
+        &lt;dbl&gt;
+1          NA</code></pre>
+</div>
+</div>
+<p>To remove missing values and calculate the summary based on the observed values for that variable, set <code>na.rm = TRUE</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb150"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_turnout =</span> <span class="fu">mean</span>(turnout_self, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  avg_turnout
+        &lt;dbl&gt;
+1       0.942</code></pre>
+</div>
+</div>
+</section>
+<section id="detecting-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="detecting-missing-values">Detecting missing values</h3>
+<p>You cannot use <code>x == NA</code> for detecting missing values in R because it treats missing values quite literally and just returns <code>NA</code> for all values:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb152"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="cn">NA</span>, <span class="dv">0</span>) <span class="sc">==</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA NA NA NA</code></pre>
+</div>
+</div>
+<p>Instead you can use <code>is.na()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="cn">NA</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE FALSE  TRUE FALSE</code></pre>
+</div>
+</div>
+<p>You can negate this to test for non-missing values:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="fu">is.na</span>(<span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="cn">NA</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE  TRUE FALSE  TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="using-is.na-to-summarize-missingness" class="level3">
+<h3 class="anchored" data-anchor-id="using-is.na-to-summarize-missingness">Using <code>is.na</code> to summarize missingness</h3>
+<p>Applying <code>mean()</code> to <code>is.na()</code> output will tell us the proportion of values in a vector that are missing. We can combine this with <code>group_by</code> and <code>summarize</code> to see what share of each party ID response are missing turnout:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb158-2"><a href="#cb158-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pid3) <span class="sc">|&gt;</span></span>
+<span id="cb158-3"><a href="#cb158-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb158-4"><a href="#cb158-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing_turnout =</span> <span class="fu">mean</span>(<span class="fu">is.na</span>(turnout_self))</span>
+<span id="cb158-5"><a href="#cb158-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  pid3        missing_turnout
+  &lt;fct&gt;                 &lt;dbl&gt;
+1 Democrat             0.0280
+2 Republican           0.0403
+3 Independent          0.0718
+4 Other                0.0709
+5 Not sure             0.431 </code></pre>
+</div>
+</div>
+</section>
+<section id="proportion-table-for-one-variable" class="level3">
+<h3 class="anchored" data-anchor-id="proportion-table-for-one-variable">Proportion table for one variable</h3>
+<p>To get a proportion table for a single categorical variable, start with the approach to creating a table of counts of each category. Then just add a <code>mutate()</code> step to get the proportion:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pres_vote) <span class="sc">|&gt;</span></span>
+<span id="cb160-3"><a href="#cb160-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb160-4"><a href="#cb160-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb160-5"><a href="#cb160-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)</span>
+<span id="cb160-6"><a href="#cb160-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 3
+  pres_vote                        n     prop
+  &lt;fct&gt;                        &lt;int&gt;    &lt;dbl&gt;
+1 Joe Biden (Democrat)         26188 0.508   
+2 Donald J. Trump (Republican) 17702 0.343   
+3 Other                         1458 0.0283  
+4 I did not vote in this race    100 0.00194 
+5 I did not vote                  13 0.000252
+6 Not sure                       190 0.00369 
+7 &lt;NA&gt;                          5900 0.114   </code></pre>
+</div>
+</div>
+</section>
+<section id="proportion-table-with-two-variables" class="level3">
+<h3 class="anchored" data-anchor-id="proportion-table-with-two-variables">Proportion table with two variables</h3>
+<p>With two variables, we take the same approach as for one variable, but we need to be careful about the grouping:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb162-2"><a href="#cb162-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pres_vote <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Joe Biden (Democrat)"</span>,</span>
+<span id="cb162-3"><a href="#cb162-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Donald J. Trump (Republican)"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb162-4"><a href="#cb162-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pid3, pres_vote) <span class="sc">|&gt;</span></span>
+<span id="cb162-5"><a href="#cb162-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb162-6"><a href="#cb162-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'pid3'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+# Groups:   pid3 [5]
+   pid3        pres_vote                        n   prop
+   &lt;fct&gt;       &lt;fct&gt;                        &lt;int&gt;  &lt;dbl&gt;
+ 1 Democrat    Joe Biden (Democrat)         17649 0.968 
+ 2 Democrat    Donald J. Trump (Republican)   581 0.0319
+ 3 Republican  Joe Biden (Democrat)           856 0.0712
+ 4 Republican  Donald J. Trump (Republican) 11164 0.929 
+ 5 Independent Joe Biden (Democrat)          6601 0.571 
+ 6 Independent Donald J. Trump (Republican)  4951 0.429 
+ 7 Other       Joe Biden (Democrat)           735 0.487 
+ 8 Other       Donald J. Trump (Republican)   774 0.513 
+ 9 Not sure    Joe Biden (Democrat)           347 0.599 
+10 Not sure    Donald J. Trump (Republican)   232 0.401 </code></pre>
+</div>
+</div>
+<p>After summarizing, the tibble drops the last grouping variable and groups the resulting tibble by the remaining variable(s). In this case, <code>pres_vote</code> is dropped and the tibble is now grouped by <code>pid3</code>. This means that when we call <code>mutate()</code>, the calculations will be done <strong>within</strong> levels of <code>pid3</code>. So the first row here is telling us the the share of Democrats that voted for Biden is 0.968.</p>
+<p>If we want to have the proportion be as a share of the <code>pres_vote</code> instead, we can reorder the grouping variables:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pres_vote <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Joe Biden (Democrat)"</span>,</span>
+<span id="cb165-3"><a href="#cb165-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Donald J. Trump (Republican)"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb165-4"><a href="#cb165-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pres_vote, pid3) <span class="sc">|&gt;</span></span>
+<span id="cb165-5"><a href="#cb165-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb165-6"><a href="#cb165-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'pres_vote'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+# Groups:   pres_vote [2]
+   pres_vote                    pid3            n   prop
+   &lt;fct&gt;                        &lt;fct&gt;       &lt;int&gt;  &lt;dbl&gt;
+ 1 Joe Biden (Democrat)         Democrat    17649 0.674 
+ 2 Joe Biden (Democrat)         Republican    856 0.0327
+ 3 Joe Biden (Democrat)         Independent  6601 0.252 
+ 4 Joe Biden (Democrat)         Other         735 0.0281
+ 5 Joe Biden (Democrat)         Not sure      347 0.0133
+ 6 Donald J. Trump (Republican) Democrat      581 0.0328
+ 7 Donald J. Trump (Republican) Republican  11164 0.631 
+ 8 Donald J. Trump (Republican) Independent  4951 0.280 
+ 9 Donald J. Trump (Republican) Other         774 0.0437
+10 Donald J. Trump (Republican) Not sure      232 0.0131</code></pre>
+</div>
+</div>
+<p>Finally, if we want the proportions to be out of all rows of the data, we can tell <code>summarize()</code> to drop the grouping:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pres_vote <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Joe Biden (Democrat)"</span>,</span>
+<span id="cb168-3"><a href="#cb168-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Donald J. Trump (Republican)"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb168-4"><a href="#cb168-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pid3, pres_vote) <span class="sc">|&gt;</span></span>
+<span id="cb168-5"><a href="#cb168-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb168-6"><a href="#cb168-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   pid3        pres_vote                        n    prop
+   &lt;fct&gt;       &lt;fct&gt;                        &lt;int&gt;   &lt;dbl&gt;
+ 1 Democrat    Joe Biden (Democrat)         17649 0.402  
+ 2 Democrat    Donald J. Trump (Republican)   581 0.0132 
+ 3 Republican  Joe Biden (Democrat)           856 0.0195 
+ 4 Republican  Donald J. Trump (Republican) 11164 0.254  
+ 5 Independent Joe Biden (Democrat)          6601 0.150  
+ 6 Independent Donald J. Trump (Republican)  4951 0.113  
+ 7 Other       Joe Biden (Democrat)           735 0.0167 
+ 8 Other       Donald J. Trump (Republican)   774 0.0176 
+ 9 Not sure    Joe Biden (Democrat)           347 0.00791
+10 Not sure    Donald J. Trump (Republican)   232 0.00529</code></pre>
+</div>
+</div>
+</section>
+<section id="create-cross-tab-proportion-tables" class="level3">
+<h3 class="anchored" data-anchor-id="create-cross-tab-proportion-tables">Create cross-tab proportion tables</h3>
+<p>We can pivot our proportion tables to create cross-tabs, but if we leave in the count variable, we get output that we don’t expect:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb170"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a href="#cb170-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb170-2"><a href="#cb170-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pres_vote <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Joe Biden (Democrat)"</span>,</span>
+<span id="cb170-3"><a href="#cb170-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Donald J. Trump (Republican)"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb170-4"><a href="#cb170-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pid3, pres_vote) <span class="sc">|&gt;</span></span>
+<span id="cb170-5"><a href="#cb170-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb170-6"><a href="#cb170-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb170-7"><a href="#cb170-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb170-8"><a href="#cb170-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> pres_vote,</span>
+<span id="cb170-9"><a href="#cb170-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> prop</span>
+<span id="cb170-10"><a href="#cb170-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'pid3'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+# Groups:   pid3 [5]
+   pid3            n `Joe Biden (Democrat)` `Donald J. Trump (Republican)`
+   &lt;fct&gt;       &lt;int&gt;                  &lt;dbl&gt;                          &lt;dbl&gt;
+ 1 Democrat    17649                 0.968                         NA     
+ 2 Democrat      581                NA                              0.0319
+ 3 Republican    856                 0.0712                        NA     
+ 4 Republican  11164                NA                              0.929 
+ 5 Independent  6601                 0.571                         NA     
+ 6 Independent  4951                NA                              0.429 
+ 7 Other         735                 0.487                         NA     
+ 8 Other         774                NA                              0.513 
+ 9 Not sure      347                 0.599                         NA     
+10 Not sure      232                NA                              0.401 </code></pre>
+</div>
+</div>
+<p>To combat this, we can either drop the count variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb173-2"><a href="#cb173-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pres_vote <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Joe Biden (Democrat)"</span>,</span>
+<span id="cb173-3"><a href="#cb173-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Donald J. Trump (Republican)"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb173-4"><a href="#cb173-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pid3, pres_vote) <span class="sc">|&gt;</span></span>
+<span id="cb173-5"><a href="#cb173-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb173-6"><a href="#cb173-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb173-7"><a href="#cb173-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n) <span class="sc">|&gt;</span>  </span>
+<span id="cb173-8"><a href="#cb173-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb173-9"><a href="#cb173-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> pres_vote,</span>
+<span id="cb173-10"><a href="#cb173-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> prop</span>
+<span id="cb173-11"><a href="#cb173-11" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'pid3'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+# Groups:   pid3 [5]
+  pid3        `Joe Biden (Democrat)` `Donald J. Trump (Republican)`
+  &lt;fct&gt;                        &lt;dbl&gt;                          &lt;dbl&gt;
+1 Democrat                    0.968                          0.0319
+2 Republican                  0.0712                         0.929 
+3 Independent                 0.571                          0.429 
+4 Other                       0.487                          0.513 
+5 Not sure                    0.599                          0.401 </code></pre>
+</div>
+</div>
+<p>Or we can also be specific about what variables we want on the rows. We can use the <code>id_cols</code> argument to specify just the variables that will go on the rows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb176-2"><a href="#cb176-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pres_vote <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Joe Biden (Democrat)"</span>,</span>
+<span id="cb176-3"><a href="#cb176-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Donald J. Trump (Republican)"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb176-4"><a href="#cb176-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pid3, pres_vote) <span class="sc">|&gt;</span></span>
+<span id="cb176-5"><a href="#cb176-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb176-6"><a href="#cb176-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb176-7"><a href="#cb176-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb176-8"><a href="#cb176-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">id_cols =</span> pid3,</span>
+<span id="cb176-9"><a href="#cb176-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> pres_vote,</span>
+<span id="cb176-10"><a href="#cb176-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> prop</span>
+<span id="cb176-11"><a href="#cb176-11" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'pid3'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+# Groups:   pid3 [5]
+  pid3        `Joe Biden (Democrat)` `Donald J. Trump (Republican)`
+  &lt;fct&gt;                        &lt;dbl&gt;                          &lt;dbl&gt;
+1 Democrat                    0.968                          0.0319
+2 Republican                  0.0712                         0.929 
+3 Independent                 0.571                          0.429 
+4 Other                       0.487                          0.513 
+5 Not sure                    0.599                          0.401 </code></pre>
+</div>
+</div>
+</section>
+<section id="visualizing-a-proportion-table" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing-a-proportion-table">Visualizing a proportion table</h3>
+<p>We can visualize our proportion table using by mapping the grouping variable to the <code>x</code> axis and the non-grouped variable to the <code>fill</code> aesthetic. We also need to use the <code>position = "dodge"</code> argument to the <code>geom_col()</code> function so that the two columns in each group don’t overlap</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a>cces_2020 <span class="sc">|&gt;</span></span>
+<span id="cb179-2"><a href="#cb179-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pres_vote <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Joe Biden (Democrat)"</span>,</span>
+<span id="cb179-3"><a href="#cb179-3" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"Donald J. Trump (Republican)"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb179-4"><a href="#cb179-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pres_vote =</span> <span class="fu">if_else</span>(pres_vote <span class="sc">==</span> <span class="st">"Joe Biden (Democrat)"</span>,</span>
+<span id="cb179-5"><a href="#cb179-5" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Biden"</span>, <span class="st">"Trump"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb179-6"><a href="#cb179-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pid3, pres_vote) <span class="sc">|&gt;</span></span>
+<span id="cb179-7"><a href="#cb179-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb179-8"><a href="#cb179-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">|&gt;</span></span>
+<span id="cb179-9"><a href="#cb179-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb179-10"><a href="#cb179-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> pid3, <span class="at">y =</span> prop, <span class="at">fill =</span> pres_vote)) <span class="sc">+</span></span>
+<span id="cb179-11"><a href="#cb179-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb179-12"><a href="#cb179-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Biden =</span> <span class="st">"steelblue1"</span>, <span class="at">Trump =</span> <span class="st">"indianred1"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'pid3'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/crosstab-plot-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
