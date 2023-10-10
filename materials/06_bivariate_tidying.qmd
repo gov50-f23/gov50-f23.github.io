@@ -1,6 +1,6 @@
 ---
 title: "Summarizing Relationships, Tidying and Joining Data"
-date: 2022-10-04
+date: 2023-10-09
 ---
 
 
@@ -12,28 +12,9 @@ date: 2022-10-04
 
 ## Data
 
-- Reinstall the Gov 50 data package that has new data for this week:
-```{r}
-#| eval: false
-remotes::install_github("mattblackwell/gov50data")
-```
 
-- If you cannot install the package, you can download the data locally at [`covid_votes.csv`](/files/data/covid_votes.csv)  to the same directory as your Rmd file and load it using:
-```{r}
-#| eval: false
-library(tidyverse)
-covid_votes <- read_csv("covid_votes.csv")
-```
 
-- For Thursday lecture, we added to additional data sets to `gov50data`. If you cannot install that package, then you can download them: [`mortality.csv`](/files/data/mortality.csv) and [`spotify.csv`](/files/data/spotify.csv). Put them in the same folder as your Rmd file and use these commands to load:
-```{r}
-#| eval: false
-library(tidyverse)
-mortality <- read_csv("mortality.csv")
-spotify <- read_csv("spotify.csv")
-```
-
-- We will also use data from the `nycflights13` package that you can install with:
+- On Thursday, We will also use data from the `nycflights13` package that you can install with:
 ```{r}
 #| eval: false
 install.packages("nycflights13")
@@ -44,13 +25,13 @@ install.packages("nycflights13")
 
 ## Slides and Code
 
-- Tuesday (10/4) lecture: Summarizing relationships and writing our own functions
-  - [PDF of slides as I present them](/slides/10_bivariate.pdf)
-  - [PDF of handout version of slides](/slides/10_bivariate_handout.pdf) (no incremental slides)
-  - Code: [`covid_votes.Rmd`](/files/code/covid_votes.Rmd)
+- Tuesday (10/10) lecture: Summarizing relationships and writing our own functions
+  - [PDF of slides as I present them](/slides/11_bivariate.pdf)
+  - [PDF of handout version of slides](/slides/11_bivariate_handout.pdf) (no incremental slides)
+<!--   - Code: [`covid_votes.Rmd`](/files/code/covid_votes.Rmd) -->
 
-- Thursday (10/6) lecture: Causality review, pivoting longer, joining data.
-  - [PDF of slides as I present them](/slides/11_tidy_joins.pdf)
-  - [PDF of handout version of slides](/slides/11_tidy_joins_handout.pdf) (no incremental slides)
-   - Code: [`lecture-11.Rmd`](/files/code/lecture-11.Rmd)
+<!-- - Thursday (10/6) lecture: Causality review, pivoting longer, joining data. -->
+<!--   - [PDF of slides as I present them](/slides/11_tidy_joins.pdf) -->
+<!--   - [PDF of handout version of slides](/slides/11_tidy_joins_handout.pdf) (no incremental slides) -->
+<!--    - Code: [`lecture-11.Rmd`](/files/code/lecture-11.Rmd) -->
 
