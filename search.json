@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling"
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling\nBivariate Relationships and Functions"
   },
   {
     "objectID": "materials/13_models.html",
@@ -774,14 +774,14 @@
     "href": "materials/06_bivariate_tidying.html#data",
     "title": "Summarizing Relationships, Tidying and Joining Data",
     "section": "Data",
-    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nIf you cannot install the package, you can download the data locally at covid_votes.csv to the same directory as your Rmd file and load it using:\n\n\nlibrary(tidyverse)\ncovid_votes &lt;- read_csv(\"covid_votes.csv\")\n\n\nFor Thursday lecture, we added to additional data sets to gov50data. If you cannot install that package, then you can download them: mortality.csv and spotify.csv. Put them in the same folder as your Rmd file and use these commands to load:\n\n\nlibrary(tidyverse)\nmortality &lt;- read_csv(\"mortality.csv\")\nspotify &lt;- read_csv(\"spotify.csv\")\n\n\nWe will also use data from the nycflights13 package that you can install with:\n\n\ninstall.packages(\"nycflights13\")"
+    "text": "Data\n\nOn Thursday, We will also use data from the nycflights13 package that you can install with:\n\n\ninstall.packages(\"nycflights13\")"
   },
   {
     "objectID": "materials/06_bivariate_tidying.html#slides-and-code",
     "href": "materials/06_bivariate_tidying.html#slides-and-code",
     "title": "Summarizing Relationships, Tidying and Joining Data",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (10/4) lecture: Summarizing relationships and writing our own functions\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: covid_votes.Rmd\n\nThursday (10/6) lecture: Causality review, pivoting longer, joining data.\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture-11.Rmd"
+    "text": "Slides and Code\n\nTuesday (10/10) lecture: Summarizing relationships and writing our own functions\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/08_regression.html",
