@@ -30,8 +30,8 @@ install.packages("nycflights13")
   - [PDF of handout version of slides](/slides/11_bivariate_handout.pdf) (no incremental slides)
 <!--   - Code: [`covid_votes.Rmd`](/files/code/covid_votes.Rmd) -->
 
-<!-- - Thursday (10/6) lecture: Causality review, pivoting longer, joining data. -->
-<!--   - [PDF of slides as I present them](/slides/11_tidy_joins.pdf) -->
-<!--   - [PDF of handout version of slides](/slides/11_tidy_joins_handout.pdf) (no incremental slides) -->
+- Thursday (10/12) lecture: Pivoting longer, joining data.
+  - [PDF of slides as I present them](/slides/12_tidy_joins.pdf)
+  - [PDF of handout version of slides](/slides/12_tidy_joins_handout.pdf) (no incremental slides)
 <!--    - Code: [`lecture-11.Rmd`](/files/code/lecture-11.Rmd) -->
 
