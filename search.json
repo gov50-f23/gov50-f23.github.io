@@ -74,14 +74,14 @@
     "href": "resources/index.html",
     "title": "Resources",
     "section": "",
-    "text": "Getting Software Set Up\nR Tutorials Instructions (for running locally in RStudio)\nProblem Sets and Exams Instructions\nGov 50 R Cheatsheet"
+    "text": "Getting Software Set Up\nR Tutorials Instructions (for running locally in RStudio)\nProblem Sets and Exams Instructions\nGov 50 R Cheatsheet\nGov 50 Troubleshooting Guide"
   },
   {
     "objectID": "resources/index.html#gov-50-resources",
     "href": "resources/index.html#gov-50-resources",
     "title": "Resources",
     "section": "",
-    "text": "Getting Software Set Up\nR Tutorials Instructions (for running locally in RStudio)\nProblem Sets and Exams Instructions\nGov 50 R Cheatsheet"
+    "text": "Getting Software Set Up\nR Tutorials Instructions (for running locally in RStudio)\nProblem Sets and Exams Instructions\nGov 50 R Cheatsheet\nGov 50 Troubleshooting Guide"
   },
   {
     "objectID": "resources/index.html#r-tutorials",
@@ -322,81 +322,249 @@
     "text": "FAQs\n\nWhat if I receive an error about pdflatex and the submission report doesn’t download?\nTo generate the reports, you need something called LaTeX. You should have installed this with Problem Set 0, but the following command will install it:\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX\n\n\n\nWhat if I don’t see a Tutorial tab in RStudio?\nMake sure that you have RStudio version 1.3 or higher installed on your computer. On a Mac, you can check the version by going to the top left of the menu bar (next to the Apple logo) and clicking on “RStudio” then “About RStudio”. On a Windows PC, you can find the same item under File &gt; About.\n\n\nWhat if my submission report misses some of my attempts?\nThe submission report isn’t perfect and will sometimes say you didn’t attempt a question when you actually did. We do not grade strictly on this and are mostly looking for a confirmation that you made a good-faith effort to complete the tutorial."
   },
   {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments",
+    "objectID": "assignments/problem-sets.html",
+    "href": "assignments/problem-sets.html",
+    "title": "Problem Sets and Exams",
     "section": "",
-    "text": "Tutorial Instructions\nTutorial 1: Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Causality\nTutorial 4: Summarizing Data\nTutorial 5: Correlation and Tidying Data\nTutorial 6: Loops\nTutorial 7: Regression and Sampling\nTutorial 8: Bootstrap"
+    "text": "For both problem sets and exams, you will end up producing two types of documents:"
   },
   {
-    "objectID": "assignments/index.html#tutorials",
-    "href": "assignments/index.html#tutorials",
-    "title": "Assignments",
+    "objectID": "assignments/problem-sets.html#problem-set-workflow",
+    "href": "assignments/problem-sets.html#problem-set-workflow",
+    "title": "Problem Sets and Exams",
+    "section": "Problem set workflow",
+    "text": "Problem set workflow\nThe text of the problem sets will be posted here on the course website. We will distribute templates and data for the problem sets via Github. To get started, follow these steps:\n\nGo to the Ed Board and find the pinned thread with the GitHub Classroom links for each assignment.\nClick on the Github Classroom link for the assignment in question. You’ll be presented with a page that asks you to accept the assignment. Click “Accept this assignment”.\nGo to this new problem set repository on GitHub. Click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).\n\n\n\nNow, switch to RStudio. Go to the menu bar and hit “File &gt; New Project”. You can then choose what type of project to start. Since we’re importing from Github, we’ll use the “Version Control” option (it’s the bottom of the list). In the next menu, choose “Git”. Now, you can paste the URL in the “Repository URL” box. Choose a set of local directories to place this project and hit “Create Project”. Because this is a private repository, you will be prompted to enter your GitHub username and password. Go ahead and do this.\nAs you make changes to your file, make sure to commit those changes. Every commit is a point that you can always go back to if your code stops working for some reason. So doing this often will make sure that you have access to that great feature of git. At an absolute minimum, you should do this every time you complete a question, though you may want to do it more often than that. Committing often means you also don’t have to constantly create new versions of the same file because you’re afraid of making some change. Also, make sure to use informative commit messages so you know what’s changing. Important: be sure to answer the questions in the Rmd file provided by the template. This is what the autograder will look for when you submit.\nAt some point, you’ll want to push your changes back to GitHub so the teaching staff can see your work (if you need help) or so that you can submit to Gradescope."
+  },
+  {
+    "objectID": "assignments/problem-sets.html#submitting-your-assignments",
+    "href": "assignments/problem-sets.html#submitting-your-assignments",
+    "title": "Problem Sets and Exams",
+    "section": "Submitting your assignments",
+    "text": "Submitting your assignments\n\nStep 1: Submit the GitHub repository to Gradescope\nOn Gradescope, you’ll find two entries for each assignment. One will be labelled “Autograder” and the other “PDF”. Click on the Autograder entry and select the GitHub submission option. The first time you do this step, you will first need to connect your GitHub account to your Gradescope account.\n\nOnce you have connected your GitHub account, you can find the repository for the relevant problem set and the “main” branch and hit “Submit”.\n\n\n\nStep 2: Check autograder output\nWhen you submit the repository, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You’ll see a list of test results and an overall score.\n\nCheck the messages on any questions you got wrong for hints about how to fix them. You may then resubmit the GitHub repository again once you have fixed the code and pushed your changes to GitHub. You should repeat this process as many times as needed before you get a perfect score.\n\n\nStep 3: Upload PDF\nOnce you are satisfied with your autograding, then you should produce your final PDF report by hitting the “Knit” button at the top of the RStudio editor. This should produce a PDF output that you can then upload to Gradescope. In Gradescope, there will be an assignment labelled “Problem Set X: PDF”. There, you will be prompted to upload your final PDF report. You’ll be asked to indicate on which page each answer is. Label the PDF with where those answers are (being sure to mark two different pages if an answer continues on two pages)."
+  },
+  {
+    "objectID": "assignments/problem-sets.html#checklist",
+    "href": "assignments/problem-sets.html#checklist",
+    "title": "Problem Sets and Exams",
+    "section": "Checklist",
+    "text": "Checklist\n\nAccept GitHub Classroom invite.\nUse RStudio to “Clone with HTTPS” this repo to your computer.\nMake progress editing the .Rmd file.\n\nAs you do, commit and push to GitHub regularly.\nYou can check your answers with the autograder at any point.\nMake sure to name your code chunks.\nAdd the names of anyone you discuss the problem set with on your write-up.\n\nPush final version to GitHub.\nSubmit the GitHub repository to the Gradescope autograder.\nUpload final .pdf file to Gradescope."
+  },
+  {
+    "objectID": "assignments/problem-sets.html#writing-good-code",
+    "href": "assignments/problem-sets.html#writing-good-code",
+    "title": "Problem Sets and Exams",
+    "section": "Writing good code",
+    "text": "Writing good code\nYou’ll be writing code to do the analyses in this class. Code, like any language, provides many different ways of saying the same thing. One good practice of coding is to have what’s called good coding style. This refers to how you format the code that you so that it is (a) easy for you and others to read, and (b) less prone to making mistakes. Here are some general guidelines for writing R code and Rmd file.\n\nWhen writing R code and unless we tell you otherwise, follow the tidyverse style guide. For this class, the relevant parts of this document are the first couple of chapters. If you are ever uncertain about how to name something or how to write some code, see this document and it will likely help you quite a bit.\nMake sure the code chunks in the Rmd file have blank lines above and below them. If you don’t have this, it can sometimes cause problems with compilation.\nTry to keep your lines of code shorter than 80 characters since this makes reading code much easier. Usually this means writing some function arguments on a different line. See the style guide (section 2.5) for more on this.\nInclude comments in your code and format them nicely as in section 3.4 of the style guide. These comments should explain why you wrote the code you wrote and any notes you had about how you came to this solution. This might include, say, other approaches you tried but didn’t work or approaches you might want to try if you ever revisit this. Look at our code and examples to get a sense of how to use comments. In RStudio, you can nicely format a comment by hitting Control-Shift-\\."
+  },
+  {
+    "objectID": "assignments/final-project.html",
+    "href": "assignments/final-project.html",
+    "title": "Final Project Information",
     "section": "",
-    "text": "Tutorial Instructions\nTutorial 1: Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Causality\nTutorial 4: Summarizing Data\nTutorial 5: Correlation and Tidying Data\nTutorial 6: Loops\nTutorial 7: Regression and Sampling\nTutorial 8: Bootstrap"
+    "text": "The final project is a data analysis project about whatever data excites you. That could be public opinion in U.S. elections, United Nations voting patterns, patterns of racial discrimination in police behavior, the distribution of salaries in basketball, or the economics of the Marvel Cinematic Universe. No matter the topic, you will formulate a key research question, find data on that question, answer the question using the tools of the course, and present those results for public consumption.\nHere is a list of milestones that we will have to keep you on track:"
   },
   {
-    "objectID": "assignments/index.html#problem-sets",
-    "href": "assignments/index.html#problem-sets",
-    "title": "Assignments",
-    "section": "Problem Sets",
-    "text": "Problem Sets\n\nSubmission guide for problem sets\nProblem set 0: Setting up R, RStudio, and GitHub\nProblem set 1: Data visualization\nProblem set 2: Data wrangling\nProblem set 3: Causality\nProblem set 4: Summarizing data"
+    "objectID": "assignments/final-project.html#milestone-1-create-public-github-repository-due-929",
+    "href": "assignments/final-project.html#milestone-1-create-public-github-repository-due-929",
+    "title": "Final Project Information",
+    "section": "Milestone 1: Create public GitHub repository (due 9/29)",
+    "text": "Milestone 1: Create public GitHub repository (due 9/29)\nFollow the instructions on how to create a repository for your final project. You should change the metadata on your article and write a few sentences in the main text about what you might be interested in writing about. You will submit a link to the public article (not the github repository) to Canvas (not Gradescope)."
   },
   {
-    "objectID": "assignments/index.html#final-project",
-    "href": "assignments/index.html#final-project",
-    "title": "Assignments",
-    "section": "Final Project",
-    "text": "Final Project\n\nFinal project information\nFinal project milestone 1: Creating a repo"
+    "objectID": "assignments/final-project.html#milestone-2-finding-data-and-writing-a-proposal-due-1013",
+    "href": "assignments/final-project.html#milestone-2-finding-data-and-writing-a-proposal-due-1013",
+    "title": "Final Project Information",
+    "section": "Milestone 2: Finding data and writing a proposal (due 10/13)",
+    "text": "Milestone 2: Finding data and writing a proposal (due 10/13)\n\nFinding a data source\nThe biggest part of the final project in Gov 50 is finding a data source. Here are some other resources and repositories with data sets:\n\nList of links to political science data sets\nHarvard Dataverse - Social Science\nData.gov - Data sets released by the US government\nData published by FiveThirtyEight\nHarvard OpenData Group Directory\nHarvard Program on Survey Research Data Collections\nRoper Center : Public Opinion in the US\nPew Research Center Data Sets\n\nIf you find a data set that you think is interesting, but you have problems loading the data set into R, please contact the course staff. R can load almost anything, so we can likely help you.\nWe also have the following specific datasets available to use:\n\nAmerican National Election Survey, 2016: Data Codebook\nCivil Wars: Data Codebook\nPolitical Violence: Data Codebook\nFox News rollout: Data Codebook\nAfrobarometer: Data Codebook\n\n\n\nGeneral advice for choosing data sources\n\nIf you want to analyze the relationship between X and Y, make sure that these two variables are included in the data set. If you want to look at effects for subgroups, make sure there is a variable that you can use for subsetting.\nTry to look for a ‘codebook’ or some other document that explains what the variables mean and how they are coded.\nFor most projects, preparing the data for analysis takes longer than the actual analysis itself. Try to find a data set where you do not need to extensively recode / clean up the data before you run your analyses, this makes the final project easier.\nIn similar vein, if the data set is greater than about 50MB (this is not a hard cutoff), R commands and analyses tend to take longer.\nImportant: Please do not try to commit any file that is larger than 100MB. You will not be able to push these files to GitHub and will require some complicated work to undo the commits. Instead, you can write an R script that subsets the data to units/variables that you need and save that file, which should be considerably smaller. Then you can put that in your repository and commit that.\nData from experiments is usually simple to analyze, since the analysis commonly involves simple comparisons of group means.\n\n\n\nWriting a proposal\nYou should write a one-paragraph note to describe what data set you will use and what your tentative research question is. Your research question should ask how one dependent variable is related to one or more independent variables. That is, your research question should be able to be answered by a regression analysis. In this paragraph, you should do the following:\n\nState your research question.\nFormulate a hypothesis related to the research question. This hypothesis should be rooted in some sort of theory. In other words, you need to present a plausible story why the hypothesis might be true. Often, this is in the form of a behaviorial or institutional explanation. As social scientists, we are not interested in idiosyncratic explanations; we want to understand systematic patterns and relationships!\nDescribe your explanatory variable(s) of interest and how it is measured. Importantly, we need to observe variation in this variable in order to study it!\nDescribe your outcome variable of interest and how it is measured.\nWhat observed pattern in the data would provide support for your hypothesis? More importantly, what observed pattern would disprove your hypothesis?\n\nFor instance, this would be a comprehensive paragraph that address each of these points in detail:\n\nDoes unified government enhance legislative productivity? In this study, I plan to examine the extent to which periods of unified government produce more landmark laws. I hypothesize that legislative productivity increases during periods of unified government in which one party controls both Houses of Congress and the presidency relative to periods of divided government. During periods of unified government, I expect that it is more likely for major bills to pass both Houses and gain the president’s signature. During periods of divided government, it is more difficult to reach a consensus around legislation that can pass each House and gain the president’s approval. My sample is comprised of each of the 79th (1945-1946) through 103rd (1993-1994) Congresses. My unit of analysis is a Congress (e.g., the 88th Congress). The explanatory variable of interest is whether there is unified government (both Houses and the presidency are controlled by the same party) or divided government. The variable is coded =1 for unified government and =0 for divided government. My outcome variable is the count of landmark pieces of legislation passed in a given Congress. For instance, if the variable were coded =11, it would mean that 11 pieces of landmark legislation were signed into law in that Congress. This variable is measured from David Mayhew’s data set on landmark legislation and relies on Mayhew’s expert knowledge to classify legislation as “landmark.” If I observe greater landmark legislative productivity under unified government relative to divided government, this would provide support for my hypothesis. If, on the other hand, I observe less productivity or the same level of productivity under unified government, this would provide evidence against my hypothesis. When I run my regression of the count of landmark legislation on the unified government indicator variable, a positive, significant coefficient would indicate support for my hypothesis.\n\nYour paragraph might be less detailed and may not refer to any academic literature, but it should address the above items.\nNote that you are not fully committing to any specific question or data in this exercise. If you want to change data or questions later, that is fine. This is just a milestone to keep you on track. You can write this proposal on your index.Rmd file in the public article. You will submit a link to the rendered article with the proposal.\nNote that you will eventually remove this proposal with the actual article. If down the road you don’t want this proposal to be part of the public history of the repository, you can always create a new repository for the final report."
   },
   {
-    "objectID": "assignments/distill.html",
-    "href": "assignments/distill.html",
-    "title": "Creating the Final Project Repository",
+    "objectID": "assignments/final-project.html#milestone-3-one-data-visualization-due-1027",
+    "href": "assignments/final-project.html#milestone-3-one-data-visualization-due-1027",
+    "title": "Final Project Information",
+    "section": "Milestone 3: One data visualization (due 10/27)",
+    "text": "Milestone 3: One data visualization (due 10/27)\nThe next milestone will require that your Distill article loads the data you have selected and produces one interesting and polished data visualization. This could either show the distribution of one variable or the relationship between two variables."
+  },
+  {
+    "objectID": "assignments/final-project.html#milestone-4-add-results-from-one-analysis-due-1110",
+    "href": "assignments/final-project.html#milestone-4-add-results-from-one-analysis-due-1110",
+    "title": "Final Project Information",
+    "section": "Milestone 4: Add results from one analysis (due 11/10)",
+    "text": "Milestone 4: Add results from one analysis (due 11/10)\nBy this time, your article should contain one visualization and one analysis that attempts to answer your research question. There does not need to be a long discussion, but the results should be presented in either a second visualization or a nicely formatted table."
+  },
+  {
+    "objectID": "assignments/final-project.html#final-step-write-up-final-report-due-1213",
+    "href": "assignments/final-project.html#final-step-write-up-final-report-due-1213",
+    "title": "Final Project Information",
+    "section": "Final step: Write up final report (due 12/13)",
+    "text": "Final step: Write up final report (due 12/13)\nThe final report will include the following sections: (1) an introduction where you introduce the research question and hypothesis and briefly describe why it is interesting; (2) a data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; (3) a results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; and (4) a brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect).\nFor the data section, you should note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences). For the results section, you should interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect."
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html",
+    "href": "assignments/04_hw_summarizing.html",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
     "section": "",
-    "text": "First you need to install the {distill} package with the following code at the Console:\n\ninstall.packages(\"distill\")"
+    "text": "This problem set is due on October 11, 2023 at 11:59pm.\nYou can find instructions for obtaining and submitting problem sets here.\nYou can find the GitHub Classroom link to download the template repository on the Ed Board"
   },
   {
-    "objectID": "assignments/distill.html#install-the-distill-package",
-    "href": "assignments/distill.html#install-the-distill-package",
-    "title": "Creating the Final Project Repository",
+    "objectID": "assignments/04_hw_summarizing.html#background",
+    "href": "assignments/04_hw_summarizing.html#background",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Background",
+    "text": "Background\nIn this problem set, we will analyze the relationship between the gender composition among a judge’s children and voting behavior among circuit court judges. In a recent paper, Adam N. Glynn and Maya Sen argue that having a female child causes circuit court judges to make more pro-feminist decisions. The paper can be found at:\n\nGlynn, Adam N., and Maya Sen. (2015). “Identifying Judicial Empathy: Does Having Daughters Cause Judges to Rule for Women’s Issues?.” American Journal of Political Science Vol. 59, No. 1, pp. 37–54.\n\nThe dataset judges.csv contains the following variables about individual judges:\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nname\nThe judge’s name\n\n\nnum_kids\nThe number of children each judge has.\n\n\ncircuit\nWhich federal circuit the judge serves in.\n\n\ngirls\nThe number of female children the judge has.\n\n\nprogressive_vote\nThe proportion of the judge’s votes on women’s issues which were decided in a pro-feminist direction.\n\n\nrace\nThe judge’s race (1 = white, 2 = African-American, 3 = Hispanic, 4 = Asian-American).\n\n\nreligion\nThe judge’s religion (1 = Unitarian, 2 = Episcopalian, 3 = Baptist, 4 = Catholic, 5 = Jewish, 7 = Presbyterian, 8 = Protestant, 9 = Congregationalist, 10 = Methodist, 11 = Church of Christ, 16 = Baha’i, 17 = Mormon, 21 = Anglican, 24 = Lutheran, 99 = unknown).\n\n\nrepublican\nTakes a value of 1 if the judge was appointed by a Republican president, 0 otherwise. Used as a proxy for the judge’s party.\n\n\nsons\nThe number of male children the judge has.\n\n\nwoman\nTakes a value of 1 if the judge is a woman, 0 otherwise.\n\n\nyearb\nThe year the judge was born."
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-1-10-points",
+    "href": "assignments/04_hw_summarizing.html#question-1-10-points",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 1 (10 points)",
+    "text": "Question 1 (10 points)\nLoad the tidyverse package in the setup chunk. In the first chunk for this question use read_csv to load the data/judges.csv file into a data frame called judges. In this exercise, you will create a cross-tab that shows the gender breakdown within each party. In particular, the result should be a table with 2 rows and 3 columns, where the rows represent each gender and the columns correspond to party. In the end, you should have a table that looks like this (with the correct proportion, not these made up ones):\n\n\n\nGender\nDemocrat\nRepublican\n\n\n\n\nMan\n0.5\n0.6\n\n\nWoman\n0.5\n0.4\n\n\n\nNote that the columns here sum to 1. You can create this using the following data wrangling steps:\n\nOverwrite the judges tibble with the same tibble with two newly created variables: one variable called Gender variable to be labelled \"Woman\" and \"Man\" based on the variable woman and another variable called Party to be labelled \"Republican\" and \"Democrat\" based on the republican variable.\nUse the judges tibble to create the cross-tab and save it as gender_party_table. It should have 2 rows and 3 columns (“Gender”, “Republican”, and “Democrat”). Be very careful about the ordering of your grouping and remember that summarize() drops the last group by default when there is more than one group. You should use group_by(), summarize(), mutate(), and pivot_wider() to accomplish this. (Hint: if you are ending up with the wrong number of rows, make sure that the only variables in the tibble when you try to use pivot_wider are the two grouping variables and the proportion variable.)\nPass gender_party_table to knitr::kable() to create a nicely formatted version of this table.\n\nIn your write-up, answer the following questions:\n\nHow many judges are in this data set?\nWhat proportion of the judges are men? (hint: use mean)\nFrom your table, is the gender breakdown different for judges appointed by Democratic vs Republican presidents?\n\nRubric: 2pts for creating Gender and Party (autograder); 5pts for gender_party_table (autograder); 1pt for properly formatted table (PDF); 2pts for answering question (PDF)."
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-2-7-points",
+    "href": "assignments/04_hw_summarizing.html#question-2-7-points",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 2 (7 points)",
+    "text": "Question 2 (7 points)\nUse group_by and summarize to calculate the mean of progressive_vote in each combination of the Gender and Party variables you created in question 1 and save this tibble as gender_party_means (this tibble should have columns Gender, Party, and progressive_vote). Use this table to recreate the following barplot:\n\nThe autograder will check the aesthetic mappings, the correct placement of the bars, and the labels, but you do not need to match the exact colors (they are \"steeblue1\" and \"indianred1\" if you do want to match, though).\nIn the main text, briefly interpret the results of the analysis by describing which party and which gender tend to be more progressive. Comment on whether there are larger differences across party or across gender in terms of progressive voting. Should we interpret any of these effects causally? Why or why not?\nRubric: 2pts for gender_party_means table (autograder); 3pts for gender_party_plot (autograder); 2pts for interpretation (PDF)"
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-3-9-points",
+    "href": "assignments/04_hw_summarizing.html#question-3-9-points",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 3 (9 points)",
+    "text": "Question 3 (9 points)\nWhat is the difference in the proportion of pro-feminist decisions between judges who have at least one daughter and those who do not have any? To compute this difference, first create a variable called any_girls that is \"Any Girls\" when the judge has at least 1 girl and \"No Girls\" otherwise and save this variable back to the judges tibble. Then, created a new tibble called parents that is filtered to contain judges that have at least one child. Create an object called vote_by_girls that has three columns: the unique values of the any_girls variable, the mean of the progressive_vote variable for each value of any_girls (column called progressive_mean), and the standard deviation of progressive_vote for each value of any_girls (column called progressive_sd). Present the table using knitr::kable().\nIn the main text, describe which group has a higher average progressive vote and which group’s distribution has more spread. Why might we worry about interpreting any difference in means causally, considering number of children as a possible confounder?\nRubric: 1pt for creating any_girls variable (autograder); 1pt for creating parents tibble (autograder); 4pts for creating the vote_by_girls table (autograder); 1pt for description of the table (PDF); 2pts for discussion of causality (PDF)."
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-4-9-points",
+    "href": "assignments/04_hw_summarizing.html#question-4-9-points",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 4 (9 points)",
+    "text": "Question 4 (9 points)\nGiven that the number of children might be a confounder for the relationship between number of girls and voting, let’s estimate the average treatment effects of having girls using statistical control for the number of children among judges that have one to three children (that is, first filter to judges that only have between 1 and 3 children, inclusive). Your final table should be called ate_nkids and should be a tibble that has two columns: one with the number of children (1, 2, and 3) and the other with the estimated ATEs of any_girls for each of those levels. Print out this table using the knitr::kable() command.\nAre these estimated effects largely similar or largely different than what you found using all of the data? What assumption do you need to make to interpret these effects causally? Do you think it is plausible in this case?\nRubric: 6pts for ate_nkids (autograder); 1pt for nicely formatted table (PDF); 2pts for discussion (PDF)"
+  },
+  {
+    "objectID": "assignments/04_hw_summarizing.html#question-5-extra-credit-5-points",
+    "href": "assignments/04_hw_summarizing.html#question-5-extra-credit-5-points",
+    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
+    "section": "Question 5 (EXTRA CREDIT, 5 points)",
+    "text": "Question 5 (EXTRA CREDIT, 5 points)\nThis problem is optional. Any points earned on this problem can be applied to lost points on other parts of the problem set. You cannot earn more than the maximum score on the problem set. There will be no autograder for this question.\nLet’s consider the design of this study. The original authors assume that, conditional on the number of children a judge has, the number of daughters is random (as we did in the previous question). If this is true, half of a judge’s children should be female, on average. A deviation from this proportion could indicate that a gender preference among judges due a stopping rule such as “have children until we get one girl,” which would violate the randomization assumption.\nTo check this assumption, group the data by the number of children and calculate the proportion of children in each group that are girls. Create a barplot that these proportions on the y-axis with the number of children on the x-axis. This barplot should have (a) informative labels on each axis, (b) a y-axis range that runs from 0 to 1, and (c) a horizontal line at 0.5 to compare against. Does it appear that there is strong gender preference/selection happening among judges?"
+  },
+  {
+    "objectID": "assignments/02_hw_data_wrangling.html",
+    "href": "assignments/02_hw_data_wrangling.html",
+    "title": "Problem Set 2: Data Wrangling",
     "section": "",
-    "text": "First you need to install the {distill} package with the following code at the Console:\n\ninstall.packages(\"distill\")"
+    "text": "This problem set is due on September 27, 2023 at 11:59pm.\nYou can find instructions for obtaining and submitting problem sets here.\nYou can find the GitHub Classroom link to download the template repository on the Ed Board"
   },
   {
-    "objectID": "assignments/distill.html#create-your-github-repository",
-    "href": "assignments/distill.html#create-your-github-repository",
-    "title": "Creating the Final Project Repository",
-    "section": "Create your GitHub repository",
-    "text": "Create your GitHub repository\nThe next thing you will do is create the GitHub repository that will house your final project. You can do this easily by using the Gov 50 Final Project template. After going to that repository, click on the green “Use this template” button:\n\nWhen presented with the option of the repository name, for now you can call it gov50-final-project or something similar. You can change the name of repository later once you have a more solid idea for your final project idea. Make sure that Public option is selected."
+    "objectID": "assignments/02_hw_data_wrangling.html#background",
+    "href": "assignments/02_hw_data_wrangling.html#background",
+    "title": "Problem Set 2: Data Wrangling",
+    "section": "Background",
+    "text": "Background\nPolitical advertising has traditionally been focused on the medium of television, but in recent cycles, online advertising has become much more popular. In this problem set, you will explore a dataset that has information on Facebook ad spending and impressions by candidates in the 2018 election cycle in the United States. The variables in this data are described below.\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncand_id\nunique identifier code for candidate\n\n\ncand_name\nfull name of the candidate\n\n\ncand_name_last\nlast name of the candidate\n\n\nparty\nparty affiliation of the candidate (R = Republican, D = Democrat)\n\n\noffice\noffice being sought by candidate\n\n\nstate\nstate in which the candidate is running\n\n\nincumbency\nincumbency status of candidate (incumbent, challenger, or open seat)\n\n\nspend\nestimated total spending on Facebook ads by candidate\n\n\nimpressions\nestimated total impressions of Facebook ads\n\n\nad_tone_attack\nproportion of FB ads that mention candidate’s opponent only\n\n\nad_tone_promote\nproportion of FB ads that mention candidate only\n\n\nad_tone_contrast\nproportion of FB ads that mention candidate and candidate’s opponent"
   },
   {
-    "objectID": "assignments/distill.html#setting-up-github-pages",
-    "href": "assignments/distill.html#setting-up-github-pages",
-    "title": "Creating the Final Project Repository",
-    "section": "Setting up GitHub pages",
-    "text": "Setting up GitHub pages\nOnce you have your repository created, it’s time to have GitHub publish the pages. In the repository click on the settings tab and then select the “Pages” entry in the side bar. There you should be able to select a branch to publish the site from. Select the “main” branch and hit “Save”. The setup should look like this:\n\nOnce you do this, GitHub will start to publish your site. After a few minutes, you’ll see a new box on the Pages settings pane that gives you the URL:\n\nClick on “Visit Site” to see your site in progress. It should be at the URL https://{username}.github.io/{repo-name}."
+    "objectID": "assignments/02_hw_data_wrangling.html#question-1-8-points",
+    "href": "assignments/02_hw_data_wrangling.html#question-1-8-points",
+    "title": "Problem Set 2: Data Wrangling",
+    "section": "Question 1 (8 points)",
+    "text": "Question 1 (8 points)\nLoad the data using the read_csv function and save it as fb_ads (using this will automatically make fb_ads a tibble). In the text, describe how many candidates there are in the dataset.\nUse dplyr functions to create a table with the number of candidates in each type of incumbency status in the data set. Save this table output as incumbency_table (for the autograder). Use the function knitr::kable() on this table to have a nicely formatted table produced in the knitted output.\nRubric: 2pt for loading the data (autograder); 1pt for describing the number of candidates (PDF); 3pts for creating the table (autograder); 2pt for using kable() to nicely format the output (PDF)"
   },
   {
-    "objectID": "assignments/distill.html#working-with-your-repo",
-    "href": "assignments/distill.html#working-with-your-repo",
-    "title": "Creating the Final Project Repository",
-    "section": "Working with your repo",
-    "text": "Working with your repo\nYou should now create a project in RStudio based on your final project repository. Open the index.Rmd file and update it with your name and some thoughts about your final project ideas. Hit the “Knit” button to preview your site. If you are happy with your edits, stage the files and commit them in the usual way:\n\nOnce committed, push your changes to GitHub. When you go back to your repo, you’ll see a yellow dot, indicating that GitHub is working on publishing your changes:\n\nOnce it is done publishing, you’ll see a green checkmark:\n\nYou can now go to your site and see the changes."
+    "objectID": "assignments/02_hw_data_wrangling.html#question-2-7-points",
+    "href": "assignments/02_hw_data_wrangling.html#question-2-7-points",
+    "title": "Problem Set 2: Data Wrangling",
+    "section": "Question 2 (7 points)",
+    "text": "Question 2 (7 points)\nFilter the data to just US House and US Senate races and use this to create a tibble called party_incumbent_promote that has 6 rows that summarizes the average of ad_tone_promote for each combination of party and incumbency. Call the variable summarizing the promote variable as promote_prop and be sure to remove any missing values when computing the averages.\nUse knitr::kable() to produce a nicely formatted table. In this call, set the digits arguments to 3 and use the col.names argument to pass a nicer set of names. You can use the following as a template:\n\nknitr::kable(my_table, col.names = c(\"Variable 1\", \"Variable 2\", ...))\n\nIn the writeup, describe which type of candidate sponsored the most promoting ads on average.\nRubric: 3pts for creating party_incumbent_promote correctly (autograder); 2pt for a nicely formatted table (PDF); 1pt for changing the column names of the output table (PDF); 1pt for correctly identifying the type of candidate with highest average (PDF)"
   },
   {
-    "objectID": "assignments/distill.html#milestone-1",
-    "href": "assignments/distill.html#milestone-1",
-    "title": "Creating the Final Project Repository",
-    "section": "Milestone 1",
-    "text": "Milestone 1\nYou should change the metadata on your article (your name at the least) and write a few sentences in the main text about what you might be interested in writing about. You will submit a link to the public article (not the github repository) to Canvas (not Gradescope)."
+    "objectID": "assignments/02_hw_data_wrangling.html#question-3-7-points",
+    "href": "assignments/02_hw_data_wrangling.html#question-3-7-points",
+    "title": "Problem Set 2: Data Wrangling",
+    "section": "Question 3 (7 points)",
+    "text": "Question 3 (7 points)\nCreate a new variable called impressions_millions that is the total Facebook ad impressions in millions (as opposed to single impressions). Make sure to save the resulting dataset back as fb_ads.\nCreate a histogram of this variable for just the US House races. Save the ggplot output as plot_q3 and also print it to produce a plot in the output. In the text, describe the shape of the histogram and tell the reader if most of the House candidates had more than 10 million ads impressions on Facebook.\nRubric: 2pt for creating the new variable (autograder); 3pts for creating the histogram object (autograder); 2pts for answering the question about the histogram (PDF)"
   },
   {
-    "objectID": "assignments/distill.html#more-information-on-distill-authoring",
-    "href": "assignments/distill.html#more-information-on-distill-authoring",
-    "title": "Creating the Final Project Repository",
-    "section": "More information on distill authoring",
-    "text": "More information on distill authoring\nThe basics of distill are very similar to the basics of the Rmd files that you have been working with. You can also check out the distill website for more information on the basics of authoring distill articles."
+    "objectID": "assignments/02_hw_data_wrangling.html#question-4-13-points",
+    "href": "assignments/02_hw_data_wrangling.html#question-4-13-points",
+    "title": "Problem Set 2: Data Wrangling",
+    "section": "Question 4 (13 points)",
+    "text": "Question 4 (13 points)\nLet’s now recreate the following plot that shows the top 15 House candidates in terms of Facebook ad impressions.\n\nYou should save the ggplot output as fb_top_plot. You should also write fb_top_plot on its own line in the chunk to produce the actual plot. The key features of this graph that you should replicate for the autograder are:\n\nThe barplot should have candidate last names on the y-axis and the impressions_millions variable from question 3 on the x-axis.\nThe data feeding into the ggplot call should only have US House candidates and only the candidates with the highest 15 impressions_millions values.\nThe y-axis should be ordered in ascending values of impressions_millions so that the lowest values are at the bottom. You may want to manipulate cand_name_last to achieve this.\nThe fill color of the bar plot should be mapped to the party variable (but not globally!).\n\nYou do not need to exactly match the labels, but you should have informative labels. The color does not need to match, but if you want to change the fill colors, you can use the scale_fill_manual(values = c(R = \"red\", D = \"blue\")) function (where you can change the red and blue to whatever you want).\nRubric: 3pts for correct axes (autograder); 3pts for correct data fed into ggplot (autograder); 3pts for the correct ordering of the y-axis (PDF); 3pts for fill being mapped to party (autograder); 1pt for plot being in knitted output and having informative labels (PDF)"
+  },
+  {
+    "objectID": "assignments/00-problem-set.html",
+    "href": "assignments/00-problem-set.html",
+    "title": "Getting Started with R, R Studio, Git, and Github",
+    "section": "",
+    "text": "In this problem set, we’re going to get R, RStudio, and R Markdown set up on your computer. To get started, follow these steps:\n\nDownload and install the most recent version of R. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the R-x.y.z-win.exe file where x.y.z is a version number. On a Mac, you will want to install using the R-x.y.z.pkg file that is notarized and signed.\nWith R installed, download and install RStudio. RStudio is a type of “integrated development environment” or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free.\nInstall the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the “Console” in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type “no”. Note that the symbols next to my_package are a less than sign &lt; followed by a minus sign - with no space between them. (Don’t be worried if you see some red text here. Those are usually just messages telling you information about the packages you are installing. Unless you see the word Error you should be fine.)\n\n\nmy_packages &lt;- c(\"tidyverse\", \"usethis\", \"devtools\", \"learnr\",\n                 \"tinytex\", \"gitcreds\", \"gapminder\")\ninstall.packages(my_packages, repos = \"http://cran.rstudio.com\")\nremotes::install_github(\"kosukeimai/qss-package\", build_vignettes = TRUE)\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nFor some things in the course, we’ll need produce PDFs from R and that requires something called LaTeX. If you’ve never heard of that, it’s completely fine and you should just run the following two lines of R code:\n\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX"
+  },
+  {
+    "objectID": "assignments/00-problem-set.html#installing-r-and-rstudio",
+    "href": "assignments/00-problem-set.html#installing-r-and-rstudio",
+    "title": "Getting Started with R, R Studio, Git, and Github",
+    "section": "",
+    "text": "In this problem set, we’re going to get R, RStudio, and R Markdown set up on your computer. To get started, follow these steps:\n\nDownload and install the most recent version of R. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the R-x.y.z-win.exe file where x.y.z is a version number. On a Mac, you will want to install using the R-x.y.z.pkg file that is notarized and signed.\nWith R installed, download and install RStudio. RStudio is a type of “integrated development environment” or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free.\nInstall the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the “Console” in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type “no”. Note that the symbols next to my_package are a less than sign &lt; followed by a minus sign - with no space between them. (Don’t be worried if you see some red text here. Those are usually just messages telling you information about the packages you are installing. Unless you see the word Error you should be fine.)\n\n\nmy_packages &lt;- c(\"tidyverse\", \"usethis\", \"devtools\", \"learnr\",\n                 \"tinytex\", \"gitcreds\", \"gapminder\")\ninstall.packages(my_packages, repos = \"http://cran.rstudio.com\")\nremotes::install_github(\"kosukeimai/qss-package\", build_vignettes = TRUE)\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nFor some things in the course, we’ll need produce PDFs from R and that requires something called LaTeX. If you’ve never heard of that, it’s completely fine and you should just run the following two lines of R code:\n\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX"
+  },
+  {
+    "objectID": "assignments/00-problem-set.html#installing-and-configuring-git",
+    "href": "assignments/00-problem-set.html#installing-and-configuring-git",
+    "title": "Getting Started with R, R Studio, Git, and Github",
+    "section": "Installing and configuring git",
+    "text": "Installing and configuring git\nGit is a version control program that helps organize the process of writing and maintaining code. It allows you to maintain a history of edits to your code without having to resort to a set of files like:\nmy_code.R\nmy_code_v1.R\nmy_code_v2_FINAL.R\nThere’s a lot to git and it will be harder to use in the beginning, but in the long term there are huge benefits of it. First, when you use git, you are much less likely to encounter a devastating data failure. All of your (committed) changes to your project are preserved, even when you make new changes or you revert old changes.\nGit is also a very useful way for people to collaborate. There is a huge community built up around it. And once your projects are publicly available on Github (a website for hosting git repositories), there are a host of ways that folks can collaborate with you.\n\nInstall git\nYou might already have git installed on your computer, especially if you have a Mac. To check, in RStudio, click on the Terminal tab in the bottom-left panel (next to the Console tab). Type git --version at the command prompt. If you get a response with a version number, great you are all set. If you get any kind of error message, you learn how to install git on your machine here.\n\n\nSetup a GitHub account\nNext, you can setup a GitHub account. You can think of GitHub as similar to Dropbox or Google Drive for your git projects (“repositories”) where everything is public by default. Since you might use this account to interact with potential employers in the future, you should probably pick a professional username.\nOnce you have a GitHub account, you can configure your local git program to interact with your account gracefully. Run the following two lines of code in the Terminal replacing \"John Harvard\" with your name and \"john@harvard.edu\" with your email address used to sign up for GitHub.\ngit config --global user.name \"John Harvard\"\ngit config --global user.email \"john@harvard.edu\"\nYou will not see any output when you enter these commands. To check that they worked, enter the following command at the Terminal:\ngit config --list\nYou should see your name and email address listed in the output.\n\n\nSet up RStudio to talk to GitHub\nWe also need to set up RStudio to be able to communicate with GitHub securely. This requires a bit of fidily configuration that we luckily only have to do once. Basically, we need to get a secret code from GitHub and store it in RStudio (kind of like a app-specific password when you’re using two-factor authentication). We can start the process from by entering the following code at the R Console (not the Terminal):\n\nusethis::create_github_token()\n\nThis will open a page on GitHub asking you to create a “Personal Access Token” or PAT (this is the secret code). You’ll have to give the PAT a note that describes what it’s for and choose an expiration date. To minimize problems throughout the semester, you should set it to a date after the semester ends such as 12/31/2023. We recommend keeping the “scope” selections as they are and clicking the “Generate Token” button at the bottom of the page.\n\nYou will then see a new screen with a long sequence of letters. This is your token or secret code. You should treat it like a password and do not share it with anyone. If you use a password manager like 1Password or LastPass, you can put it in a secure note in those programs. Copy this by hitting the button with the two boxes.\n\nOnce you have copied the PAT, call gitcreds::gitcreds_set() from the RStudio console and paste the PAT when prompted. You should see the following:\n&gt; gitcreds::gitcreds_set()\n? Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n-&gt; Adding new credentials...\n-&gt; Removing credentials from cache...\n-&gt; Done.\nOnce this is done, you should be all set for RStudio to communicate with GitHub. If you have any problems with the PAT process or want to know more about it, the Happy Git and GitHub for the useR book has a great chapter about it.\n\n\nCreating your first repo\nOnce you are logged into Github and at its homepage, you can now create a new repo (shorthand for “repository”). These repositories are like folders in Dropbox except a bit more structured. Create one by clicking on the green “New” button in the top-left of the screen next to “Repositories.” It should look like this:\n\nNow a new screen should pop up requesting some information for the new repo. Give this new Repository the name gov50-problem-set0 and set it to be a private repository. You can give it an informative description and check the “Initialize this repository with a README” checkbox. This latter option will add a README to the repository where you can add more information that will display nicely in the repository’s homepage. Your setup should look something like this:\n\nOnce you create your repo, you are ready to connect it to RStudio on your local computer. The easiest way to do this is go to the repo homepage (you’re already there if you’ve just created it) and click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).\n\nNow, switch to RStudio. Go to the menu bar and hit “File &gt; New Project”. You can then choose what type of project to start. Since we’re importing from Github, we’ll use the “Version Control” option (it’s the bottom of the list). In the next menu, choose “Git”. Now, you can paste the URL in the “Repository URL” box. Choose a set of local directories to place this project and hit “Create Project”. And now you’ll have your project ready to go in RStudio."
+  },
+  {
+    "objectID": "assignments/00-problem-set.html#working-with-a-project-in-rstudio",
+    "href": "assignments/00-problem-set.html#working-with-a-project-in-rstudio",
+    "title": "Getting Started with R, R Studio, Git, and Github",
+    "section": "Working with a project in RStudio",
+    "text": "Working with a project in RStudio\nYou’ll see in the bottom right window of RStudio you’ll now see the files from your Github project.\n\nLet’s edit the README file by clicking on README.md in that file pane and you’ll be able to edit it in the top-left pane. Change the header from # gov-50-problem-set0 to # Introduction and save the file (⌘+S or Ctrl+S). If you click on the “Git” tab in the top right panel, you will a list of the changes you’ve made to the repo since the last commit (you can think of a commit as a more permanent type of saving work to the git repo).\n\nOne thing you’ll notice here is that git thinks that gov50-problem-set0.Rproj is a file that maybe should go into the repo. But this file is just for our local copy of RStudio and shouldn’t really go into the repo. To prevent git from bothering us about it every time we open something, we can modify the .gitignore file to tell git to ignore certain files. Open .gitignore and add a new line with *.Rproj on it to tell git to ignore any file with the extension .Rproj. Make sure to save the file.\n\nIf you go back to the Git tab in the top right and refresh (little circular arrow in the top right corner), you see that gov50-problem-set0.Rproj is removed from our list. Now we are ready to commit our changes. Click the “Staged” box for .gitignore and README.md and hit the “Commit” button just above the file list. You’ll see a window with the changes that you are about to commit.\n\nYou can click on different files to see what exactly you are changing. Add a short but informative commit message that describes what you are committing and hit “Commit”. Once this completes, you can hit the “Push” button in the top right to push that commit back to Github.\n\nIf you go back to your repo’s homepage on Github and refresh the page, you’ll see the updates to your README file and the new .gitignore.\n\nAnd you’re done! You’ve just created your first repo."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html",
+    "href": "assignments/01_hw_data_viz.html",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "",
+    "text": "This problem set is due on September 20, 2023 at 11:59pm.\nYou can find instructions for obtaining and submitting problem sets here.\nYou can find the GitHub Classroom link to download the template repository on the Ed Board"
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#background",
+    "href": "assignments/01_hw_data_viz.html#background",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Background",
+    "text": "Background\nIn this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using ggplot. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncountry\nname of the country\n\n\ncontinent\nname of the country’s continent\n\n\nyear\nyear of the measurement, ranging from 1952 to 2007 in 5-year increments\n\n\nlifeExp\nlife expectancy at birth, in years\n\n\npop\npopulation\n\n\ngdpPercap\nGDP per capita (US dollars, inflation-adjusted)\n\n\n\n\n\n\n\nNOTE: In the template you’ll get from GitHub Classroom, the default settings for chunks is to only show the output of the chunk, not the code that generated it (echo = FALSE). This is to give your answers a clean look and to highlight the output rather than the source code. The template also has a part that will dump all of the R code at the end so that we can look at it if needed."
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#question-1-5-points",
+    "href": "assignments/01_hw_data_viz.html#question-1-5-points",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Question 1 (5 points)",
+    "text": "Question 1 (5 points)\nMake sure that you load the gapminder and tidyverse packages in the setup chunk (right after the header). For this question, use the glimpse function to show basic information about the gapminder dataset. In the main text (that is, outside of a code chunk), tell us how many rows and columns there are in the data set and which of the variables are factors.\nRubric: 2 write-up points for using the glimpse function; 2 points for reporting the dimension of the data; 1 point for identifying factors."
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#question-2-10-points",
+    "href": "assignments/01_hw_data_viz.html#question-2-10-points",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Question 2 (10 points)",
+    "text": "Question 2 (10 points)\nLet’s investigate how life expectancy varies across the continents. Using ggplot, we want you to recreate the following figure:\n\nThese are boxplots of the distribution of life expectancy in each continent. Please make sure that you include the labels as shown in this figure. For the autograder to be able to process your plot, you should assign your the output of your ggplot call to plot_q2 and then evaluate plot_q2 to ensure that the plot is produced in the output. That is, your code should look like this:\n\nplot_q2 &lt;- ggplot(&lt;arguments&gt;) +\n  geom_&lt;type&gt;(&lt;arguments&gt;) +\n  ...\n\nplot_q2\n\nNote: in the raw Rmd file for this problem set, you’ll notice the above code chunk has the argument eval = FALSE. This tells Rmarkdown not to try to run the code, since it’s not complete. If you copy and paste this chunk below, be sure to remove that argument to ensure the code runs properly.\nRubric: 10 autograder points."
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#question-3-5-points",
+    "href": "assignments/01_hw_data_viz.html#question-3-5-points",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Question 3 (5 points)",
+    "text": "Question 3 (5 points)\nLooking at the previous plot, which continent has the highest median life expectancy? Which part of the boxplot can we determine this from?\nRubric: 5 write up points (2 for identifying the correct continent, 3 for correctly identifying how to find this on the boxplot)"
+  },
+  {
+    "objectID": "assignments/01_hw_data_viz.html#question-4-15-points",
+    "href": "assignments/01_hw_data_viz.html#question-4-15-points",
+    "title": "Problem Set 1: Data Visualization",
+    "section": "Question 4 (15 points)",
+    "text": "Question 4 (15 points)\nThe previous boxplot groups all the years together into one boxplot, but what if we want to understand how life expectancy is changing over time? Next, we will recreate the following plot:\n\nThe plot shows each country’s life expectancy trajectory over time, broken out by continent with smoothed average lines overlayed for each continent. To get started, we’ll give you a few clues about what we’ve done here:\n\nThe lines for each country use the color \"gray70\".\nThe linewidth of the smoothed line is 1.1 and the method used is the loess smoother. We also have turned off the standard errors.\nMake sure that the facets are all on one row. Look at the facet_wrap documentation if need help with this.\nMake sure that the labels are correctly specified.\nUse the chunk options fig.width = 11 and fig.height = 4 to shrink the font size so the year labels will not overlap.\n\nFinally, assign the output of your ggplot call to plot_q4 and then evaluate plot_q4 (similarly to what you did in Question 2).\nRubric: 15 autograder points."
   },
   {
     "objectID": "assignments/03_hw_causality.html",
@@ -455,249 +623,102 @@
     "text": "Question 6 (10 points)\nRepeat the same analysis as in the previous question but this time with respect to income. For age, use case_when and logical vectors to create a new variable income_group that has the following values:\n\n\"1. Under $100k\" when income is below $100,000,\n\"2. $100k - $150k\" when income is between $100,000 and $150,000, and\n\"3. Over $150k\" when income is over $150,000.\n\nRemember to save the output to the trains name. Use this variable along with the approach in the previous question to create a tibble called ate_income (replacing college with income_group) that has four rows corresponding to the three unique values of income_group and four columns: income_group, Treated, Control, and ATE (all defined similarly to the previous question).\nUse the ate_income tibble to produce a barplot (using ggplot) of the ATE for each income group and assigning the plot to the name income_plot. Be sure to include informative labels for the x and y axes, along with a title.\nIn the text, answer these question: Do there appear to be systematic relationships between the treatment effects and income? If so, what patterns do you see?\nRubric: 2pts for income_group variable (autograder); 5pts for ate_income object (autograder); 2pts for income_plot ggplot object (autograder); 1pt descriptions of the results (PDF)"
   },
   {
-    "objectID": "assignments/01_hw_data_viz.html",
-    "href": "assignments/01_hw_data_viz.html",
-    "title": "Problem Set 1: Data Visualization",
+    "objectID": "assignments/distill.html",
+    "href": "assignments/distill.html",
+    "title": "Creating the Final Project Repository",
     "section": "",
-    "text": "This problem set is due on September 20, 2023 at 11:59pm.\nYou can find instructions for obtaining and submitting problem sets here.\nYou can find the GitHub Classroom link to download the template repository on the Ed Board"
+    "text": "First you need to install the {distill} package with the following code at the Console:\n\ninstall.packages(\"distill\")"
   },
   {
-    "objectID": "assignments/01_hw_data_viz.html#background",
-    "href": "assignments/01_hw_data_viz.html#background",
-    "title": "Problem Set 1: Data Visualization",
-    "section": "Background",
-    "text": "Background\nIn this problem set, you will get your bearings on how to produce an Rmarkdown report and how to produce data visualizations using ggplot. The data we will use is the Gapminder dataset, which gives some economic and demographic information about countries over time. The variables in this data are described below.\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncountry\nname of the country\n\n\ncontinent\nname of the country’s continent\n\n\nyear\nyear of the measurement, ranging from 1952 to 2007 in 5-year increments\n\n\nlifeExp\nlife expectancy at birth, in years\n\n\npop\npopulation\n\n\ngdpPercap\nGDP per capita (US dollars, inflation-adjusted)\n\n\n\n\n\n\n\nNOTE: In the template you’ll get from GitHub Classroom, the default settings for chunks is to only show the output of the chunk, not the code that generated it (echo = FALSE). This is to give your answers a clean look and to highlight the output rather than the source code. The template also has a part that will dump all of the R code at the end so that we can look at it if needed."
-  },
-  {
-    "objectID": "assignments/01_hw_data_viz.html#question-1-5-points",
-    "href": "assignments/01_hw_data_viz.html#question-1-5-points",
-    "title": "Problem Set 1: Data Visualization",
-    "section": "Question 1 (5 points)",
-    "text": "Question 1 (5 points)\nMake sure that you load the gapminder and tidyverse packages in the setup chunk (right after the header). For this question, use the glimpse function to show basic information about the gapminder dataset. In the main text (that is, outside of a code chunk), tell us how many rows and columns there are in the data set and which of the variables are factors.\nRubric: 2 write-up points for using the glimpse function; 2 points for reporting the dimension of the data; 1 point for identifying factors."
-  },
-  {
-    "objectID": "assignments/01_hw_data_viz.html#question-2-10-points",
-    "href": "assignments/01_hw_data_viz.html#question-2-10-points",
-    "title": "Problem Set 1: Data Visualization",
-    "section": "Question 2 (10 points)",
-    "text": "Question 2 (10 points)\nLet’s investigate how life expectancy varies across the continents. Using ggplot, we want you to recreate the following figure:\n\nThese are boxplots of the distribution of life expectancy in each continent. Please make sure that you include the labels as shown in this figure. For the autograder to be able to process your plot, you should assign your the output of your ggplot call to plot_q2 and then evaluate plot_q2 to ensure that the plot is produced in the output. That is, your code should look like this:\n\nplot_q2 &lt;- ggplot(&lt;arguments&gt;) +\n  geom_&lt;type&gt;(&lt;arguments&gt;) +\n  ...\n\nplot_q2\n\nNote: in the raw Rmd file for this problem set, you’ll notice the above code chunk has the argument eval = FALSE. This tells Rmarkdown not to try to run the code, since it’s not complete. If you copy and paste this chunk below, be sure to remove that argument to ensure the code runs properly.\nRubric: 10 autograder points."
-  },
-  {
-    "objectID": "assignments/01_hw_data_viz.html#question-3-5-points",
-    "href": "assignments/01_hw_data_viz.html#question-3-5-points",
-    "title": "Problem Set 1: Data Visualization",
-    "section": "Question 3 (5 points)",
-    "text": "Question 3 (5 points)\nLooking at the previous plot, which continent has the highest median life expectancy? Which part of the boxplot can we determine this from?\nRubric: 5 write up points (2 for identifying the correct continent, 3 for correctly identifying how to find this on the boxplot)"
-  },
-  {
-    "objectID": "assignments/01_hw_data_viz.html#question-4-15-points",
-    "href": "assignments/01_hw_data_viz.html#question-4-15-points",
-    "title": "Problem Set 1: Data Visualization",
-    "section": "Question 4 (15 points)",
-    "text": "Question 4 (15 points)\nThe previous boxplot groups all the years together into one boxplot, but what if we want to understand how life expectancy is changing over time? Next, we will recreate the following plot:\n\nThe plot shows each country’s life expectancy trajectory over time, broken out by continent with smoothed average lines overlayed for each continent. To get started, we’ll give you a few clues about what we’ve done here:\n\nThe lines for each country use the color \"gray70\".\nThe linewidth of the smoothed line is 1.1 and the method used is the loess smoother. We also have turned off the standard errors.\nMake sure that the facets are all on one row. Look at the facet_wrap documentation if need help with this.\nMake sure that the labels are correctly specified.\nUse the chunk options fig.width = 11 and fig.height = 4 to shrink the font size so the year labels will not overlap.\n\nFinally, assign the output of your ggplot call to plot_q4 and then evaluate plot_q4 (similarly to what you did in Question 2).\nRubric: 15 autograder points."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "assignments/distill.html#install-the-distill-package",
+    "href": "assignments/distill.html#install-the-distill-package",
+    "title": "Creating the Final Project Repository",
     "section": "",
-    "text": "About this site"
+    "text": "First you need to install the {distill} package with the following code at the Console:\n\ninstall.packages(\"distill\")"
   },
   {
-    "objectID": "assignments/00-problem-set.html",
-    "href": "assignments/00-problem-set.html",
-    "title": "Getting Started with R, R Studio, Git, and Github",
+    "objectID": "assignments/distill.html#create-your-github-repository",
+    "href": "assignments/distill.html#create-your-github-repository",
+    "title": "Creating the Final Project Repository",
+    "section": "Create your GitHub repository",
+    "text": "Create your GitHub repository\nThe next thing you will do is create the GitHub repository that will house your final project. You can do this easily by using the Gov 50 Final Project template. After going to that repository, click on the green “Use this template” button:\n\nWhen presented with the option of the repository name, for now you can call it gov50-final-project or something similar. You can change the name of repository later once you have a more solid idea for your final project idea. Make sure that Public option is selected."
+  },
+  {
+    "objectID": "assignments/distill.html#setting-up-github-pages",
+    "href": "assignments/distill.html#setting-up-github-pages",
+    "title": "Creating the Final Project Repository",
+    "section": "Setting up GitHub pages",
+    "text": "Setting up GitHub pages\nOnce you have your repository created, it’s time to have GitHub publish the pages. In the repository click on the settings tab and then select the “Pages” entry in the side bar. There you should be able to select a branch to publish the site from. Select the “main” branch and hit “Save”. The setup should look like this:\n\nOnce you do this, GitHub will start to publish your site. After a few minutes, you’ll see a new box on the Pages settings pane that gives you the URL:\n\nClick on “Visit Site” to see your site in progress. It should be at the URL https://{username}.github.io/{repo-name}."
+  },
+  {
+    "objectID": "assignments/distill.html#working-with-your-repo",
+    "href": "assignments/distill.html#working-with-your-repo",
+    "title": "Creating the Final Project Repository",
+    "section": "Working with your repo",
+    "text": "Working with your repo\nYou should now create a project in RStudio based on your final project repository. Open the index.Rmd file and update it with your name and some thoughts about your final project ideas. Hit the “Knit” button to preview your site. If you are happy with your edits, stage the files and commit them in the usual way:\n\nOnce committed, push your changes to GitHub. When you go back to your repo, you’ll see a yellow dot, indicating that GitHub is working on publishing your changes:\n\nOnce it is done publishing, you’ll see a green checkmark:\n\nYou can now go to your site and see the changes."
+  },
+  {
+    "objectID": "assignments/distill.html#milestone-1",
+    "href": "assignments/distill.html#milestone-1",
+    "title": "Creating the Final Project Repository",
+    "section": "Milestone 1",
+    "text": "Milestone 1\nYou should change the metadata on your article (your name at the least) and write a few sentences in the main text about what you might be interested in writing about. You will submit a link to the public article (not the github repository) to Canvas (not Gradescope)."
+  },
+  {
+    "objectID": "assignments/distill.html#more-information-on-distill-authoring",
+    "href": "assignments/distill.html#more-information-on-distill-authoring",
+    "title": "Creating the Final Project Repository",
+    "section": "More information on distill authoring",
+    "text": "More information on distill authoring\nThe basics of distill are very similar to the basics of the Rmd files that you have been working with. You can also check out the distill website for more information on the basics of authoring distill articles."
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments",
     "section": "",
-    "text": "In this problem set, we’re going to get R, RStudio, and R Markdown set up on your computer. To get started, follow these steps:\n\nDownload and install the most recent version of R. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the R-x.y.z-win.exe file where x.y.z is a version number. On a Mac, you will want to install using the R-x.y.z.pkg file that is notarized and signed.\nWith R installed, download and install RStudio. RStudio is a type of “integrated development environment” or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free.\nInstall the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the “Console” in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type “no”. Note that the symbols next to my_package are a less than sign &lt; followed by a minus sign - with no space between them. (Don’t be worried if you see some red text here. Those are usually just messages telling you information about the packages you are installing. Unless you see the word Error you should be fine.)\n\n\nmy_packages &lt;- c(\"tidyverse\", \"usethis\", \"devtools\", \"learnr\",\n                 \"tinytex\", \"gitcreds\", \"gapminder\")\ninstall.packages(my_packages, repos = \"http://cran.rstudio.com\")\nremotes::install_github(\"kosukeimai/qss-package\", build_vignettes = TRUE)\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nFor some things in the course, we’ll need produce PDFs from R and that requires something called LaTeX. If you’ve never heard of that, it’s completely fine and you should just run the following two lines of R code:\n\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX"
+    "text": "Having problems: check our Troubleshooting Guide"
   },
   {
-    "objectID": "assignments/00-problem-set.html#installing-r-and-rstudio",
-    "href": "assignments/00-problem-set.html#installing-r-and-rstudio",
-    "title": "Getting Started with R, R Studio, Git, and Github",
+    "objectID": "assignments/index.html#tutorials",
+    "href": "assignments/index.html#tutorials",
+    "title": "Assignments",
+    "section": "Tutorials",
+    "text": "Tutorials\n\nTutorial Instructions\nTutorial 1: Data Visualization\nTutorial 2: Data Wrangling\nTutorial 3: Causality\nTutorial 4: Summarizing Data\nTutorial 5: Correlation and Tidying Data\nTutorial 6: Loops\nTutorial 7: Regression and Sampling\nTutorial 8: Bootstrap"
+  },
+  {
+    "objectID": "assignments/index.html#problem-sets",
+    "href": "assignments/index.html#problem-sets",
+    "title": "Assignments",
+    "section": "Problem Sets",
+    "text": "Problem Sets\n\nSubmission guide for problem sets\nProblem set 0: Setting up R, RStudio, and GitHub\nProblem set 1: Data visualization\nProblem set 2: Data wrangling\nProblem set 3: Causality\nProblem set 4: Summarizing data"
+  },
+  {
+    "objectID": "assignments/index.html#final-project",
+    "href": "assignments/index.html#final-project",
+    "title": "Assignments",
+    "section": "Final Project",
+    "text": "Final Project\n\nFinal project information\nFinal project milestone 1: Creating a repo"
+  },
+  {
+    "objectID": "assignments/troubleshooting.html",
+    "href": "assignments/troubleshooting.html",
+    "title": "Troubleshooting Assignments",
     "section": "",
-    "text": "In this problem set, we’re going to get R, RStudio, and R Markdown set up on your computer. To get started, follow these steps:\n\nDownload and install the most recent version of R. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the R-x.y.z-win.exe file where x.y.z is a version number. On a Mac, you will want to install using the R-x.y.z.pkg file that is notarized and signed.\nWith R installed, download and install RStudio. RStudio is a type of “integrated development environment” or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free.\nInstall the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the “Console” in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type “no”. Note that the symbols next to my_package are a less than sign &lt; followed by a minus sign - with no space between them. (Don’t be worried if you see some red text here. Those are usually just messages telling you information about the packages you are installing. Unless you see the word Error you should be fine.)\n\n\nmy_packages &lt;- c(\"tidyverse\", \"usethis\", \"devtools\", \"learnr\",\n                 \"tinytex\", \"gitcreds\", \"gapminder\")\ninstall.packages(my_packages, repos = \"http://cran.rstudio.com\")\nremotes::install_github(\"kosukeimai/qss-package\", build_vignettes = TRUE)\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nFor some things in the course, we’ll need produce PDFs from R and that requires something called LaTeX. If you’ve never heard of that, it’s completely fine and you should just run the following two lines of R code:\n\n\ninstall.packages('tinytex')\ntinytex::install_tinytex()  # install TinyTeX"
+    "text": "If you are missing your Git tab in RStudio, the most likely culprit is that you simply don’t have the RStudio project for the repository open in RStudio. In the upper right-hand corner of RStudio, you can see the current project that is open. If you do not have a project open, you might see this:\n\nTo get to your project, simply click on that Project: (None) button to reveal a list of recent projects, from which you will usually see the one you are working on:"
   },
   {
-    "objectID": "assignments/00-problem-set.html#installing-and-configuring-git",
-    "href": "assignments/00-problem-set.html#installing-and-configuring-git",
-    "title": "Getting Started with R, R Studio, Git, and Github",
-    "section": "Installing and configuring git",
-    "text": "Installing and configuring git\nGit is a version control program that helps organize the process of writing and maintaining code. It allows you to maintain a history of edits to your code without having to resort to a set of files like:\nmy_code.R\nmy_code_v1.R\nmy_code_v2_FINAL.R\nThere’s a lot to git and it will be harder to use in the beginning, but in the long term there are huge benefits of it. First, when you use git, you are much less likely to encounter a devastating data failure. All of your (committed) changes to your project are preserved, even when you make new changes or you revert old changes.\nGit is also a very useful way for people to collaborate. There is a huge community built up around it. And once your projects are publicly available on Github (a website for hosting git repositories), there are a host of ways that folks can collaborate with you.\n\nInstall git\nYou might already have git installed on your computer, especially if you have a Mac. To check, in RStudio, click on the Terminal tab in the bottom-left panel (next to the Console tab). Type git --version at the command prompt. If you get a response with a version number, great you are all set. If you get any kind of error message, you learn how to install git on your machine here.\n\n\nSetup a GitHub account\nNext, you can setup a GitHub account. You can think of GitHub as similar to Dropbox or Google Drive for your git projects (“repositories”) where everything is public by default. Since you might use this account to interact with potential employers in the future, you should probably pick a professional username.\nOnce you have a GitHub account, you can configure your local git program to interact with your account gracefully. Run the following two lines of code in the Terminal replacing \"John Harvard\" with your name and \"john@harvard.edu\" with your email address used to sign up for GitHub.\ngit config --global user.name \"John Harvard\"\ngit config --global user.email \"john@harvard.edu\"\nYou will not see any output when you enter these commands. To check that they worked, enter the following command at the Terminal:\ngit config --list\nYou should see your name and email address listed in the output.\n\n\nSet up RStudio to talk to GitHub\nWe also need to set up RStudio to be able to communicate with GitHub securely. This requires a bit of fidily configuration that we luckily only have to do once. Basically, we need to get a secret code from GitHub and store it in RStudio (kind of like a app-specific password when you’re using two-factor authentication). We can start the process from by entering the following code at the R Console (not the Terminal):\n\nusethis::create_github_token()\n\nThis will open a page on GitHub asking you to create a “Personal Access Token” or PAT (this is the secret code). You’ll have to give the PAT a note that describes what it’s for and choose an expiration date. To minimize problems throughout the semester, you should set it to a date after the semester ends such as 12/31/2023. We recommend keeping the “scope” selections as they are and clicking the “Generate Token” button at the bottom of the page.\n\nYou will then see a new screen with a long sequence of letters. This is your token or secret code. You should treat it like a password and do not share it with anyone. If you use a password manager like 1Password or LastPass, you can put it in a secure note in those programs. Copy this by hitting the button with the two boxes.\n\nOnce you have copied the PAT, call gitcreds::gitcreds_set() from the RStudio console and paste the PAT when prompted. You should see the following:\n&gt; gitcreds::gitcreds_set()\n? Enter password or token: ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n-&gt; Adding new credentials...\n-&gt; Removing credentials from cache...\n-&gt; Done.\nOnce this is done, you should be all set for RStudio to communicate with GitHub. If you have any problems with the PAT process or want to know more about it, the Happy Git and GitHub for the useR book has a great chapter about it.\n\n\nCreating your first repo\nOnce you are logged into Github and at its homepage, you can now create a new repo (shorthand for “repository”). These repositories are like folders in Dropbox except a bit more structured. Create one by clicking on the green “New” button in the top-left of the screen next to “Repositories.” It should look like this:\n\nNow a new screen should pop up requesting some information for the new repo. Give this new Repository the name gov50-problem-set0 and set it to be a private repository. You can give it an informative description and check the “Initialize this repository with a README” checkbox. This latter option will add a README to the repository where you can add more information that will display nicely in the repository’s homepage. Your setup should look something like this:\n\nOnce you create your repo, you are ready to connect it to RStudio on your local computer. The easiest way to do this is go to the repo homepage (you’re already there if you’ve just created it) and click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).\n\nNow, switch to RStudio. Go to the menu bar and hit “File &gt; New Project”. You can then choose what type of project to start. Since we’re importing from Github, we’ll use the “Version Control” option (it’s the bottom of the list). In the next menu, choose “Git”. Now, you can paste the URL in the “Repository URL” box. Choose a set of local directories to place this project and hit “Create Project”. And now you’ll have your project ready to go in RStudio."
-  },
-  {
-    "objectID": "assignments/00-problem-set.html#working-with-a-project-in-rstudio",
-    "href": "assignments/00-problem-set.html#working-with-a-project-in-rstudio",
-    "title": "Getting Started with R, R Studio, Git, and Github",
-    "section": "Working with a project in RStudio",
-    "text": "Working with a project in RStudio\nYou’ll see in the bottom right window of RStudio you’ll now see the files from your Github project.\n\nLet’s edit the README file by clicking on README.md in that file pane and you’ll be able to edit it in the top-left pane. Change the header from # gov-50-problem-set0 to # Introduction and save the file (⌘+S or Ctrl+S). If you click on the “Git” tab in the top right panel, you will a list of the changes you’ve made to the repo since the last commit (you can think of a commit as a more permanent type of saving work to the git repo).\n\nOne thing you’ll notice here is that git thinks that gov50-problem-set0.Rproj is a file that maybe should go into the repo. But this file is just for our local copy of RStudio and shouldn’t really go into the repo. To prevent git from bothering us about it every time we open something, we can modify the .gitignore file to tell git to ignore certain files. Open .gitignore and add a new line with *.Rproj on it to tell git to ignore any file with the extension .Rproj. Make sure to save the file.\n\nIf you go back to the Git tab in the top right and refresh (little circular arrow in the top right corner), you see that gov50-problem-set0.Rproj is removed from our list. Now we are ready to commit our changes. Click the “Staged” box for .gitignore and README.md and hit the “Commit” button just above the file list. You’ll see a window with the changes that you are about to commit.\n\nYou can click on different files to see what exactly you are changing. Add a short but informative commit message that describes what you are committing and hit “Commit”. Once this completes, you can hit the “Push” button in the top right to push that commit back to Github.\n\nIf you go back to your repo’s homepage on Github and refresh the page, you’ll see the updates to your README file and the new .gitignore.\n\nAnd you’re done! You’ve just created your first repo."
-  },
-  {
-    "objectID": "assignments/02_hw_data_wrangling.html",
-    "href": "assignments/02_hw_data_wrangling.html",
-    "title": "Problem Set 2: Data Wrangling",
+    "objectID": "assignments/troubleshooting.html#missing-git-tab-in-rstudio",
+    "href": "assignments/troubleshooting.html#missing-git-tab-in-rstudio",
+    "title": "Troubleshooting Assignments",
     "section": "",
-    "text": "This problem set is due on September 27, 2023 at 11:59pm.\nYou can find instructions for obtaining and submitting problem sets here.\nYou can find the GitHub Classroom link to download the template repository on the Ed Board"
+    "text": "If you are missing your Git tab in RStudio, the most likely culprit is that you simply don’t have the RStudio project for the repository open in RStudio. In the upper right-hand corner of RStudio, you can see the current project that is open. If you do not have a project open, you might see this:\n\nTo get to your project, simply click on that Project: (None) button to reveal a list of recent projects, from which you will usually see the one you are working on:"
   },
   {
-    "objectID": "assignments/02_hw_data_wrangling.html#background",
-    "href": "assignments/02_hw_data_wrangling.html#background",
-    "title": "Problem Set 2: Data Wrangling",
-    "section": "Background",
-    "text": "Background\nPolitical advertising has traditionally been focused on the medium of television, but in recent cycles, online advertising has become much more popular. In this problem set, you will explore a dataset that has information on Facebook ad spending and impressions by candidates in the 2018 election cycle in the United States. The variables in this data are described below.\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ncand_id\nunique identifier code for candidate\n\n\ncand_name\nfull name of the candidate\n\n\ncand_name_last\nlast name of the candidate\n\n\nparty\nparty affiliation of the candidate (R = Republican, D = Democrat)\n\n\noffice\noffice being sought by candidate\n\n\nstate\nstate in which the candidate is running\n\n\nincumbency\nincumbency status of candidate (incumbent, challenger, or open seat)\n\n\nspend\nestimated total spending on Facebook ads by candidate\n\n\nimpressions\nestimated total impressions of Facebook ads\n\n\nad_tone_attack\nproportion of FB ads that mention candidate’s opponent only\n\n\nad_tone_promote\nproportion of FB ads that mention candidate only\n\n\nad_tone_contrast\nproportion of FB ads that mention candidate and candidate’s opponent"
-  },
-  {
-    "objectID": "assignments/02_hw_data_wrangling.html#question-1-8-points",
-    "href": "assignments/02_hw_data_wrangling.html#question-1-8-points",
-    "title": "Problem Set 2: Data Wrangling",
-    "section": "Question 1 (8 points)",
-    "text": "Question 1 (8 points)\nLoad the data using the read_csv function and save it as fb_ads (using this will automatically make fb_ads a tibble). In the text, describe how many candidates there are in the dataset.\nUse dplyr functions to create a table with the number of candidates in each type of incumbency status in the data set. Save this table output as incumbency_table (for the autograder). Use the function knitr::kable() on this table to have a nicely formatted table produced in the knitted output.\nRubric: 2pt for loading the data (autograder); 1pt for describing the number of candidates (PDF); 3pts for creating the table (autograder); 2pt for using kable() to nicely format the output (PDF)"
-  },
-  {
-    "objectID": "assignments/02_hw_data_wrangling.html#question-2-7-points",
-    "href": "assignments/02_hw_data_wrangling.html#question-2-7-points",
-    "title": "Problem Set 2: Data Wrangling",
-    "section": "Question 2 (7 points)",
-    "text": "Question 2 (7 points)\nFilter the data to just US House and US Senate races and use this to create a tibble called party_incumbent_promote that has 6 rows that summarizes the average of ad_tone_promote for each combination of party and incumbency. Call the variable summarizing the promote variable as promote_prop and be sure to remove any missing values when computing the averages.\nUse knitr::kable() to produce a nicely formatted table. In this call, set the digits arguments to 3 and use the col.names argument to pass a nicer set of names. You can use the following as a template:\n\nknitr::kable(my_table, col.names = c(\"Variable 1\", \"Variable 2\", ...))\n\nIn the writeup, describe which type of candidate sponsored the most promoting ads on average.\nRubric: 3pts for creating party_incumbent_promote correctly (autograder); 2pt for a nicely formatted table (PDF); 1pt for changing the column names of the output table (PDF); 1pt for correctly identifying the type of candidate with highest average (PDF)"
-  },
-  {
-    "objectID": "assignments/02_hw_data_wrangling.html#question-3-7-points",
-    "href": "assignments/02_hw_data_wrangling.html#question-3-7-points",
-    "title": "Problem Set 2: Data Wrangling",
-    "section": "Question 3 (7 points)",
-    "text": "Question 3 (7 points)\nCreate a new variable called impressions_millions that is the total Facebook ad impressions in millions (as opposed to single impressions). Make sure to save the resulting dataset back as fb_ads.\nCreate a histogram of this variable for just the US House races. Save the ggplot output as plot_q3 and also print it to produce a plot in the output. In the text, describe the shape of the histogram and tell the reader if most of the House candidates had more than 10 million ads impressions on Facebook.\nRubric: 2pt for creating the new variable (autograder); 3pts for creating the histogram object (autograder); 2pts for answering the question about the histogram (PDF)"
-  },
-  {
-    "objectID": "assignments/02_hw_data_wrangling.html#question-4-13-points",
-    "href": "assignments/02_hw_data_wrangling.html#question-4-13-points",
-    "title": "Problem Set 2: Data Wrangling",
-    "section": "Question 4 (13 points)",
-    "text": "Question 4 (13 points)\nLet’s now recreate the following plot that shows the top 15 House candidates in terms of Facebook ad impressions.\n\nYou should save the ggplot output as fb_top_plot. You should also write fb_top_plot on its own line in the chunk to produce the actual plot. The key features of this graph that you should replicate for the autograder are:\n\nThe barplot should have candidate last names on the y-axis and the impressions_millions variable from question 3 on the x-axis.\nThe data feeding into the ggplot call should only have US House candidates and only the candidates with the highest 15 impressions_millions values.\nThe y-axis should be ordered in ascending values of impressions_millions so that the lowest values are at the bottom. You may want to manipulate cand_name_last to achieve this.\nThe fill color of the bar plot should be mapped to the party variable (but not globally!).\n\nYou do not need to exactly match the labels, but you should have informative labels. The color does not need to match, but if you want to change the fill colors, you can use the scale_fill_manual(values = c(R = \"red\", D = \"blue\")) function (where you can change the red and blue to whatever you want).\nRubric: 3pts for correct axes (autograder); 3pts for correct data fed into ggplot (autograder); 3pts for the correct ordering of the y-axis (PDF); 3pts for fill being mapped to party (autograder); 1pt for plot being in knitted output and having informative labels (PDF)"
-  },
-  {
-    "objectID": "assignments/04_hw_summarizing.html",
-    "href": "assignments/04_hw_summarizing.html",
-    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
-    "section": "",
-    "text": "This problem set is due on October 11, 2023 at 11:59pm.\nYou can find instructions for obtaining and submitting problem sets here.\nYou can find the GitHub Classroom link to download the template repository on the Ed Board"
-  },
-  {
-    "objectID": "assignments/04_hw_summarizing.html#background",
-    "href": "assignments/04_hw_summarizing.html#background",
-    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
-    "section": "Background",
-    "text": "Background\nIn this problem set, we will analyze the relationship between the gender composition among a judge’s children and voting behavior among circuit court judges. In a recent paper, Adam N. Glynn and Maya Sen argue that having a female child causes circuit court judges to make more pro-feminist decisions. The paper can be found at:\n\nGlynn, Adam N., and Maya Sen. (2015). “Identifying Judicial Empathy: Does Having Daughters Cause Judges to Rule for Women’s Issues?.” American Journal of Political Science Vol. 59, No. 1, pp. 37–54.\n\nThe dataset judges.csv contains the following variables about individual judges:\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nname\nThe judge’s name\n\n\nnum_kids\nThe number of children each judge has.\n\n\ncircuit\nWhich federal circuit the judge serves in.\n\n\ngirls\nThe number of female children the judge has.\n\n\nprogressive_vote\nThe proportion of the judge’s votes on women’s issues which were decided in a pro-feminist direction.\n\n\nrace\nThe judge’s race (1 = white, 2 = African-American, 3 = Hispanic, 4 = Asian-American).\n\n\nreligion\nThe judge’s religion (1 = Unitarian, 2 = Episcopalian, 3 = Baptist, 4 = Catholic, 5 = Jewish, 7 = Presbyterian, 8 = Protestant, 9 = Congregationalist, 10 = Methodist, 11 = Church of Christ, 16 = Baha’i, 17 = Mormon, 21 = Anglican, 24 = Lutheran, 99 = unknown).\n\n\nrepublican\nTakes a value of 1 if the judge was appointed by a Republican president, 0 otherwise. Used as a proxy for the judge’s party.\n\n\nsons\nThe number of male children the judge has.\n\n\nwoman\nTakes a value of 1 if the judge is a woman, 0 otherwise.\n\n\nyearb\nThe year the judge was born."
-  },
-  {
-    "objectID": "assignments/04_hw_summarizing.html#question-1-10-points",
-    "href": "assignments/04_hw_summarizing.html#question-1-10-points",
-    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
-    "section": "Question 1 (10 points)",
-    "text": "Question 1 (10 points)\nLoad the tidyverse package in the setup chunk. In the first chunk for this question use read_csv to load the data/judges.csv file into a data frame called judges. In this exercise, you will create a cross-tab that shows the gender breakdown within each party. In particular, the result should be a table with 2 rows and 3 columns, where the rows represent each gender and the columns correspond to party. In the end, you should have a table that looks like this (with the correct proportion, not these made up ones):\n\n\n\nGender\nDemocrat\nRepublican\n\n\n\n\nMan\n0.5\n0.6\n\n\nWoman\n0.5\n0.4\n\n\n\nNote that the columns here sum to 1. You can create this using the following data wrangling steps:\n\nOverwrite the judges tibble with the same tibble with two newly created variables: one variable called Gender variable to be labelled \"Woman\" and \"Man\" based on the variable woman and another variable called Party to be labelled \"Republican\" and \"Democrat\" based on the republican variable.\nUse the judges tibble to create the cross-tab and save it as gender_party_table. It should have 2 rows and 3 columns (“Gender”, “Republican”, and “Democrat”). Be very careful about the ordering of your grouping and remember that summarize() drops the last group by default when there is more than one group. You should use group_by(), summarize(), mutate(), and pivot_wider() to accomplish this. (Hint: if you are ending up with the wrong number of rows, make sure that the only variables in the tibble when you try to use pivot_wider are the two grouping variables and the proportion variable.)\nPass gender_party_table to knitr::kable() to create a nicely formatted version of this table.\n\nIn your write-up, answer the following questions:\n\nHow many judges are in this data set?\nWhat proportion of the judges are men? (hint: use mean)\nFrom your table, is the gender breakdown different for judges appointed by Democratic vs Republican presidents?\n\nRubric: 2pts for creating Gender and Party (autograder); 5pts for gender_party_table (autograder); 1pt for properly formatted table (PDF); 2pts for answering question (PDF)."
-  },
-  {
-    "objectID": "assignments/04_hw_summarizing.html#question-2-7-points",
-    "href": "assignments/04_hw_summarizing.html#question-2-7-points",
-    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
-    "section": "Question 2 (7 points)",
-    "text": "Question 2 (7 points)\nUse group_by and summarize to calculate the mean of progressive_vote in each combination of the Gender and Party variables you created in question 1 and save this tibble as gender_party_means (this tibble should have columns Gender, Party, and progressive_vote). Use this table to recreate the following barplot:\n\nThe autograder will check the aesthetic mappings, the correct placement of the bars, and the labels, but you do not need to match the exact colors (they are \"steeblue1\" and \"indianred1\" if you do want to match, though).\nIn the main text, briefly interpret the results of the analysis by describing which party and which gender tend to be more progressive. Comment on whether there are larger differences across party or across gender in terms of progressive voting. Should we interpret any of these effects causally? Why or why not?\nRubric: 2pts for gender_party_means table (autograder); 3pts for gender_party_plot (autograder); 2pts for interpretation (PDF)"
-  },
-  {
-    "objectID": "assignments/04_hw_summarizing.html#question-3-9-points",
-    "href": "assignments/04_hw_summarizing.html#question-3-9-points",
-    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
-    "section": "Question 3 (9 points)",
-    "text": "Question 3 (9 points)\nWhat is the difference in the proportion of pro-feminist decisions between judges who have at least one daughter and those who do not have any? To compute this difference, first create a variable called any_girls that is \"Any Girls\" when the judge has at least 1 girl and \"No Girls\" otherwise and save this variable back to the judges tibble. Then, created a new tibble called parents that is filtered to contain judges that have at least one child. Create an object called vote_by_girls that has three columns: the unique values of the any_girls variable, the mean of the progressive_vote variable for each value of any_girls (column called progressive_mean), and the standard deviation of progressive_vote for each value of any_girls (column called progressive_sd). Present the table using knitr::kable().\nIn the main text, describe which group has a higher average progressive vote and which group’s distribution has more spread. Why might we worry about interpreting any difference in means causally, considering number of children as a possible confounder?\nRubric: 1pt for creating any_girls variable (autograder); 1pt for creating parents tibble (autograder); 4pts for creating the vote_by_girls table (autograder); 1pt for description of the table (PDF); 2pts for discussion of causality (PDF)."
-  },
-  {
-    "objectID": "assignments/04_hw_summarizing.html#question-4-9-points",
-    "href": "assignments/04_hw_summarizing.html#question-4-9-points",
-    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
-    "section": "Question 4 (9 points)",
-    "text": "Question 4 (9 points)\nGiven that the number of children might be a confounder for the relationship between number of girls and voting, let’s estimate the average treatment effects of having girls using statistical control for the number of children among judges that have one to three children (that is, first filter to judges that only have between 1 and 3 children, inclusive). Your final table should be called ate_nkids and should be a tibble that has two columns: one with the number of children (1, 2, and 3) and the other with the estimated ATEs of any_girls for each of those levels. Print out this table using the knitr::kable() command.\nAre these estimated effects largely similar or largely different than what you found using all of the data? What assumption do you need to make to interpret these effects causally? Do you think it is plausible in this case?\nRubric: 6pts for ate_nkids (autograder); 1pt for nicely formatted table (PDF); 2pts for discussion (PDF)"
-  },
-  {
-    "objectID": "assignments/04_hw_summarizing.html#question-5-extra-credit-5-points",
-    "href": "assignments/04_hw_summarizing.html#question-5-extra-credit-5-points",
-    "title": "Problem Set 4: Sources of Empathy in the Circuit Courts",
-    "section": "Question 5 (EXTRA CREDIT, 5 points)",
-    "text": "Question 5 (EXTRA CREDIT, 5 points)\nThis problem is optional. Any points earned on this problem can be applied to lost points on other parts of the problem set. You cannot earn more than the maximum score on the problem set. There will be no autograder for this question.\nLet’s consider the design of this study. The original authors assume that, conditional on the number of children a judge has, the number of daughters is random (as we did in the previous question). If this is true, half of a judge’s children should be female, on average. A deviation from this proportion could indicate that a gender preference among judges due a stopping rule such as “have children until we get one girl,” which would violate the randomization assumption.\nTo check this assumption, group the data by the number of children and calculate the proportion of children in each group that are girls. Create a barplot that these proportions on the y-axis with the number of children on the x-axis. This barplot should have (a) informative labels on each axis, (b) a y-axis range that runs from 0 to 1, and (c) a horizontal line at 0.5 to compare against. Does it appear that there is strong gender preference/selection happening among judges?"
-  },
-  {
-    "objectID": "assignments/final-project.html",
-    "href": "assignments/final-project.html",
-    "title": "Final Project Information",
-    "section": "",
-    "text": "The final project is a data analysis project about whatever data excites you. That could be public opinion in U.S. elections, United Nations voting patterns, patterns of racial discrimination in police behavior, the distribution of salaries in basketball, or the economics of the Marvel Cinematic Universe. No matter the topic, you will formulate a key research question, find data on that question, answer the question using the tools of the course, and present those results for public consumption.\nHere is a list of milestones that we will have to keep you on track:"
-  },
-  {
-    "objectID": "assignments/final-project.html#milestone-1-create-public-github-repository-due-929",
-    "href": "assignments/final-project.html#milestone-1-create-public-github-repository-due-929",
-    "title": "Final Project Information",
-    "section": "Milestone 1: Create public GitHub repository (due 9/29)",
-    "text": "Milestone 1: Create public GitHub repository (due 9/29)\nFollow the instructions on how to create a repository for your final project. You should change the metadata on your article and write a few sentences in the main text about what you might be interested in writing about. You will submit a link to the public article (not the github repository) to Canvas (not Gradescope)."
-  },
-  {
-    "objectID": "assignments/final-project.html#milestone-2-finding-data-and-writing-a-proposal-due-1013",
-    "href": "assignments/final-project.html#milestone-2-finding-data-and-writing-a-proposal-due-1013",
-    "title": "Final Project Information",
-    "section": "Milestone 2: Finding data and writing a proposal (due 10/13)",
-    "text": "Milestone 2: Finding data and writing a proposal (due 10/13)\n\nFinding a data source\nThe biggest part of the final project in Gov 50 is finding a data source. Here are some other resources and repositories with data sets:\n\nList of links to political science data sets\nHarvard Dataverse - Social Science\nData.gov - Data sets released by the US government\nData published by FiveThirtyEight\nHarvard OpenData Group Directory\nHarvard Program on Survey Research Data Collections\nRoper Center : Public Opinion in the US\nPew Research Center Data Sets\n\nIf you find a data set that you think is interesting, but you have problems loading the data set into R, please contact the course staff. R can load almost anything, so we can likely help you.\nWe also have the following specific datasets available to use:\n\nAmerican National Election Survey, 2016: Data Codebook\nCivil Wars: Data Codebook\nPolitical Violence: Data Codebook\nFox News rollout: Data Codebook\nAfrobarometer: Data Codebook\n\n\n\nGeneral advice for choosing data sources\n\nIf you want to analyze the relationship between X and Y, make sure that these two variables are included in the data set. If you want to look at effects for subgroups, make sure there is a variable that you can use for subsetting.\nTry to look for a ‘codebook’ or some other document that explains what the variables mean and how they are coded.\nFor most projects, preparing the data for analysis takes longer than the actual analysis itself. Try to find a data set where you do not need to extensively recode / clean up the data before you run your analyses, this makes the final project easier.\nIn similar vein, if the data set is greater than about 50MB (this is not a hard cutoff), R commands and analyses tend to take longer.\nImportant: Please do not try to commit any file that is larger than 100MB. You will not be able to push these files to GitHub and will require some complicated work to undo the commits. Instead, you can write an R script that subsets the data to units/variables that you need and save that file, which should be considerably smaller. Then you can put that in your repository and commit that.\nData from experiments is usually simple to analyze, since the analysis commonly involves simple comparisons of group means.\n\n\n\nWriting a proposal\nYou should write a one-paragraph note to describe what data set you will use and what your tentative research question is. Your research question should ask how one dependent variable is related to one or more independent variables. That is, your research question should be able to be answered by a regression analysis. In this paragraph, you should do the following:\n\nState your research question.\nFormulate a hypothesis related to the research question. This hypothesis should be rooted in some sort of theory. In other words, you need to present a plausible story why the hypothesis might be true. Often, this is in the form of a behaviorial or institutional explanation. As social scientists, we are not interested in idiosyncratic explanations; we want to understand systematic patterns and relationships!\nDescribe your explanatory variable(s) of interest and how it is measured. Importantly, we need to observe variation in this variable in order to study it!\nDescribe your outcome variable of interest and how it is measured.\nWhat observed pattern in the data would provide support for your hypothesis? More importantly, what observed pattern would disprove your hypothesis?\n\nFor instance, this would be a comprehensive paragraph that address each of these points in detail:\n\nDoes unified government enhance legislative productivity? In this study, I plan to examine the extent to which periods of unified government produce more landmark laws. I hypothesize that legislative productivity increases during periods of unified government in which one party controls both Houses of Congress and the presidency relative to periods of divided government. During periods of unified government, I expect that it is more likely for major bills to pass both Houses and gain the president’s signature. During periods of divided government, it is more difficult to reach a consensus around legislation that can pass each House and gain the president’s approval. My sample is comprised of each of the 79th (1945-1946) through 103rd (1993-1994) Congresses. My unit of analysis is a Congress (e.g., the 88th Congress). The explanatory variable of interest is whether there is unified government (both Houses and the presidency are controlled by the same party) or divided government. The variable is coded =1 for unified government and =0 for divided government. My outcome variable is the count of landmark pieces of legislation passed in a given Congress. For instance, if the variable were coded =11, it would mean that 11 pieces of landmark legislation were signed into law in that Congress. This variable is measured from David Mayhew’s data set on landmark legislation and relies on Mayhew’s expert knowledge to classify legislation as “landmark.” If I observe greater landmark legislative productivity under unified government relative to divided government, this would provide support for my hypothesis. If, on the other hand, I observe less productivity or the same level of productivity under unified government, this would provide evidence against my hypothesis. When I run my regression of the count of landmark legislation on the unified government indicator variable, a positive, significant coefficient would indicate support for my hypothesis.\n\nYour paragraph might be less detailed and may not refer to any academic literature, but it should address the above items.\nNote that you are not fully committing to any specific question or data in this exercise. If you want to change data or questions later, that is fine. This is just a milestone to keep you on track. You can write this proposal on your index.Rmd file in the public article. You will submit a link to the rendered article with the proposal.\nNote that you will eventually remove this proposal with the actual article. If down the road you don’t want this proposal to be part of the public history of the repository, you can always create a new repository for the final report."
-  },
-  {
-    "objectID": "assignments/final-project.html#milestone-3-one-data-visualization-due-1027",
-    "href": "assignments/final-project.html#milestone-3-one-data-visualization-due-1027",
-    "title": "Final Project Information",
-    "section": "Milestone 3: One data visualization (due 10/27)",
-    "text": "Milestone 3: One data visualization (due 10/27)\nThe next milestone will require that your Distill article loads the data you have selected and produces one interesting and polished data visualization. This could either show the distribution of one variable or the relationship between two variables."
-  },
-  {
-    "objectID": "assignments/final-project.html#milestone-4-add-results-from-one-analysis-due-1110",
-    "href": "assignments/final-project.html#milestone-4-add-results-from-one-analysis-due-1110",
-    "title": "Final Project Information",
-    "section": "Milestone 4: Add results from one analysis (due 11/10)",
-    "text": "Milestone 4: Add results from one analysis (due 11/10)\nBy this time, your article should contain one visualization and one analysis that attempts to answer your research question. There does not need to be a long discussion, but the results should be presented in either a second visualization or a nicely formatted table."
-  },
-  {
-    "objectID": "assignments/final-project.html#final-step-write-up-final-report-due-1213",
-    "href": "assignments/final-project.html#final-step-write-up-final-report-due-1213",
-    "title": "Final Project Information",
-    "section": "Final step: Write up final report (due 12/13)",
-    "text": "Final step: Write up final report (due 12/13)\nThe final report will include the following sections: (1) an introduction where you introduce the research question and hypothesis and briefly describe why it is interesting; (2) a data section that briefly describes the data source, describes how the key dependent and independent variables are measured (e.g., a survey, statistical model, or expert coding), and also produces a plot that summarizes the dependent variable; (3) a results section that contains a scatterplot, barplot, or boxplot of the main relationship of interest and output for the main regression of interest; and (4) a brief (one paragraph) concluding section that summarizes your results, assesses the extent to which you find support for your hypothesis, describes limitations of your analysis and threats to inference, and states how your analysis could be improved (e.g., improved data that would be useful to collect).\nFor the data section, you should note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences). For the results section, you should interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect."
-  },
-  {
-    "objectID": "assignments/problem-sets.html",
-    "href": "assignments/problem-sets.html",
-    "title": "Problem Sets and Exams",
-    "section": "",
-    "text": "For both problem sets and exams, you will end up producing two types of documents:"
-  },
-  {
-    "objectID": "assignments/problem-sets.html#problem-set-workflow",
-    "href": "assignments/problem-sets.html#problem-set-workflow",
-    "title": "Problem Sets and Exams",
-    "section": "Problem set workflow",
-    "text": "Problem set workflow\nThe text of the problem sets will be posted here on the course website. We will distribute templates and data for the problem sets via Github. To get started, follow these steps:\n\nGo to the Ed Board and find the pinned thread with the GitHub Classroom links for each assignment.\nClick on the Github Classroom link for the assignment in question. You’ll be presented with a page that asks you to accept the assignment. Click “Accept this assignment”.\nGo to this new problem set repository on GitHub. Click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).\n\n\n\nNow, switch to RStudio. Go to the menu bar and hit “File &gt; New Project”. You can then choose what type of project to start. Since we’re importing from Github, we’ll use the “Version Control” option (it’s the bottom of the list). In the next menu, choose “Git”. Now, you can paste the URL in the “Repository URL” box. Choose a set of local directories to place this project and hit “Create Project”. Because this is a private repository, you will be prompted to enter your GitHub username and password. Go ahead and do this.\nAs you make changes to your file, make sure to commit those changes. Every commit is a point that you can always go back to if your code stops working for some reason. So doing this often will make sure that you have access to that great feature of git. At an absolute minimum, you should do this every time you complete a question, though you may want to do it more often than that. Committing often means you also don’t have to constantly create new versions of the same file because you’re afraid of making some change. Also, make sure to use informative commit messages so you know what’s changing. Important: be sure to answer the questions in the Rmd file provided by the template. This is what the autograder will look for when you submit.\nAt some point, you’ll want to push your changes back to GitHub so the teaching staff can see your work (if you need help) or so that you can submit to Gradescope."
-  },
-  {
-    "objectID": "assignments/problem-sets.html#submitting-your-assignments",
-    "href": "assignments/problem-sets.html#submitting-your-assignments",
-    "title": "Problem Sets and Exams",
-    "section": "Submitting your assignments",
-    "text": "Submitting your assignments\n\nStep 1: Submit the GitHub repository to Gradescope\nOn Gradescope, you’ll find two entries for each assignment. One will be labelled “Autograder” and the other “PDF”. Click on the Autograder entry and select the GitHub submission option. The first time you do this step, you will first need to connect your GitHub account to your Gradescope account.\n\nOnce you have connected your GitHub account, you can find the repository for the relevant problem set and the “main” branch and hit “Submit”.\n\n\n\nStep 2: Check autograder output\nWhen you submit the repository, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You’ll see a list of test results and an overall score.\n\nCheck the messages on any questions you got wrong for hints about how to fix them. You may then resubmit the GitHub repository again once you have fixed the code and pushed your changes to GitHub. You should repeat this process as many times as needed before you get a perfect score.\n\n\nStep 3: Upload PDF\nOnce you are satisfied with your autograding, then you should produce your final PDF report by hitting the “Knit” button at the top of the RStudio editor. This should produce a PDF output that you can then upload to Gradescope. In Gradescope, there will be an assignment labelled “Problem Set X: PDF”. There, you will be prompted to upload your final PDF report. You’ll be asked to indicate on which page each answer is. Label the PDF with where those answers are (being sure to mark two different pages if an answer continues on two pages)."
-  },
-  {
-    "objectID": "assignments/problem-sets.html#checklist",
-    "href": "assignments/problem-sets.html#checklist",
-    "title": "Problem Sets and Exams",
-    "section": "Checklist",
-    "text": "Checklist\n\nAccept GitHub Classroom invite.\nUse RStudio to “Clone with HTTPS” this repo to your computer.\nMake progress editing the .Rmd file.\n\nAs you do, commit and push to GitHub regularly.\nYou can check your answers with the autograder at any point.\nMake sure to name your code chunks.\nAdd the names of anyone you discuss the problem set with on your write-up.\n\nPush final version to GitHub.\nSubmit the GitHub repository to the Gradescope autograder.\nUpload final .pdf file to Gradescope."
-  },
-  {
-    "objectID": "assignments/problem-sets.html#writing-good-code",
-    "href": "assignments/problem-sets.html#writing-good-code",
-    "title": "Problem Sets and Exams",
-    "section": "Writing good code",
-    "text": "Writing good code\nYou’ll be writing code to do the analyses in this class. Code, like any language, provides many different ways of saying the same thing. One good practice of coding is to have what’s called good coding style. This refers to how you format the code that you so that it is (a) easy for you and others to read, and (b) less prone to making mistakes. Here are some general guidelines for writing R code and Rmd file.\n\nWhen writing R code and unless we tell you otherwise, follow the tidyverse style guide. For this class, the relevant parts of this document are the first couple of chapters. If you are ever uncertain about how to name something or how to write some code, see this document and it will likely help you quite a bit.\nMake sure the code chunks in the Rmd file have blank lines above and below them. If you don’t have this, it can sometimes cause problems with compilation.\nTry to keep your lines of code shorter than 80 characters since this makes reading code much easier. Usually this means writing some function arguments on a different line. See the style guide (section 2.5) for more on this.\nInclude comments in your code and format them nicely as in section 3.4 of the style guide. These comments should explain why you wrote the code you wrote and any notes you had about how you came to this solution. This might include, say, other approaches you tried but didn’t work or approaches you might want to try if you ever revisit this. Look at our code and examples to get a sense of how to use comments. In RStudio, you can nicely format a comment by hitting Control-Shift-\\."
+    "objectID": "assignments/troubleshooting.html#errors-pushing-to-github",
+    "href": "assignments/troubleshooting.html#errors-pushing-to-github",
+    "title": "Troubleshooting Assignments",
+    "section": "Errors pushing to GitHub",
+    "text": "Errors pushing to GitHub\nIf you trying to push to GitHub and you get an error saying something like:\n\n/usr/bin/git push origin HEAD:refs/heads/main To https://github.com/gov50-f23/gov-50-hw-2-mattblackwell.git ! [rejected] HEAD -&gt; main (non-fast-forward) error: failed to push some refs to ‘https://github.com/gov50-f23/gov-50-hw-2-mattblackwell.git’ hint: Updates were rejected because the tip of your current branch is behind hint: its remote counterpart. Integrate the remote changes (e.g. hint: ‘git pull …’) before pushing again. hint: See the ‘Note about fast-forwards’ in ‘git push –help’ for details.\n\nThis can happen if you edit the repository manually on the GitHub website rather than in your local version. Sometimes you can fix this problem by simply hitting the “Pull” button in RStudio:\n\nIf this solves your problem, great! If you get an error message when trying to pull, then you’ll need to resolve the conflicts manually. First start a new session of RStudio by going to the Session menu and hitting “New Session”:\n\nThis will open a new RStudio window. In this new window, we are going to create a new project from the same repository. When creating this new project, be sure to add _new to the end of the project directory name:\n\nNow you should have two RStudio sessions with two different projects: the original local one and a new one directly from GitHub:\n\nAssuming you want to overwrite whatever is on the GitHub website with what is on you local computer, copy the contents of your Rmd file from the old RStudio project to the same Rmd file in the new RStudio project. In the new RStudio project, knit the Rmd file, commit any changes, and then push to GitHub. Thew new RStudio project should be all synced now.\nOnce you are confident that the new project has all of the changes that you want, simply delete the old RStudio project from your computer."
   },
   {
     "objectID": "index.html",
