@@ -131,6 +131,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#missing-git-tab-in-rstudio" id="toc-missing-git-tab-in-rstudio" class="nav-link active" data-scroll-target="#missing-git-tab-in-rstudio">Missing Git tab in RStudio</a></li>
   <li><a href="#errors-pushing-to-github" id="toc-errors-pushing-to-github" class="nav-link" data-scroll-target="#errors-pushing-to-github">Errors pushing to GitHub</a></li>
+  <li><a href="#final-project-website-is-not-updating" id="toc-final-project-website-is-not-updating" class="nav-link" data-scroll-target="#final-project-website-is-not-updating">Final project website is not updating</a></li>
   </ul>
 </nav>
     </div>
@@ -183,6 +184,11 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="../files/img/both_projects.png" class="img-fluid"></p>
 <p>Assuming you want to overwrite whatever is on the GitHub website with what is on you local computer, copy the contents of your Rmd file from the old RStudio project to the same Rmd file in the new RStudio project. In the new RStudio project, knit the Rmd file, commit any changes, and then push to GitHub. Thew new RStudio project should be all synced now.</p>
 <p>Once you are confident that the new project has all of the changes that you want, simply delete the old RStudio project from your computer.</p>
+</section>
+<section id="final-project-website-is-not-updating" class="level2">
+<h2 class="anchored" data-anchor-id="final-project-website-is-not-updating">Final project website is not updating</h2>
+<p>If you have committed and pushed a change to your final project repository and confirmed that the website has deployed (by looking at the green check), but there are no changes to the actual project website, there could be a couple of problems. First, check to make sure you have knitted the Rmd file to HTML and then committed and pushed any changes to the HTML file to GitHub.</p>
+<p>Second, you might check the website in a second browser or incognito window. Sometimes browsers cache versions of the website and don’t update them immediately. Finally, sometimes the deploy process just doesn’t work or times out for unknown reasons (“internet weather”). In that case, try to add another change, knit, commit, and push to get the process to restart.</p>
 
 
 </section>
