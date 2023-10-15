@@ -131,6 +131,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#missing-git-tab-in-rstudio" id="toc-missing-git-tab-in-rstudio" class="nav-link active" data-scroll-target="#missing-git-tab-in-rstudio">Missing Git tab in RStudio</a></li>
   <li><a href="#errors-pushing-to-github" id="toc-errors-pushing-to-github" class="nav-link" data-scroll-target="#errors-pushing-to-github">Errors pushing to GitHub</a></li>
+  <li><a href="#files-larger-than-100-mb" id="toc-files-larger-than-100-mb" class="nav-link" data-scroll-target="#files-larger-than-100-mb">Files larger than 100 MB</a></li>
   <li><a href="#final-project-website-is-not-updating" id="toc-final-project-website-is-not-updating" class="nav-link" data-scroll-target="#final-project-website-is-not-updating">Final project website is not updating</a></li>
   </ul>
 </nav>
@@ -185,9 +186,17 @@ ul.task-list li input[type="checkbox"] {
 <p>Assuming you want to overwrite whatever is on the GitHub website with what is on you local computer, copy the contents of your Rmd file from the old RStudio project to the same Rmd file in the new RStudio project. In the new RStudio project, knit the Rmd file, commit any changes, and then push to GitHub. Thew new RStudio project should be all synced now.</p>
 <p>Once you are confident that the new project has all of the changes that you want, simply delete the old RStudio project from your computer.</p>
 </section>
+<section id="files-larger-than-100-mb" class="level2">
+<h2 class="anchored" data-anchor-id="files-larger-than-100-mb">Files larger than 100 MB</h2>
+<p>If you get a push error complaining about files greater than 100 MB, you will need to follow similar steps to the <a href="https://gov50-f23.github.io/assignments/troubleshooting.html#errors-pushing-to-github">pull error steps</a> in the last section. Once you have copied over the contents of your Rmd files, you can then add your data files. For files over 100 MB, you will add them to the the <code>.gitignore</code> file of your new repository. To do this, add the file to your new repository and it will show up in the Git tab. Right-click on the new file in the Git tab and hit the Ignore button:</p>
+<p><img src="../files/img/gitignore.png" class="img-fluid"></p>
+<p>A dialog box will open and you can hit “Save” which will add or amend a <code>.gitignore</code> file in your repository. You should then stage and commit that <code>.gitignore</code> file and push.</p>
+<p><img src="../files/img/committing-gitignore.png" class="img-fluid"></p>
+<p>A good practice would be to now write an Rmd file or R script that will load the ignored big data file, subset it to certain rows and columns and then save the file as a csv file using <a href="https://readr.tidyverse.org/reference/write_delim.html"><code>write_csv()</code></a>. Once you get that csv file to under 100 MB, you can commit that file and use it as the main data file in your main Rmd file.</p>
+</section>
 <section id="final-project-website-is-not-updating" class="level2">
 <h2 class="anchored" data-anchor-id="final-project-website-is-not-updating">Final project website is not updating</h2>
-<p>If you have committed and pushed a change to your final project repository and confirmed that the website has deployed (by looking at the green check), but there are no changes to the actual project website, there could be a couple of problems. First, check to make sure you have knitted the Rmd file to HTML and then committed and pushed any changes to the HTML file to GitHub.</p>
+<p>If you have committed and pushed a change to your final project repository and confirmed that the website has deployed (by looking at the green check), but there are no changes to the actual project website, there could be a couple of problems. First, check to make sure you have knitted the Rmd file to HTML and then committed and pushed any changes to the HTML file to GitHub. Once way to ensure this is to check the “Knit on Save” checkbox so that RStudio automatically knits when you save.</p>
 <p>Second, you might check the website in a second browser or incognito window. Sometimes browsers cache versions of the website and don’t update them immediately. Finally, sometimes the deploy process just doesn’t work or times out for unknown reasons (“internet weather”). In that case, try to add another change, knit, commit, and push to get the process to restart.</p>
 
 
