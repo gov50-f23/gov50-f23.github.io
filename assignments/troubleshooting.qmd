@@ -44,8 +44,24 @@ Assuming you want to overwrite whatever is on the GitHub website with what is on
 Once you are confident that the new project has all of the changes that you want, simply delete the old RStudio project from your computer. 
 
 
+## Files larger than 100 MB
+
+If you get a push error complaining about files greater than 100 MB, you will need to follow similar steps to the [pull error steps](https://gov50-f23.github.io/assignments/troubleshooting.html#errors-pushing-to-github) in the last section. Once you have copied over the contents of your Rmd files, you can then add your data files. For files over 100 MB, you will add them to the the `.gitignore` file of your new repository. To do this, add the file to your new repository and it will show up in the Git tab. Right-click on the new file in the Git tab and hit the Ignore button:
+
+![](/files/img/gitignore.png)
+
+A dialog box will open and you can hit "Save" which will add or amend a `.gitignore` file in your repository. You should then stage and commit that `.gitignore` file and push. 
+
+![](/files/img/committing-gitignore.png)
+
+A good practice would be to now write an Rmd file or R script that will load the ignored big data file, subset it to certain rows and columns and then save the file as a csv file using [`write_csv()`](https://readr.tidyverse.org/reference/write_delim.html). Once you get that csv file to under 100 MB, you can commit that file and use it as the main data file in your main Rmd file. 
+
 ## Final project website is not updating
 
-If you have committed and pushed a change to your final project repository and confirmed that the website has deployed (by looking at the green check), but there are no changes to the actual project website, there could be a couple of problems. First, check to make sure you have knitted the Rmd file to HTML and then committed and pushed any changes to the HTML file to GitHub. 
+If you have committed and pushed a change to your final project repository and confirmed that the website has deployed (by looking at the green check), but there are no changes to the actual project website, there could be a couple of problems. First, check to make sure you have knitted the Rmd file to HTML and then committed and pushed any changes to the HTML file to GitHub. Once way to ensure this is to check the "Knit on Save" checkbox so that RStudio automatically knits when you save. 
 
 Second, you might check the website in a second browser or incognito window. Sometimes browsers cache versions of the website and don't update them immediately. Finally, sometimes the deploy process just doesn't work or times out for unknown reasons ("internet weather"). In that case, try to add another change, knit, commit, and push to get the process to restart. 
+
+
+
+
