@@ -43,3 +43,9 @@ Assuming you want to overwrite whatever is on the GitHub website with what is on
 
 Once you are confident that the new project has all of the changes that you want, simply delete the old RStudio project from your computer. 
 
+
+## Final project website is not updating
+
+If you have committed and pushed a change to your final project repository and confirmed that the website has deployed (by looking at the green check), but there are no changes to the actual project website, there could be a couple of problems. First, check to make sure you have knitted the Rmd file to HTML and then committed and pushed any changes to the HTML file to GitHub. 
+
+Second, you might check the website in a second browser or incognito window. Sometimes browsers cache versions of the website and don't update them immediately. Finally, sometimes the deploy process just doesn't work or times out for unknown reasons ("internet weather"). In that case, try to add another change, knit, commit, and push to get the process to restart. 
