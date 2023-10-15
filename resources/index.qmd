@@ -9,7 +9,7 @@ title: "Resources"
 - [R Tutorials Instructions](/assignments/tutorials.qmd) (for running locally in RStudio)
 - [Problem Sets and Exams Instructions](/assignments/problem-sets.qmd)
 - [Gov 50 R Cheatsheet](/resources/cheatsheet.qmd)
-
+- [Gov 50 Troubleshooting Guide](/assignments/troubleshooting.qmd)
 
 ## R Tutorials
 

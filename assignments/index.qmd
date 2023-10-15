@@ -2,6 +2,9 @@
 title: "Assignments"
 ---
 
+
+- Having problems: check our [Troubleshooting Guide](/assignments/troubleshooting.qmd)
+
 ## Tutorials
 
 - [Tutorial Instructions](/assignments/tutorials.qmd)
@@ -27,3 +30,4 @@ title: "Assignments"
 
 - [Final project information](/assignments/final-project.html)
 - [Final project milestone 1: Creating a repo](/assignments/distill.qmd)
+
