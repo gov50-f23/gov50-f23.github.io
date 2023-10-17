@@ -1,0 +1,142 @@
+---
+title: "Lecture 12"
+author: "Matt Blackwell"
+date: "2023-10-12"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pivot longer
+
+
+```{r}
+library(tidyverse)
+library(gov50data)
+mortality
+
+```
+
+
+
+```{r}
+mortality_long <- mortality |> 
+  pivot_longer(
+    cols = `1972`:`2020`,
+    names_to = "year",
+    values_to = "child_mortality"
+  ) |>
+  mutate(year = as.integer(year))
+mortality_long
+```
+
+```{r}
+mortality |> 
+  pivot_longer(
+    cols = `1972`:`2020`,
+    names_to = "year",
+    values_to = "child_mortality"
+  ) |>
+  mutate(year = as.integer(year)) |>
+  ggplot(mapping = aes(x = year, y = child_mortality, group = country)) +
+  geom_line(alpha = 0.25)
+```
+
+
+
+
+
+
+## Spotify
+
+
+```{r}
+spotify
+```
+
+
+
+```{r}
+spotify |> 
+  filter(!is.na(week1)) |>
+  pivot_longer(
+    cols = week1:week52, ## alternative: c(-`Track Name`, -Artist)
+    names_to = "week_of_year",
+    values_to = "rank", 
+    names_prefix = "week"
+  ) |>
+  mutate(week_of_year = as.integer(week_of_year)) |> 
+  ggplot(mapping = aes(x = week_of_year, y = rank, group = `Track Name`)) +
+  geom_line(alpha = 0.25) +
+  scale_y_reverse()
+```
+
+## Joins
+
+
+```{r}
+library(gapminder)
+
+gapminder |> 
+  count(country, year) |>
+  filter(n > 1)
+```
+
+
+```{r}
+mortality_long |>
+  count(country, year) |>
+  filter(n > 1)
+```
+
+
+```{r}
+left_join(gapminder, mortality_long) |>
+  select(country, year, lifeExp, pop, child_mortality)
+```
+
+
+```{r}
+gapminder |> 
+  inner_join(mortality_long)
+
+```
+
+
+
+```{r}
+library(nycflights13)
+flights2 <- flights |>
+  select(year, time_hour, origin, dest, tailnum, carrier)
+flights2
+```
+
+
+```{r}
+planes2 <- planes |>
+  select(tailnum, year, type, engine, seats)
+planes2
+```
+
+
+```{r}
+flights2 |>
+  left_join(planes2, by = "tailnum") |>
+  rename(year_built = year.y)
+
+```
+
+
+```{r}
+flights2 |> 
+  left_join(planes2 |> rename(year_built = year))
+
+```
+
+
+
+
+
+

@@ -235,7 +235,7 @@
     "href": "materials/05_measurement.html#slides-and-code",
     "title": "Measuring and Summarizing Data",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (10/3) lecture: Summarizing data\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (10/5) lecture: Survey Sampling\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (10/3) lecture: Summarizing data\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture9.Rmd\n\nThursday (10/5) lecture: Survey Sampling\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/03_data_wrangling.html",
@@ -263,7 +263,7 @@
     "href": "materials/03_data_wrangling.html#slides-and-code",
     "title": "Data Transformation and Causality",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (9/19) lecture: Data Wrangling and Barplots\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides) \n\nThursday (9/21) lecture: Causality\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (9/19) lecture: Data Wrangling and Barplots\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides) \n\nThursday (9/21) lecture: Causality\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture6.Rmd"
   },
   {
     "objectID": "materials/01_intro.html",
@@ -291,7 +291,7 @@
     "href": "materials/01_intro.html#slides",
     "title": "Introduction to Gov 50",
     "section": "Slides",
-    "text": "Slides\n\nTuesday (9/5) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (9/7) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides\n\nTuesday (9/5) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (9/7) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture2.Rmd"
   },
   {
     "objectID": "assignments/tutorials.html",
@@ -788,7 +788,7 @@
     "href": "materials/04_causality.html#slides-and-code",
     "title": "Causality and Pivoting",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (9/26) lecture: Randomized Experiments\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides) \n\nTuesday (9/28) lecture: Observational Studies\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (9/26) lecture: Randomized Experiments\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture7.Rmd\n\nTuesday (9/28) lecture: Observational Studies\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture8.Rmd"
   },
   {
     "objectID": "materials/06_bivariate_tidying.html",
@@ -816,7 +816,7 @@
     "href": "materials/06_bivariate_tidying.html#slides-and-code",
     "title": "Summarizing Relationships, Tidying and Joining Data",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (10/10) lecture: Summarizing relationships and writing our own functions\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides) \n\nThursday (10/12) lecture: Pivoting longer, joining data.\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (10/10) lecture: Summarizing relationships and writing our own functions\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture_11.Rmd\n\nThursday (10/12) lecture: Pivoting longer, joining data.\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture12.Rmd"
   },
   {
     "objectID": "materials/08_regression.html",

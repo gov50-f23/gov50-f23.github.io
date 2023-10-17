@@ -1,0 +1,85 @@
+---
+title: "Lecture 8"
+author: "Matt Blackwell"
+date: "2023-09-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+library(gov50data)
+newspapers
+```
+
+
+
+
+```{r}
+switched <- newspapers |>
+  filter(to_labour == 1) |>
+  summarize(mean(vote_lab_97))
+
+no_switch <- newspapers |>
+  filter(to_labour == 0) |>
+  summarize(mean(vote_lab_97))
+
+
+switched - no_switch
+```
+
+
+
+## Statistical control
+
+```{r}
+newspapers |> 
+  group_by(to_labour, parent_labour) |>
+  summarize(lab_vote = mean(vote_lab_97)) |>
+  pivot_wider(
+    names_from = to_labour,
+    values_from = lab_vote
+  ) |> 
+  mutate(ATE = `1` - `0`)
+```
+
+
+## Before and after
+
+
+```{r}
+newspapers |>
+  filter(to_labour == 1) |>
+  mutate(
+    vote_change = vote_lab_97 - vote_lab_92
+  ) |>
+  summarize(avg_change = mean(vote_change))
+```
+
+## DiD
+
+```{r}
+newspapers |>
+  mutate(
+    vote_change = vote_lab_97 - vote_lab_92
+  ) |>
+  group_by(to_labour) |>
+  summarize(avg_change = mean(vote_change)) |>
+  pivot_wider(
+    names_from = to_labour,
+    values_from = avg_change
+  ) |>
+  mutate(did = `1` - `0`)
+```
+
+
+
+
+
+
+
+
