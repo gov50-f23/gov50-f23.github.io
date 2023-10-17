@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -128,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Staff</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../materials/index.html" rel="" target="">
+    <a class="nav-link active" href="../materials/index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
@@ -153,10 +153,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/01_intro.html">Course Materials</a></li><li class="breadcrumb-item"><a href="../materials/07_prediction.html">7: Prediction and Regression</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Readings, lectures, and videos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Course Materials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1: Introduction to Gov 50</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/02_r_data_viz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2: Data Visualization and Wrangling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/03_data_wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3: Data Wrangling and Causality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/04_causality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4: Causality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/05_measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5: Summarizing and Measurement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/06_bivariate_tidying.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6: Relationships, Functions, and Importing/Tidying Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/07_prediction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">7: Prediction and Regression</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -198,59 +285,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="readings" class="level2">
 <h2 class="anchored" data-anchor-id="readings">Readings</h2>
 <ul>
-<li>For prediction and loops, see QSS 4.1 (you can skip 4.1.1)</li>
+<li>For prediction, see QSS 4.1 (you can skip 4.1.1)</li>
 <li>For regression, see either MD Ch 5 or QSS 4.2 (you can skip 4.2.5).</li>
 </ul>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <ul>
-<li>Reinstall the Gov 50 data package that has new data for this week:</li>
+<li>For Thursday, you may want to install the <code>broom</code> package:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mattblackwell/gov50data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>If you cannot install the package, you can download the data locally at
-<ul>
-<li><a href="../files/data/polls20.csv"><code>poll20.csv</code></a></li>
-<li><a href="../files/data/pres20.csv"><code>pres20.csv</code></a></li>
-<li><a href="../files/data/national_polls20.csv"><code>national_poll20.csv</code></a></li>
-</ul></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>polls20 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"polls20.csv"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pres20 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"pres20.csv"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>national_polls20 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"national_polls20.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>You may need to install the <code>lubridate</code> package if it’s not installed:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lubridate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>For Thursday, you may want to reinstall the <code>gov50date</code> package and install the <code>broom</code> package:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"broom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"broom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="slides-and-code" class="level2">
 <h2 class="anchored" data-anchor-id="slides-and-code">Slides and Code</h2>
 <ul>
-<li>Tuesday (10/11) lecture: Prediction and loops
+<li>Tuesday (10/17) lecture: Midterm review and prediction
 <ul>
-<li><a href="../slides/12_prediction_loops.pdf">PDF of slides as I present them</a></li>
-<li><a href="../slides/12_prediction_loops_handout.pdf">PDF of handout version of slides</a> (no incremental slides)</li>
-</ul></li>
-<li>Tuesday (10/13) lecture: Regression
-<ul>
-<li><a href="../slides/13_regression.pdf">PDF of slides as I present them</a></li>
-<li><a href="../slides/13_regression_handout.pdf">PDF of handout version of slides</a> (no incremental slides)</li>
+<li><a href="../slides/13_prediction.pdf">PDF of slides as I present them</a></li>
+<li><a href="../slides/13_prediction_handout.pdf">PDF of handout version of slides</a> (no incremental slides)</li>
 </ul></li>
 </ul>
+<!-- - Tuesday (10/13) lecture: Regression -->
+<!--   - [PDF of slides as I present them](/slides/13_regression.pdf) -->
+<!--   - [PDF of handout version of slides](/slides/13_regression_handout.pdf) (no incremental slides) -->
 
 
 </section>
