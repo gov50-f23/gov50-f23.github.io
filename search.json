@@ -263,7 +263,7 @@
     "href": "materials/03_data_wrangling.html#slides-and-code",
     "title": "Data Transformation and Causality",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (9/19) lecture: Data Wrangling and Barplots\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides) \n\nThursday (9/21) lecture: Causality\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture6.Rmd"
+    "text": "Slides and Code\n\nTuesday (9/19) lecture: Data Wrangling and Barplots\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture5.Rmd\n\nThursday (9/21) lecture: Causality\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture6.Rmd"
   },
   {
     "objectID": "materials/01_intro.html",
@@ -767,7 +767,7 @@
     "href": "materials/02_r_data_viz.html#slides-and-code",
     "title": "Data Visualization and Data Wrangling",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (9/12) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture3.Rmd\n\nThursday (9/14) lecture: Data Wrangling\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (9/12) lecture:\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture3.Rmd\n\nThursday (9/14) lecture: Data Wrangling\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\nCode: lecture4.Rmd"
   },
   {
     "objectID": "materials/04_causality.html",

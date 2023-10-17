@@ -1,0 +1,131 @@
+---
+title: "Lecture 5"
+author: "Matt Blackwell"
+date: "2023-09-19"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Load the library
+
+```{r}
+library(gov50data)
+news <- na.omit(news)
+news
+```
+
+
+## slice functions
+
+
+```{r}
+library(tidyverse)
+news |> 
+  slice(1, 20:25, 1000, 2000)
+
+```
+
+```{r}
+news |> 
+  slice_max(ideology, n = 5)
+```
+
+
+
+```{r}
+news |> 
+  slice_min(ideology, n = 5)
+```
+
+
+## Groups!
+
+```{r}
+news |> 
+  group_by(month) |>
+  summarize(
+    slant_mean = mean(ideology), 
+    national_min = min(national_politics)
+  )
+```
+
+
+```{r}
+news |> 
+  group_by(sinclair2017, post) |> 
+  summarize(
+    across(where(is.numeric), mean)
+  )
+```
+
+
+
+```{r}
+news |> 
+  group_by(month) |>
+  summarize(
+    slant_mean = mean(ideology)
+  ) |>
+  knitr::kable(col.names = c("Month", "Avg. Slant"))
+```
+
+```{r}
+news |>
+  group_by(month) |>
+  summarize(
+    n = n()
+  )
+```
+
+
+
+```{r}
+news |>
+  count(affiliation)
+```
+
+
+## Barplots!
+
+```{r}
+ggplot(news, mapping = aes(x = affiliation)) + 
+  geom_bar()
+```
+
+```{r}
+news |> 
+  group_by(affiliation) |>
+  summarize(
+    avg_ideology = mean(ideology)
+  ) |>
+  ggplot(mapping = aes(x = affiliation, y = avg_ideology)) + 
+  geom_col()
+```
+
+
+```{r}
+station_ideology <- news |> 
+  group_by(callsign, affiliation) |>
+  summarize(
+    avg_ideology = mean(ideology)
+  ) |> 
+  slice_max(avg_ideology, n = 20)
+station_ideology
+```
+
+
+```{r}
+station_ideology |>
+  ggplot(mapping = aes(y = fct_reorder(callsign, avg_ideology), x = avg_ideology)) + 
+  geom_col(mapping = aes(fill = affiliation)) +
+  scale_fill_brewer(palette = "Dark2")
+```
+
+
+
+
+
