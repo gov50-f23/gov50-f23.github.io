@@ -19,3 +19,4 @@ Each class session has a set of required readings that you should complete ***be
 10. [Survey Sampling](/slides/10_survey_sampling_handout.pdf)
 11. [Bivariate Relationships and Functions](/slides/11_bivariate_handout.pdf)
 12. [Joining and Tidying Data](/slides/12_tidy_joins_handout.pdf)
+13. [Midterm Review and Prediction](/slides/13_prediction_handout.pdf) 

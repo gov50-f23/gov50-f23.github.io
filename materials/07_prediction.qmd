@@ -6,37 +6,12 @@ date: 2022-10-04
 
 ## Readings 
 
-- For prediction and loops, see QSS  4.1 (you can skip 4.1.1)
+- For prediction, see QSS  4.1 (you can skip 4.1.1)
 - For regression, see either MD Ch 5 or QSS 4.2 (you can skip 4.2.5). 
 
 ## Data
 
-- Reinstall the Gov 50 data package that has new data for this week:
-```{r}
-#| eval: false
-remotes::install_github("mattblackwell/gov50data")
-```
-
-- If you cannot install the package, you can download the data locally at
-  - [`poll20.csv`](/files/data/polls20.csv)
-  - [`pres20.csv`](/files/data/pres20.csv)
-  - [`national_poll20.csv`](/files/data/national_polls20.csv)
-
-```{r}
-#| eval: false
-library(tidyverse)
-polls20 <- read_csv("polls20.csv")
-pres20 <- read_csv("pres20.csv")
-national_polls20 <- read_csv("national_polls20.csv")
-```
-
-- You may need to install the `lubridate` package if it's not installed:
-```{r}
-#| eval: false
-install.packages("lubridate")
-```
-
-- For Thursday, you may want to reinstall the `gov50date` package and install the `broom` package:
+- For Thursday, you may want to install the `broom` package:
 ```{r}
 #| eval: false
 install.packages("broom")
@@ -47,10 +22,10 @@ install.packages("broom")
 
 ## Slides and Code
 
-- Tuesday (10/11) lecture: Prediction and loops
-  - [PDF of slides as I present them](/slides/12_prediction_loops.pdf)
-  - [PDF of handout version of slides](/slides/12_prediction_loops_handout.pdf) (no incremental slides)
+- Tuesday (10/17) lecture: Midterm review and prediction
+  - [PDF of slides as I present them](/slides/13_prediction.pdf)
+  - [PDF of handout version of slides](/slides/13_prediction_handout.pdf) (no incremental slides)
 
-- Tuesday (10/13) lecture: Regression
-  - [PDF of slides as I present them](/slides/13_regression.pdf)
-  - [PDF of handout version of slides](/slides/13_regression_handout.pdf) (no incremental slides)
+<!-- - Tuesday (10/13) lecture: Regression -->
+<!--   - [PDF of slides as I present them](/slides/13_regression.pdf) -->
+<!--   - [PDF of handout version of slides](/slides/13_regression_handout.pdf) (no incremental slides) -->
