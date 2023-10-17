@@ -1,0 +1,69 @@
+---
+title: "Lecture 11"
+author: "Matt Blackwell"
+date: "2023-10-10"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Covid data
+
+
+```{r}
+library(tidyverse)
+library(gov50data)
+covid_votes
+```
+
+
+
+```{r}
+covid_votes |>
+  mutate(
+    one_dose_centered = one_dose_5plus_pct - mean(one_dose_5plus_pct, na.rm = TRUE),
+    one_dose_z = one_dose_centered / sd(one_dose_5plus_pct, na.rm = TRUE)
+  ) |>
+  select(fips:state, one_dose_5plus_pct, one_dose_centered, one_dose_z)
+
+```
+
+
+
+```{r}
+cor(covid_votes$one_dose_5plus_pct, covid_votes$dem_pct_2000,
+    use = "pairwise")
+
+```
+
+
+
+```{r}
+covid_votes |>
+  ggplot(mapping = aes(x = dem_pct_2000, y = one_dose_5plus_pct)) + 
+  geom_point(alpha = 0.25) +
+  geom_smooth()
+```
+
+
+```{r}
+z_score <- function(variable) {
+  (variable - mean(variable, na.rm = TRUE)) / sd(variable, na.rm = TRUE)
+}
+
+z_score(variable = c(1,2,3,4,5))
+```
+
+```{r}
+covid_votes |> 
+  mutate(
+    one_dose_5p_z = z_score(one_dose_5plus_pct),
+    one_dose_65p_z = z_score(one_dose_65plus_pct)
+  )
+```
+
+
+
+

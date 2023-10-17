@@ -1,0 +1,160 @@
+---
+title: 'Lecture 9: Summarizing Data'
+author: "Matt Blackwell"
+date: "2023-10-03"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Descriptive Stats
+
+
+```{r}
+library(tidyverse)
+library(gapminder)
+gapminder
+```
+
+
+
+```{r}
+ggplot(gapminder, mapping = aes(x = lifeExp)) +
+  geom_histogram(binwidth = 1) +
+  geom_vline(mapping = aes(xintercept = mean(lifeExp)), color = "indianred") +
+  geom_vline(mapping = aes(xintercept = median(lifeExp)), color = "dodgerblue")
+```
+
+
+
+
+```{r}
+ggplot(gapminder, mapping = aes(x = gdpPercap)) +
+  geom_histogram(binwidth = 5000) +
+  geom_vline(mapping = aes(xintercept = mean(gdpPercap)), color = "indianred") +
+  geom_vline(mapping = aes(xintercept = median(gdpPercap)), color = "dodgerblue")
+```
+```{r}
+ggplot(gapminder, mapping = aes(y = lifeExp)) +
+  geom_boxplot()
+```
+
+
+
+
+## CCES
+
+```{r}
+library(gov50data)
+cces_2020
+```
+
+
+
+```{r}
+cces_2020 |> 
+  drop_na(turnout_self)
+```
+
+
+
+```{r}
+## available case analysis
+
+cces_2020 |> 
+  summarize(mean(turnout_self, na.rm = TRUE))
+
+```
+
+
+```{r}
+
+## complete case/listwise deletion. 
+cces_2020 |> 
+  drop_na() |>
+  summarize(mean(turnout_self))
+```
+
+
+
+```{r}
+c(5, 6, NA, 9) == NA
+
+sum(is.na(c(5, 6, NA, 9, NA)))
+mean(is.na(c(5, 6, NA, 9, NA)))
+```
+
+
+```{r}
+
+cces_2020 |> 
+  group_by(pid3) |>
+  summarize(
+    mean_turnout = mean(turnout_self, na.rm = TRUE),
+    missing_turnout = mean(is.na(turnout_self))
+  )
+```
+
+
+
+## Proportion tables
+
+
+```{r}
+cces_2020 |> 
+  filter(pres_vote %in% c("Joe Biden (Democrat)", "Donald J. Trump (Republican)")) |>
+  group_by(pres_vote, pid3) |>
+  summarize(n = n()) |> 
+  mutate(prop = n / sum(n))
+
+```
+
+
+```{r}
+cces_2020 |> 
+  filter(pres_vote %in% c("Joe Biden (Democrat)", "Donald J. Trump (Republican)")) |>
+  group_by(pres_vote, pid3) |>
+  summarize(n = n(), .groups = "drop" ) |> 
+  mutate(prop = n / sum(n))
+```
+
+
+### Cross tabs
+
+
+```{r}
+cces_2020 |> 
+  filter(pres_vote %in% c("Joe Biden (Democrat)", "Donald J. Trump (Republican)")) |>
+  group_by(pid3, pres_vote) |>
+  summarize(n = n()) |> 
+  mutate(prop = n / sum(n)) |>
+  pivot_wider(
+    id_cols = pid3,
+    names_from = pres_vote,
+    values_from = prop
+  )
+
+
+```
+
+
+```{r}
+vote_by_party <- cces_2020 |> 
+  filter(pres_vote %in% c("Joe Biden (Democrat)", "Donald J. Trump (Republican)")) |>
+  group_by(pid3, pres_vote) |>
+  summarize(n = n()) |> 
+  mutate(prop = n / sum(n)) 
+
+vote_by_party
+```
+
+
+```{r}
+ggplot(vote_by_party, 
+       mapping = aes(x = pid3, y = prop, fill = pres_vote)) +
+  geom_col(position = "dodge")
+```
+
+

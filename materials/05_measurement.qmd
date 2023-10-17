@@ -14,6 +14,8 @@ date: 2023-10-02
 - Tuesday (10/3) lecture: Summarizing data
   - [PDF of slides as I present them](/slides/09_summarizing_data.pdf)
   - [PDF of handout version of slides](/slides/09_summarizing_data_handout.pdf) (no incremental slides)
+  - Code: [`lecture9.Rmd`](/files/code/lecture9.Rmd)
+  
 
 - Thursday (10/5) lecture: Survey Sampling
   - [PDF of slides as I present them](/slides/10_survey_sampling.pdf)

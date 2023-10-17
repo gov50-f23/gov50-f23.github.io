@@ -1,0 +1,27 @@
+---
+title: "Lecture 2"
+author: "Matt Blackwell"
+date: "2023-09-07"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Gapminder
+
+
+```{r}
+library(gapminder)
+gapminder
+
+```
+
+
+```{r}
+library(ggplot2)
+ggplot(gapminder, mapping = aes(gdpPerCap, y = lifeExp)) + 
+  geom_point() 
+```
+

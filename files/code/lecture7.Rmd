@@ -1,0 +1,129 @@
+---
+title: "Lecture 7"
+author: "Matt Blackwell"
+date: "2023-09-26"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Loading the data 
+
+
+```{r}
+library(tidyverse)
+library(gov50data)
+trans
+```
+
+```{r}
+treat_mean <- trans |>
+  filter(treat_ind == 1) |>
+  summarize(
+    outcome_mean = mean(nondiscrim_post)
+  )
+treat_mean
+```
+
+```{r}
+control_mean <- trans |>
+  filter(treat_ind == 0) |>
+  summarize(
+    outcome_mean = mean(nondiscrim_post)
+  )
+
+control_mean
+```
+
+
+
+
+```{r}
+treat_mean - control_mean
+```
+
+
+## Balance checking
+
+```{r}
+trans |>
+  group_by(treat_ind) |>
+  summarize(
+    age_mean = mean(age),
+    voted_mean = mean(voted_gen_12),
+    voted_14_mean = mean(voted_gen_14)
+  )
+```
+
+
+```{r}
+trans |>
+  group_by(treat_ind, racename) |>
+  summarize(n = n()) 
+```
+
+```{r}
+trans |>
+  group_by(treat_ind, racename) |>
+  summarize(n = n()) |>
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = n
+  )
+```
+
+
+## DIM by groups
+
+```{r}
+trans |>
+  mutate(
+    treat_ind = if_else(treat_ind == 1, "Treated", "Control"),
+    party = if_else(democrat == 1, "Democrat", "Non-Democrat")
+  ) |>
+  group_by(treat_ind, party) |>
+  summarize(
+    outcome_mean = mean(nondiscrim_post)
+  ) |>
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = outcome_mean
+  ) |>
+  mutate(
+    ATE = Treated - Control
+  )
+```
+
+## ATE by age
+
+```{r}
+trans |> 
+  mutate(
+    treat_ind = if_else(treat_ind == 1, "Treated", "Control"),
+    age_group = case_when(
+      age < 25 ~ "Under 25",
+      age >=25 & age < 65 ~ "Between 25 and 65",
+      age >= 65 ~ "Older than 65"
+    )
+  ) |> 
+  group_by(treat_ind, age_group) |>
+  summarize(
+    outcome_mean = mean(nondiscrim_post)
+  ) |>
+  pivot_wider(
+    names_from = treat_ind,
+    values_from = outcome_mean
+  ) |>
+  mutate(
+    ATE = Treated - Control
+  )
+```
+
+
+
+
+
+

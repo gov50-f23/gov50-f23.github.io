@@ -29,4 +29,4 @@ remotes::install_github("mattblackwell/gov50data")
 - Thursday (9/21) lecture: Causality
   - [PDF of slides as I present them](/slides/06_causality.pdf)
   - [PDF of handout version of slides](/slides/06_causality_handout.pdf) (no incremental slides)
-<!--   - Code: [`transphobia.Rmd`](/files/code/transphobia.Rmd) -->
+  - Code: [`lecture6.Rmd`](/files/code/lecture6.Rmd)

@@ -28,10 +28,10 @@ install.packages("nycflights13")
 - Tuesday (10/10) lecture: Summarizing relationships and writing our own functions
   - [PDF of slides as I present them](/slides/11_bivariate.pdf)
   - [PDF of handout version of slides](/slides/11_bivariate_handout.pdf) (no incremental slides)
-<!--   - Code: [`covid_votes.Rmd`](/files/code/covid_votes.Rmd) -->
+  - Code: [`lecture_11.Rmd`](/files/code/lecture_11.Rmd)
 
 - Thursday (10/12) lecture: Pivoting longer, joining data.
   - [PDF of slides as I present them](/slides/12_tidy_joins.pdf)
   - [PDF of handout version of slides](/slides/12_tidy_joins_handout.pdf) (no incremental slides)
-<!--    - Code: [`lecture-11.Rmd`](/files/code/lecture-11.Rmd) -->
+  - Code: [`lecture12.Rmd`](/files/code/lecture12.Rmd)
 

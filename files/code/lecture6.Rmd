@@ -1,0 +1,56 @@
+---
+title: "Lecture 5"
+author: "Matt Blackwell"
+date: "2023-09-21"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+library(gov50data)
+news <- na.omit(news)
+news
+```
+
+
+
+
+
+```{r}
+news |> 
+  mutate(
+    right_leaning = ideology > 0,
+    fall = month == "Sep" | month == "Oct" | month == "Nov"
+  ) |>
+  filter(!(right_leaning & fall))
+```
+
+
+
+
+
+
+```{r}
+news |>
+  mutate(
+    month_num = as.numeric(month)
+  ) |>
+  filter(month_num == 9 | 10)
+```
+
+
+```{r}
+news |> 
+  group_by(callsign) |>
+  summarize(
+    prop_liberal = sum(ideology < 0)
+  )
+
+```
+
+
