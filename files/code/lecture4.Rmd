@@ -1,0 +1,101 @@
+---
+title: "Lecture 4"
+author: "Matt Blackwell"
+date: "2023-09-14"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Loading the news data
+
+```{r}
+library(tidyverse)
+library(gov50data)
+news
+```
+
+
+
+## filter
+
+```{r}
+tues_news <- news |>
+  filter(weekday == "Tue")
+```
+
+
+```{r}
+news |> 
+  filter(weekday == "Tue",
+         affiliation == "ABC")
+```
+
+
+```{r}
+news |> 
+  filter(ideology <= 0 & weekday == "Tue")
+```
+
+
+```{r}
+news |>
+  filter(weekday %in% c("Mon", "Tue", "Wed"))
+```
+
+
+```{r}
+news |> 
+  arrange(desc(ideology))
+```
+
+
+
+## Operating on columns
+
+
+```{r}
+news |> 
+  select(callsign:weekday, -date)
+```
+
+
+```{r}
+news |>
+  rename(call_sign = callsign)
+```
+
+
+```{r}
+news <- news  |>
+  mutate(
+    national_local_diff = national_politics - local_politics
+  ) 
+
+news |> 
+  select(callsign, national_local_diff)
+```
+
+
+
+```{r}
+news |> 
+  mutate(
+    Ownership = if_else(sinclair2017 == 1, "Acquired by Sinclair" , "Not Acquired")
+  ) |>
+  select(callsign, sinclair2017, Ownership)
+```
+
+
+
+
+
+
+
+
+
+
+

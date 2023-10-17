@@ -24,7 +24,7 @@ remotes::install_github("mattblackwell/gov50data")
 - Tuesday (9/19) lecture: Data Wrangling and Barplots
   - [PDF of slides as I present them](/slides/05_data_wrangling.pdf)
   - [PDF of handout version of slides](/slides/05_data_wrangling_handout.pdf) (no incremental slides)
-  <!-- - Code: [`news.Rmd`](/files/code/news.Rmd)  -->
+  - Code: [`lecture5.Rmd`](/files/code/lecture5.Rmd)
 
 - Thursday (9/21) lecture: Causality
   - [PDF of slides as I present them](/slides/06_causality.pdf)
