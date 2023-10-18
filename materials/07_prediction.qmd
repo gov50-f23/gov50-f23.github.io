@@ -26,6 +26,6 @@ install.packages("broom")
   - [PDF of slides as I present them](/slides/13_prediction.pdf)
   - [PDF of handout version of slides](/slides/13_prediction_handout.pdf) (no incremental slides)
 
-<!-- - Tuesday (10/13) lecture: Regression -->
-<!--   - [PDF of slides as I present them](/slides/13_regression.pdf) -->
-<!--   - [PDF of handout version of slides](/slides/13_regression_handout.pdf) (no incremental slides) -->
+- Tuesday (10/19) lecture: Regression
+  - [PDF of slides as I present them](/slides/14_regression.pdf)
+  - [PDF of handout version of slides](/slides/14_regression_handout.pdf) (no incremental slides)
