@@ -192,11 +192,11 @@ The data collection and cleaning must be meaningful---it's not sufficient to sim
 
 | Milestone                    | Due Date                 |
 |:-----------------------------|:-------------------------|
-| Creating a GitHub Repository | Fri, Sep 29th 11:59pm ET  |
+| Creating a GitHub Repository | Fri, Sep 29th 11:59pm ET |
 | Data and Proposal            | Fri, Oct 13th 11:59pm ET |
-| First Visualization          | Fri, Oct 27th 11:59pm ET |
-| First Analysis               | Fri, Nov 10th 11:59pm ET |
-| Final Report                 | Wed, Dec 13th 11:59pm ET       |
+| First Visualization          | Fri, Nov 3rd 11:59pm ET  |
+| First Analysis               | Fri, Nov 17th 11:59pm ET |
+| Final Report                 | Wed, Dec 13th 11:59pm ET |
 
 
 

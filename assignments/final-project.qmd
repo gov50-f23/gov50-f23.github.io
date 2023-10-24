@@ -12,8 +12,8 @@ Here is a list of milestones that we will have to keep you on track:
 
 - Milestone 1: Create a new public GitHub repository that will host the article (9/29)
 - Milestone 2: Find a data source and write a short proposal on your research question (10/13)
-- Milestone 3: Add one polished data visualization on your distill article (10/27)
-- Milestone 4: Add results from one set of analyses (11/10)
+- Milestone 3: Add one polished data visualization on your distill article (11/3)
+- Milestone 4: Add results from one set of analyses (11/17)
 - Final project due (12/13)
 
 ## Milestone 1: Create public GitHub repository (due 9/29)
@@ -80,13 +80,13 @@ Note that you are not fully committing to any specific question or data in this 
 Note that you will eventually remove this proposal with the actual article. If down the road you don't want this proposal to be part of the public history of the repository, you can always create a new repository for the final report. 
 
 
-## Milestone 3: One data visualization (due 10/27)
+## Milestone 3: One data visualization (due 11/3)
 
 
 The next milestone will require that your Distill article  loads the data you have selected and produces one interesting and polished data visualization. This could either show the distribution of one variable or the relationship between two variables. 
 
 
-## Milestone 4: Add results from one analysis (due 11/10)
+## Milestone 4: Add results from one analysis (due 11/17)
 
 By this time, your article should contain one visualization and one analysis that attempts to answer your research question. There does not need to be a long discussion, but the results should be presented in either a second visualization or a nicely formatted table. 
 

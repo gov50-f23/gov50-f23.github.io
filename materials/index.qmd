@@ -20,4 +20,5 @@ Each class session has a set of required readings that you should complete ***be
 11. [Bivariate Relationships and Functions](/slides/11_bivariate_handout.pdf)
 12. [Joining and Tidying Data](/slides/12_tidy_joins_handout.pdf)
 13. [Midterm Review and Prediction](/slides/13_prediction_handout.pdf)
-13. [Regression](/slides/14_regression_handout.pdf)
+14. [Regression](/slides/14_regression_handout.pdf)
+15. [More Regression and Model Fit](/slides/15_regression_ii_handout.pdf)
