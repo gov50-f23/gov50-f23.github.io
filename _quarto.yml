@@ -90,8 +90,8 @@ website:
               file: assignments/03_hw_causality.qmd
             - text: "Problem Set 4"
               file: assignments/04_hw_summarizing.qmd
-            # - text: "Problem Set 5"
-            #   file: assignments/05_hw_regression.qmd
+            - text: "Problem Set 5"
+              file: assignments/05_hw_regression.qmd
             # - text: "Problem Set 6"
             #   file: assignments/06_hw_sampling.qmd              
             # - text: "Problem Set 7"
