@@ -1244,3 +1244,83 @@ flights |>
 ```
 
 Because both data sets had a `year` variable, the join function renames them to `year.x` in the first data frame and `year.y` for the second. We could rename them before merging to solve this problem. 
+
+
+## Regression (Week 8)
+
+
+### Add binned means to a scatterplot
+
+You can add binned means of the y-axis variable in a scatterplot using the `stat_summary_bin(fun = "mean")` function with your ggplot call:
+
+
+
+```{r, binned}
+ggplot(health, aes(x = steps_lag, y = weight)) +
+  geom_point(color = "steelblue1", alpha = 0.25) +
+  labs(
+    x = "Steps on day prior (in 1000s)",
+    y = "Weight",
+    title = "Weight and Steps"
+  ) +
+  stat_summary_bin(fun = "mean", color = "indianred1", size = 3,
+                   geom = "point", binwidth = 1)
+```
+
+
+
+### Running a regression (estimating the line of best fit)
+
+We can estimate the line of best fit using the `lm` function:
+
+```{r}
+fit <- lm(weight ~ steps, data = health)
+fit
+```
+
+
+### Extracting the vector of estimated regression coefficients
+
+```{r}
+coef(fit)
+```
+
+
+### Obtaining unit-level statistics about the regression
+
+The `broom` package has a number of functions that will allow you to extract information about the regression output from `lm()`. For example, if you want information about each unit such as the predicted/fitted value and the residual, you can use `augment`:
+
+```{r}
+library(broom)
+augment(fit)
+```
+
+
+
+### Obtaining overall information about the model fitted
+
+The `glance` function will give you some high-level information about the regression, including the $R^2$:
+
+
+```{r}
+glance(fit)
+```
+
+
+You can also access the $R^{2}$ using the `summary()` function:
+
+```{r}
+summary(fit)$r.squared
+```
+
+### Running a multiple regression
+
+You can fit a regression with multiple predictors by putting a `+` between them on the right-hand side of the formula:
+
+```{r}
+mult.fit <- lm(seat_change ~ approval + rdi_change,
+               data = midterms)
+mult.fit
+```
+
+
