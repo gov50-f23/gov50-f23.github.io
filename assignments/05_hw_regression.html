@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-08-11">
 
-<title>Gov 50 - Problem Sets and Exams</title>
+<title>Gov 50 - Problem Set 5: Fake News Consumption in the 2016 US Election</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -124,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Resources</a></li><li class="breadcrumb-item"><a href="../assignments/problem-sets.html">Problem Sets and Exams</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/00-problem-set.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/05_hw_regression.html">Problem Set 5</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -159,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/problem-sets.html" class="sidebar-item-text sidebar-link active">
+  <a href="../assignments/problem-sets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Sets and Exams</span></a>
   </div>
 </li>
@@ -206,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/05_hw_regression.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/05_hw_regression.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Problem Set 5</span></a>
   </div>
 </li>
@@ -222,15 +255,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#problem-set-workflow" id="toc-problem-set-workflow" class="nav-link active" data-scroll-target="#problem-set-workflow">Problem set workflow</a></li>
-  <li><a href="#submitting-your-assignments" id="toc-submitting-your-assignments" class="nav-link" data-scroll-target="#submitting-your-assignments">Submitting your assignments</a>
-  <ul class="collapse">
-  <li><a href="#step-1-submit-the-github-repository-to-gradescope" id="toc-step-1-submit-the-github-repository-to-gradescope" class="nav-link" data-scroll-target="#step-1-submit-the-github-repository-to-gradescope">Step 1: Submit the GitHub repository to Gradescope</a></li>
-  <li><a href="#step-2-check-autograder-output" id="toc-step-2-check-autograder-output" class="nav-link" data-scroll-target="#step-2-check-autograder-output">Step 2: Check autograder output</a></li>
-  <li><a href="#step-3-upload-pdf" id="toc-step-3-upload-pdf" class="nav-link" data-scroll-target="#step-3-upload-pdf">Step 3: Upload PDF</a></li>
-  </ul></li>
-  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
-  <li><a href="#writing-good-code" id="toc-writing-good-code" class="nav-link" data-scroll-target="#writing-good-code">Writing good code</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#question-1-4-points" id="toc-question-1-4-points" class="nav-link" data-scroll-target="#question-1-4-points">Question 1 (4 points)</a></li>
+  <li><a href="#question-2-6-points" id="toc-question-2-6-points" class="nav-link" data-scroll-target="#question-2-6-points">Question 2 (6 points)</a></li>
+  <li><a href="#question-3-6-points" id="toc-question-3-6-points" class="nav-link" data-scroll-target="#question-3-6-points">Question 3 (6 points)</a></li>
+  <li><a href="#question-4-5-points" id="toc-question-4-5-points" class="nav-link" data-scroll-target="#question-4-5-points">Question 4 (5 points)</a></li>
+  <li><a href="#question-5-6-points" id="toc-question-5-6-points" class="nav-link" data-scroll-target="#question-5-6-points">Question 5 (6 points)</a></li>
+  <li><a href="#question-6-2-points" id="toc-question-6-2-points" class="nav-link" data-scroll-target="#question-6-2-points">Question 6 (2 points)</a></li>
+  <li><a href="#question-7-6-points" id="toc-question-7-6-points" class="nav-link" data-scroll-target="#question-7-6-points">Question 7 (6 points)</a></li>
   </ul>
 </nav>
     </div>
@@ -239,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Problem Sets and Exams</h1>
+<h1 class="title">Problem Set 5: Fake News Consumption in the 2016 US Election</h1>
 </div>
 
 
@@ -247,12 +279,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 11, 2022</p>
-    </div>
-  </div>
   
     
   </div>
@@ -260,72 +286,147 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>For both problem sets and exams, you will end up producing two types of documents:</p>
-<ol type="1">
-<li>An <code>.Rmd</code> file (or “RMarkdown file” when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You don’t apply markup directly like in Word or Google docs, but by using various text shortcuts, like in Slack.</li>
-<li>An output <code>.pdf</code> file that contains the compiled version of the Rmd file. Usually, you might call this the write-up and it will be nicely formatted and ready for non-technical folks to read. In other classes, you might write these in Microsoft Word or Google Docs. In this class, this will be the output of compiling (or knitting, in the R lingo) the <code>.Rmd</code> file.</li>
-</ol>
-<section id="problem-set-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="problem-set-workflow">Problem set workflow</h2>
-<p>The text of the problem sets will be posted here on the course website. We will distribute templates and data for the problem sets via Github. To get started, follow these steps:</p>
-<ol type="1">
-<li>Go to the <a href="https://edstem.org/us/courses/43339/">Ed Board</a> and find the pinned thread with the GitHub Classroom links for each assignment.</li>
-<li>Click on the Github Classroom link for the assignment in question. You’ll be presented with a page that asks you to accept the assignment. Click “Accept this assignment”.</li>
-<li>Go to this new problem set repository on GitHub. Click on the green “Code” button toward the top right of the page. When you click that, a popup will appear and you can copy the URL (you can click the little clipboard icon to copy this automatically).</li>
-</ol>
-<p><img src="../files/img/assignments/github-clone.png" class="img-fluid" alt="Cloning the repo"></p>
-<ol start="4" type="1">
-<li><p>Now, switch to RStudio. Go to the menu bar and hit “File &gt; New Project”. You can then choose what type of project to start. Since we’re importing from Github, we’ll use the “Version Control” option (it’s the bottom of the list). In the next menu, choose “Git”. Now, you can paste the URL in the “Repository URL” box. Choose a set of local directories to place this project and hit “Create Project”. Because this is a <strong>private</strong> repository, you will be prompted to enter your GitHub username and password. Go ahead and do this.</p></li>
-<li><p>As you make changes to your file, make sure to commit those changes. Every commit is a point that you can always go back to if your code stops working for some reason. So doing this often will make sure that you have access to that great feature of git. At an absolute minimum, you should do this every time you complete a question, though you may want to do it more often than that. Committing often means you also don’t have to constantly create new versions of the same file because you’re afraid of making some change. Also, make sure to use informative commit messages so you know what’s changing. <strong>Important: be sure to answer the questions in the Rmd file provided by the template. This is what the autograder will look for when you submit.</strong></p></li>
-<li><p>At some point, you’ll want to push your changes back to GitHub so the teaching staff can see your work (if you need help) or so that you can submit to Gradescope.</p></li>
-</ol>
+<p>This problem set is due on <strong>November 1, 2023 at 11:59pm</strong>.</p>
+<p>You can find instructions for obtaining and submitting problem sets <a href="../assignments/problem-sets.html">here</a>.</p>
+<p>You can find the GitHub Classroom link to download the template repository on the <a href="https://edstem.org/us/courses/43339/resources">Ed Board</a></p>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>For this problem set, we will analyze data from the following article:</p>
+<p>Guess, Andrew M., Nyhan, Brendan &amp; Reifler, Jason <a href="https://doi.org/10.1038/s41562-020-0833-x">Exposure to untrustworthy websites in the 2016 US election</a>. Nature Human Behavior, Vol 4, pp.&nbsp;472–480 (2020).</p>
+<p>Guess, Nyhan, and Reifler investigate the consumption of political misinformation online using a combination of survey data matched to inidividual-level web traffic data. This data allowed the researchers to assess what characteristics are predictive of a citizen consuming untrustworthy news in the lead up to the 2016 U.S. presidential election. These untrustworthy sources included, for example, <code>occupydemocracts.com</code> on the left and <code>angrypatriotmovement.com</code> on the right. The authors found that 93% of the fact-checked articles on these sites were classified as false.</p>
+<p>We will use the data from this paper, contained in the <code>data/fake_news.csv</code> file, to explore the use of multiple regression. A description of the variables is listed below:</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 85%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>age</code></td>
+<td>Age of respondent</td>
+</tr>
+<tr class="even">
+<td><code>fn_perc</code></td>
+<td>Percent of online news consumption classified as untrustworthy (fake news)</td>
+</tr>
+<tr class="odd">
+<td><code>slant_decile</code></td>
+<td>Liberal-conservative slant of news consumption (1 = very liberal, 10 = very conservative)</td>
+</tr>
+<tr class="even">
+<td><code>female</code></td>
+<td>Gender identity of the respondent (1 = female, 0 = male)</td>
+</tr>
+<tr class="odd">
+<td><code>black</code></td>
+<td>Respondent identifies as Black (1) or not (0)</td>
+</tr>
+<tr class="even">
+<td><code>nonwhite</code></td>
+<td>Respondent identifies as non-white (1) or white (0)</td>
+</tr>
+<tr class="odd">
+<td><code>trump_support</code></td>
+<td>Respondent support Donald Trump (1) or not (0)</td>
+</tr>
+<tr class="even">
+<td><code>clinton_support</code></td>
+<td>Respondent support Hillary Clinton (1) or not (0)</td>
+</tr>
+<tr class="odd">
+<td><code>college</code></td>
+<td>Respondent has a college degree</td>
+</tr>
+<tr class="even">
+<td><code>polinterest</code></td>
+<td>4-point scale of interest in politics (1 = “hardly any interest”, 4 = “follows politics most of the time”)</td>
+</tr>
+<tr class="odd">
+<td><code>knowledge</code></td>
+<td>Political knowledge scale (0=least knowledgeable, 8=most knowledgeable)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
 </section>
-<section id="submitting-your-assignments" class="level2">
-<h2 class="anchored" data-anchor-id="submitting-your-assignments">Submitting your assignments</h2>
-<section id="step-1-submit-the-github-repository-to-gradescope" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-submit-the-github-repository-to-gradescope">Step 1: Submit the GitHub repository to Gradescope</h3>
-<p>On Gradescope, you’ll find two entries for each assignment. One will be labelled “Autograder” and the other “PDF”. Click on the Autograder entry and select the GitHub submission option. The first time you do this step, you will first need to connect your GitHub account to your Gradescope account.</p>
-<p><img src="../files/img/assignments/gradescope-github-connect.png" class="img-fluid" alt="Connect Gradescope to GitHub"></p>
-<p>Once you have connected your GitHub account, you can find the repository for the relevant problem set and the “main” branch and hit “Submit”.</p>
-<p><img src="../files/img/assignments/gradescope-submit.png" class="img-fluid" alt="Choosing repository for submission"></p>
+<section id="question-1-4-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-4-points">Question 1 (4 points)</h2>
+<p>Read the data from <code>data/fake_news.csv</code>, subset it to respondents that support either Trump or Clinton, and save it as <code>fake_news</code>.</p>
+<p>In the write up, indicate the number of respondents in the sample and the average percent of online news consumption that is fake news.</p>
+<p><strong>Rubric:</strong> 1pt for Rmd file compiling (autograder); 2pt for loading data (autograder); 1pt for reporting number of respondents and average (PDF).</p>
 </section>
-<section id="step-2-check-autograder-output" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-check-autograder-output">Step 2: Check autograder output</h3>
-<p>When you submit the repository, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You’ll see a list of test results and an overall score.</p>
-<p><img src="../files/img/assignments/autograder-results.png" class="img-fluid" alt="Autograder results"></p>
-<p>Check the messages on any questions you got wrong for hints about how to fix them. You may then resubmit the GitHub repository again once you have fixed the code and pushed your changes to GitHub. You should repeat this process as many times as needed before you get a perfect score.</p>
+<section id="question-2-6-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-6-points">Question 2 (6 points)</h2>
+<p>Create a boxplot that compares fake news consumption by which candidate the respondent supports and save the plot as <code>trump_box</code>. Your plot should look like this:</p>
+<p><img src="figures/trump_box.png" class="img-fluid"></p>
+<p>To create the x-axis variable that is nicely labeled, use <code>mutate()</code> to create a variable that is <code>"Trump supporter"</code> when <code>trump_support</code> is 1 and <code>"Clinton supporter"</code> otherwise (it does not matter what this variable is called to the autograder, but don’t overwrite your <code>trump_support</code> variable!). Be sure to use informative labels, though they do not have to match the text exactly.</p>
+<p>In the write-up, report what the plot tells us about which candidate’s supporters consume more untrustworthy news sources.</p>
+<p><strong>Rubric:</strong> 3pts for boxplot (autograder); 1pt for informative labels on plot (PDF); 2pts for written description of relationship (PDF).</p>
 </section>
-<section id="step-3-upload-pdf" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-upload-pdf">Step 3: Upload PDF</h3>
-<p>Once you are satisfied with your autograding, then you should produce your final PDF report by hitting the “Knit” button at the top of the RStudio editor. This should produce a PDF output that you can then upload to Gradescope. In Gradescope, there will be an assignment labelled “Problem Set X: PDF”. There, you will be prompted to upload your final PDF report. You’ll be asked to indicate on which page each answer is. Label the PDF with where those answers are (being sure to mark two different pages if an answer continues on two pages).</p>
+<section id="question-3-6-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-6-points">Question 3 (6 points)</h2>
+<p>Run a linear regression with fake news consumption as your outcome variable and Trump support as your predictor. Save this regression as <code>fit_1</code> and report the coefficients using a nicely formatted table with the following code (you may need to install the <code>broom</code> package to have this work):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(term, estimate) <span class="sc">|&gt;</span>  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Interpret both of these coefficients. Do not merely comment on the direction of the association (i.e., whether the slope is positive or negative). Explain what the value of the coefficients mean in terms of the units in which each variable is measured.</p>
+<p><strong>Rubric:</strong> 3pts for correct <code>lm</code> output (autograder); 1pt for coefficient table (PDF); 2pt for interpretation of coefficients (PDF).</p>
 </section>
+<section id="question-4-5-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-4-5-points">Question 4 (5 points)</h2>
+<p>You decide to investigate the results of the previous question a bit more carefully because you know that Trump supporters are probably different than Trump non-supporters in other ways. Create a scatter plot where the x-axis is the age of the respondent and the y-axis is fake news consumption. Color your points according to whether they support Trump or Clinton. That is, make the points Trump supporters one color, and make the points for Clinton supporters a different color. You plot should look like this:</p>
+<p><img src="figures/candidate_scatter.png" class="img-fluid"></p>
+<p>You should save this plot as <code>candidate_scatter</code> and to create better labels for the color of the points, use <code>mutate()</code> in a similar way to question 2.</p>
+<p>Answer these questions in the write-up: What is the relationship between age and consumption of fake news? Can you detect a relationship between age and support for Trump?</p>
+<p><strong>Rubric:</strong> 3pts for scatter plot (autograder); 2pts for written conclusions about the plots (PDF).</p>
 </section>
-<section id="checklist" class="level2">
-<h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
-<ol type="1">
-<li>Accept GitHub Classroom invite.</li>
-<li>Use RStudio to “Clone with HTTPS” this repo to your computer.</li>
-<li>Make progress editing the <code>.Rmd</code> file.
+<section id="question-5-6-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-5-6-points">Question 5 (6 points)</h2>
+<p>Run a linear regression with fake news consumption as your outcome variable and with Trump support and age as your predictors. Save the output of this regression as <code>fit_2</code> and report the coefficients using a nicely formatted table with the following code (you may need to install the <code>broom</code> package to have this work):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(term, estimate) <span class="sc">|&gt;</span>  </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the main text, interpret the coefficients on the two predictors, ignoring the intercept for now (you will interpret the intercept in the next question). Explain what each coefficient represents in terms of the units of the relevant variables.</p>
+<p><strong>Rubric:</strong> 3pts for correct <code>lm</code> output (autograder); 1pt for the coefficient table (PDF); 2pts for correct interpretation of the coefficients (PDF).</p>
+</section>
+<section id="question-6-2-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-6-2-points">Question 6 (2 points)</h2>
+<p>Now interpret the intercept from the regression model with two predictors. Is this intercept a substantively important or interesting quantity? Why or why not?</p>
+<p><strong>Rubric:</strong> 1pt for correct interpretation (PDF); 1pt for argument about substantive importance (PDF).</p>
+</section>
+<section id="question-7-6-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-7-6-points">Question 7 (6 points)</h2>
+<p>Now we’ll see how consumption of misinformation varies by the slant of the media diet. Create a new variable called <code>slant_group</code> that takes on the following values:</p>
 <ul>
-<li>As you do, commit and push to GitHub regularly.</li>
-<li>You can check your answers with the autograder at any point.</li>
-<li>Make sure to <strong>name your code chunks</strong>.</li>
-<li>Add the names of anyone you discuss the problem set with on your write-up.</li>
-</ul></li>
-<li>Push final version to GitHub.</li>
-<li>Submit the GitHub repository to the Gradescope autograder.</li>
-<li>Upload final <code>.pdf</code> file to Gradescope.</li>
-</ol>
-</section>
-<section id="writing-good-code" class="level2">
-<h2 class="anchored" data-anchor-id="writing-good-code">Writing good code</h2>
-<p>You’ll be writing code to do the analyses in this class. Code, like any language, provides many different ways of saying the same thing. One good practice of coding is to have what’s called good coding style. This refers to how you format the code that you so that it is (a) easy for you and others to read, and (b) less prone to making mistakes. Here are some general guidelines for writing R code and Rmd file.</p>
-<ul>
-<li>When writing R code and unless we tell you otherwise, follow the <a href="https://style.tidyverse.org/">tidyverse style guide</a>. For this class, the relevant parts of this document are the first couple of chapters. If you are ever uncertain about how to name something or how to write some code, see this document and it will likely help you quite a bit.</li>
-<li>Make sure the code chunks in the Rmd file have blank lines above and below them. If you don’t have this, it can sometimes cause problems with compilation.</li>
-<li>Try to keep your lines of code shorter than 80 characters since this makes reading code <strong>much</strong> easier. Usually this means writing some function arguments on a different line. See the style guide (section 2.5) for more on this.</li>
-<li>Include comments in your code and format them nicely as in <a href="https://style.tidyverse.org/functions.html#comments-1">section 3.4</a> of the style guide. These comments should explain why you wrote the code you wrote and any notes you had about how you came to this solution. This might include, say, other approaches you tried but didn’t work or approaches you might want to try if you ever revisit this. Look at our code and examples to get a sense of how to use comments. In RStudio, you can nicely format a comment by hitting Control-Shift-\.</li>
+<li><code>"Liberal"</code> when the <code>slant_decile</code> is less than or equal to 4</li>
+<li><code>"Moderate"</code> when <code>slant_decile</code> is 5 or 6</li>
+<li><code>"Conservative"</code> when <code>slant_decile</code> is greater than or equal to 7</li>
 </ul>
+<p>Run a regression of the untrustworthy news consumption percentage on this newly created variable. Save the output of this regression as <code>fit_3</code> and report the coefficients using a nicely formatted table with the following code (you may need to install the <code>broom</code> package to have this work):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fit_3 <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(term, estimate) <span class="sc">|&gt;</span>  </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the main text, substantively interpret each coefficient in the regression, including the intercept. From this regression, indicate which media diet slant group has the highest consumption of untrustworthy news sources.</p>
+<p><strong>Rubric:</strong> 3pts for correct <code>lm</code> output (autograder); 1pt for the coefficient table (PDF); 2pts for correct interpretation of the coefficients and identifying the highest group (PDF).</p>
 
 
 </section>
