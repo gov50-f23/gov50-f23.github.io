@@ -9,6 +9,13 @@ date: 2023-10-23
 - For model fit, see QSS 4.2.6 or IMS 7.2.5
 - For multiple regression, IMS 8.1-8.3, MD 6.1-6.2, or QSS 4.3.1-4.3.2
 
+## Packages
+
+- In Thursday's lecture, we'll use the `modelr` package which you can install with the following command:
+
+```{r eval = FALSE}
+install.pacakges("modelr")
+```
 
 ## Slides and Code
 
@@ -16,6 +23,6 @@ date: 2023-10-23
   - [PDF of slides as I present them](/slides/15_regression_ii.pdf)
   - [PDF of handout version of slides](/slides/15_regression_ii_handout.pdf) (no incremental slides)
 
-<!-- - Thursday (10/20) lecture: Multiple regression and categorical independent variables -->
-<!--   - [PDF of slides as I present them](/slides/15_multiple_regression.pdf) -->
-<!--   - [PDF of handout version of slides](/slides/15_multiple_regression_handout.pdf) (no incremental slides) -->
+- Thursday (10/26) lecture: Multiple regression and categorical independent variables
+  - [PDF of slides as I present them](/slides/16_multiple_regression.pdf)
+  - [PDF of handout version of slides](/slides/16_multiple_regression_handout.pdf) (no incremental slides)
