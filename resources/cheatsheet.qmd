@@ -1099,3 +1099,148 @@ ggplot(aes(x = pid3, y = prop, fill = pres_vote)) +
   geom_col(position = "dodge") +
   scale_fill_manual(values = c(Biden = "steelblue1", Trump = "indianred1"))
 ```
+
+## Bivariate Relationships and Joins (Week 6)
+
+### Calculating a correlation
+
+You can calcuate a correlation between two variables using the `cor` function:
+
+
+```{r}
+cor(news$national_politics, news$local_politics)
+```
+
+You can also use the pipe and summarize:
+
+```{r}
+news |>
+  summarize(cor(national_politics, local_politics))
+```
+
+When there are missing values in one of the variables, the correlation will be `NA`:
+
+```{r}
+cor(covid_votes$one_dose_5plus_pct, covid_votes$dem_pct_2020)
+```
+
+In that case, you can use the argument `use = "pairwise"` to remove the observations with missing values:
+
+```{r}
+cor(covid_votes$one_dose_5plus_pct, covid_votes$dem_pct_2020,
+    use = "pairwise")
+```
+
+
+### Writing a function
+
+You can create a function with the `function()` function (oof). The arguments in the `function()` call will become the arguments of your function. For example, if we want to create a z-score function that takes in a vector and coverts it to a z-score, we can create a function for this:
+
+```{r}
+z_score <- function(x) {
+  (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE)
+}
+```
+
+Here, `x` is the argument that takes in the vector and it is used inside the function body to perform the task. Let's call the function:
+
+```{r}
+z_score(x = c(1, 2, 3, 4, 5))
+```
+
+What happens here is that R runs the code inside the function definition, replacing `x` with the vector we pass to `x`, which in this case is `c(1, 2, 3, 4, 5)`. 
+
+
+### Pivoting longer
+
+
+We sometimes have data that has data in the column names that we would actually like to be in the data frame itself. When this happens, we need the opposite of `pivot_wider` which is called `pivot_longer`. For example, the `mortality` data has the years in the column names, but we want the rows to be country-years:
+
+
+```{r}
+mortality
+```
+
+We can use `pivot_longer` to move this information. To do so, we need to pass the variables we want to pivot to the `cols` argument, the name of the new variable to hold the colum names into `names_to`, and the name of the column to hold the pivoted data in `values_to`. 
+
+
+```{r}
+mortality_long <- mortality |>
+  select(-indicator) |>  
+  pivot_longer(
+    cols = `1972`:`2020`,
+    names_to = "year",
+    values_to = "child_mortality"
+  ) |>
+  mutate(year = as.integer(year))
+mortality_long
+```
+
+Here we mutate the years to be integers because they are characters when initially pivoted. 
+
+
+### Pivoting longer with a column name prefix
+
+Sometimes the column names have a prefix in front of the data that we want, like in the `spotify` data where the week columns are all `weekX` where `X` is the week number. We'd like to extract `X`:
+
+```{r}
+spotify
+```
+
+
+
+We can use the `names_prefix` arugment to do this:
+
+
+```{r}
+spotify |>
+  pivot_longer(
+    cols = c(-`Track Name`, -Artist),
+    names_to = "week_of_year",
+    values_to = "rank",
+    names_prefix = "week"
+  ) |>
+  mutate(
+    week_of_year = as.integer(week_of_year)
+  )
+```
+
+
+### Merging one data frame into another (joins)
+
+We can take the variables from one data frame and put them into another data frame using the various join functions. If we think of the primary data frame as A and the donor data frame as B, then if we want to keep the rows of A the same and just import the columns of B, then we can use the `left_join`
+
+```{r}
+gapminder |>
+  left_join(mortality_long)
+```
+
+By default this keeps all rows of A and any rows in A that do not appear in B give missing values for the newly imported columns of B. If we want only the rows that are in both A and B, we can use `inner_join`
+
+
+```{r}
+gapminder |>
+  inner_join(mortality_long)
+```
+ 
+### Specifying the key variables for a join
+
+By default, the join functions will merge data frames A and B based on the columns that have the same name in both data frames. This sometimes isn't what we want. For example, using the `nycflights13` package, we might want to merge the `flights` and `planes` data frames. Both of these data sets have a `year` variable but they mean different things in the two data frames (the year of the flights vs the year the plane was manufactured):
+
+```{r}
+library(nycflights13)
+flights
+
+planes
+```
+
+In this case, we want to specify what variable we want to do the merge with. Here, we want to merge based on `tailnum`:
+
+
+```{r}
+flights |>
+  left_join(planes, by = "tailnum") |>
+  select(year.x, tailnum, origin, dest, carrier, type, engine)
+```
+
+Because both data sets had a `year` variable, the join function renames them to `year.x` in the first data frame and `year.y` for the second. We could rename them before merging to solve this problem. 
