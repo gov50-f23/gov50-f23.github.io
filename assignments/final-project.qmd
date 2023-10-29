@@ -27,19 +27,28 @@ You should change the metadata on your article and write a few sentences in the 
 
 The biggest part of the final project in Gov 50 is finding a data source. Here are some other resources and repositories with data sets:
 
-- [List of links to political science data sets](https://github.com/erikgahner/PolData) 
+
+- [List of links to political science datasets](https://github.com/erikgahner/PolData) 
+- [Another list of political science datasets](https://docs.google.com/spreadsheets/d/1C0CKBHlmfVYK2u-k-x_PMER7VGZSBZaf/edit#gid=2044626482)
+- [DataIsPlural database of datasets](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0)
 - [Harvard Dataverse - Social Science](https://dataverse.harvard.edu/dataverse/harvard?q=&fq0=subject_ss%3A%22Social+Sciences%22&types=dataverses%3Adatasets&sort=dateSort&order=desc)
 - [Data.gov - Data sets released by the US government](https://catalog.data.gov/dataset) 
 - [Data published by FiveThirtyEight](https://data.fivethirtyeight.com/) 
+- [Open datasets on climate](https://github.com/KKulma/climate-change-data#open-data)
 - [Harvard OpenData Group Directory](https://github.com/HarvardOpenData/harvard-data)
 - [Harvard Program on Survey Research Data Collections](https://psr.iq.harvard.edu/book/survey-data-collections)
 - [Roper Center : Public Opinion in the US](https://psr.iq.harvard.edu/roper_center_public_opinion_research)
 - [Pew Research Center Data Sets](https://www.pewresearch.org/download-datasets/)
+- [Kaggle](https://www.kaggle.com/datasets) - Platform for data science competitions with tons of data sets
+- [Afrobarometer](https://www.afrobarometer.org) - Multicountry survey of African residents 
+- [Latinobarometer](https://www.latinobarometro.org/lat.jsp) - Multicountry survey of Latin American residents 
+- [American National Election Survey](https://electionstudies.org)
+- [Cooperative Elections Survey](https://cces.gov.harvard.edu)
 
 If you find a data set that you think is interesting, but you have problems loading the data set into R, please contact the course staff. R can load almost anything, so we can likely help you.
 
 
-We also have the following specific datasets available to use:
+We also have the following specific datasets available to use (you will need to merge these with other data for the purposes of the final project):
 
 - American National Election Survey, 2016: [Data](https://www.dropbox.com/s/qf8mnhbpckx469u/anes-2016.csv?dl=0) [Codebook](https://www.dropbox.com/s/n5ogow0vdcbmrik/anes_timeseries_2016_userguidecodebook.pdf?dl=0)
 - Civil Wars: [Data](https://www.dropbox.com/s/gde30hr9yokqku5/civilwar.csv?dl=0) [Codebook](https://www.dropbox.com/s/m7hnd64g2z38plm/civilwar-codebook.txt?dl=0)
