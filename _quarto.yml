@@ -55,8 +55,8 @@ website:
               file: materials/07_prediction.qmd
             - text: "8: More Regression"
               file: materials/08_regression.qmd
-            # - text: "9: Sampling"
-            #   file: materials/09_sampling.qmd
+            - text: "9: Sampling"
+              file: materials/09_sampling.qmd
             # - text: "10: Bootstrap and Confidence Intervals"
             #   file: materials/10_bootstrap.qmd
             # - text: "11: Hypothesis Testing"

@@ -29,9 +29,9 @@
 8,2022-10-24,,Regression and model fit,,MD Ch 6.1-6.2 or QSS 4.2.6-4.3.2,"materials/08_regression",,
 8,2022-10-26,,Multiple regression and interpretation,,,"materials/08_regression",,
 9,2022-10-30,,Tutorial 7,11:59 PM,MD Ch 7,,https://mblackwell.shinyapps.io/07-regression/,
-9,2022-10-31,,Sampling,,,,,
+9,2022-10-31,,Sampling,,,"materials/09_sampling",,
 9,2022-11-01,,Problem Set 5,11:59 PM,,,,/assignments/05_hw_regression
-9,2022-11-02,,Sampling distributions,,,,,
+9,2022-11-02,,Sampling distributions,,,"materials/09_sampling",,
 9,2022-11-03,,Final Project Milestone 3,11:59 PM,,,,assignments/final-project
 10,2022-11-06,,Tutorial 8,11:59 PM,MD Ch 8/IMS Ch 12,,https://mblackwell.shinyapps.io/08-bootstrap/,
 10,2022-11-07,,The bootstrap and confidence intervals,,,,,

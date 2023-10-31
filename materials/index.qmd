@@ -23,3 +23,4 @@ Each class session has a set of required readings that you should complete ***be
 14. [Regression](/slides/14_regression_handout.pdf)
 15. [Model Fit](/slides/15_regression_ii_handout.pdf)
 15. [Multiple Regression and Categorical Predictors](/slides/16_multiple_regression_handout.pdf)
+15. [Sampling](/slides/17_sampling_handout.pdf)
