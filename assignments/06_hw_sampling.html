@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gov 50 - Problem Set 5: Fake News Consumption in the 2016 US Election</title>
+<title>Gov 50 - Problem Set 6: Sampling from a Voter File</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/00-problem-set.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/05_hw_regression.html">Problem Set 5</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/00-problem-set.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/06_hw_sampling.html">Problem Set 6</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -239,13 +239,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/05_hw_regression.html" class="sidebar-item-text sidebar-link active">
+  <a href="../assignments/05_hw_regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/06_hw_sampling.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/06_hw_sampling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Problem Set 6</span></a>
   </div>
 </li>
@@ -262,13 +262,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
-  <li><a href="#question-1-4-points" id="toc-question-1-4-points" class="nav-link" data-scroll-target="#question-1-4-points">Question 1 (4 points)</a></li>
-  <li><a href="#question-2-6-points" id="toc-question-2-6-points" class="nav-link" data-scroll-target="#question-2-6-points">Question 2 (6 points)</a></li>
-  <li><a href="#question-3-6-points" id="toc-question-3-6-points" class="nav-link" data-scroll-target="#question-3-6-points">Question 3 (6 points)</a></li>
-  <li><a href="#question-4-5-points" id="toc-question-4-5-points" class="nav-link" data-scroll-target="#question-4-5-points">Question 4 (5 points)</a></li>
-  <li><a href="#question-5-6-points" id="toc-question-5-6-points" class="nav-link" data-scroll-target="#question-5-6-points">Question 5 (6 points)</a></li>
-  <li><a href="#question-6-2-points" id="toc-question-6-2-points" class="nav-link" data-scroll-target="#question-6-2-points">Question 6 (2 points)</a></li>
-  <li><a href="#question-7-6-points" id="toc-question-7-6-points" class="nav-link" data-scroll-target="#question-7-6-points">Question 7 (6 points)</a></li>
+  <li><a href="#question-1-6-points" id="toc-question-1-6-points" class="nav-link" data-scroll-target="#question-1-6-points">Question 1 (6 points)</a></li>
+  <li><a href="#question-2-4-points" id="toc-question-2-4-points" class="nav-link" data-scroll-target="#question-2-4-points">Question 2 (4 points)</a></li>
+  <li><a href="#question-3-5-points" id="toc-question-3-5-points" class="nav-link" data-scroll-target="#question-3-5-points">Question 3 (5 points)</a></li>
+  <li><a href="#question-4-8-points" id="toc-question-4-8-points" class="nav-link" data-scroll-target="#question-4-8-points">Question 4 (8 points)</a></li>
+  <li><a href="#question-5-7-points" id="toc-question-5-7-points" class="nav-link" data-scroll-target="#question-5-7-points">Question 5 (7 points)</a></li>
+  <li><a href="#question-6-5-points" id="toc-question-6-5-points" class="nav-link" data-scroll-target="#question-6-5-points">Question 6 (5 points)</a></li>
   </ul>
 </nav>
     </div>
@@ -277,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Problem Set 5: Fake News Consumption in the 2016 US Election</h1>
+<h1 class="title">Problem Set 6: Sampling from a Voter File</h1>
 </div>
 
 
@@ -292,19 +291,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>This problem set is due on <strong>November 1, 2023 at 11:59pm</strong>.</p>
+<p>This problem set is due on <strong>November 8, 2023 at 11:59pm</strong>.</p>
 <p>You can find instructions for obtaining and submitting problem sets <a href="../assignments/problem-sets.html">here</a>.</p>
 <p>You can find the GitHub Classroom link to download the template repository on the <a href="https://edstem.org/us/courses/43339/resources">Ed Board</a></p>
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>For this problem set, we will analyze data from the following article:</p>
-<p>Guess, Andrew M., Nyhan, Brendan &amp; Reifler, Jason <a href="https://doi.org/10.1038/s41562-020-0833-x">Exposure to untrustworthy websites in the 2016 US election</a>. Nature Human Behavior, Vol 4, pp.&nbsp;472–480 (2020).</p>
-<p>Guess, Nyhan, and Reifler investigate the consumption of political misinformation online using a combination of survey data matched to inidividual-level web traffic data. This data allowed the researchers to assess what characteristics are predictive of a citizen consuming untrustworthy news in the lead up to the 2016 U.S. presidential election. These untrustworthy sources included, for example, <code>occupydemocracts.com</code> on the left and <code>angrypatriotmovement.com</code> on the right. The authors found that 93% of the fact-checked articles on these sites were classified as false.</p>
-<p>We will use the data from this paper, contained in the <code>data/fake_news.csv</code> file, to explore the use of multiple regression. A description of the variables is listed below:</p>
+<p>In this exercise, we will focus on sampling and sampling distributions when we have access to an entire census for a given population. In this case, the <code>data/durham.csv</code> file contains anonymized data on all registered voters in Durham County, NC that were registered to vote on election day of the 2020 presidential election. The variables in this dataset are:</p>
 <table class="table">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 85%">
+<col style="width: 13%">
+<col style="width: 86%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -314,125 +310,156 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
+<td><code>ncid</code></td>
+<td>unique voter identification number</td>
+</tr>
+<tr class="even">
+<td><code>reg_year</code></td>
+<td>did person vote (1) or not (0) in 1994?</td>
+</tr>
+<tr class="odd">
 <td><code>age</code></td>
-<td>Age of respondent</td>
+<td>age of registered voter</td>
 </tr>
 <tr class="even">
-<td><code>fn_perc</code></td>
-<td>Percent of online news consumption classified as untrustworthy (fake news)</td>
+<td><code>gender</code></td>
+<td>voter gender identity (<code>"F"</code> = Female, <code>"M"</code> = Male, <code>"U"</code> = Undeclared)</td>
 </tr>
 <tr class="odd">
-<td><code>slant_decile</code></td>
-<td>Liberal-conservative slant of news consumption (1 = very liberal, 10 = very conservative)</td>
+<td><code>race</code></td>
+<td>voter racial identity (see table below)</td>
 </tr>
 <tr class="even">
-<td><code>female</code></td>
-<td>Gender identity of the respondent (1 = female, 0 = male)</td>
+<td><code>latino</code></td>
+<td>voter identifies as Hispanic or Latino (<code>"HL"</code>), does not (<code>"NL"</code>), or undesignated (<code>"UN"</code>)</td>
 </tr>
 <tr class="odd">
-<td><code>black</code></td>
-<td>Respondent identifies as Black (1) or not (0)</td>
+<td><code>party</code></td>
+<td>party registration (<code>"DEM"</code> = Democrat, <code>"Rep"</code> = Republican, <code>"LIB"</code> = Libertarian, <code>"GRE"</code> = Green, <code>"UNA"</code> = Unaffiliated)</td>
 </tr>
 <tr class="even">
-<td><code>nonwhite</code></td>
-<td>Respondent identifies as non-white (1) or white (0)</td>
+<td><code>drivers_lic</code></td>
+<td>voter has drivers license (1) or not (0)?</td>
+</tr>
+</tbody>
+</table>
+<p>North Carolina provides the voter history data in a separate file with a row for each voter who actually casts a ballot in a given election. In the <code>data/vote_history.csv</code> file is a row for every voter that cast a ballot in the 2020 general election. The variables in this dataset are:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ncid</code></td>
+<td>unique voter identification number</td>
+</tr>
+<tr class="even">
+<td><code>vote_method_2020</code></td>
+<td>method of voting in 2020 general election</td>
+</tr>
+</tbody>
+</table>
+<p>For the purposed of this exercise, we will treat the voter list from <code>durhman.csv</code> as the population of interest. Doing so is an increasingly common approach for polling, where pollsters are now using the voter file as a sampling frame to conduct their polls. We will repeated sample from this population to better understand sampling uncertainty.</p>
+<p><strong>Note:</strong> please follow the directions carefully about setting the seed for the sampling based questions.</p>
+<p>In the Durham data, the racial category codes are:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Race</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>ASIAN</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>BLACK or AFRICAN AMERICAN</td>
 </tr>
 <tr class="odd">
-<td><code>trump_support</code></td>
-<td>Respondent support Donald Trump (1) or not (0)</td>
+<td>I</td>
+<td>AMERICAN INDIAN or ALASKA NATIVE</td>
 </tr>
 <tr class="even">
-<td><code>clinton_support</code></td>
-<td>Respondent support Hillary Clinton (1) or not (0)</td>
+<td>M</td>
+<td>TWO or MORE RACES</td>
 </tr>
 <tr class="odd">
-<td><code>college</code></td>
-<td>Respondent has a college degree</td>
+<td>O</td>
+<td>OTHER</td>
 </tr>
 <tr class="even">
-<td><code>polinterest</code></td>
-<td>4-point scale of interest in politics (1 = “hardly any interest”, 4 = “follows politics most of the time”)</td>
+<td>P</td>
+<td>NATIVE HAWAIIAN or PACIFIC ISLANDER</td>
 </tr>
 <tr class="odd">
-<td><code>knowledge</code></td>
-<td>Political knowledge scale (0=least knowledgeable, 8=most knowledgeable)</td>
+<td>U</td>
+<td>UNDESIGNATED</td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
+<td>W</td>
+<td>WHITE</td>
 </tr>
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="question-1-4-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-1-4-points">Question 1 (4 points)</h2>
-<p>Read the data from <code>data/fake_news.csv</code>, subset it to respondents that support either Trump or Clinton, and save it as <code>fake_news</code>.</p>
-<p>In the write up, indicate the number of respondents in the sample and the average percent of online news consumption that is fake news.</p>
-<p><strong>Rubric:</strong> 1pt for Rmd file compiling (autograder); 2pt for loading data (autograder); 1pt for reporting number of respondents and average (PDF).</p>
+<section id="question-1-6-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-6-points">Question 1 (6 points)</h2>
+<p>Load the voter list data (<code>data/durham.csv</code>) into R using <code>read_csv</code> and save the data as <code>durham</code> and use the same function to load in the voter history data (<code>data/vote_history.csv</code>) as <code>vote_history</code>. Use <code>left_join</code> to merge the voter history data into the voter list data so that all rows of the voter list remain. Use the <code>ncid</code> variable to join the data sets and save this merged data as <code>durham</code>.</p>
+<p>Any registered voter who did not turn out in the 2020 general election will not appear in the <code>vote_history</code> data so their <code>vote_method_2020</code> variable will be missing in the merged data. Create a new variable called <code>vote_gen_2020</code> that is 1 if the voter turned out and 0 otherwise (the <code>is.na()</code> function may be helpful).</p>
+<p>In the write-up, state how many units are in the population (that is, how many rows are in the <code>durham</code> data) and the proportion of registered voters that actually voted in the 2020 elections.</p>
+<p><strong>Rubric:</strong> 1pt for Rmd file compiling (autograder); 3pt for data loaded and merged (autograder), 1pt for creation of the <code>vote_gen_2020</code> variable (autograder); 1pt for number of rows and turnout proportion reported (PDF).</p>
 </section>
-<section id="question-2-6-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-2-6-points">Question 2 (6 points)</h2>
-<p>Create a boxplot that compares fake news consumption by which candidate the respondent supports and save the plot as <code>trump_box</code>. Your plot should look like this:</p>
-<p><img src="figures/trump_box.png" class="img-fluid"></p>
-<p>To create the x-axis variable that is nicely labeled, use <code>mutate()</code> to create a variable that is <code>"Trump supporter"</code> when <code>trump_support</code> is 1 and <code>"Clinton supporter"</code> otherwise (it does not matter what this variable is called to the autograder, but don’t overwrite your <code>trump_support</code> variable!). Be sure to use informative labels, though they do not have to match the text exactly.</p>
-<p>In the write-up, report what the plot tells us about which candidate’s supporters consume more untrustworthy news sources.</p>
-<p><strong>Rubric:</strong> 3pts for boxplot (autograder); 1pt for informative labels on plot (PDF); 2pts for written description of relationship (PDF).</p>
+<section id="question-2-4-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-4-points">Question 2 (4 points)</h2>
+<p>Create a density histogram of age with a bin width of 1 and save this plot as <code>age_hist</code> (use the aesthetic mapping <code>y = after_stat(density)</code> in to accomplish this). Create a barplot for turnout (<code>vote_gen_2020</code>) with the proportion on the y-axis (use the aesthetic mapping <code>y = after_stat(prop)</code> in <code>geom_barplot</code> to achieve this). For a slightly nicer plot, use the <code>width = 1</code> argument. Make sure both of these plots are shown in the PDF.</p>
+<p><strong>Rubric:</strong> 2pts for <code>age_hist</code> (autograder); 2pts for <code>turnout_hist</code> (autograder).</p>
 </section>
-<section id="question-3-6-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-3-6-points">Question 3 (6 points)</h2>
-<p>Run a linear regression with fake news consumption as your outcome variable and Trump support as your predictor. Save this regression as <code>fit_1</code> and report the coefficients using a nicely formatted table with the following code (you may need to install the <code>broom</code> package to have this work):</p>
+<section id="question-3-5-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-5-points">Question 3 (5 points)</h2>
+<p>Use <code>summarize()</code> to calculate the population mean and standard deviation of <code>age</code> and <code>vote_gen_2020</code> (that is the mean and SD of these variables in the <code>durham</code> data) and save the resulting tibble as <code>pop_parameters</code> with the tibble output looking like:</p>
+<pre><code># A tibble: 1 × 4
+  age_pop_mean age_pop_sd turnout_pop_prop turnout_pop_sd
+         &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;          &lt;dbl&gt;
+1         XX.X       XX.X            X.XXX          X.XXX</code></pre>
+<p>Make sure that the column names are the same for the autograder. (<strong>Hint:</strong> you can summarize multiple variables in the same call to <code>summarize</code>.) Use <code>knitr::kable()</code> to present the values in nicely formatted table with <code>digits = 2</code> to create nicely rounded numbers and informative column names (they may need to be abbreviated to fit on the page).</p>
+<p><strong>Rubric:</strong> 4pts for correct <code>pop_parameters</code> tibble (autograder); 1pts for nicely formatted table (PDF).</p>
+</section>
+<section id="question-4-8-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-4-8-points">Question 4 (8 points)</h2>
+<p>In the first line of the code chunk for this question use the following code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(term, estimate) <span class="sc">|&gt;</span>  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">02138</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Interpret both of these coefficients. Do not merely comment on the direction of the association (i.e., whether the slope is positive or negative). Explain what the value of the coefficients mean in terms of the units in which each variable is measured.</p>
-<p><strong>Rubric:</strong> 3pts for correct <code>lm</code> output (autograder); 1pt for coefficient table (PDF); 2pt for interpretation of coefficients (PDF).</p>
+<p>Then use <code>rep_slice_sample()</code> to take 1,000 samples of size 200 from <code>durham</code> and calculate the sample mean of <code>age</code> and the sample mean/proportion of turnout for each of these samples. Save these as variables named <code>age_mean</code> and <code>turnout_prop</code> and save the resulting tibble as <code>samples_n200</code>.</p>
+<p>Create a density histogram of the age means and with a bin width of 1 and save this as <code>age_mean_hist</code> (use a bin width of 0.5). Create a density histogram of the turnout proportions and save this as <code>turnout_prop_hist</code> (use a bin width of 0.005) (<strong>NOTE: this is not a bar plot like in Question 2</strong>). Make sure both of these plots are shown in the PDF and that they have informative labels.</p>
+<p>In the write-up, compare the sampling distribution of the sample mean and sample proportion here to the population distributions from question 2. Are the shapes of the sampling distributions similar or different to the population distributions? If different, how are they different?</p>
+<p><strong>Rubric:</strong> 2pts for correct <code>sample_n200</code> output (autograder); 2pts for correct <code>age_mean_hist</code> (autograder); 2pts for correct <code>turnout_prop_hist</code> (autograder); 1pt informative labels (PDF); 1pt comparison to population distributions (PDF).</p>
 </section>
-<section id="question-4-5-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-4-5-points">Question 4 (5 points)</h2>
-<p>You decide to investigate the results of the previous question a bit more carefully because you know that Trump supporters are probably different than Trump non-supporters in other ways. Create a scatter plot where the x-axis is the age of the respondent and the y-axis is fake news consumption. Color your points according to whether they support Trump or Clinton. That is, make the points Trump supporters one color, and make the points for Clinton supporters a different color. You plot should look like this:</p>
-<p><img src="figures/candidate_scatter.png" class="img-fluid"></p>
-<p>You should save this plot as <code>candidate_scatter</code> and to create better labels for the color of the points, use <code>mutate()</code> in a similar way to question 2.</p>
-<p>Answer these questions in the write-up: What is the relationship between age and consumption of fake news? Can you detect a relationship between age and support for Trump?</p>
-<p><strong>Rubric:</strong> 3pts for scatter plot (autograder); 2pts for written conclusions about the plots (PDF).</p>
+<section id="question-5-7-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-5-7-points">Question 5 (7 points)</h2>
+<p>Use the <code>summarize()</code> function on <code>samples_n200</code> to calculate the average (named <code>ev_age</code> and <code>ev_turnout</code>) and standard deviation (named <code>se_age</code> and <code>se_turnout</code>) of each sample mean/proportion across the repeated samples. Save this tibble as <code>samp_dist_summary</code> and it should look like this:</p>
+<pre><code># A tibble: 1 × 4
+  ev_age se_age ev_turnout se_turnout
+   &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1   X.XX   X.XX      X.XXX      X.XXX</code></pre>
+<p>Make sure that the column names are the same for the autograder. Use <code>knitr::kable()</code> to present the values in nicely formatted table with <code>digits = 2</code> to create nicely rounded numbers.</p>
+<p>Compare the mean and SD of these sampling distributions to the population means and SDs from the previous question. Are these distributions centered on the same value? Which has more spread, the population distribution of age/turnout or the sampling distributions of their means?</p>
+<p><strong>Rubric</strong>: 4pts for correct <code>samp_dist_summary</code> tibble (autograder); 1pt for nicely formatted table (PDF); 2pts for discussion (PDF).</p>
 </section>
-<section id="question-5-6-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-5-6-points">Question 5 (6 points)</h2>
-<p>Run a linear regression with fake news consumption as your outcome variable and with Trump support and age as your predictors. Save the output of this regression as <code>fit_2</code> and report the coefficients using a nicely formatted table with the following code (you may need to install the <code>broom</code> package to have this work):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(term, estimate) <span class="sc">|&gt;</span>  </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>In the main text, interpret the coefficients on the two predictors, ignoring the intercept for now (you will interpret the intercept in the next question). Explain what each coefficient represents in terms of the units of the relevant variables.</p>
-<p><strong>Rubric:</strong> 3pts for correct <code>lm</code> output (autograder); 1pt for the coefficient table (PDF); 2pts for correct interpretation of the coefficients (PDF).</p>
-</section>
-<section id="question-6-2-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-6-2-points">Question 6 (2 points)</h2>
-<p>Now interpret the intercept from the regression model with two predictors. Is this intercept a substantively important or interesting quantity? Why or why not?</p>
-<p><strong>Rubric:</strong> 1pt for correct interpretation (PDF); 1pt for argument about substantive importance (PDF).</p>
-</section>
-<section id="question-7-6-points" class="level2">
-<h2 class="anchored" data-anchor-id="question-7-6-points">Question 7 (6 points)</h2>
-<p>Now we’ll see how consumption of misinformation varies by the slant of the media diet. Create a new variable called <code>slant_group</code> that takes on the following values:</p>
-<ul>
-<li><code>"Liberal"</code> when the <code>slant_decile</code> is less than or equal to 4</li>
-<li><code>"Moderate"</code> when <code>slant_decile</code> is 5 or 6</li>
-<li><code>"Conservative"</code> when <code>slant_decile</code> is greater than or equal to 7</li>
-</ul>
-<p>Run a regression of the untrustworthy news consumption percentage on this newly created variable. Save the output of this regression as <code>fit_3</code> and report the coefficients using a nicely formatted table with the following code (you may need to install the <code>broom</code> package to have this work):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fit_3 <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(term, estimate) <span class="sc">|&gt;</span>  </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>In the main text, substantively interpret each coefficient in the regression, including the intercept. From this regression, indicate which media diet slant group has the highest consumption of untrustworthy news sources.</p>
-<p><strong>Rubric:</strong> 3pts for correct <code>lm</code> output (autograder); 1pt for the coefficient table (PDF); 2pts for correct interpretation of the coefficients and identifying the highest group (PDF).</p>
+<section id="question-6-5-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-6-5-points">Question 6 (5 points)</h2>
+<p>Now suppose we received a bad voter file that only contained voters under the age of 30 at the time of the 2020 election. Set the seed using <code>set.seed(02138)</code> and repeat the replicate sampling from Question 3 to take 1,000 samples of size 200 from <code>durham</code> after removing voters 30 and over. Calculate the sample proportion of turnout for each of these samples. Save this as a variable named <code>turnout_prop</code> and save the resulting tibble as <code>young_samples_n200</code>.</p>
+<p>Create a density histogram of the turnout proportions with informative labels and add a vertical line at the true population average turnout (of all ages). Save this plot as <code>young_turnout_prop_hist</code>.</p>
+<p>Does the sampling distribution of turnout in these samples appear biased or unbiased for the population average turnout? Explain why based on the sampling process.</p>
+<p><strong>Rubric:</strong> 2pts for correct <code>young_samples_n200</code> tibble (autograder); 1pt for correctly identifying biased/unbiased (PDF); 2pt explaining bias/unbiasedness (PDF).</p>
 
 
 </section>
