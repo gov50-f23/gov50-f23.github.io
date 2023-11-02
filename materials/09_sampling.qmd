@@ -34,6 +34,6 @@ remotes::install_github("mattblackwell/gov50data")
   - [PDF of slides as I present them](/slides/17_sampling.pdf)
   - [PDF of handout version of slides](/slides/17_sampling_handout.pdf) (no incremental slides)
 
-<!-- - Thursday (10/27) lecture: Sampling distributions -->
-<!--   - [PDF of slides as I present them](/slides/17_sampling_dist.pdf) -->
-<!--   - [PDF of handout version of slides](/slides/17_sampling_dist_handout.pdf) (no incremental slides) -->
+- Thursday (11/2) lecture: Sampling distributions
+  - [PDF of slides as I present them](/slides/18_sampling_dist.pdf)
+  - [PDF of handout version of slides](/slides/18_sampling_dist_handout.pdf) (no incremental slides)
