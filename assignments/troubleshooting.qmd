@@ -65,3 +65,11 @@ Second, you might check the website in a second browser or incognito window. Som
 
 
 
+## Missing images and figures in final project website
+
+
+If you are missing the figures on your final project website, but you saw them when you knitted on your computer, you probably need to stage, commit, and push the output of your knitting to GitHub. In particular, you should see a bunch of files in your Git tab:
+
+![](/files/img/distill-img-files.png)
+
+You need to stage all of those, commit the changes, and push. Make sure that you do not stage any large data files by accident. 
