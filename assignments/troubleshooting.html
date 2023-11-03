@@ -133,6 +133,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#errors-pushing-to-github" id="toc-errors-pushing-to-github" class="nav-link" data-scroll-target="#errors-pushing-to-github">Errors pushing to GitHub</a></li>
   <li><a href="#files-larger-than-100-mb" id="toc-files-larger-than-100-mb" class="nav-link" data-scroll-target="#files-larger-than-100-mb">Files larger than 100 MB</a></li>
   <li><a href="#final-project-website-is-not-updating" id="toc-final-project-website-is-not-updating" class="nav-link" data-scroll-target="#final-project-website-is-not-updating">Final project website is not updating</a></li>
+  <li><a href="#missing-images-and-figures-in-final-project-website" id="toc-missing-images-and-figures-in-final-project-website" class="nav-link" data-scroll-target="#missing-images-and-figures-in-final-project-website">Missing images and figures in final project website</a></li>
   </ul>
 </nav>
     </div>
@@ -198,6 +199,12 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="final-project-website-is-not-updating">Final project website is not updating</h2>
 <p>If you have committed and pushed a change to your final project repository and confirmed that the website has deployed (by looking at the green check), but there are no changes to the actual project website, there could be a couple of problems. First, check to make sure you have knitted the Rmd file to HTML and then committed and pushed any changes to the HTML file to GitHub. Once way to ensure this is to check the “Knit on Save” checkbox so that RStudio automatically knits when you save.</p>
 <p>Second, you might check the website in a second browser or incognito window. Sometimes browsers cache versions of the website and don’t update them immediately. Finally, sometimes the deploy process just doesn’t work or times out for unknown reasons (“internet weather”). In that case, try to add another change, knit, commit, and push to get the process to restart.</p>
+</section>
+<section id="missing-images-and-figures-in-final-project-website" class="level2">
+<h2 class="anchored" data-anchor-id="missing-images-and-figures-in-final-project-website">Missing images and figures in final project website</h2>
+<p>If you are missing the figures on your final project website, but you saw them when you knitted on your computer, you probably need to stage, commit, and push the output of your knitting to GitHub. In particular, you should see a bunch of files in your Git tab:</p>
+<p><img src="../files/img/distill-img-files.png" class="img-fluid"></p>
+<p>You need to stage all of those, commit the changes, and push. Make sure that you do not stage any large data files by accident.</p>
 
 
 </section>
