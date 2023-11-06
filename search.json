@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling\nBivariate Relationships and Functions\nJoining and Tidying Data\nMidterm Review and Prediction\nRegression\nModel Fit\nMultiple Regression and Categorical Predictors\nSampling\nSampling Distributions"
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling\nBivariate Relationships and Functions\nJoining and Tidying Data\nMidterm Review and Prediction\nRegression\nModel Fit\nMultiple Regression and Categorical Predictors\nSampling\nSampling Distributions\nThe Bootstrap"
   },
   {
     "objectID": "materials/13_models.html",
@@ -438,7 +438,7 @@
     "href": "assignments/06_hw_sampling.html#question-4-8-points",
     "title": "Problem Set 6: Sampling from a Voter File",
     "section": "Question 4 (8 points)",
-    "text": "Question 4 (8 points)\nIn the first line of the code chunk for this question use the following code:\n\nlibrary(infer)\nset.seed(02138)\n\nThen use rep_slice_sample() to take 1,000 samples of size 200 from durham and calculate the sample mean of age and the sample mean/proportion of turnout for each of these samples. Save these as variables named age_mean and turnout_prop and save the resulting tibble as samples_n200.\nCreate a density histogram of the age means and with a bin width of 1 and save this as age_mean_hist (use a bin width of 0.5). Create a density histogram of the turnout proportions and save this as turnout_prop_hist (use a bin width of 0.005) (NOTE: this is not a bar plot like in Question 2). Make sure both of these plots are shown in the PDF and that they have informative labels.\nIn the write-up, compare the sampling distribution of the sample mean and sample proportion here to the population distributions from question 2. Are the shapes of the sampling distributions similar or different to the population distributions? If different, how are they different?\nRubric: 2pts for correct sample_n200 output (autograder); 2pts for correct age_mean_hist (autograder); 2pts for correct turnout_prop_hist (autograder); 1pt informative labels (PDF); 1pt comparison to population distributions (PDF)."
+    "text": "Question 4 (8 points)\nIn the first line of the code chunk for this question use the following code:\n\nlibrary(infer)\nset.seed(02138)\n\nThen use rep_slice_sample() to take 1,000 samples of size 200 from durham and calculate the sample mean of age and the sample mean/proportion of turnout for each of these samples. Save these as variables named age_mean and turnout_prop and save the resulting tibble as samples_n200.\nCreate a density histogram of the age means and save this as age_mean_hist (use a bin width of 0.5). Create a density histogram of the turnout proportions and save this as turnout_prop_hist (use a bin width of 0.005) (NOTE: this is not a bar plot like in Question 2). Make sure both of these plots are shown in the PDF and that they have informative labels.\nIn the write-up, compare the sampling distribution of the sample mean and sample proportion here to the population distributions from question 2. Are the shapes of the sampling distributions similar or different to the population distributions? If different, how are they different?\nRubric: 2pts for correct sample_n200 output (autograder); 2pts for correct age_mean_hist (autograder); 2pts for correct turnout_prop_hist (autograder); 1pt informative labels (PDF); 1pt comparison to population distributions (PDF)."
   },
   {
     "objectID": "assignments/06_hw_sampling.html#question-5-7-points",
@@ -987,18 +987,11 @@
     "text": "MD Ch 8, IMS Ch 12 for another take."
   },
   {
-    "objectID": "materials/10_bootstrap.html#data",
-    "href": "materials/10_bootstrap.html#data",
-    "title": "The Bootstrap and Confidence Intervals",
-    "section": "Data",
-    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nCSV files for the data from this week if you cannot install the package:\n\nanes.csv\ntrains.csv"
-  },
-  {
     "objectID": "materials/10_bootstrap.html#slides-and-code",
     "href": "materials/10_bootstrap.html#slides-and-code",
     "title": "The Bootstrap and Confidence Intervals",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (11/1) lecture: The Bootstrap\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (11/3) lecture: More Confidence Intervals\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (11/7) lecture: The Bootstrap\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/12_tests_models.html",
