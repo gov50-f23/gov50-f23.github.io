@@ -106,7 +106,7 @@ set.seed(02138)
 Then use `rep_slice_sample()` to take 1,000 samples of size 200 from `durham` and calculate the sample mean of `age` and the sample mean/proportion of turnout for each of these samples. Save these as variables named `age_mean` and `turnout_prop` and save the resulting tibble as `samples_n200`.  
 
 
-Create a density histogram of the age means and with a bin width of 1 and save this as `age_mean_hist` (use a bin width of 0.5). Create a density histogram of the turnout proportions and save this as `turnout_prop_hist` (use a bin width of 0.005) (**NOTE: this is not a bar plot like in Question 2**). Make sure both of these plots are shown in the PDF and that they have informative labels. 
+Create a density histogram of the age means and save this as `age_mean_hist` (use a bin width of 0.5). Create a density histogram of the turnout proportions and save this as `turnout_prop_hist` (use a bin width of 0.005) (**NOTE: this is not a bar plot like in Question 2**). Make sure both of these plots are shown in the PDF and that they have informative labels. 
 
 In the write-up, compare the sampling distribution of the sample mean and sample proportion here to the population distributions from question 2. Are the shapes of the sampling distributions similar or different to the population distributions? If different, how are they different? 
 

@@ -25,3 +25,4 @@ Each class session has a set of required readings that you should complete ***be
 16. [Multiple Regression and Categorical Predictors](/slides/16_multiple_regression_handout.pdf)
 17. [Sampling](/slides/17_sampling_handout.pdf)
 18. [Sampling Distributions](/slides/18_sampling_dist_handout.pdf)
+19. [The Bootstrap](/slides/19_bootstrap_handout.pdf)
