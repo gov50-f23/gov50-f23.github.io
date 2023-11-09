@@ -94,8 +94,8 @@ website:
               file: assignments/05_hw_regression.qmd
             - text: "Problem Set 6"
               file: assignments/06_hw_sampling.qmd              
-            # - text: "Problem Set 7"
-            #   file: assignments/07_hw_bootstrap.qmd              
+            - text: "Problem Set 7"
+              file: assignments/07_hw_bootstrap.qmd              
             # - text: "Problem Set 8"
             #   file: assignments/08_hw_hyp_tests.qmd              
 
