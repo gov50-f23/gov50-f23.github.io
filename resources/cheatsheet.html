@@ -250,6 +250,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#obtaining-overall-information-about-the-model-fitted" id="toc-obtaining-overall-information-about-the-model-fitted" class="nav-link" data-scroll-target="#obtaining-overall-information-about-the-model-fitted">Obtaining overall information about the model fitted</a></li>
   <li><a href="#running-a-multiple-regression" id="toc-running-a-multiple-regression" class="nav-link" data-scroll-target="#running-a-multiple-regression">Running a multiple regression</a></li>
   </ul></li>
+  <li><a href="#sampling-week-9" id="toc-sampling-week-9" class="nav-link" data-scroll-target="#sampling-week-9">Sampling (Week 9)</a>
+  <ul class="collapse">
+  <li><a href="#selecting-a-random-subset-of-rows-of-the-data" id="toc-selecting-a-random-subset-of-rows-of-the-data" class="nav-link" data-scroll-target="#selecting-a-random-subset-of-rows-of-the-data">Selecting a random subset of rows of the data</a></li>
+  <li><a href="#repeated-sampling-from-a-data-frame" id="toc-repeated-sampling-from-a-data-frame" class="nav-link" data-scroll-target="#repeated-sampling-from-a-data-frame">Repeated sampling from a data frame</a></li>
+  <li><a href="#converting-a-column-of-a-tibble-into-a-vector" id="toc-converting-a-column-of-a-tibble-into-a-vector" class="nav-link" data-scroll-target="#converting-a-column-of-a-tibble-into-a-vector">Converting a column of a tibble into a vector</a></li>
+  <li><a href="#barplot-with-proportions-rather-than-counts" id="toc-barplot-with-proportions-rather-than-counts" class="nav-link" data-scroll-target="#barplot-with-proportions-rather-than-counts">Barplot with proportions rather than counts</a></li>
+  <li><a href="#density-histograms" id="toc-density-histograms" class="nav-link" data-scroll-target="#density-histograms">Density histograms</a></li>
+  </ul></li>
+  <li><a href="#bootstrap-week-10" id="toc-bootstrap-week-10" class="nav-link" data-scroll-target="#bootstrap-week-10">Bootstrap (Week 10)</a>
+  <ul class="collapse">
+  <li><a href="#bootstrap-distributions" id="toc-bootstrap-distributions" class="nav-link" data-scroll-target="#bootstrap-distributions">Bootstrap distributions</a></li>
+  <li><a href="#calculating-bootstrap-confidence-intervals" id="toc-calculating-bootstrap-confidence-intervals" class="nav-link" data-scroll-target="#calculating-bootstrap-confidence-intervals">Calculating bootstrap confidence intervals</a></li>
+  <li><a href="#bootstrapping-a-difference-in-means" id="toc-bootstrapping-a-difference-in-means" class="nav-link" data-scroll-target="#bootstrapping-a-difference-in-means">Bootstrapping a difference in means</a></li>
+  <li><a href="#bootstrapping-the-difference-between-estimated-ates" id="toc-bootstrapping-the-difference-between-estimated-ates" class="nav-link" data-scroll-target="#bootstrapping-the-difference-between-estimated-ates">Bootstrapping the difference between estimated ATEs</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -2688,6 +2703,363 @@ lm(formula = seat_change ~ approval + rdi_change, data = midterms)
 Coefficients:
 (Intercept)     approval   rdi_change  
    -117.226        1.526        3.217  </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="sampling-week-9" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-week-9">Sampling (Week 9)</h2>
+<section id="selecting-a-random-subset-of-rows-of-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-a-random-subset-of-rows-of-the-data">Selecting a random subset of rows of the data</h3>
+<p>The <code>slice_sample</code> function will return a random subset of rows from your data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb227"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb227-1"><a href="#cb227-1" aria-hidden="true" tabindex="-1"></a>class_years <span class="sc">|&gt;</span></span>
+<span id="cb227-2"><a href="#cb227-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  year           
+  &lt;chr&gt;          
+1 First-Year     
+2 Junior         
+3 First-Year     
+4 Graduate Year 1
+5 Sophomore      </code></pre>
+</div>
+</div>
+</section>
+<section id="repeated-sampling-from-a-data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="repeated-sampling-from-a-data-frame">Repeated sampling from a data frame</h3>
+<p>You can take multiple random samples from a data set using the <code>rep_slice_sample</code> function from the <code>infer</code> package. In the resulting data frame you will get a new column called <code>replicate</code> which will indicate which of the repeated samples this row belongs to.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb229"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb229-1"><a href="#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
+<span id="cb229-2"><a href="#cb229-2" aria-hidden="true" tabindex="-1"></a>class_years <span class="sc">|&gt;</span></span>
+<span id="cb229-3"><a href="#cb229-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">reps =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 2
+# Groups:   replicate [2]
+   replicate year      
+       &lt;int&gt; &lt;chr&gt;     
+ 1         1 Junior    
+ 2         1 Sophomore 
+ 3         1 Sophomore 
+ 4         1 Sophomore 
+ 5         1 Sophomore 
+ 6         2 Junior    
+ 7         2 Junior    
+ 8         2 Sophomore 
+ 9         2 First-Year
+10         2 Junior    </code></pre>
+</div>
+</div>
+<p>You can use this to get repeated draws of a sample statistic like the sample proportion:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb231"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb231-1"><a href="#cb231-1" aria-hidden="true" tabindex="-1"></a>samples_n20 <span class="ot">&lt;-</span> class_years <span class="sc">|&gt;</span></span>
+<span id="cb231-2"><a href="#cb231-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_slice_sample</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">reps =</span> <span class="dv">100</span>) <span class="sc">|&gt;</span></span>
+<span id="cb231-3"><a href="#cb231-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(replicate) <span class="sc">|&gt;</span></span>
+<span id="cb231-4"><a href="#cb231-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">fy_prop =</span> <span class="fu">mean</span>(year <span class="sc">==</span> <span class="st">"First-Year"</span>))</span>
+<span id="cb231-5"><a href="#cb231-5" aria-hidden="true" tabindex="-1"></a>samples_n20</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 100 × 2
+   replicate fy_prop
+       &lt;int&gt;   &lt;dbl&gt;
+ 1         1    0.2 
+ 2         2    0.25
+ 3         3    0.3 
+ 4         4    0.4 
+ 5         5    0.15
+ 6         6    0.25
+ 7         7    0.2 
+ 8         8    0.25
+ 9         9    0.2 
+10        10    0.35
+# ℹ 90 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="converting-a-column-of-a-tibble-into-a-vector" class="level3">
+<h3 class="anchored" data-anchor-id="converting-a-column-of-a-tibble-into-a-vector">Converting a column of a tibble into a vector</h3>
+<p>You can use the <code>pull</code> function to access a column of a tibble as a R vector, removing all the tibble infrastructure:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb233"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb233-1"><a href="#cb233-1" aria-hidden="true" tabindex="-1"></a>class_years <span class="sc">|&gt;</span></span>
+<span id="cb233-2"><a href="#cb233-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb233-3"><a href="#cb233-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Graduate Year 1" "First-Year"      "Sophomore"       "First-Year"     
+[5] "Sophomore"      </code></pre>
+</div>
+</div>
+</section>
+<section id="barplot-with-proportions-rather-than-counts" class="level3">
+<h3 class="anchored" data-anchor-id="barplot-with-proportions-rather-than-counts">Barplot with proportions rather than counts</h3>
+<p>You can use the <code>y = after_stat(prop)</code> aesthetic to get a barplot with proportions instead of count to show us the chance/probability of selecting a first-year student:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb235"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a>class_years <span class="sc">|&gt;</span></span>
+<span id="cb235-2"><a href="#cb235-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">first_year =</span> <span class="fu">as.numeric</span>(year <span class="sc">==</span> <span class="st">"First-Year"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb235-3"><a href="#cb235-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> first_year)) <span class="sc">+</span></span>
+<span id="cb235-4"><a href="#cb235-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(prop)), <span class="at">width =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/disc_dist-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="density-histograms" class="level3">
+<h3 class="anchored" data-anchor-id="density-histograms">Density histograms</h3>
+<p>We can use the <code>y = after_stat(density)</code> to create a <strong>density histogram</strong> instead of a count histogram so that the area of the histogram boxes are equal to the chance of randomly selecting a unit in that bin:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb236"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb236-1"><a href="#cb236-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
+<span id="cb236-2"><a href="#cb236-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> percollege)) <span class="sc">+</span></span>
+<span id="cb236-3"><a href="#cb236-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/cont-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="bootstrap-week-10" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrap-week-10">Bootstrap (Week 10)</h2>
+<section id="bootstrap-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrap-distributions">Bootstrap distributions</h3>
+<p>You can generate bootstrap samples by using <code>rep_slice_sample(prop = 1, replace = TRUE)</code>. From there, if you group by the replicate column, you can do summaries within each bootstrap sample.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb237"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb237-1"><a href="#cb237-1" aria-hidden="true" tabindex="-1"></a>bootstrap_dist <span class="ot">&lt;-</span> anes <span class="sc">|&gt;</span></span>
+<span id="cb237-2"><a href="#cb237-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_slice_sample</span>(<span class="at">prop =</span> <span class="dv">1</span>, <span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb237-3"><a href="#cb237-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(replicate) <span class="sc">|&gt;</span></span>
+<span id="cb237-4"><a href="#cb237-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">sci_therm_mean =</span> <span class="fu">mean</span>(sci_therm))</span>
+<span id="cb237-5"><a href="#cb237-5" aria-hidden="true" tabindex="-1"></a>bootstrap_dist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 2
+   replicate sci_therm_mean
+       &lt;int&gt;          &lt;dbl&gt;
+ 1         1           81.3
+ 2         2           81.1
+ 3         3           81.4
+ 4         4           80.8
+ 5         5           80.3
+ 6         6           80.8
+ 7         7           81.0
+ 8         8           80.5
+ 9         9           80.9
+10        10           80.8
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+<p>You can also generate bootstraps using the <code>specify/generate</code> workflow:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb239"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb239-1"><a href="#cb239-1" aria-hidden="true" tabindex="-1"></a>boot_dist_infer <span class="ot">&lt;-</span> anes <span class="sc">|&gt;</span></span>
+<span id="cb239-2"><a href="#cb239-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> sci_therm) <span class="sc">|&gt;</span></span>
+<span id="cb239-3"><a href="#cb239-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb239-4"><a href="#cb239-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"mean"</span>)</span>
+<span id="cb239-5"><a href="#cb239-5" aria-hidden="true" tabindex="-1"></a>boot_dist_infer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: sci_therm (numeric)
+# A tibble: 1,000 × 2
+   replicate  stat
+       &lt;int&gt; &lt;dbl&gt;
+ 1         1  80.3
+ 2         2  81.0
+ 3         3  80.9
+ 4         4  81.0
+ 5         5  80.1
+ 6         6  80.7
+ 7         7  80.8
+ 8         8  80.7
+ 9         9  81.1
+10        10  80.8
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+<p>You can also pass these functions to <code>visualize()</code> to plot the distributions (though you could always use ggplot as well):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb241"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb241-1"><a href="#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(boot_dist_infer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/unnamed-chunk-115-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="calculating-bootstrap-confidence-intervals" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-bootstrap-confidence-intervals">Calculating bootstrap confidence intervals</h3>
+<p>You can use the <code>get_confidence_intervals</code> or <code>get_ci</code> (they are the same function) with <code>type = "percentile"</code> to get bootstrap confidence intervals. Use the <code>level</code> argument to set the confidence level</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb242"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb242-1"><a href="#cb242-1" aria-hidden="true" tabindex="-1"></a>boot_dist_infer <span class="sc">|&gt;</span></span>
+<span id="cb242-2"><a href="#cb242-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_confidence_interval</span>(<span class="at">level =</span> <span class="fl">0.95</span>, <span class="at">type =</span> <span class="st">"percentile"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1     80.1     81.1</code></pre>
+</div>
+</div>
+</section>
+<section id="bootstrapping-a-difference-in-means" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrapping-a-difference-in-means">Bootstrapping a difference in means</h3>
+<p>To get the bootstrapped distribution of a difference in means, we can use <code>rep_slice_sample</code> and our usual dplyr workflow:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb244"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb244-1"><a href="#cb244-1" aria-hidden="true" tabindex="-1"></a>dim_boots <span class="ot">&lt;-</span> trains <span class="sc">|&gt;</span></span>
+<span id="cb244-2"><a href="#cb244-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_slice_sample</span>(<span class="at">prop =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">reps =</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span></span>
+<span id="cb244-3"><a href="#cb244-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(replicate, treatment) <span class="sc">|&gt;</span></span>
+<span id="cb244-4"><a href="#cb244-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">post_mean =</span> <span class="fu">mean</span>(numberim.post)) <span class="sc">|&gt;</span></span>
+<span id="cb244-5"><a href="#cb244-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> treatment, <span class="at">values_from =</span> post_mean) <span class="sc">|&gt;</span></span>
+<span id="cb244-6"><a href="#cb244-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ATE =</span> <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">0</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'replicate'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb246"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb246-1"><a href="#cb246-1" aria-hidden="true" tabindex="-1"></a>dim_boots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 4
+# Groups:   replicate [1,000]
+   replicate   `0`   `1`    ATE
+       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+ 1         1  2.70  3.35 0.648 
+ 2         2  2.62  3.08 0.453 
+ 3         3  2.70  3.04 0.336 
+ 4         4  2.56  2.98 0.417 
+ 5         5  2.73  3.15 0.424 
+ 6         6  2.80  3.09 0.293 
+ 7         7  2.67  3.06 0.391 
+ 8         8  2.84  3.17 0.332 
+ 9         9  2.88  3.20 0.328 
+10        10  2.97  3.06 0.0932
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+<p>Note that if you use this approach, you’ll need to select the column that you want before passing it to <code>get_ci</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb248"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb248-1"><a href="#cb248-1" aria-hidden="true" tabindex="-1"></a>dim_boots <span class="sc">|&gt;</span></span>
+<span id="cb248-2"><a href="#cb248-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(replicate, ATE) <span class="sc">|&gt;</span></span>
+<span id="cb248-3"><a href="#cb248-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_ci</span>(<span class="at">level =</span> <span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1   0.0554    0.711</code></pre>
+</div>
+</div>
+<p>We can also use the <code>specify</code> workflow from <code>infer</code>, but we need to be careful about setting the order of the groups for the difference in means in the <code>calculate</code> step:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb250"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb250-1"><a href="#cb250-1" aria-hidden="true" tabindex="-1"></a>dim_boots_infer <span class="ot">&lt;-</span> trains <span class="sc">|&gt;</span></span>
+<span id="cb250-2"><a href="#cb250-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">treatment =</span> <span class="fu">if_else</span>(treatment <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Treated"</span>, <span class="st">"Control"</span>)) <span class="sc">|&gt;</span>  </span>
+<span id="cb250-3"><a href="#cb250-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(numberim.post <span class="sc">~</span> treatment) <span class="sc">|&gt;</span></span>
+<span id="cb250-4"><a href="#cb250-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb250-5"><a href="#cb250-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"Treated"</span>, <span class="st">"Control"</span>))</span>
+<span id="cb250-6"><a href="#cb250-6" aria-hidden="true" tabindex="-1"></a>dim_boots_infer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: numberim.post (numeric)
+Explanatory: treatment (factor)
+# A tibble: 1,000 × 2
+   replicate   stat
+       &lt;int&gt;  &lt;dbl&gt;
+ 1         1 0.504 
+ 2         2 0.304 
+ 3         3 0.273 
+ 4         4 0.174 
+ 5         5 0.502 
+ 6         6 0.152 
+ 7         7 0.290 
+ 8         8 0.393 
+ 9         9 0.0898
+10        10 0.603 
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="bootstrapping-the-difference-between-estimated-ates" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrapping-the-difference-between-estimated-ates">Bootstrapping the difference between estimated ATEs</h3>
+<p>When you want to estimate the interaction between two variables or the difference in ATEs between two groups, we need to get both the treatment and grouping variables into the columns using <code>pivot_wider</code>. Passing both variables to the <code>names_from</code> argument will create columns based on each combination of the variables with a <code>_</code> to separate the column names:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb252"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb252-1"><a href="#cb252-1" aria-hidden="true" tabindex="-1"></a>trains <span class="sc">|&gt;</span></span>
+<span id="cb252-2"><a href="#cb252-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb252-3"><a href="#cb252-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">treatment =</span> <span class="fu">if_else</span>(treatment <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Treated"</span>, <span class="st">"Control"</span>),</span>
+<span id="cb252-4"><a href="#cb252-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">college =</span> <span class="fu">if_else</span>(college <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"College"</span>, <span class="st">"Noncollege"</span>) </span>
+<span id="cb252-5"><a href="#cb252-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb252-6"><a href="#cb252-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treatment, college) <span class="sc">|&gt;</span></span>
+<span id="cb252-7"><a href="#cb252-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">post_mean =</span> <span class="fu">mean</span>(numberim.post)) <span class="sc">|&gt;</span></span>
+<span id="cb252-8"><a href="#cb252-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb252-9"><a href="#cb252-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(treatment, college),</span>
+<span id="cb252-10"><a href="#cb252-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> post_mean</span>
+<span id="cb252-11"><a href="#cb252-11" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'treatment'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+  Control_College Control_Noncollege Treated_College Treated_Noncollege
+            &lt;dbl&gt;              &lt;dbl&gt;           &lt;dbl&gt;              &lt;dbl&gt;
+1            2.63               3.57            3.11               3.14</code></pre>
+</div>
+</div>
+<p>Thus, to calculate the difference in ATEs we can:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb255"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb255-1"><a href="#cb255-1" aria-hidden="true" tabindex="-1"></a>trains <span class="sc">|&gt;</span></span>
+<span id="cb255-2"><a href="#cb255-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb255-3"><a href="#cb255-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">treatment =</span> <span class="fu">if_else</span>(treatment <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Treated"</span>, <span class="st">"Control"</span>),</span>
+<span id="cb255-4"><a href="#cb255-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">college =</span> <span class="fu">if_else</span>(college <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"College"</span>, <span class="st">"Noncollege"</span>) </span>
+<span id="cb255-5"><a href="#cb255-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb255-6"><a href="#cb255-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treatment, college) <span class="sc">|&gt;</span></span>
+<span id="cb255-7"><a href="#cb255-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">post_mean =</span> <span class="fu">mean</span>(numberim.post)) <span class="sc">|&gt;</span></span>
+<span id="cb255-8"><a href="#cb255-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb255-9"><a href="#cb255-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(treatment, college),</span>
+<span id="cb255-10"><a href="#cb255-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> post_mean</span>
+<span id="cb255-11"><a href="#cb255-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb255-12"><a href="#cb255-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb255-13"><a href="#cb255-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">ATE_c =</span> Treated_College <span class="sc">-</span> Control_College,</span>
+<span id="cb255-14"><a href="#cb255-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">ATE_nc =</span> Treated_Noncollege <span class="sc">-</span> Control_Noncollege,</span>
+<span id="cb255-15"><a href="#cb255-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">interaction =</span> ATE_c <span class="sc">-</span> ATE_nc</span>
+<span id="cb255-16"><a href="#cb255-16" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'treatment'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+  Control_College Control_Noncollege Treated_College Treated_Noncollege ATE_c
+            &lt;dbl&gt;              &lt;dbl&gt;           &lt;dbl&gt;              &lt;dbl&gt; &lt;dbl&gt;
+1            2.63               3.57            3.11               3.14 0.482
+# ℹ 2 more variables: ATE_nc &lt;dbl&gt;, interaction &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>We can now add the <code>rep_slice_sample</code> step to produce a bootstrap distribution of this interaction:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb258"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb258-1"><a href="#cb258-1" aria-hidden="true" tabindex="-1"></a>int_boots <span class="ot">&lt;-</span> trains <span class="sc">|&gt;</span></span>
+<span id="cb258-2"><a href="#cb258-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb258-3"><a href="#cb258-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">treatment =</span> <span class="fu">if_else</span>(treatment <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Treated"</span>, <span class="st">"Control"</span>),</span>
+<span id="cb258-4"><a href="#cb258-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">college =</span> <span class="fu">if_else</span>(college <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"College"</span>, <span class="st">"Noncollege"</span>) </span>
+<span id="cb258-5"><a href="#cb258-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb258-6"><a href="#cb258-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_slice_sample</span>(<span class="at">prop =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">reps =</span> <span class="dv">1000</span>) <span class="sc">|&gt;</span>  </span>
+<span id="cb258-7"><a href="#cb258-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(replicate, treatment, college) <span class="sc">|&gt;</span></span>
+<span id="cb258-8"><a href="#cb258-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">post_mean =</span> <span class="fu">mean</span>(numberim.post)) <span class="sc">|&gt;</span></span>
+<span id="cb258-9"><a href="#cb258-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb258-10"><a href="#cb258-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(treatment, college),</span>
+<span id="cb258-11"><a href="#cb258-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> post_mean</span>
+<span id="cb258-12"><a href="#cb258-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb258-13"><a href="#cb258-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb258-14"><a href="#cb258-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">ATE_c =</span> Treated_College <span class="sc">-</span> Control_College,</span>
+<span id="cb258-15"><a href="#cb258-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">ATE_nc =</span> Treated_Noncollege <span class="sc">-</span> Control_Noncollege,</span>
+<span id="cb258-16"><a href="#cb258-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">interaction =</span> ATE_c <span class="sc">-</span> ATE_nc</span>
+<span id="cb258-17"><a href="#cb258-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb258-18"><a href="#cb258-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(replicate, ATE_c, ATE_nc, interaction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'replicate', 'treatment'. You can override
+using the `.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb260"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb260-1"><a href="#cb260-1" aria-hidden="true" tabindex="-1"></a>int_boots</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 4
+# Groups:   replicate [1,000]
+   replicate  ATE_c  ATE_nc interaction
+       &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
+ 1         1 0.429  -0.8         1.23  
+ 2         2 0.876  -0.5         1.38  
+ 3         3 0.703  -0.8         1.50  
+ 4         4 0.603  -1.06        1.67  
+ 5         5 0.625  -0.6         1.22  
+ 6         6 0.414  -0.583       0.998 
+ 7         7 0.383  -0.257       0.640 
+ 8         8 0.549  -0.542       1.09  
+ 9         9 0.0685  0.0417      0.0268
+10        10 0.237  -0.229       0.466 
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 
