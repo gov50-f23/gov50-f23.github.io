@@ -1324,3 +1324,221 @@ mult.fit
 ```
 
 
+## Sampling (Week 9)
+
+
+### Selecting a random subset of rows of the data
+
+The `slice_sample` function will return a random subset of rows from your data:
+
+```{r}
+class_years |>
+  slice_sample(n = 5)
+```
+
+ 
+### Repeated sampling from a data frame
+
+You can take multiple random samples from a data set using the `rep_slice_sample` function from the `infer` package. In the resulting data frame you will get a new column called `replicate` which will indicate which of the repeated samples this row belongs to.  
+
+```{r}
+library(infer)
+class_years |>
+  rep_slice_sample(n = 5, reps = 2)
+```
+
+
+You can use this to get repeated draws of a sample statistic like the sample proportion:
+
+
+```{r}
+samples_n20 <- class_years |>
+  rep_slice_sample(n = 20, reps = 100) |>
+  group_by(replicate) |>
+  summarize(fy_prop = mean(year == "First-Year"))
+samples_n20
+```
+
+
+### Converting a column of a tibble into a vector
+
+You can use the `pull` function to access a column of a tibble as a R vector, removing all the tibble infrastructure:
+
+
+```{r}
+class_years |>
+  slice_sample(n = 5) |>
+  pull(year)
+```
+
+
+### Barplot with proportions rather than counts
+
+You can use the `y = after_stat(prop)` aesthetic to get a barplot with proportions instead of count to show us the chance/probability of selecting a first-year student:
+
+```{r}
+#| label: "disc_dist"
+class_years |>
+  mutate(first_year = as.numeric(year == "First-Year")) |>
+  ggplot(aes(x = first_year)) +
+  geom_bar(mapping = aes(y = after_stat(prop)), width = 0.1)
+```
+
+
+### Density histograms
+
+We can use the `y = after_stat(density)` to create a **density histogram** instead of a count histogram so that the area of the histogram boxes are equal to the chance of randomly selecting a unit in that bin: 
+
+```{r}
+#| label: "cont"
+midwest |>
+  ggplot(aes(x = percollege)) +
+  geom_histogram(aes(y = after_stat(density)), binwidth = 1)
+```
+
+## Bootstrap (Week 10)
+
+
+### Bootstrap distributions
+
+You can generate bootstrap samples by using `rep_slice_sample(prop = 1, replace = TRUE)`. From there, if you group by the replicate column, you can do summaries within each bootstrap sample.  
+
+```{r}
+#| label: "boot_dist"
+bootstrap_dist <- anes |>
+  rep_slice_sample(prop = 1, reps = 1000, replace = TRUE) |>
+  group_by(replicate) |>
+  summarize(sci_therm_mean = mean(sci_therm))
+bootstrap_dist
+```
+
+You can also generate bootstraps using the `specify/generate` workflow:
+
+
+```{r}
+boot_dist_infer <- anes |>
+  specify(response = sci_therm) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  calculate(stat = "mean")
+boot_dist_infer
+```
+
+You can also pass these functions to `visualize()` to plot the distributions (though you could always use ggplot as well):
+
+
+```{r}
+visualize(boot_dist_infer)
+```
+
+
+### Calculating bootstrap confidence intervals
+
+You can use the `get_confidence_intervals` or `get_ci` (they are the same function) with `type = "percentile"` to get bootstrap confidence intervals. Use the `level` argument to set the confidence level 
+
+```{r}
+boot_dist_infer |>
+  get_confidence_interval(level = 0.95, type = "percentile")
+```
+
+
+
+### Bootstrapping a difference in means
+
+To get the bootstrapped distribution of a difference in means, we can use `rep_slice_sample` and our usual dplyr workflow: 
+
+```{r}
+dim_boots <- trains |>
+  rep_slice_sample(prop = 1, replace = TRUE, reps = 1000) |>
+  group_by(replicate, treatment) |>
+  summarize(post_mean = mean(numberim.post)) |>
+  pivot_wider(names_from = treatment, values_from = post_mean) |>
+  mutate(ATE = `1` - `0`)
+dim_boots
+```
+
+Note that if you use this approach, you'll need to select the column that you want before passing it to `get_ci`:
+
+```{r}
+dim_boots |>
+  select(replicate, ATE) |>
+  get_ci(level = 0.95)
+```
+
+We can also use the `specify` workflow from `infer`, but we need to be careful about setting the order of the groups for the difference in means in the `calculate` step:
+
+```{r}
+dim_boots_infer <- trains |>
+  mutate(treatment = if_else(treatment == 1, "Treated", "Control")) |>  
+  specify(numberim.post ~ treatment) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  calculate(stat = "diff in means", order = c("Treated", "Control"))
+dim_boots_infer
+```
+
+
+### Bootstrapping the difference between estimated ATEs
+
+
+When you want to estimate the interaction between two variables or the difference in ATEs between two groups, we need to get both the treatment and grouping variables into the columns using `pivot_wider`. Passing both variables to the `names_from` argument will create columns based on each combination of the variables with a `_` to separate the column names:
+
+```{r}
+#| label: "boot_int"
+trains |>
+  mutate(
+    treatment = if_else(treatment == 1, "Treated", "Control"),
+    college = if_else(college == 1, "College", "Noncollege") 
+  ) |>
+  group_by(treatment, college) |>
+  summarize(post_mean = mean(numberim.post)) |>
+  pivot_wider(
+    names_from = c(treatment, college),
+    values_from = post_mean
+  ) 
+```
+
+Thus, to calculate the difference in ATEs we can:
+
+
+```{r}
+trains |>
+  mutate(
+    treatment = if_else(treatment == 1, "Treated", "Control"),
+    college = if_else(college == 1, "College", "Noncollege") 
+  ) |>
+  group_by(treatment, college) |>
+  summarize(post_mean = mean(numberim.post)) |>
+  pivot_wider(
+    names_from = c(treatment, college),
+    values_from = post_mean
+  ) |>
+  mutate(
+    ATE_c = Treated_College - Control_College,
+    ATE_nc = Treated_Noncollege - Control_Noncollege,
+    interaction = ATE_c - ATE_nc
+  )
+```
+
+
+We can now add the `rep_slice_sample` step to produce a bootstrap distribution of this interaction: 
+
+```{r}
+int_boots <- trains |>
+  mutate(
+    treatment = if_else(treatment == 1, "Treated", "Control"),
+    college = if_else(college == 1, "College", "Noncollege") 
+  ) |>
+  rep_slice_sample(prop = 1, replace = TRUE, reps = 1000) |>  
+  group_by(replicate, treatment, college) |>
+  summarize(post_mean = mean(numberim.post)) |>
+  pivot_wider(
+    names_from = c(treatment, college),
+    values_from = post_mean
+  ) |>
+  mutate(
+    ATE_c = Treated_College - Control_College,
+    ATE_nc = Treated_Noncollege - Control_Noncollege,
+    interaction = ATE_c - ATE_nc
+  ) |>
+  select(replicate, ATE_c, ATE_nc, interaction)
+int_boots
+```
