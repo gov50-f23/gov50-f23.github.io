@@ -96,8 +96,8 @@ website:
               file: assignments/06_hw_sampling.qmd              
             - text: "Problem Set 7"
               file: assignments/07_hw_bootstrap.qmd              
-            # - text: "Problem Set 8"
-            #   file: assignments/08_hw_hyp_tests.qmd              
+            - text: "Problem Set 8"
+              file: assignments/08_hw_hyp_tests.qmd              
 
 format:
   html:
