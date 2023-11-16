@@ -15,6 +15,6 @@ date: 2023-11-13
   - [PDF of slides as I present them](/slides/21_hyp_tests.pdf)
   - [PDF of handout version of slides](/slides/21_hyp_tests_handout.pdf) (no incremental slides)
 
-<!-- - Thursday (11/11) lecture: More hypothesis tests -->
-<!--   - [PDF of slides as I present them](/slides/21_hyp_tests_diff.pdf) -->
-<!--   - [PDF of handout version of slides](/slides/21_hyp_tests_diff_handout.pdf) (no incremental slides) -->
+- Thursday (11/16) lecture: More hypothesis tests
+  - [PDF of slides as I present them](/slides/22_hyp_tests_diff.pdf)
+  - [PDF of handout version of slides](/slides/22_hyp_tests_diff_handout.pdf) (no incremental slides)

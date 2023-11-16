@@ -28,3 +28,4 @@ Each class session has a set of required readings that you should complete ***be
 19. [The Bootstrap](/slides/19_bootstrap_handout.pdf)
 20. [More Confidence Intervals](/slides/20_conf_int_handout.pdf)
 21. [Hypothesis Testing](/slides/21_hyp_tests_handout.pdf)
+22. [Two-sample Hypothesis Testing](/slides/22_hyp_tests_diff_handout.pdf)
