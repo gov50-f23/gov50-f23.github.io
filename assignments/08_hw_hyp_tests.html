@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gov 50 - Gov 50 R Tutorials Instructions</title>
+<title>Gov 50 - Problem Set 8: The Effect of Cognitive Behavioral Therapy on Crime and Violence</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -94,6 +60,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -157,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Resources</a></li><li class="breadcrumb-item"><a href="../assignments/tutorials.html">Gov 50 R Tutorials Instructions</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/00-problem-set.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/08_hw_hyp_tests.html">Problem Set 8</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -186,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/tutorials.html" class="sidebar-item-text sidebar-link active">
+  <a href="../assignments/tutorials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Gov 50 R Tutorials Instructions</span></a>
   </div>
 </li>
@@ -257,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/08_hw_hyp_tests.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/08_hw_hyp_tests.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Problem Set 8</span></a>
   </div>
 </li>
@@ -273,14 +241,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#submitting-tutorial-reports-to-gradescope" id="toc-submitting-tutorial-reports-to-gradescope" class="nav-link active" data-scroll-target="#submitting-tutorial-reports-to-gradescope">Submitting Tutorial Reports to Gradescope</a></li>
-  <li><a href="#installing-the-gov-50-tutorials-package" id="toc-installing-the-gov-50-tutorials-package" class="nav-link" data-scroll-target="#installing-the-gov-50-tutorials-package">Installing the Gov 50 tutorials package</a></li>
-  <li><a href="#faqs" id="toc-faqs" class="nav-link" data-scroll-target="#faqs">FAQs</a>
-  <ul class="collapse">
-  <li><a href="#what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download" id="toc-what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download" class="nav-link" data-scroll-target="#what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download">What if I receive an error about <code>pdflatex</code> and the submission report doesn’t download?</a></li>
-  <li><a href="#what-if-i-dont-see-a-tutorial-tab-in-rstudio" id="toc-what-if-i-dont-see-a-tutorial-tab-in-rstudio" class="nav-link" data-scroll-target="#what-if-i-dont-see-a-tutorial-tab-in-rstudio">What if I don’t see a Tutorial tab in RStudio?</a></li>
-  <li><a href="#what-if-my-submission-report-misses-some-of-my-attempts" id="toc-what-if-my-submission-report-misses-some-of-my-attempts" class="nav-link" data-scroll-target="#what-if-my-submission-report-misses-some-of-my-attempts">What if my submission report misses some of my attempts?</a></li>
-  </ul></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#question-1-9-points" id="toc-question-1-9-points" class="nav-link" data-scroll-target="#question-1-9-points">Question 1 (9 points)</a></li>
+  <li><a href="#question-2-8-points" id="toc-question-2-8-points" class="nav-link" data-scroll-target="#question-2-8-points">Question 2 (8 Points)</a></li>
+  <li><a href="#question-3-3-points" id="toc-question-3-3-points" class="nav-link" data-scroll-target="#question-3-3-points">Question 3 (3 points)</a></li>
+  <li><a href="#question-4-7-points" id="toc-question-4-7-points" class="nav-link" data-scroll-target="#question-4-7-points">Question 4 (7 points)</a></li>
+  <li><a href="#question-5-8-points" id="toc-question-5-8-points" class="nav-link" data-scroll-target="#question-5-8-points">Question 5 (8 points)</a></li>
   </ul>
 </nav>
     </div>
@@ -289,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Gov 50 R Tutorials Instructions</h1>
+<h1 class="title">Problem Set 8: The Effect of Cognitive Behavioral Therapy on Crime and Violence</h1>
 </div>
 
 
@@ -304,45 +270,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="submitting-tutorial-reports-to-gradescope" class="level2">
-<h2 class="anchored" data-anchor-id="submitting-tutorial-reports-to-gradescope">Submitting Tutorial Reports to Gradescope</h2>
-<p>Once you have completed the tutorial you will see a screen that prompts you to enter your name (as it appears on Gradescope) and produce a submission report. Clicking “Download” should place a report into the folder of your choosing. Find that PDF and upload it to Gradescope (see the link at the top of every page).</p>
-<p><img src="../files/img/assignments/tutorial-report.png" class="img-fluid" alt="RStudio Tutorial Report"></p>
-<p>Note that we do not grade these reports on correctness, just that you attempted the tutorial. That said, going slowly and making sure that you understand each question and its answer is a good practice to ensure you are mastering the course material.</p>
+<p>This problem set is due on <strong>November 29, 2023 at 11:59pm</strong>.</p>
+<p>You can find instructions for obtaining and submitting problem sets <a href="../assignments/problem-sets.html">here</a>.</p>
+<p>You can find the GitHub Classroom link to download the template repository on the <a href="https://edstem.org/us/courses/43339/resources">Ed Board</a></p>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>Can noncognitive skills and preferences like patience and identity be changed in adults? And can improving these skills lower crime and violence? A recent paper attempted to answer these questions with a randomized field experiment in Liberia. This exercise is based on:</p>
+<blockquote class="blockquote">
+<p>Blattman, Christopher, Julian C. Jamison, and Margaret Sheridan. 2017. “<a href="https://doi.org/10.1257/aer.20150503">Reducing Crime and Violence: Experimental Evidence from Cognitive Behavioral Therapy in Liberia.</a>” <em>American Economic Review</em>, 107(4): 1165-1206.</p>
+</blockquote>
+<p>In this experiment, the researchers randomly assigned two different treatments to all respondents. Half of respondents were randomly assigned to eight weeks of cognitive behavioral therapy designed to reduce self-destructive beliefs or behaviors and promote positive ones. The sessions focused on encouraging goal-setting and self-control with simple behaviors and then built up to dealing with more realistic situations while learning to control emotions. The goal was to promote noncognitive skills that might reduce tendencies toward criminal activity or violence. Note that not everyone assigned to treatment actually attended all of the meetings. The second treatment was a randomly assigned cash prize of $200. The outcomes of interest are index measures of anti-social behavior like theft, carrying weapons, or selling drugs. An index combines all of these different variables into one continuous measure. The researchers also have baseline measures of some of these variables.</p>
+<p>A total of 999 respondents were randomized in the study. The data file for this study is <code>data/cbt.csv</code> and contains the following variables:</p>
+<table class="table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>partid</code></td>
+<td style="text-align: left;">participant ID number</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cashassigned</code></td>
+<td style="text-align: left;">participant assigned to cash treatment (1) or not (0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>tpassigned</code></td>
+<td style="text-align: left;">participant assigned to CBT treatment (1) or not (0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>attend_80</code></td>
+<td style="text-align: left;">did the participant attend 80% CBT meetings (1) or not (0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>steals_basline</code></td>
+<td style="text-align: left;">has the participant committed theft in the last 2 weeks before treatment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>homeless_basline</code></td>
+<td style="text-align: left;">is the participant sleeping on the streets before treatment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>year_born</code></td>
+<td style="text-align: left;">year of birth of participant</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>fam_asb_st</code></td>
+<td style="text-align: left;">index score of anti-social behaviors 2 weeks posttreatment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>carryweapon</code></td>
+<td style="text-align: left;">does participant carry a weapon, 2 weeks posttreatment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>fam_asb_lt</code></td>
+<td style="text-align: left;">index score of anti-social behaviors 12 months posttreatment</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="installing-the-gov-50-tutorials-package" class="level2">
-<h2 class="anchored" data-anchor-id="installing-the-gov-50-tutorials-package">Installing the Gov 50 tutorials package</h2>
-<p>Our tutorials will be hosted on an external website so that you should not have to install any packages on your own computer. However, occasionally the server will become slow or unresponsive when there are many students trying to complete the tutorial at once. When this happens, you can install the tutorials locally to your RStudio. To install the package that contains the tutorials for the class run the following lines of code, each entered separately. Note that you may be asked to update packages when you enter this code. You can select 1 for “All” to perform any updates.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"kosukeimai/qss-package"</span>, <span class="at">build_vignettes =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"rstudio/learnr"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"rstudio-education/gradethis"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mattblackwell/gov50tutor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>After the package has been installed, you should be able to find all of the tutorials for the course in the “Tutorials” tab in the top-right pane of RStudio. Scroll down to find a Gov 50 tutorial and click “Start Tutorial” to launch a tutorial:</p>
-<p><img src="../files/img/assignments/rstudio-tutorials.png" class="img-fluid" alt="RStudio Tutorials Tab"></p>
-<p>If you do not see any QSS tutorials after scrolling to the bottom, try to restart RStudio, and check again. If you still don’t see any tutorials, confirm that you have installed the package by running <code>library(gov50tutor)</code>. If you get an error about the package not being installed, try the above installation procedure again and note any error messages you receive before reaching out to the teaching staff for assistance.</p>
+<section id="question-1-9-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-9-points">Question 1 (9 points)</h2>
+<p>Experiments are designed so that treatment assignment is unrelated to any background characteristics of the participants. But treatment and control groups will differ a bit by random chance even if they are the same on average. Let’s see if the randomization created groups that are fairly balanced by doing a <em>balance test</em>.</p>
+<p>Load the <code>tidyverse</code> and <code>infer</code> packages and use <code>read_csv</code> to load the data into R and name it <code>cbt</code>. Create two new variables in the <code>cbt</code> tibble:</p>
+<ul>
+<li><code>cbt_assigned</code> that is <code>"CBT"</code> if <code>tpassigned</code> is 1 and <code>"No CBT"</code> otherwise.</li>
+<li><code>unhoused_baseline</code> that is <code>"Unhoused"</code> if <code>homeless_baseline</code> is 1 and <code>"Housed"</code> otherwise.</li>
+</ul>
+<p>Use the <code>specify/calculate</code> workflow to calculate the difference in proportions in the baseline measure of sleeping on the streets (<code>unhoused_baseline</code>) between the CBT treatment group and the non-CBT group (<code>cbt_assigned</code>). Save this value as <code>base_diff</code> (it should be a 1x1 tibble).</p>
+<p>Next, use the <code>infer</code> framework to conduct a two-sided permutation hypothesis test of whether the CBT treatment group has the same proportion of <code>unhoused_baseline</code> as the non-CBT group. Calculate the two-sided p-value using <code>get_p_value()</code> and save it as <code>base_p</code> (it should be a 1x1 tibble).</p>
+<p>Report the observed difference and the p-value in the write-up. With an <span class="math inline">\(\alpha\)</span> of 0.05, can you reject the null hypothesis that the proportion sleeping on the streets is the same in the two groups? Given that decision, which type of error (type I vs type II) would be worried for this test?</p>
+<p><strong>NOTE:</strong> For this problem, set the seed to 02138 at the top of the chunk and use <code>reps = 1000</code> when generating the permutations.</p>
+<p><strong>Rubric</strong>: 1pt for successfully compiling Rmd (autograder); 1pt for loading the data and creating the new variables (autograder); 2pts for the <code>base_diff</code> (autograder); 3pts for the <code>base_p</code> (autograder); 1pt for reporting the difference/p-value and the rejection or not decision (PDF); 1pts for correct error type (PDF).</p>
 </section>
-<section id="faqs" class="level2">
-<h2 class="anchored" data-anchor-id="faqs">FAQs</h2>
-<section id="what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download" class="level3">
-<h3 class="anchored" data-anchor-id="what-if-i-receive-an-error-about-pdflatex-and-the-submission-report-doesnt-download">What if I receive an error about <code>pdflatex</code> and the submission report doesn’t download?</h3>
-<p>To generate the reports, you need something called LaTeX. You should have installed this with <a href="../assignments/00-problem-set.html">Problem Set 0</a>, but the following command will install it:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'tinytex'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()  <span class="co"># install TinyTeX</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="question-2-8-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-8-points">Question 2 (8 Points)</h2>
+<p>A colleague suggests that you should use actual attendance at the CBT meetings rather than the random assignment since there shouldn’t be any treatment effect for those that don’t attend the meetings. To investigate this, you decide to do a balance test on the attendance variable that measures if a person actually attended 80% of the CBT meetings (<code>attend_80</code>). Create a new variable:</p>
+<ul>
+<li><code>cbt_attended</code> that is <code>"Attended CBT"</code> if <code>attend_80</code> is 1 and <code>"Not Attended"</code> otherwise.</li>
+</ul>
+<p>Calculate the difference in proportions in baseline sleeping on the streets (<code>unhoused_baseline</code>) for those that actually attended 80% of meetings versus those that did not (<code>cbt_attended</code>) and save this difference as <code>base_diff_attend</code>. Calculate the two-sided p-value for another permutation hypothesis for the null hypothesis that the true proportion of baseline sleeping on the street is the same across values of <code>attend_80</code>. Save this p-value as <code>base_p_attend</code>.</p>
+<p>Report the observed difference and the p-value in the write-up. Is any imbalance that you find on this variable statistically significant (that is, can you reject the null hypothesis) if <span class="math inline">\(\alpha\)</span> is 0.05? Which type of error are we worried about here? What parameter of the hypothesis test can control this type of error?</p>
+<p><strong>NOTE:</strong> For this problem, set the seed to 02138 at the top of the chunk and use <code>reps = 1000</code> when generating the permutations.</p>
+<p><strong>Rubric:</strong> 2pts for the <code>base_diff_attend</code> (autograder); 3pts for the <code>base_p_attend</code> (autograder); 1pt for reporting the difference/p-value and the rejection or not decision (PDF); 1pt for correct error type (PDF); 1pt for correctly identifying what parameter controls this error (PDF).</p>
 </section>
-<section id="what-if-i-dont-see-a-tutorial-tab-in-rstudio" class="level3">
-<h3 class="anchored" data-anchor-id="what-if-i-dont-see-a-tutorial-tab-in-rstudio">What if I don’t see a Tutorial tab in RStudio?</h3>
-<p>Make sure that you have RStudio version 1.3 or higher installed on your computer. On a Mac, you can check the version by going to the top left of the menu bar (next to the Apple logo) and clicking on “RStudio” then “About RStudio”. On a Windows PC, you can find the same item under File &gt; About.</p>
+<section id="question-3-3-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-3-points">Question 3 (3 points)</h2>
+<p>Explain how the tests in questions 1 and 2 should inform whether it is better to use the CBT assignment or the actual attendance to the CBT meetings as the treatment variable when estimating causal effects. Justify your answer by discussing the benefits and disadvantages of using either treatment variable.</p>
+<p><strong>Rubric:</strong> 2pts for correctly identifying which variable should be used (PDF); 1pt for justification (PDF).</p>
 </section>
-<section id="what-if-my-submission-report-misses-some-of-my-attempts" class="level3">
-<h3 class="anchored" data-anchor-id="what-if-my-submission-report-misses-some-of-my-attempts">What if my submission report misses some of my attempts?</h3>
-<p>The submission report isn’t perfect and will sometimes say you didn’t attempt a question when you actually did. We do not grade strictly on this and are mostly looking for a confirmation that you made a good-faith effort to complete the tutorial.</p>
+<section id="question-4-7-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-4-7-points">Question 4 (7 points)</h2>
+<p>Calculate the estimated ATE of the CBT treatment assignment on the short-term index measure of anti-social behavior (<code>fam_asb_st</code>) and save the estimate as <code>ate</code>. For this, you can either use the <code>specify/calculate</code> approach or the <code>group_by/summarize</code> approach, but in either case, your resulting tibble should contain the ATE somewhere.</p>
+<p>Use the <code>infer</code> worklfow to generate 1000 simulations from the null distribution of a permutation hypothesis test of the null hypothesis that there is no treatment effect. Save this distribution as <code>ate_null_dist</code>. Plot this distribution of the difference in means under the null hypothesis along with the observed estimate. Explain, in substantive terms of this setting, what this distribution represents.</p>
+<p>Calculate the two-sided p-value and save it as <code>ate_p</code>. Is the estimated effect statistically significant when alpha is 0.05?</p>
+<p><strong>NOTE:</strong> For this problem, set the seed to 02138 at the top of the chunk and use <code>reps = 1000</code> when generating the permutations.</p>
+<p><strong>Rubric</strong>: 2pts for <code>ate</code> (autograder); 2pts for the <code>ate_null_dist</code> (autograder); 1pt for <code>ate_p</code> (autograder); 1pt for plot of the null distribution (PDF); 1pt for explanation of null distribution and reporting if null is rejected (PDF).</p>
+</section>
+<section id="question-5-8-points" class="level2">
+<h2 class="anchored" data-anchor-id="question-5-8-points">Question 5 (8 points)</h2>
+<p>Calculate the estimated ATE of the CBT treatment assignment on the long-term index measure of anti-social behavior (<code>fam_asb_st</code>) and save the estimate as <code>ate_lt</code>. For this, you can either use the <code>specify/calculate</code> approach or the <code>group_by/summarize</code> approach, but in either case, your resulting tibble should contain the ATE somewhere.</p>
+<p>Generate 1000 simulations from the null distribution of a permutation hypothesis test of the null hypothesis that there is no treatment effect. Save this distribution as <code>ate_lt_null_dist</code>. Plot this distribution of the difference in means under the null hypothesis along with the observed estimate and the shaded region for the p-value using <code>visualize()</code> and <code>shade_p_value()</code>.</p>
+<p>Calculate the two-sided p-value and save it as <code>ate_lt_p</code>. Is the estimated effect statistically significant when alpha is 0.05?</p>
+<p>In the write up, report the ATEs calculated in questions 4 and 5, and describe what they mean for the persistence of the effect of CBT over time?</p>
+<p><strong>NOTE:</strong> For this problem, set the seed to 02138 at the top of the chunk and use <code>reps = 1000</code> when generating the permutations.</p>
+<p><strong>Rubric</strong>: 2pts for <code>ate_lt</code> (autograder); 2pts for the <code>ate_lt_null_dist</code> (autograder); 1pt for <code>ate_lt_p</code> (autograder); 1pt for plot of the null distribution (PDF); 2pts for reporting if null is rejected and describing the persistence over time (PDF).</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
