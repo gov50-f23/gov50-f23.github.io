@@ -265,6 +265,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#bootstrapping-a-difference-in-means" id="toc-bootstrapping-a-difference-in-means" class="nav-link" data-scroll-target="#bootstrapping-a-difference-in-means">Bootstrapping a difference in means</a></li>
   <li><a href="#bootstrapping-the-difference-between-estimated-ates" id="toc-bootstrapping-the-difference-between-estimated-ates" class="nav-link" data-scroll-target="#bootstrapping-the-difference-between-estimated-ates">Bootstrapping the difference between estimated ATEs</a></li>
   </ul></li>
+  <li><a href="#hypothesis-testing-week-11" id="toc-hypothesis-testing-week-11" class="nav-link" data-scroll-target="#hypothesis-testing-week-11">Hypothesis testing (Week 11)</a>
+  <ul class="collapse">
+  <li><a href="#generating-the-null-distribution-of-a-sample-mean" id="toc-generating-the-null-distribution-of-a-sample-mean" class="nav-link" data-scroll-target="#generating-the-null-distribution-of-a-sample-mean">Generating the null distribution of a sample mean</a></li>
+  <li><a href="#calculating-the-p-value-of-a-hypothesis-test" id="toc-calculating-the-p-value-of-a-hypothesis-test" class="nav-link" data-scroll-target="#calculating-the-p-value-of-a-hypothesis-test">Calculating the p-value of a hypothesis test</a></li>
+  <li><a href="#null-distribution-for-a-difference-in-means" id="toc-null-distribution-for-a-difference-in-means" class="nav-link" data-scroll-target="#null-distribution-for-a-difference-in-means">Null distribution for a difference in means</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -2717,13 +2723,13 @@ Coefficients:
 <span id="cb227-2"><a href="#cb227-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 1
-  year           
-  &lt;chr&gt;          
-1 First-Year     
-2 Junior         
-3 First-Year     
-4 Graduate Year 1
-5 Sophomore      </code></pre>
+  year      
+  &lt;chr&gt;     
+1 Junior    
+2 Not Set   
+3 Sophomore 
+4 First-Year
+5 First-Year</code></pre>
 </div>
 </div>
 </section>
@@ -2737,18 +2743,18 @@ Coefficients:
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 2
 # Groups:   replicate [2]
-   replicate year      
-       &lt;int&gt; &lt;chr&gt;     
- 1         1 Junior    
- 2         1 Sophomore 
- 3         1 Sophomore 
- 4         1 Sophomore 
- 5         1 Sophomore 
- 6         2 Junior    
- 7         2 Junior    
- 8         2 Sophomore 
- 9         2 First-Year
-10         2 Junior    </code></pre>
+   replicate year           
+       &lt;int&gt; &lt;chr&gt;          
+ 1         1 First-Year     
+ 2         1 Junior         
+ 3         1 Graduate Year 1
+ 4         1 Sophomore      
+ 5         1 Junior         
+ 6         2 Sophomore      
+ 7         2 First-Year     
+ 8         2 Sophomore      
+ 9         2 Sophomore      
+10         2 Junior         </code></pre>
 </div>
 </div>
 <p>You can use this to get repeated draws of a sample statistic like the sample proportion:</p>
@@ -2762,16 +2768,16 @@ Coefficients:
 <pre><code># A tibble: 100 × 2
    replicate fy_prop
        &lt;int&gt;   &lt;dbl&gt;
- 1         1    0.2 
- 2         2    0.25
- 3         3    0.3 
- 4         4    0.4 
- 5         5    0.15
- 6         6    0.25
- 7         7    0.2 
- 8         8    0.25
- 9         9    0.2 
-10        10    0.35
+ 1         1    0.35
+ 2         2    0.3 
+ 3         3    0.5 
+ 4         4    0.3 
+ 5         5    0.3 
+ 6         6    0.3 
+ 7         7    0.4 
+ 8         8    0.2 
+ 9         9    0.15
+10        10    0.3 
 # ℹ 90 more rows</code></pre>
 </div>
 </div>
@@ -2784,8 +2790,7 @@ Coefficients:
 <span id="cb233-2"><a href="#cb233-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
 <span id="cb233-3"><a href="#cb233-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Graduate Year 1" "First-Year"      "Sophomore"       "First-Year"     
-[5] "Sophomore"      </code></pre>
+<pre><code>[1] "First-Year" "Sophomore"  "Junior"     "Junior"     "Sophomore" </code></pre>
 </div>
 </div>
 </section>
@@ -2830,16 +2835,16 @@ Coefficients:
 <pre><code># A tibble: 1,000 × 2
    replicate sci_therm_mean
        &lt;int&gt;          &lt;dbl&gt;
- 1         1           81.3
- 2         2           81.1
- 3         3           81.4
+ 1         1           80.6
+ 2         2           80.8
+ 3         3           80.3
  4         4           80.8
- 5         5           80.3
- 6         6           80.8
- 7         7           81.0
- 8         8           80.5
- 9         9           80.9
-10        10           80.8
+ 5         5           80.4
+ 6         6           80.6
+ 7         7           80.4
+ 8         8           80.7
+ 9         9           80.8
+10        10           80.5
 # ℹ 990 more rows</code></pre>
 </div>
 </div>
@@ -2855,16 +2860,16 @@ Coefficients:
 # A tibble: 1,000 × 2
    replicate  stat
        &lt;int&gt; &lt;dbl&gt;
- 1         1  80.3
- 2         2  81.0
+ 1         1  80.6
+ 2         2  80.7
  3         3  80.9
- 4         4  81.0
- 5         5  80.1
- 6         6  80.7
- 7         7  80.8
+ 4         4  80.9
+ 5         5  80.7
+ 6         6  80.6
+ 7         7  80.5
  8         8  80.7
- 9         9  81.1
-10        10  80.8
+ 9         9  80.3
+10        10  80.6
 # ℹ 990 more rows</code></pre>
 </div>
 </div>
@@ -2908,18 +2913,18 @@ Coefficients:
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,000 × 4
 # Groups:   replicate [1,000]
-   replicate   `0`   `1`    ATE
-       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
- 1         1  2.70  3.35 0.648 
- 2         2  2.62  3.08 0.453 
- 3         3  2.70  3.04 0.336 
- 4         4  2.56  2.98 0.417 
- 5         5  2.73  3.15 0.424 
- 6         6  2.80  3.09 0.293 
- 7         7  2.67  3.06 0.391 
- 8         8  2.84  3.17 0.332 
- 9         9  2.88  3.20 0.328 
-10        10  2.97  3.06 0.0932
+   replicate   `0`   `1`   ATE
+       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1         1  2.65  3.04 0.395
+ 2         2  2.80  3.20 0.399
+ 3         3  2.62  2.95 0.327
+ 4         4  2.71  2.88 0.172
+ 5         5  2.71  2.98 0.263
+ 6         6  2.70  3.04 0.344
+ 7         7  2.95  3.13 0.182
+ 8         8  2.78  3.30 0.522
+ 9         9  2.71  3.24 0.532
+10        10  2.87  3.26 0.388
 # ℹ 990 more rows</code></pre>
 </div>
 </div>
@@ -2932,7 +2937,7 @@ Coefficients:
 <pre><code># A tibble: 1 × 2
   lower_ci upper_ci
      &lt;dbl&gt;    &lt;dbl&gt;
-1   0.0554    0.711</code></pre>
+1   0.0519    0.702</code></pre>
 </div>
 </div>
 <p>We can also use the <code>specify</code> workflow from <code>infer</code>, but we need to be careful about setting the order of the groups for the difference in means in the <code>calculate</code> step:</p>
@@ -2947,18 +2952,18 @@ Coefficients:
 <pre><code>Response: numberim.post (numeric)
 Explanatory: treatment (factor)
 # A tibble: 1,000 × 2
-   replicate   stat
-       &lt;int&gt;  &lt;dbl&gt;
- 1         1 0.504 
- 2         2 0.304 
- 3         3 0.273 
- 4         4 0.174 
- 5         5 0.502 
- 6         6 0.152 
- 7         7 0.290 
- 8         8 0.393 
- 9         9 0.0898
-10        10 0.603 
+   replicate  stat
+       &lt;int&gt; &lt;dbl&gt;
+ 1         1 0.662
+ 2         2 0.216
+ 3         3 0.613
+ 4         4 0.393
+ 5         5 0.379
+ 6         6 0.453
+ 7         7 0.339
+ 8         8 0.244
+ 9         9 0.247
+10        10 0.422
 # ℹ 990 more rows</code></pre>
 </div>
 </div>
@@ -3047,19 +3052,134 @@ using the `.groups` argument.</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,000 × 4
 # Groups:   replicate [1,000]
-   replicate  ATE_c  ATE_nc interaction
-       &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;
- 1         1 0.429  -0.8         1.23  
- 2         2 0.876  -0.5         1.38  
- 3         3 0.703  -0.8         1.50  
- 4         4 0.603  -1.06        1.67  
- 5         5 0.625  -0.6         1.22  
- 6         6 0.414  -0.583       0.998 
- 7         7 0.383  -0.257       0.640 
- 8         8 0.549  -0.542       1.09  
- 9         9 0.0685  0.0417      0.0268
-10        10 0.237  -0.229       0.466 
+   replicate ATE_c ATE_nc interaction
+       &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt;
+ 1         1 0.240 -0.667      0.907 
+ 2         2 0.647 -0.319      0.967 
+ 3         3 0.667 -0.857      1.52  
+ 4         4 0.284  0.375     -0.0908
+ 5         5 0.358  0.25       0.108 
+ 6         6 0.428  0.667     -0.239 
+ 7         7 0.596 -0.667      1.26  
+ 8         8 0.444 -1.14       1.59  
+ 9         9 0.8    0.143      0.657 
+10        10 0.360 -0.321      0.682 
 # ℹ 990 more rows</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="hypothesis-testing-week-11" class="level2">
+<h2 class="anchored" data-anchor-id="hypothesis-testing-week-11">Hypothesis testing (Week 11)</h2>
+<section id="generating-the-null-distribution-of-a-sample-mean" class="level3">
+<h3 class="anchored" data-anchor-id="generating-the-null-distribution-of-a-sample-mean">Generating the null distribution of a sample mean</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb262"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb262-1"><a href="#cb262-1" aria-hidden="true" tabindex="-1"></a>null_dist <span class="ot">&lt;-</span> gss <span class="sc">|&gt;</span></span>
+<span id="cb262-2"><a href="#cb262-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> hours) <span class="sc">|&gt;</span></span>
+<span id="cb262-3"><a href="#cb262-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"point"</span>, <span class="at">mu =</span> <span class="dv">40</span>) <span class="sc">|&gt;</span></span>
+<span id="cb262-4"><a href="#cb262-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb262-5"><a href="#cb262-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"mean"</span>)</span>
+<span id="cb262-6"><a href="#cb262-6" aria-hidden="true" tabindex="-1"></a>null_dist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: hours (numeric)
+Null Hypothesis: point
+# A tibble: 1,000 × 2
+   replicate  stat
+       &lt;int&gt; &lt;dbl&gt;
+ 1         1  40.4
+ 2         2  39.0
+ 3         3  39.1
+ 4         4  41.2
+ 5         5  40.8
+ 6         6  40.1
+ 7         7  39.9
+ 8         8  40.7
+ 9         9  40.2
+10        10  40.5
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="calculating-the-p-value-of-a-hypothesis-test" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-the-p-value-of-a-hypothesis-test">Calculating the p-value of a hypothesis test</h3>
+<p>If we want to calculate the p-value of the test, we need to first calculate the observed value of the sample mean and then pass that to the <code>get_p_value</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb264"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb264-1"><a href="#cb264-1" aria-hidden="true" tabindex="-1"></a>obs_mean <span class="ot">&lt;-</span> gss <span class="sc">|&gt;</span></span>
+<span id="cb264-2"><a href="#cb264-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> hours) <span class="sc">|&gt;</span></span>
+<span id="cb264-3"><a href="#cb264-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"mean"</span>)</span>
+<span id="cb264-4"><a href="#cb264-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb264-5"><a href="#cb264-5" aria-hidden="true" tabindex="-1"></a><span class="fu">get_p_value</span>(null_dist, obs_mean, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.038</code></pre>
+</div>
+</div>
+<p>We can also visualize the p-value:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb266"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb266-1"><a href="#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visualize</span>(null_dist) <span class="sc">+</span></span>
+<span id="cb266-2"><a href="#cb266-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_p_value</span>(obs_mean, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="cheatsheet_files/figure-html/unnamed-chunk-125-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="null-distribution-for-a-difference-in-means" class="level3">
+<h3 class="anchored" data-anchor-id="null-distribution-for-a-difference-in-means">Null distribution for a difference in means</h3>
+<p>For a diffrence in means, we can use a similar approach, but need to turn our treatment/grouping variable into a charactor/factor variable. Then we need to make sure we sepcify the order the difference in mean should be taken across groups. First we calculate the effect and then get the null distribution using the <code>permute</code> approach.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb267"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb267-1"><a href="#cb267-1" aria-hidden="true" tabindex="-1"></a>trains <span class="ot">&lt;-</span> trains <span class="sc">|&gt;</span></span>
+<span id="cb267-2"><a href="#cb267-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">treated =</span> <span class="fu">if_else</span>(treatment <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"Treated"</span>, <span class="st">"Untreated"</span>))</span>
+<span id="cb267-3"><a href="#cb267-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-4"><a href="#cb267-4" aria-hidden="true" tabindex="-1"></a>ate <span class="ot">&lt;-</span> trains <span class="sc">|&gt;</span></span>
+<span id="cb267-5"><a href="#cb267-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(numberim.post <span class="sc">~</span> treated) <span class="sc">|&gt;</span></span>
+<span id="cb267-6"><a href="#cb267-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>,</span>
+<span id="cb267-7"><a href="#cb267-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"Treated"</span>, <span class="st">"Untreated"</span>))</span>
+<span id="cb267-8"><a href="#cb267-8" aria-hidden="true" tabindex="-1"></a>ate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: numberim.post (numeric)
+Explanatory: treated (factor)
+# A tibble: 1 × 1
+   stat
+  &lt;dbl&gt;
+1 0.383</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb269"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb269-1"><a href="#cb269-1" aria-hidden="true" tabindex="-1"></a>null_dist <span class="ot">&lt;-</span> trains <span class="sc">|&gt;</span></span>
+<span id="cb269-2"><a href="#cb269-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(numberim.post <span class="sc">~</span> treated) <span class="sc">|&gt;</span></span>
+<span id="cb269-3"><a href="#cb269-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb269-4"><a href="#cb269-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>,</span>
+<span id="cb269-5"><a href="#cb269-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb269-6"><a href="#cb269-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"Treated"</span>, <span class="st">"Untreated"</span>))</span>
+<span id="cb269-7"><a href="#cb269-7" aria-hidden="true" tabindex="-1"></a>null_dist</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: numberim.post (numeric)
+Explanatory: treated (factor)
+Null Hypothesis: independence
+# A tibble: 1,000 × 2
+   replicate    stat
+       &lt;int&gt;   &lt;dbl&gt;
+ 1         1 -0.180 
+ 2         2  0.207 
+ 3         3  0.242 
+ 4         4  0.313 
+ 5         5 -0.0395
+ 6         6 -0.145 
+ 7         7 -0.110 
+ 8         8 -0.0395
+ 9         9  0.101 
+10        10 -0.110 
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+<p>Getting the p-value is the same:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb271"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb271-1"><a href="#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_p_value</span>(null_dist, <span class="at">obs_stat =</span> ate, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.026</code></pre>
 </div>
 </div>
 
