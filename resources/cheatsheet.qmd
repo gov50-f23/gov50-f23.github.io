@@ -1542,3 +1542,69 @@ int_boots <- trains |>
   select(replicate, ATE_c, ATE_nc, interaction)
 int_boots
 ```
+
+## Hypothesis testing (Week 11)
+
+### Generating the null distribution of a sample mean
+
+
+```{r}
+
+null_dist <- gss |>
+  specify(response = hours) |>
+  hypothesize(null = "point", mu = 40) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  calculate(stat = "mean")
+null_dist
+```
+
+### Calculating the p-value of a hypothesis test
+
+If we want to calculate the p-value of the test, we need to first calculate the observed value of the sample mean and then pass that to the `get_p_value` function:
+
+```{r}
+obs_mean <- gss |>
+  specify(response = hours) |>
+  calculate(stat = "mean")
+
+get_p_value(null_dist, obs_mean, direction = "both")
+```
+
+We can also visualize the p-value:
+
+```{r}
+visualize(null_dist) +
+  shade_p_value(obs_mean, direction = "both")
+```
+
+### Null distribution for a difference in means
+
+For a diffrence in means, we can use a similar approach, but need to turn our treatment/grouping variable into a charactor/factor variable. Then we need to make sure we sepcify the order the difference in mean should be taken across groups. First we calculate the effect and then get the null distribution using the `permute` approach. 
+
+```{r}
+trains <- trains |>
+  mutate(treated = if_else(treatment == 1, "Treated", "Untreated"))
+
+ate <- trains |>
+  specify(numberim.post ~ treated) |>
+  calculate(stat = "diff in means",
+            order = c("Treated", "Untreated"))
+ate
+
+
+null_dist <- trains |>
+  specify(numberim.post ~ treated) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000,
+           type = "permute") |>
+  calculate(stat = "diff in means", order = c("Treated", "Untreated"))
+null_dist
+```
+
+
+Getting the p-value is the same:
+
+
+```{r}
+get_p_value(null_dist, obs_stat = ate, direction = "both")
+```
