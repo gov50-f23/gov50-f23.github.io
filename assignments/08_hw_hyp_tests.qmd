@@ -95,7 +95,7 @@ Calculate the two-sided p-value and save it as `ate_p`. Is the estimated effect 
 
 ## Question 5 (8 points)
 
-Calculate the estimated ATE of the CBT treatment assignment on the long-term index measure of anti-social behavior (`fam_asb_st`) and save the estimate as `ate_lt`. For this, you can either use the `specify/calculate` approach or the `group_by/summarize` approach, but in either case, your resulting tibble should contain the ATE somewhere. 
+Calculate the estimated ATE of the CBT treatment assignment on the long-term index measure of anti-social behavior (`fam_asb_lt`) and save the estimate as `ate_lt`. For this, you can either use the `specify/calculate` approach or the `group_by/summarize` approach, but in either case, your resulting tibble should contain the ATE somewhere. 
 
 Generate 1000 simulations from the null distribution of a permutation hypothesis test of the null hypothesis that there is no treatment effect. Save this distribution as `ate_lt_null_dist`. Plot this distribution of the difference in means under the null hypothesis along with the observed estimate and the shaded region for the p-value using `visualize()` and `shade_p_value()`. 
 
