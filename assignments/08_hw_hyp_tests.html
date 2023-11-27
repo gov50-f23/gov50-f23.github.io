@@ -376,7 +376,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="question-5-8-points" class="level2">
 <h2 class="anchored" data-anchor-id="question-5-8-points">Question 5 (8 points)</h2>
-<p>Calculate the estimated ATE of the CBT treatment assignment on the long-term index measure of anti-social behavior (<code>fam_asb_st</code>) and save the estimate as <code>ate_lt</code>. For this, you can either use the <code>specify/calculate</code> approach or the <code>group_by/summarize</code> approach, but in either case, your resulting tibble should contain the ATE somewhere.</p>
+<p>Calculate the estimated ATE of the CBT treatment assignment on the long-term index measure of anti-social behavior (<code>fam_asb_lt</code>) and save the estimate as <code>ate_lt</code>. For this, you can either use the <code>specify/calculate</code> approach or the <code>group_by/summarize</code> approach, but in either case, your resulting tibble should contain the ATE somewhere.</p>
 <p>Generate 1000 simulations from the null distribution of a permutation hypothesis test of the null hypothesis that there is no treatment effect. Save this distribution as <code>ate_lt_null_dist</code>. Plot this distribution of the difference in means under the null hypothesis along with the observed estimate and the shaded region for the p-value using <code>visualize()</code> and <code>shade_p_value()</code>.</p>
 <p>Calculate the two-sided p-value and save it as <code>ate_lt_p</code>. Is the estimated effect statistically significant when alpha is 0.05?</p>
 <p>In the write up, report the ATEs calculated in questions 4 and 5, and describe what they mean for the persistence of the effect of CBT over time?</p>
