@@ -61,8 +61,8 @@ website:
               file: materials/10_bootstrap.qmd
             - text: "11: Hypothesis Testing"
               file: materials/11_hyp_tests.qmd
-            # - text: "12: More Tests and Mathematical Models"
-            #   file: materials/12_tests_models.qmd
+            - text: "12: Mathematical Models of Inference"
+              file: materials/12_tests_models.qmd
             # - text: "13: More Mathematical Models"
             #   file: materials/13_models.qmd
             # - text: "14: Inference for Regression"
