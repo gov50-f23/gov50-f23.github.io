@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling\nBivariate Relationships and Functions\nJoining and Tidying Data\nMidterm Review and Prediction\nRegression\nModel Fit\nMultiple Regression and Categorical Predictors\nSampling\nSampling Distributions\nThe Bootstrap\nMore Confidence Intervals\nHypothesis Testing\nTwo-sample Hypothesis Testing"
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling\nBivariate Relationships and Functions\nJoining and Tidying Data\nMidterm Review and Prediction\nRegression\nModel Fit\nMultiple Regression and Categorical Predictors\nSampling\nSampling Distributions\nThe Bootstrap\nMore Confidence Intervals\nHypothesis Testing\nTwo-sample Hypothesis Testing\nMathematical Models of Inference"
   },
   {
     "objectID": "materials/13_models.html",
@@ -1087,30 +1087,23 @@
   {
     "objectID": "materials/12_tests_models.html",
     "href": "materials/12_tests_models.html",
-    "title": "More Hypothesis Tests and Mathematical Models",
+    "title": "Mathematical Models of Inference",
     "section": "",
     "text": "IMS Ch 13 for Thursday."
   },
   {
     "objectID": "materials/12_tests_models.html#readings",
     "href": "materials/12_tests_models.html#readings",
-    "title": "More Hypothesis Tests and Mathematical Models",
+    "title": "Mathematical Models of Inference",
     "section": "",
     "text": "IMS Ch 13 for Thursday."
   },
   {
-    "objectID": "materials/12_tests_models.html#data",
-    "href": "materials/12_tests_models.html#data",
-    "title": "More Hypothesis Tests and Mathematical Models",
-    "section": "Data",
-    "text": "Data\n\nNo new data for Tuesday."
-  },
-  {
     "objectID": "materials/12_tests_models.html#slides-and-code",
     "href": "materials/12_tests_models.html#slides-and-code",
-    "title": "More Hypothesis Tests and Mathematical Models",
+    "title": "Mathematical Models of Inference",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (11/15) lecture: Difference in means tests and Power\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nThursday (11/17) lecture: Mathematical models for inference\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (11/28) lecture: Mathematical models for inference\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/14_ols_inference.html",

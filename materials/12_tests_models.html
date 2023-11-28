@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-11-14">
+<meta name="dcterms.date" content="2023-11-27">
 
-<title>Gov 50 - More Hypothesis Tests and Mathematical Models</title>
+<title>Gov 50 - Mathematical Models of Inference</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Staff</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../materials/index.html" rel="" target="">
+    <a class="nav-link active" href="../materials/index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
@@ -119,10 +119,127 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../materials/01_intro.html">Course Materials</a></li><li class="breadcrumb-item"><a href="../materials/12_tests_models.html">12: Mathematical Models of Inference</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Readings, lectures, and videos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Course Materials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1: Introduction to Gov 50</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/02_r_data_viz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2: Data Visualization and Wrangling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/03_data_wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3: Data Wrangling and Causality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/04_causality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4: Causality</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/05_measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5: Summarizing and Measurement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/06_bivariate_tidying.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6: Relationships, Functions, and Importing/Tidying Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/07_prediction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7: Prediction and Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/08_regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8: More Regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/09_sampling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9: Sampling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/10_bootstrap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10: Bootstrap and Confidence Intervals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/11_hyp_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11: Hypothesis Testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/12_tests_models.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">12: Mathematical Models of Inference</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -130,7 +247,6 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#readings" id="toc-readings" class="nav-link active" data-scroll-target="#readings">Readings</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#slides-and-code" id="toc-slides-and-code" class="nav-link" data-scroll-target="#slides-and-code">Slides and Code</a></li>
   </ul>
 </nav>
@@ -140,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">More Hypothesis Tests and Mathematical Models</h1>
+<h1 class="title">Mathematical Models of Inference</h1>
 </div>
 
 
@@ -151,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 14, 2022</p>
+      <p class="date">November 27, 2023</p>
     </div>
   </div>
   
@@ -167,21 +283,10 @@ ul.task-list li input[type="checkbox"] {
 <li>IMS Ch 13 for Thursday.</li>
 </ul>
 </section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<ul>
-<li>No new data for Tuesday.</li>
-</ul>
-</section>
 <section id="slides-and-code" class="level2">
 <h2 class="anchored" data-anchor-id="slides-and-code">Slides and Code</h2>
 <ul>
-<li>Tuesday (11/15) lecture: Difference in means tests and Power
-<ul>
-<li><a href="../slides/22_hyp_tests_more.pdf">PDF of slides as I present them</a></li>
-<li><a href="../slides/22_hyp_tests_more_handout.pdf">PDF of handout version of slides</a> (no incremental slides)</li>
-</ul></li>
-<li>Thursday (11/17) lecture: Mathematical models for inference
+<li>Tuesday (11/28) lecture: Mathematical models for inference
 <ul>
 <li><a href="../slides/23_math_models.pdf">PDF of slides as I present them</a></li>
 <li><a href="../slides/23_math_models_handout.pdf">PDF of handout version of slides</a> (no incremental slides)</li>
