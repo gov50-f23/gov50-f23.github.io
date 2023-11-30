@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling\nBivariate Relationships and Functions\nJoining and Tidying Data\nMidterm Review and Prediction\nRegression\nModel Fit\nMultiple Regression and Categorical Predictors\nSampling\nSampling Distributions\nThe Bootstrap\nMore Confidence Intervals\nHypothesis Testing\nTwo-sample Hypothesis Testing\nMathematical Models of Inference"
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling\nBivariate Relationships and Functions\nJoining and Tidying Data\nMidterm Review and Prediction\nRegression\nModel Fit\nMultiple Regression and Categorical Predictors\nSampling\nSampling Distributions\nThe Bootstrap\nMore Confidence Intervals\nHypothesis Testing\nTwo-sample Hypothesis Testing\nMathematical Models of Inference\nMathematical Models for Hypothesis Testing"
   },
   {
     "objectID": "materials/13_models.html",
@@ -1103,7 +1103,7 @@
     "href": "materials/12_tests_models.html#slides-and-code",
     "title": "Mathematical Models of Inference",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (11/28) lecture: Mathematical models for inference\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (11/28) lecture: Mathematical models for inference\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)\n\nTuesday (11/30) lecture: Math models for hypothesis testing and difference in means\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "materials/14_ols_inference.html",
