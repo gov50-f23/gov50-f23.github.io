@@ -108,3 +108,21 @@ The final report will include the following sections: (1) an introduction where 
 For the data section, you should note if your research design is cross-sectional (most projects will be of this type) or one of the other designs we discussed (randomized experiment, before-and-after, differences-in-differences). For the results section, you should interpret (in plain English) the main coefficient of interest in your regression. You should also comment on the statistical significance of the estimated coefficient and whether or not you believe the coefficient to represent a causal effect. 
 
 
+Here is a rubric for the the core components of the final project:
+
+- Introduction: describe the research question and main hypothesis; describe why it is important. (1-2 paragraphs) (2pts)
+- Data section: 2-3 paragraphs + plot visualizing main outcome of interest.  (3pts)
+- Results section: plot of main analysis + regression output + 2-3 paragraphs of description and interpretation of the plots and regression (including interpreting the main coefficient of interest and describing if it is statistically significant and if we should interpret it causally). This section could be longer if you choose to include additional analyses. (8pts)
+- Conclusion section: 1 paragraph (i) summarizing results and assessing the extent to which you find support for your hypothesis; (ii) describing limitations of the analysis and threats to inference (missing data, confounding, etc), and stating how you could improve your analysis if you had more time/money. (2pts)
+
+To earn full credit on the visualizations and regression output, they should use informative labels and names and have a small number of digits presented. Tables should use `kable` or `modelsummary` to format output nicely. Generally speaking, the final report should mostly be readable by a person who hasn’t taken Gov 50. 
+
+That adds up to 15 out of 16 points. We reserve one point for students going above and beyond the basic requirements. This “great work” point can be earned in many ways:
+
+1. Using different datasets that must be merged before use. 
+2. Presenting additional analyses that investigate the relationship further in terms of possible confounders or alternative explanations. 
+3. Aesthetically pleasing visualizations (above and beyond what we learned in class)
+4. Maps
+5. Use of other packages not reviewed in class (excluding those for importing data)
+6. Clean code (i.e., proper indentation, naming chunks)
+7. No raw R output (all “prints” using kable or kable like functions)
