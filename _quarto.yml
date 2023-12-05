@@ -65,8 +65,8 @@ website:
               file: materials/12_tests_models.qmd
             # - text: "13: More Mathematical Models"
             #   file: materials/13_models.qmd
-            # - text: "14: Inference for Regression"
-            #   file: materials/14_ols_inference.qmd
+            - text: "14: Inference for Regression"
+              file: materials/14_ols_inference.qmd
               
     - title: "Assignments"
       style: "docked"

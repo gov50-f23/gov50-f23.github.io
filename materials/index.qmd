@@ -31,3 +31,4 @@ Each class session has a set of required readings that you should complete ***be
 22. [Two-sample Hypothesis Testing](/slides/22_hyp_tests_diff_handout.pdf)
 23. [Mathematical Models of Inference](/slides/23_math_models_handout.pdf)
 24. [Mathematical Models for Hypothesis Testing](/slides/24_math_models_ii_handout.pdf)
+25. [Inference for Linear Regression](/slides/25_ols_inference_handout.pdf)

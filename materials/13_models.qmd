@@ -14,3 +14,4 @@ date: 2022-11-21
 - Tuesday (11/22) lecture: Math models for hypothesis testing and difference in means
   - [PDF of slides as I present them](/slides/24_math_models_ii.pdf)
   - [PDF of handout version of slides](/slides/24_math_models_ii_handout.pdf) (no incremental slides)
+
