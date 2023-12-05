@@ -109,7 +109,7 @@
     "href": "materials/index.html",
     "title": "Readings, lectures, and videos",
     "section": "",
-    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling\nBivariate Relationships and Functions\nJoining and Tidying Data\nMidterm Review and Prediction\nRegression\nModel Fit\nMultiple Regression and Categorical Predictors\nSampling\nSampling Distributions\nThe Bootstrap\nMore Confidence Intervals\nHypothesis Testing\nTwo-sample Hypothesis Testing\nMathematical Models of Inference\nMathematical Models for Hypothesis Testing"
+    "text": "Each class session has a set of required readings that you should complete before attempting the tutorials.\n\nCourse Introduction\nIntroduction to R and RStudio\nData Visualization\nData Wrangling\nData Wrangling and Barplots\nCausality\nRandomized Experiments\nObservational Studies\nSummarizing Data\nSurvey Sampling\nBivariate Relationships and Functions\nJoining and Tidying Data\nMidterm Review and Prediction\nRegression\nModel Fit\nMultiple Regression and Categorical Predictors\nSampling\nSampling Distributions\nThe Bootstrap\nMore Confidence Intervals\nHypothesis Testing\nTwo-sample Hypothesis Testing\nMathematical Models of Inference\nMathematical Models for Hypothesis Testing\nInference for Linear Regression"
   },
   {
     "objectID": "materials/13_models.html",
@@ -1108,30 +1108,23 @@
   {
     "objectID": "materials/14_ols_inference.html",
     "href": "materials/14_ols_inference.html",
-    "title": "The Bootstrap and Confidence Intervals",
+    "title": "Inference with Linear Regression",
     "section": "",
     "text": "QSS 7.3 and/or IMS Ch 24."
   },
   {
     "objectID": "materials/14_ols_inference.html#readings",
     "href": "materials/14_ols_inference.html#readings",
-    "title": "The Bootstrap and Confidence Intervals",
+    "title": "Inference with Linear Regression",
     "section": "",
     "text": "QSS 7.3 and/or IMS Ch 24."
   },
   {
-    "objectID": "materials/14_ols_inference.html#data",
-    "href": "materials/14_ols_inference.html#data",
-    "title": "The Bootstrap and Confidence Intervals",
-    "section": "Data",
-    "text": "Data\n\nReinstall the Gov 50 data package that has new data for this week:\n\n\nremotes::install_github(\"mattblackwell/gov50data\")\n\n\nCSV files for the data from this week if you cannot install the package:\n\najr.csv"
-  },
-  {
     "objectID": "materials/14_ols_inference.html#slides-and-code",
     "href": "materials/14_ols_inference.html#slides-and-code",
-    "title": "The Bootstrap and Confidence Intervals",
+    "title": "Inference with Linear Regression",
     "section": "Slides and Code",
-    "text": "Slides and Code\n\nTuesday (11/29) lecture: Inference with Linear Regression\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
+    "text": "Slides and Code\n\nTuesday (12/5) lecture: Inference with Linear Regression\n\nPDF of slides as I present them\nPDF of handout version of slides (no incremental slides)"
   },
   {
     "objectID": "resources/cheatsheet.html",
